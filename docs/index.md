@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.png
 heroAlt: Le5le Topology
 heroText: 乐吾乐Topology
-tagline: 新一代智能可视化引擎
+tagline: 新一代智能动态可视化引擎
 actionText: 开始上手
 actionLink: /tutorial/start
 features:
