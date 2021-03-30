@@ -3,7 +3,7 @@ module.exports = {
   description: '乐吾乐 Topology文档中心',
 
   themeConfig: {
-    // logo: '/img/logo.png',
+    logo: '/img/logo.png',
 
     algolia: {
       apiKey: '',

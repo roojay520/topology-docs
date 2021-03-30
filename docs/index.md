@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/logo.png
+heroImage: /img/home.png
 heroAlt: Le5le Topology
 heroText: 乐吾乐Topology
 tagline: 新一代智能动态可视化引擎
