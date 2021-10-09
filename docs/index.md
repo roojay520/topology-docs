@@ -2,8 +2,8 @@
 home: true
 heroImage: /img/home.png
 heroAlt: Le5le Topology
-heroText: 乐吾乐Topology
-tagline: 新一代智能动态可视化引擎
+heroText: 乐吾乐 Topology
+tagline: 新一代高性能动态可视化web引擎
 actionText: 开始上手
 actionLink: /tutorial/start
 features:
