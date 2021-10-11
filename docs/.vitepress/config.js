@@ -1,6 +1,6 @@
 module.exports = {
   title: '乐吾乐 Topology',
-  description: '乐吾乐 Topology文档中心',
+  description: '乐吾乐Topology文档中心',
 
   themeConfig: {
     logo: '/img/logo.png',
@@ -20,11 +20,29 @@ module.exports = {
       },
       {
         text: '资源',
-        link: '/resources/install',
-        activeMatch: '^/resources/',
+        link: '/awesome/index',
+        activeMatch: '^/awesome/',
       },
       { text: '常见问题', link: '/faq/open-source', activeMatch: '^/faq/' },
       { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
+      {
+        text: '社区',
+        activeMatch: '^/community/',
+        items: [
+          {
+            text: 'Github',
+            link: 'https://github.com/le5le-com/topology',
+          },
+          {
+            text: '技术交流群',
+            link: '/community/wechat',
+          },
+          {
+            text: '关于我们',
+            link: '/community/us',
+          },
+        ],
+      },
       {
         text: '多语言',
         items: [
@@ -38,28 +56,6 @@ module.exports = {
           },
         ],
       },
-      {
-        text: '社区',
-        activeMatch: '^/community/',
-        items: [
-          {
-            text: 'Github',
-            link: 'https://github.com/le5le-com/topology',
-          },
-          {
-            text: 'Issues',
-            link: 'https://github.com/le5le-com/issues/issues',
-          },
-          {
-            text: '技术交流群',
-            link: '/community/wechat',
-          },
-          {
-            text: '关于我们',
-            link: '/community/us',
-          },
-        ],
-      },
     ],
 
     sidebar: {
@@ -70,7 +66,7 @@ module.exports = {
           text: '视频教程',
           children: [
             {
-              text: '入门使用',
+              text: '使用介绍',
               link: '/videos/start',
             },
             {
@@ -84,18 +80,10 @@ module.exports = {
           ],
         },
       ],
-      '/resources/': [
+      '/awesome/': [
         {
           text: '资源',
           children: [
-            {
-              text: '部署试用',
-              link: '/resources/install',
-            },
-            {
-              text: '单机版',
-              link: '/resources/pc',
-            },
             {
               text: '开发者示例',
               link: '/awesome/index',
@@ -115,21 +103,14 @@ function getTutorialSidebar() {
       text: '使用',
       children: [
         { text: 'Topology介绍', link: '/tutorial/introduction' },
-        { text: '快速上手', link: '/tutorial/start' },
-        { text: '部署使用', link: '/tutorial/install' },
-        { text: 'Topology-Vue使用指南', link: '/tutorial/vue' },
         {
-          text: '发布预览',
+          text: '快速上手',
           children: [
-            { text: '在ES5中使用', link: '/tutorial/es5' },
-            { text: '在ES6中使用', link: '/tutorial/es6' },
-            { text: '在Vue中使用', link: '/tutorial/vue' },
-            { text: '在React中使用', link: '/tutorial/react' },
-            { text: '在Angular中使用', link: '/tutorial/angular' },
+            { text: 'ES5方式', link: '/tutorial/es5' },
+            { text: 'ES6方式', link: '/tutorial/es6' },
           ],
         },
-        { text: '如何使用企业组件', link: '/tutorial/commercial-components' },
-        { text: '数据与接口文档', link: '/tutorial/data' },
+        { text: '企业版介绍', link: '/tutorial/commercial' },
       ],
     },
     {
@@ -137,25 +118,14 @@ function getTutorialSidebar() {
       children: [
         { text: '概要', link: '/tutorial/architecture' },
         { text: '画布', link: '/tutorial/topology' },
-        { text: '画布数据通信', link: '/tutorial/store' },
-        {
-          text: '事件',
-          children: [
-            { text: '画布事件', link: '/tutorial/topology-events' },
-            { text: '画笔事件', link: '/tutorial/pen-events' },
-            { text: '条件触发器', link: '/tutorial/trigger' },
-          ],
-        },
-        {
-          text: '远程消息通信',
-          children: [
-            { text: '标准格式通信', link: '/tutorial/topology-socket' },
-            { text: '自定义格式通信', link: '/tutorial/custom-socket' },
-          ],
-        },
+        { text: '画笔', link: '/tutorial/pen' },
+        { text: '实时数据监听', link: '/tutorial/data' },
+        { text: '消息事件', link: '/tutorial/events' },
+        { text: '生命周期', link: '/tutorial/lifecycle' },
         { text: '动画', link: '/tutorial/animate' },
+        { text: '进度条', link: '/tutorial/progress' },
         { text: '视频', link: '/tutorial/video' },
-        { text: '排版布局', link: '/tutorial/layout' },
+        { text: '排版算法', link: '/tutorial/layout' },
         { text: '注意事项', link: '/tutorial/attention' },
       ],
     },
@@ -163,26 +133,38 @@ function getTutorialSidebar() {
       text: '进阶',
       children: [
         {
+          text: '功能',
+          children: [
+            { text: '拖拽', link: '/tutorial/drag' },
+            { text: '钢笔', link: '/tutorial/pen' },
+            { text: '铅笔', link: '/tutorial/pencil' },
+            { text: '自动锚点', link: '/tutorial/auto-anchor' },
+            { text: '网格', link: '/tutorial/grid' },
+            { text: '标尺', link: '/tutorial/rule' },
+            { text: '右键菜单', link: '/tutorial/right-menu' },
+            { text: '鹰眼地图', link: '/tutorial/map' },
+            { text: '放大镜', link: '/tutorial/magnifier' },
+            { text: '快捷键', link: '/tutorial/keyboards' },
+            { text: '自定义连线算法', link: '/tutorial/line-ai' },
+          ],
+        },
+        {
           text: '图形库',
           children: [
             { text: '图片', link: '/tutorial/image' },
             { text: '字体图标', link: '/tutorial/icon' },
-            { text: '自定义图形库', link: '/tutorial/canvas-component' },
+            { text: '自定义图形库', link: '/tutorial/make-component' },
+            { text: '使用外部组件', link: '/tutorial/dom' },
           ],
         },
-        { text: '使用外部组件', link: '/tutorial/dom' },
-        { text: '如何拖拽', link: '/tutorial/drag' },
-        { text: '右键菜单', link: '/tutorial/right-menu' },
-        { text: '实现编辑器', link: '/tutorial/editor' },
       ],
     },
     {
-      text: '数据',
+      text: '企业图形库',
       children: [
-        { text: '基础图形库', link: '/tutorial/components' },
-        { text: 'echarts', link: '/tutorial/echarts' },
-        { text: '容器/水池组件', link: '/tutorial/pool' },
-        { text: '进度条', link: '/tutorial/progress' },
+        { text: '表单', link: '/tutorial/forms' },
+        { text: '图表', link: '/tutorial/charts' },
+        { text: '表格', link: '/tutorial/table' },
       ],
     },
   ];
@@ -196,40 +178,23 @@ function getAPISidebar() {
         {
           text: '画布',
           children: [
-            { text: '数据', link: '/api/topology-data' },
-            { text: '方法', link: '/api/topology-functions' },
-            { text: '选项', link: '/api/topology-options' },
+            { text: '引擎core', link: '/api/core' },
+            { text: 'Canvas', link: '/api/canvas' },
+            { text: '数据', link: '/api/store' },
+            { text: '选项', link: '/api/options' },
+            { text: '工具函数', link: '/api/utils' },
           ],
         },
         {
           text: '画笔',
           children: [
-            { text: '公共基础', link: '/api/pen' },
-            { text: '组件', link: '/api/node' },
-            { text: '连线', link: '/api/line' },
+            { text: '画笔', link: '/api/pen' },
+            { text: '位置', link: '/api/rect' },
+            { text: '点', link: '/api/point' },
+            { text: '箭头', link: '/api/arrow' },
           ],
         },
-        { text: '位置区域', link: '/api/rect' },
-        { text: '箭头', link: '/api/arrow' },
-        {
-          text: '点',
-          children: [
-            { text: '普通点', link: '/api/point' },
-            { text: '锚点', link: '/api/anchor' },
-            { text: '控制点', link: '/api/controller-point' },
-          ],
-        },
-        {
-          text: '图层',
-          children: [
-            { text: '基类', link: '/api/layer' },
-            { text: '离屏层', link: '/api/offset-layer' },
-            { text: '选中层', link: '/api/active-layer' },
-            { text: '活动层', link: '/api/hover-layer' },
-            { text: '动画层', link: '/api/animate-layer' },
-            { text: '外部组件层', link: '/api/div-layer' },
-          ],
-        },
+        { text: '排版算法', link: '/api/layout' },
       ],
     },
   ];
@@ -240,13 +205,9 @@ function getFaqSidebar() {
     {
       text: '常见问题',
       children: [
-        { text: '开源和企业版', link: '/faq/open-source' },
+        { text: '开源引擎和企业版', link: '/faq/open-source' },
         { text: '如何编译源码', link: '/faq/source' },
         { text: '图标不显示', link: '/faq/icon' },
-        { text: '修改数据不生效', link: '/faq/render' },
-        { text: '修改连线name报错', link: '/faq/line' },
-        { text: '选择子节点', link: '/faq/children' },
-        { text: '修改动画不生效', link: '/faq/animate' },
         { text: 'MQTT一直重连', link: '/faq/mqtt' },
         { text: '节点位置错误', link: '/faq/position' },
         { text: '如何保存为svg', link: '/faq/svg' },
@@ -263,11 +224,7 @@ function getCommunitySidebar() {
       children: [
         {
           text: 'Github',
-          link: 'https://github.com/le5le-com/topology',
-        },
-        {
-          text: 'Issues',
-          link: 'https://github.com/le5le-com/issues/issues',
+          link: 'https://github.com/le5le-com/topology.js',
         },
         {
           text: '技术交流群',

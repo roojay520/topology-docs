@@ -1,45 +1,39 @@
 ---
 home: true
-heroImage: /img/home.png
+pageClass: le5le-home
+# heroImage: /img/home.png
 heroAlt: Le5le Topology
 heroText: 乐吾乐 Topology
-tagline: 新一代高性能动态可视化web引擎
+tagline: 全新web可视化引擎
 actionText: 开始上手
 actionLink: /tutorial/start
 features:
-  - title: 动态智能
-    details: 集动态交互、丰富展示、数据管理等一体的全功能可视化引擎，为物联网、工业互联网、电力能力、水利工程、智慧农业、智能医疗、智慧城市等智能可视化场景而生。
-  - title: 开箱即用
-    details: 提供快速本地部署安装包、桌面版，无需开发，快速体验；Topology-vue组件一键导入，方便快捷；一分钟快速上手指南、丰富的Github代码示例等，快速上手开发。
-  - title: 定制扩展
-    details: 引擎提供了丰富的接口，支持不同场景应用开发；画笔、图元、连线等自由定制、插件式扩展，实现绚丽多变的视觉呈现；动画、数据管理、自动算法等皆可自主设计，提供更多可能。
+  - title: 高效、卓越
+    details: 数据为核心、数据驱动显示，数据+ 算法 + 风格 = 栩栩如生；多状态呈现，进度、动效多角度动态展示；支持1万+以上节点、1000+动画
+  - title: 实时监听、交互响应
+    details: 实时动态数据监听；画笔全生命周期事件（创建、更新、销毁）；鼠标进入、移出、单击、选中等事件；移动、缩放、旋转等事件；网络消息事件；动画、视频播放事件；文本输入事件
+  - title: 可扩展、丰富场景
+    details: 可定制化开发图形库；支持自动算法、业务算法等中间件扩展；架构拓扑图、UML图、脑图，电力能源、水利，物联网、工业互联网，智慧城市、智慧医疗、智慧农业，大屏展示、IT运维等多场景支持
 
 footer: Copyright © 2020-present le5le.com
 ---
 
-### As Easy as 1, 2, 3
 
 ```bash
-# install topology
+# Install topology
 yarn add -D @topology/core
 ...
 
-# register
+# Register
 import { Topology } from '@topology/core';
-import { register as registerFlow } from '@topology/flow-diagram';
-import { register as registerActivity } from '@topology/activity-diagram';
-import { register as registerClass } from '@topology/class-diagram';
-import { register as registerSequence } from '@topology/sequence-diagram';
-import { register as registerChart } from '@topology/chart-diagram';
-...
+import { register as registerMyDiagram } from 'my-diagram';
 
-# create a topology on: <div id="topology"></div>
-registerFlow();
-registerActivity()
-...
+# <div id="topology"></div>
 new Topology('topology');
 
-# open a json
+registerMyDiagram();
+
+# Open a json
 topology.open(json);
 
 ```
