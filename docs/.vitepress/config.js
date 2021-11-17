@@ -12,7 +12,7 @@ module.exports = {
 
     nav: [
       { text: '教程', link: '/tutorial/start', activeMatch: '^/tutorial/' },
-      { text: 'API', link: '/api/topology-data', activeMatch: '^/api/' },
+      { text: 'API', link: '/api/core', activeMatch: '^/api/' },
       {
         text: '视频教程',
         link: '/videos/start',
@@ -20,10 +20,10 @@ module.exports = {
       },
       {
         text: '资源',
-        link: '/awesome/index',
+        link: '/awesome/home',
         activeMatch: '^/awesome/',
       },
-      { text: '常见问题', link: '/faq/open-source', activeMatch: '^/faq/' },
+      { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
       { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
       {
         text: '社区',
@@ -31,7 +31,7 @@ module.exports = {
         items: [
           {
             text: 'Github',
-            link: 'https://github.com/le5le-com/topology',
+            link: 'https://github.com/le5le-com',
           },
           {
             text: '技术交流群',
@@ -83,12 +83,7 @@ module.exports = {
       '/awesome/': [
         {
           text: '资源',
-          children: [
-            {
-              text: '开发者示例',
-              link: '/awesome/index',
-            },
-          ],
+          link: '/awesome/home',
         },
       ],
       '/faq/': getFaqSidebar(),
@@ -105,12 +100,9 @@ function getTutorialSidebar() {
         { text: 'Topology介绍', link: '/tutorial/introduction' },
         {
           text: '快速上手',
-          children: [
-            { text: 'ES5方式', link: '/tutorial/es5' },
-            { text: 'ES6方式', link: '/tutorial/es6' },
-          ],
+          link: '/tutorial/start',
         },
-        { text: '企业版介绍', link: '/tutorial/commercial' },
+        { text: '企业版', link: '/tutorial/commercial' },
       ],
     },
     {
@@ -175,26 +167,13 @@ function getAPISidebar() {
     {
       text: 'API',
       children: [
-        {
-          text: '画布',
-          children: [
-            { text: '引擎core', link: '/api/core' },
-            { text: 'Canvas', link: '/api/canvas' },
-            { text: '数据', link: '/api/store' },
-            { text: '选项', link: '/api/options' },
-            { text: '工具函数', link: '/api/utils' },
-          ],
-        },
-        {
-          text: '画笔',
-          children: [
-            { text: '画笔', link: '/api/pen' },
-            { text: '位置', link: '/api/rect' },
-            { text: '点', link: '/api/point' },
-            { text: '箭头', link: '/api/arrow' },
-          ],
-        },
-        { text: '排版算法', link: '/api/layout' },
+        { text: 'Core', link: '/api/core' },
+        { text: 'Canvas', link: '/api/canvas' },
+        { text: 'Pen', link: '/api/pen' },
+        { text: 'Rect', link: '/api/rect' },
+        { text: 'Point', link: '/api/point' },
+        { text: 'Layout', link: '/api/layout' },
+        { text: 'Utils', link: '/api/utils' },
       ],
     },
   ];
@@ -204,15 +183,7 @@ function getFaqSidebar() {
   return [
     {
       text: '常见问题',
-      children: [
-        { text: '开源引擎和企业版', link: '/faq/open-source' },
-        { text: '如何编译源码', link: '/faq/source' },
-        { text: '图标不显示', link: '/faq/icon' },
-        { text: 'MQTT一直重连', link: '/faq/mqtt' },
-        { text: '节点位置错误', link: '/faq/position' },
-        { text: '如何保存为svg', link: '/faq/svg' },
-        { text: '常见商务问答', link: '/faq/business' },
-      ],
+      link: '/faq/home',
     },
   ];
 }
@@ -224,7 +195,7 @@ function getCommunitySidebar() {
       children: [
         {
           text: 'Github',
-          link: 'https://github.com/le5le-com/topology.js',
+          link: '/community/github',
         },
         {
           text: '技术交流群',
