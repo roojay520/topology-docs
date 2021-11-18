@@ -15,7 +15,7 @@ module.exports = {
       { text: 'API', link: '/api/core', activeMatch: '^/api/' },
       {
         text: '视频教程',
-        link: '/videos/start',
+        link: '/videos/home',
         activeMatch: '^/videos/',
       },
       {
@@ -24,7 +24,7 @@ module.exports = {
         activeMatch: '^/awesome/',
       },
       { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
-      { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
+      // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
       {
         text: '社区',
         activeMatch: '^/community/',
@@ -64,20 +64,7 @@ module.exports = {
       '/videos/': [
         {
           text: '视频教程',
-          children: [
-            {
-              text: '使用介绍',
-              link: '/videos/start',
-            },
-            {
-              text: '基础课程',
-              link: '/videos/courses',
-            },
-            {
-              text: '源码解析',
-              link: '/videos/advanced',
-            },
-          ],
+          link: '/videos/home',
         },
       ],
       '/awesome/': [

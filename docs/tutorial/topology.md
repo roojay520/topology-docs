@@ -32,163 +32,145 @@ topology.open(json);
 
 ## Options 选项
 
-| 名称                 | 类型        | 描述                                               |
-| -------------------- | ----------- | -------------------------------------------------- |
-| color                | string      | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
-| activeColor          | string      | 画笔选中颜色                                       |
-| activeBackground     | string      | 画笔选中背景颜色                                   |
-| hoverColor           | string      |                                                    |
-| hoverBackground      | string      |                                                    |
-| anchorColor          | string      |                                                    |
-| anchorRadius         | number      |                                                    |
-| anchorBackground     | string      |                                                    |
-| dockColor            | string      |                                                    |
-| dockBackground       | string      |                                                    |
-| dragColor            | string      |                                                    |
-| animateColor         | string      |                                                    |
-| textColor            | string      |                                                    |
-| fontFamily           | string      |                                                    |
-| fontSize             | number      |                                                    |
-| lineHeight           | number      |                                                    |
-| textAlign            | string      |                                                    |
-| textBaseline         | string      |                                                    |
-| rotateCursor         | string      |                                                    |
-| hoverCursor          | string      |                                                    |
-| disableInput         | boolean     |                                                    |
-| disableRotate        | boolean     |                                                    |
-| disableSize          | boolean     |                                                    |
-| disableAnchor        | boolean     |                                                    |
-| disableWidth         | boolean     |                                                    |
-| disableHeight        | boolean     |                                                    |
-| alwaysAnchor         | boolean     |                                                    |
-| autoAnchor           | boolean     |                                                    |
-| disableEmptyLine     | boolean     |                                                    |
-| disableRepeatLine    | boolean     |                                                    |
-| disableScale         | boolean     |                                                    |
-| disableTranslate     | boolean     |                                                    |
-| disableMoveOutParent | boolean     |                                                    |
-| disableDockLine      | boolean     |                                                    |
-| playIcon             | string      |                                                    |
-| pauseIcon            | string      |                                                    |
-| fullScreenIcon       | string      |                                                    |
-| loopIcon             | string      |                                                    |
-| rightMouseTranslate  | boolean     |                                                    |
-| minScale             | number      |                                                    |
-| maxScale             | number      |                                                    |
-| keydown              | KeydownType |                                                    |
-| viewPadding          | Padding     |                                                    |
-| background           | string      |                                                    |
-| grid                 | boolean     |                                                    |
-| gridColor            | string      |                                                    |
-| gridSize             | number      |                                                    |
-| rule                 | boolean     |                                                    |
-| ruleColor            | string      |                                                    |
-| drawingLineName      | string      |                                                    |
-| fromArrow            | string      |                                                    |
-| toArrow              | string      |                                                    |
-| autoPolyline         | boolean     |                                                    |
-| interval             | number      |                                                    |
-| animateInterval      | number      |                                                    |
-| dragAllIn            | boolean     |                                                    |
-| scroll               | boolean     |                                                    |
+| 名称                | 类型        | 描述                                               |
+| ------------------- | ----------- | -------------------------------------------------- |
+| color               | string      | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
+| activeColor         | string      | 画笔选中颜色                                       |
+| activeBackground    | string      | 画笔选中背景颜色                                   |
+| hoverColor          | string      | 鼠标移动到画笔上的颜色                             |
+| hoverBackground     | string      | 鼠标移动到画笔上的背景颜色                         |
+| anchorColor         | string      | 锚点颜色                                           |
+| anchorRadius        | number      | 锚点半径                                           |
+| anchorBackground    | string      | 锚点背景颜色                                       |
+| dockColor           | string      | 辅助线颜色                                         |
+| dragColor           | string      | 鼠标框选多个节点时，边框颜色                       |
+| animateColor        | string      | 连线动画颜色                                       |
+| textColor           | string      | 文字颜色                                           |
+| fontFamily          | string      | 文字字体                                           |
+| fontSize            | number      | 文字大小                                           |
+| lineHeight          | number      | 文字行高                                           |
+| textAlign           | string      | 文字水平对齐方式                                   |
+| textBaseline        | string      | 文字垂直对齐方式                                   |
+| rotateCursor        | string      | 旋转控制点的鼠标样式                               |
+| hoverCursor         | string      | 鼠标经过画笔的样式                                 |
+| disableInput        | boolean     | 禁用双击弹出输入框                                 |
+| disableRotate       | boolean     | 禁止旋转                                           |
+| disableAnchor       | boolean     | 禁止设置锚点                                       |
+| alwaysAnchor        | boolean     | 默认显示锚点                                       |
+| autoAnchor          | boolean     | 连线时，自动选中节点锚点                           |
+| disableEmptyLine    | boolean     | 禁止存在两端关联缺少的连线                         |
+| disableRepeatLine   | boolean     | 禁止存在关联重复的连线                             |
+| disableScale        | boolean     | 禁止画布缩放                                       |
+| disableTranslate    | boolean     | 禁止画布移动                                       |
+| disableDockLine     | boolean     | 取消辅助线                                         |
+| rightMouseTranslate | boolean     | 禁止右键拖拽画布                                   |
+| minScale            | number      | 画布最小缩放比例                                   |
+| maxScale            | number      | 画布最大缩放比例                                   |
+| keydown             | KeydownType | 快捷键监听对象，默认 canvas                        |
+| grid                | boolean     | 是否显示网格                                       |
+| gridColor           | string      | 网格颜色                                           |
+| gridSize            | number      | 网格大小                                           |
+| rule                | boolean     | 是否显示标尺                                       |
+| ruleColor           | string      | 标尺颜色                                           |
+| drawingLineName     | string      | 默认连线类型名称                                   |
+| fromArrow           | string      | 默认连线起始箭头                                   |
+| toArrow             | string      | 默认连线终点箭头                                   |
+| autoPolyline        | boolean     | 是否自动计算多线段锚点                             |
+| interval            | number      | 绘画帧时长                                         |
+| animateInterval     | number      | 动画帧时长                                         |
+| dragAllIn           | boolean     | 框选画笔时，是否需要全部在框选区域内               |
+| scroll              | boolean     | 默认是否显示滚动条。与默认缩放互斥                 |
 
 ## Function 函数
 
-| 名称                                                 | 描述                                               |
-| ---------------------------------------------------- | -------------------------------------------------- |
-| [constructor](/api/core#constructor)                 | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
-| [setOptions](/api/core#setOptions)                   |                                                    |
-| [getOptions](/api/core#getOptions)                   |                                                    |
-| [initEventFns](/api/core#initEventFns)               |                                                    |
-| [resize](/api/core#resize)                           |                                                    |
-| [addPen](/api/core#addPen)                           |                                                    |
-| [addPens](/api/core#addPens)                         |                                                    |
-| [render](/api/core#render)                           |                                                    |
-| [open](/api/core#open)                               |                                                    |
-| [connectSocket](/api/core#connectSocket)             |                                                    |
-| [drawLine](/api/core#drawLine)                       |                                                    |
-| [drawingPencil](/api/core#drawingPencil)             |                                                    |
-| [finishDrawLine](/api/core#finishDrawLine)           |                                                    |
-| [finishPencil](/api/core#finishPencil)               |                                                    |
-| [updateLineType](/api/core#updateLineType)           |                                                    |
-| [addDrawLineFn](/api/core#addDrawLineFn)             |                                                    |
-| [removeDrawLineFn](/api/core#removeDrawLineFn)       |                                                    |
-| [showMagnifier](/api/core#showMagnifier)             |                                                    |
-| [hideMagnifier](/api/core#hideMagnifier)             |                                                    |
-| [toggleMagnifier](/api/core#toggleMagnifier)         |                                                    |
-| [clear](/api/core#clear)                             |                                                    |
-| [emit](/api/core#emit)                               |                                                    |
-| [on](/api/core#on)                                   |                                                    |
-| [off](/api/core#off)                                 |                                                    |
-| [register](/api/core#register)                       |                                                    |
-| [registerCanvasDraw](/api/core#registerCanvasDraw)   |                                                    |
-| [registerAnchors](/api/core#registerAnchors)         |                                                    |
-| [registerDock](/api/core#registerDock)               |                                                    |
-| [find](/api/core#find)                               |                                                    |
-| [getPenRect](/api/core#getPenRect)                   |                                                    |
-| [setPenRect](/api/core#setPenRect)                   |                                                    |
-| [startAnimate](/api/core#startAnimate)               |                                                    |
-| [pauseAnimate](/api/core#pauseAnimate)               |                                                    |
-| [stopAnimate](/api/core#stopAnimate)                 |                                                    |
-| [calcAnimateDuration](/api/core#calcAnimateDuration) |                                                    |
-| [combine](/api/core#combine)                         |                                                    |
-| [uncombine](/api/core#uncombine)                     |                                                    |
-| [active](/api/core#active)                           |                                                    |
-| [inactive](/api/core#inactive)                       |                                                    |
-| [delete](/api/core#delete)                           |                                                    |
-| [scale](/api/core#scale)                             |                                                    |
-| [translate](/api/core#translate)                     |                                                    |
-| [translatePens](/api/core#translatePens)             |                                                    |
-| [getParent](/api/core#getParent)                     |                                                    |
-| [data](/api/core#data)                               |                                                    |
-| [copy](/api/core#copy)                               |                                                    |
-| [cut](/api/core#cut)                                 |                                                    |
-| [paste](/api/core#paste)                             |                                                    |
-| [undo](/api/core#undo)                               |                                                    |
-| [redo](/api/core#redo)                               |                                                    |
-| [listenSocket](/api/core#listenSocket)               |                                                    |
-| [connectWebsocket](/api/core#connectWebsocket)       |                                                    |
-| [closeWebsocket](/api/core#closeWebsocket)           |                                                    |
-| [connectMqtt](/api/core#connectMqtt)                 |                                                    |
-| [closeMqtt](/api/core#closeMqtt)                     |                                                    |
-| [doSocket](/api/core#doSocket)                       |                                                    |
-| [closeMqtt](/api/core#closeMqtt)                     |                                                    |
-| [doSocket](/api/core#doSocket)                       |                                                    |
-| [setValue](/api/core#setValue)                       |                                                    |
-| [pushHistory](/api/core#pushHistory)                 |                                                    |
-| [showInput](/api/core#showInput)                     |                                                    |
-| [hideInput](/api/core#hideInput)                     |                                                    |
-| [clearDropdownList](/api/core#clearDropdownList)     |                                                    |
-| [pushChildren](/api/core#pushChildren)               |                                                    |
-| [renderPenRaw](/api/core#renderPenRaw)               |                                                    |
-| [toPng](/api/core#toPng)                             |                                                    |
-| [downloadPng](/api/core#downloadPng)                 |                                                    |
-| [getRect](/api/core#getRect)                         |                                                    |
-| [fitView](/api/core#fitView)                         |                                                    |
-| [alignNodes](/api/core#alignNodes)                   |                                                    |
-| [spaceBetween](/api/core#spaceBetween)               |                                                    |
-| [spaceBetweenColumn](/api/core#spaceBetweenColumn)   |                                                    |
-| [layout](/api/core#layout)                           |                                                    |
-| [showMap](/api/core#showMap)                         |                                                    |
-| [hideMap](/api/core#hideMap)                         |                                                    |
-| [onSizeUpdate](/api/core#onSizeUpdate)               |                                                    |
-| [toggleAnchorMode](/api/core#toggleAnchorMode)       |                                                    |
-| [addAnchorHand](/api/core#addAnchorHand)             |                                                    |
-| [removeAnchorHand](/api/core#removeAnchorHand)       |                                                    |
-| [toggleAnchorHand](/api/core#toggleAnchorHand)       |                                                    |
-| [top](/api/core#top)                                 |                                                    |
-| [bottom](/api/core#bottom)                           |                                                    |
-| [up](/api/core#up)                                   |                                                    |
-| [down](/api/core#down)                               |                                                    |
-| [setLayer](/api/core#setLayer)                       |                                                    |
-| [changePenId](/api/core#changePenId)                 |                                                    |
-| [getLines](/api/core#getLines)                       |                                                    |
-| [nextNode](/api/core#nextNode)                       |                                                    |
-| [previousNode](/api/core#previousNode)               |                                                    |
-| [destroy](/api/core#destroy)                         |                                                    |
-
-
-
+| 名称                                                 | 描述                                |
+| ---------------------------------------------------- | ----------------------------------- |
+| [constructor](/api/core#constructor)                 | 可视化引擎构造函数                  |
+| [setOptions](/api/core#setOptions)                   | 设置引擎选项                        |
+| [getOptions](/api/core#getOptions)                   | 获取引擎选项                        |
+| [resize](/api/core#resize)                           | 重置画布大小                        |
+| [addPen](/api/core#addPen)                           | 添加单个画笔                        |
+| [addPens](/api/core#addPens)                         | 批量添加画笔                        |
+| [render](/api/core#render)                           | 渲染（重绘）                        |
+| [open](/api/core#open)                               | 打开图纸                            |
+| [connectSocket](/api/core#connectSocket)             | 消息通信重连（默认自动连接）        |
+| [drawLine](/api/core#drawLine)                       | 开始钢笔绘画                        |
+| [drawingPencil](/api/core#drawingPencil)             | 开始铅笔绘画                        |
+| [finishDrawLine](/api/core#finishDrawLine)           | 完成钢笔绘画                        |
+| [finishPencil](/api/core#finishPencil)               | 完成铅笔绘画                        |
+| [updateLineType](/api/core#updateLineType)           | 修改连线类型                        |
+| [addDrawLineFn](/api/core#addDrawLineFn)             | 添加自定义连线绘画函数              |
+| [removeDrawLineFn](/api/core#removeDrawLineFn)       | 移除自定义连线绘画函数              |
+| [showMagnifier](/api/core#showMagnifier)             | 显示放大镜                          |
+| [hideMagnifier](/api/core#hideMagnifier)             | 隐藏放大镜                          |
+| [toggleMagnifier](/api/core#toggleMagnifier)         | 显示或隐藏放大镜                    |
+| [clear](/api/core#clear)                             | 清空画布资源。打开空白图纸用 open() |
+| [emit](/api/core#emit)                               | 发送自定义消息                      |
+| [on](/api/core#on)                                   | 监听消息                            |
+| [off](/api/core#off)                                 | 取消监听消息                        |
+| [register](/api/core#register)                       | 注册画笔(Path2D 类型)               |
+| [registerCanvasDraw](/api/core#registerCanvasDraw)   | 注册原生 canvas 上下文画笔          |
+| [registerAnchors](/api/core#registerAnchors)         | 注册画笔锚点函数                    |
+| [registerDock](/api/core#registerDock)               | 注册辅助线算法                      |
+| [find](/api/core#find)                               | 查找画笔                            |
+| [getPenRect](/api/core#getPenRect)                   | 获取画笔区域位置                    |
+| [setPenRect](/api/core#setPenRect)                   | 设置画笔区域位置                    |
+| [startAnimate](/api/core#startAnimate)               | 开始播放动画                        |
+| [pauseAnimate](/api/core#pauseAnimate)               | 暂停动画                            |
+| [stopAnimate](/api/core#stopAnimate)                 | 结束动画                            |
+| [calcAnimateDuration](/api/core#calcAnimateDuration) | 计算动画时长                        |
+| [combine](/api/core#combine)                         | 组合                                |
+| [uncombine](/api/core#uncombine)                     | 取消组合                            |
+| [active](/api/core#active)                           | 高亮选中画笔                        |
+| [inactive](/api/core#inactive)                       | 取消高亮选中画笔                    |
+| [delete](/api/core#delete)                           | 删除画笔                            |
+| [scale](/api/core#scale)                             | 缩放画布                            |
+| [translate](/api/core#translate)                     | 平移画布                            |
+| [translatePens](/api/core#translatePens)             | 平移画笔                            |
+| [getParent](/api/core#getParent)                     | 获取画笔父对象                      |
+| [data](/api/core#data)                               | 图纸数据                            |
+| [copy](/api/core#copy)                               | 复制                                |
+| [cut](/api/core#cut)                                 | 剪切                                |
+| [paste](/api/core#paste)                             | 粘贴                                |
+| [undo](/api/core#undo)                               | 撤消                                |
+| [redo](/api/core#redo)                               | 恢复                                |
+| [connectWebsocket](/api/core#connectWebsocket)       | 手动连接 websocket。默认自动连接    |
+| [closeWebsocket](/api/core#closeWebsocket)           | 关闭 websocket 连接                 |
+| [connectMqtt](/api/core#connectMqtt)                 | 手动连接 mqtt 。默认自动连接        |
+| [closeMqtt](/api/core#closeMqtt)                     | 关闭 mqtt 连接                      |
+| [setValue](/api/core#setValue)                       | 设置修改画笔数据                    |
+| [pushHistory](/api/core#pushHistory)                 | 添加一个编辑历史到队列              |
+| [showInput](/api/core#showInput)                     | 显示文字输入框                      |
+| [hideInput](/api/core#hideInput)                     | 隐藏文字输入框                      |
+| [clearDropdownList](/api/core#clearDropdownList)     | 清除画笔下拉列表选项                |
+| [pushChildren](/api/core#pushChildren)               | 给画笔添加子对象                    |
+| [toPng](/api/core#toPng)                             | 生成 png 图像                       |
+| [downloadPng](/api/core#downloadPng)                 | 下载 png                            |
+| [getRect](/api/core#getRect)                         | 获取图纸区域                        |
+| [fitView](/api/core#fitView)                         | 自适应屏幕显示                      |
+| [gotoView](/api/core#gotoView)                       | 定位画笔到屏幕中心显示              |
+| [centerView](/api/core#centerView)                   | 居中显示可视区域                    |
+| [hasView](/api/core#hasView)                         | 画布是否有内容                      |
+| [alignNodes](/api/core#alignNodes)                   | 节点对齐                            |
+| [spaceBetween](/api/core#spaceBetween)               | 水平等分对齐                        |
+| [spaceBetweenColumn](/api/core#spaceBetweenColumn)   | 垂直等分对齐                        |
+| [layout](/api/core#layout)                           | 排版                                |
+| [showMap](/api/core#showMap)                         | 显示鹰眼地图                        |
+| [hideMap](/api/core#hideMap)                         | 隐藏鹰眼地图                        |
+| [toggleAnchorMode](/api/core#toggleAnchorMode)       | 切换锚点模式                        |
+| [addAnchorHand](/api/core#addAnchorHand)             | 添加锚点手柄                        |
+| [removeAnchorHand](/api/core#removeAnchorHand)       | 移除锚点手柄                        |
+| [toggleAnchorHand](/api/core#toggleAnchorHand)       | 添加或移除锚点手柄                  |
+| [top](/api/core#top)                                 | 置顶画笔                            |
+| [bottom](/api/core#bottom)                           | 置底画笔                            |
+| [up](/api/core#up)                                   | 向上移动画笔图层                    |
+| [down](/api/core#down)                               | 向下移动画笔图层                    |
+| [setLayer](/api/core#setLayer)                       | 指定画笔图层                        |
+| [changePenId](/api/core#changePenId)                 | 修改画笔 id                         |
+| [getLines](/api/core#getLines)                       | 获取关联连线                        |
+| [nextNode](/api/core#nextNode)                       | 获取下一个节点                      |
+| [previousNode](/api/core#previousNode)               | 获取前一个节点                      |
+| [destroy](/api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |
 
 ## Data 数据
 
@@ -197,22 +179,25 @@ topology.open(json);
 | color            | string    | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
 | activeColor      | string    | 画笔选中颜色                                       |
 | activeBackground | string    | 画笔选中背景颜色                                   |
-| pens             | Pen       |                                                    |
-| x                | number    |                                                    |
-| y                | number    |                                                    |
-| scale            | number    |                                                    |
-| origin           | Point     |                                                    |
-| center           | Point     |                                                    |
-| locked           | LockState |                                                    |
-| websocket        | string    |                                                    |
-| mqtt             | string    |                                                    |
-| mqttTopics       | string    |                                                    |
-| background       | string    |                                                    |
-| socketCbJs       | string    |                                                    |
-| socketCbFn       | Function  |                                                    |
-| initJs           | string    |                                                    |
-| grid             | boolean   |                                                    |
-| ruleColor        | string    |                                                    |
-| fromArrow        | string    |                                                    |
-| toArrow          | string    |                                                    |
-| lineWidth        | number    |                                                    |
+| pens             | Pen       | 画笔数组                                           |
+| x                | number    | 画布 x 偏移                                        |
+| y                | number    | 画布 y 偏移                                        |
+| scale            | number    | 画布缩放比例                                       |
+| origin           | Point     | 画布原点                                           |
+| center           | Point     | 画布缩放中心点                                     |
+| locked           | LockState | 画布锁定                                           |
+| websocket        | string    | websocket 通信地址                                 |
+| mqtt             | string    | mqtt 通信地址                                      |
+| mqttTopics       | string    | mqtt 订阅主题                                      |
+| background       | string    | 画布背景颜色                                       |
+| socketCbJs       | string    | 消息通信回调函数 js 代码                           |
+| socketCbFn       | Function  | 消息通信回调函数名                                 |
+| initJs           | string    | 打开图纸后，执行的初始脚本                         |
+| grid             | boolean   | 是否显示网格                                       |
+| gridColor        | string    | 网格颜色                                           |
+| gridSize         | number    | 网格大小                                           |
+| rule             | boolean   | 是否显示标尺                                       |
+| ruleColor        | string    | 标尺颜色                                           |
+| fromArrow        | string    | 默认起始箭头                                       |
+| toArrow          | string    | 默认终点箭头                                       |
+| lineWidth        | number    | 默认线宽                                           |
