@@ -34,6 +34,12 @@ yarn build
 
 参考： [教程 - 企业版](/tutorial/commercial.html)
 
+## 开源版有核心算法没开放
+
+不是的。开源核心库开放了所有完整 API 能力，企业版是基于核心库做的上层 UI 封装。
+
+为什么有不开源的企业版：1. 基于核心库能开发各式各样的丰富产品，我们企业版只是形态之一。2. 当然，也是为了项目和团队的更好的、长期的发展
+
 ## 其他问题
 
 其他问题，欢迎联系我们：
@@ -43,3 +49,5 @@ Github： https://github.com/le5le-com/topology.js/issues
 交流群： [交流群](/community/wechat.html)
 
 Email： business@le5le.com
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

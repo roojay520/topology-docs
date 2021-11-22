@@ -1,8 +1,12 @@
 # Canvas
 
-## addCaches
+## 属性
+
+### addCaches
 
 待添加的画笔数组。存在此缓存数组时，点击画布，将在当前位置添加画笔。
+
+**数据类型：** Pen[]
 
 **示例：**
 
@@ -10,17 +14,9 @@
 topology.canvas.addCaches = [pen1, pen2, pen3];
 ```
 
-## addCaches
+## 函数
 
-待添加的画笔数组。存在此缓存数组时，点击画布，将在当前位置添加画笔。
-
-**示例：**
-
-```js
-topology.canvas.addCaches = [pen1, pen2, pen3];
-```
-
-## makePen
+### makePen
 
 初始化 pen 对象并添加到画布，不高亮，不选中。添加 pen 并选中，推荐用 core.addPen 方法。
 
@@ -38,7 +34,7 @@ topology.canvas.addCaches = [pen1, pen2, pen3];
 topology.canvas.makePen(pen);
 ```
 
-## loadImage
+### loadImage
 
 加载 pen 的图片。仅当第一次加载或者 image 属性有变化有效。pen 的 image 属性有：显示图片，背景图片，边框填充图片 3 种
 
@@ -56,7 +52,7 @@ topology.canvas.makePen(pen);
 topology.canvas.loadImage(pen);
 ```
 
-## dirtyPenRect
+### dirtyPenRect
 
 pen 的 rect 有更新，重新计算相关 rect。
 
