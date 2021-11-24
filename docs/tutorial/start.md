@@ -1,5 +1,39 @@
 # 快速上手
 
+<font color=#fa541c >**【注意】** 初始化引擎后，会在 window 下注入 topology 对象（window.topology），表示当前 topology 实例。默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。</font>
+
+---
+
+<font color=#fa541c >**【画重点】** 所有标准 js 语法均可以在 [topology 官网编辑器](http://topology.le5le.com/workspace) 直接运行查看效果。</font>
+
+例如：
+
+```js
+// 定义一个pen，矩形
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+topology.addPen(pen);
+```
+
+需要编译和依赖环境的代码除外，比如：
+
+```js
+import { Topology } from '@topology/core';
+
+new Topology();
+```
+
+本教程下列代码不可在 topology 官网编辑器运行。其他页面教程的标准 js 语法大多可以。
+
+---
+
 ## 在 ES5 中使用
 
 1. 获取 topology.js
@@ -180,3 +214,11 @@ export default TopologyContainer;
 ```
 
 **参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/react
+
+## 如何学习
+
+1. 跟着[快速上手](/tutorial/start)做一遍，先有个总体认知
+
+2. 看一遍我们的[视频教程](/videos/home)，有个全面认识
+
+3. 多学习[社区](/awesome/home)教程、示例等

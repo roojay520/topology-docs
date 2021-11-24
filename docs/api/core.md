@@ -1,7 +1,20 @@
-# 画布
+# Core
 
-## constructor
+可视化引擎
 
+## 属性
+
+| 名称       | 类型                            | 描述                                      |
+| ---------- | ------------------------------- | ----------------------------------------- |
+| canvas     | [Canvas](/api/canvas)           | 绘画画板                                  |
+| store      | [TopologyStore](#topologystore) | 绘画数据。包括文件数据和各种状态数据等    |
+| websocket  | WebSocket                       | 原生 WebSocket 客户端。仅连接成功才有实例 |
+| mqttClient | Mqtt.Client                     | mqtt.js 通信客户端                        |
+
+## 函数
+
+### constructor
+
 **参数：**  
 xxx
 
@@ -17,7 +30,7 @@ xxx
 
 ```
 
-## setOptions
+### setOptions
 
 **参数：**  
 xxx
@@ -34,7 +47,7 @@ xxx
 
 ```
 
-## getOptions
+### getOptions
 
 **参数：**  
 xxx
@@ -51,7 +64,7 @@ xxx
 
 ```
 
-## resize
+### resize
 
 **参数：**  
 xxx
@@ -68,7 +81,7 @@ xxx
 
 ```
 
-## addPen
+### addPen
 
 **参数：**  
 xxx
@@ -85,7 +98,7 @@ xxx
 
 ```
 
-## addPens
+### addPens
 
 **参数：**  
 xxx
@@ -102,7 +115,7 @@ xxx
 
 ```
 
-## render
+### render
 
 **参数：**  
 xxx
@@ -119,7 +132,7 @@ xxx
 
 ```
 
-## open
+### open
 
 **参数：**  
 xxx
@@ -136,7 +149,7 @@ xxx
 
 ```
 
-## connectSocket
+### connectSocket
 
 **参数：**  
 xxx
@@ -153,7 +166,7 @@ xxx
 
 ```
 
-## drawLine
+### drawLine
 
 **参数：**  
 xxx
@@ -170,7 +183,7 @@ xxx
 
 ```
 
-## drawingPencil
+### drawingPencil
 
 **参数：**  
 xxx
@@ -187,7 +200,7 @@ xxx
 
 ```
 
-## finishDrawLine
+### finishDrawLine
 
 **参数：**  
 xxx
@@ -204,7 +217,7 @@ xxx
 
 ```
 
-## finishPencil
+### finishPencil
 
 **参数：**  
 xxx
@@ -221,7 +234,7 @@ xxx
 
 ```
 
-## updateLineType
+### updateLineType
 
 **参数：**  
 xxx
@@ -238,7 +251,7 @@ xxx
 
 ```
 
-## removeDrawLineFn
+### removeDrawLineFn
 
 **参数：**  
 xxx
@@ -255,7 +268,7 @@ xxx
 
 ```
 
-## showMagnifier
+### showMagnifier
 
 **参数：**  
 xxx
@@ -272,7 +285,7 @@ xxx
 
 ```
 
-## hideMagnifier
+### hideMagnifier
 
 **参数：**  
 xxx
@@ -289,7 +302,7 @@ xxx
 
 ```
 
-## toggleMagnifier
+### toggleMagnifier
 
 **参数：**  
 xxx
@@ -306,7 +319,7 @@ xxx
 
 ```
 
-## clear
+### clear
 
 **参数：**  
 xxx
@@ -323,7 +336,7 @@ xxx
 
 ```
 
-## emit
+### emit
 
 **参数：**  
 xxx
@@ -340,7 +353,7 @@ xxx
 
 ```
 
-## on
+### on
 
 **参数：**  
 xxx
@@ -357,7 +370,7 @@ xxx
 
 ```
 
-## off
+### off
 
 **参数：**  
 xxx
@@ -374,7 +387,7 @@ xxx
 
 ```
 
-## register
+### register
 
 **参数：**  
 xxx
@@ -391,7 +404,7 @@ xxx
 
 ```
 
-## registerCanvasDraw
+### registerCanvasDraw
 
 **参数：**  
 xxx
@@ -408,7 +421,7 @@ xxx
 
 ```
 
-## registerAnchors
+### registerAnchors
 
 **参数：**  
 xxx
@@ -425,7 +438,7 @@ xxx
 
 ```
 
-## registerDock
+### registerDock
 
 **参数：**  
 xxx
@@ -442,7 +455,7 @@ xxx
 
 ```
 
-## find
+### find
 
 **参数：**  
 xxx
@@ -459,7 +472,7 @@ xxx
 
 ```
 
-## getPenRect
+### getPenRect
 
 **参数：**  
 xxx
@@ -476,7 +489,7 @@ xxx
 
 ```
 
-## setPenRect
+### setPenRect
 
 **参数：**  
 xxx
@@ -493,7 +506,7 @@ xxx
 
 ```
 
-## startAnimate
+### startAnimate
 
 **参数：**  
 xxx
@@ -510,7 +523,7 @@ xxx
 
 ```
 
-## pauseAnimate
+### pauseAnimate
 
 **参数：**  
 xxx
@@ -527,7 +540,7 @@ xxx
 
 ```
 
-## calcAnimateDuration
+### calcAnimateDuration
 
 **参数：**  
 xxx
@@ -544,7 +557,7 @@ xxx
 
 ```
 
-## combine
+### combine
 
 **参数：**  
 xxx
@@ -561,7 +574,7 @@ xxx
 
 ```
 
-## uncombine
+### uncombine
 
 **参数：**  
 xxx
@@ -578,7 +591,7 @@ xxx
 
 ```
 
-## active
+### active
 
 **参数：**  
 xxx
@@ -595,7 +608,7 @@ xxx
 
 ```
 
-## inactive
+### inactive
 
 **参数：**  
 xxx
@@ -612,7 +625,7 @@ xxx
 
 ```
 
-## delete
+### delete
 
 **参数：**  
 xxx
@@ -629,7 +642,7 @@ xxx
 
 ```
 
-## scale
+### scale
 
 **参数：**  
 xxx
@@ -646,7 +659,7 @@ xxx
 
 ```
 
-## translate
+### translate
 
 **参数：**  
 xxx
@@ -663,7 +676,7 @@ xxx
 
 ```
 
-## translatePens
+### translatePens
 
 **参数：**  
 xxx
@@ -680,7 +693,7 @@ xxx
 
 ```
 
-## getParent
+### getParent
 
 **参数：**  
 xxx
@@ -697,7 +710,7 @@ xxx
 
 ```
 
-## data
+### data
 
 **参数：**  
 xxx
@@ -714,7 +727,7 @@ xxx
 
 ```
 
-## copy
+### copy
 
 **参数：**  
 xxx
@@ -731,7 +744,7 @@ xxx
 
 ```
 
-## cut
+### cut
 
 **参数：**  
 xxx
@@ -748,7 +761,7 @@ xxx
 
 ```
 
-## paste
+### paste
 
 **参数：**  
 xxx
@@ -765,7 +778,7 @@ xxx
 
 ```
 
-## undo
+### undo
 
 **参数：**  
 xxx
@@ -782,7 +795,7 @@ xxx
 
 ```
 
-## redo
+### redo
 
 **参数：**  
 xxx
@@ -799,7 +812,7 @@ xxx
 
 ```
 
-## redo
+### redo
 
 **参数：**  
 xxx
@@ -816,7 +829,7 @@ xxx
 
 ```
 
-## connectWebsocket
+### connectWebsocket
 
 **参数：**  
 xxx
@@ -833,7 +846,7 @@ xxx
 
 ```
 
-## closeWebsocket
+### closeWebsocket
 
 **参数：**  
 xxx
@@ -850,7 +863,7 @@ xxx
 
 ```
 
-## connectMqtt
+### connectMqtt
 
 **参数：**  
 xxx
@@ -867,7 +880,7 @@ xxx
 
 ```
 
-## closeMqtt
+### closeMqtt
 
 **参数：**  
 xxx
@@ -884,7 +897,7 @@ xxx
 
 ```
 
-## setValue
+### setValue
 
 **参数：**  
 xxx
@@ -901,7 +914,7 @@ xxx
 
 ```
 
-## pushHistory
+### pushHistory
 
 **参数：**  
 xxx
@@ -918,7 +931,7 @@ xxx
 
 ```
 
-## showInput
+### showInput
 
 **参数：**  
 xxx
@@ -935,7 +948,7 @@ xxx
 
 ```
 
-## hideInput
+### hideInput
 
 **参数：**  
 xxx
@@ -952,7 +965,7 @@ xxx
 
 ```
 
-## clearDropdownList
+### clearDropdownList
 
 **参数：**  
 xxx
@@ -969,7 +982,7 @@ xxx
 
 ```
 
-## pushChildren
+### pushChildren
 
 **参数：**  
 xxx
@@ -986,7 +999,7 @@ xxx
 
 ```
 
-## renderPenRaw
+### renderPenRaw
 
 **参数：**  
 xxx
@@ -1003,7 +1016,7 @@ xxx
 
 ```
 
-## toPng
+### toPng
 
 **参数：**  
 xxx
@@ -1020,7 +1033,7 @@ xxx
 
 ```
 
-## downloadPng
+### downloadPng
 
 **参数：**  
 xxx
@@ -1037,7 +1050,7 @@ xxx
 
 ```
 
-## getRect
+### getRect
 
 **参数：**  
 xxx
@@ -1054,7 +1067,7 @@ xxx
 
 ```
 
-## fitView
+### fitView
 
 **参数：**  
 xxx
@@ -1071,7 +1084,7 @@ xxx
 
 ```
 
-## gotoView
+### gotoView
 
 **参数：**  
 xxx
@@ -1088,7 +1101,7 @@ xxx
 
 ```
 
-## centerView
+### centerView
 
 **参数：**  
 xxx
@@ -1105,7 +1118,7 @@ xxx
 
 ```
 
-## hasView
+### hasView
 
 **参数：**  
 xxx
@@ -1122,7 +1135,7 @@ xxx
 
 ```
 
-## alignNodes
+### alignNodes
 
 **参数：**  
 xxx
@@ -1139,7 +1152,7 @@ xxx
 
 ```
 
-## spaceBetween
+### spaceBetween
 
 **参数：**  
 xxx
@@ -1156,7 +1169,7 @@ xxx
 
 ```
 
-## spaceBetweenColumn
+### spaceBetweenColumn
 
 **参数：**  
 xxx
@@ -1173,7 +1186,7 @@ xxx
 
 ```
 
-## layout
+### layout
 
 **参数：**  
 xxx
@@ -1190,7 +1203,7 @@ xxx
 
 ```
 
-## showMap
+### showMap
 
 **参数：**  
 xxx
@@ -1207,7 +1220,7 @@ xxx
 
 ```
 
-## hideMap
+### hideMap
 
 **参数：**  
 xxx
@@ -1224,7 +1237,7 @@ xxx
 
 ```
 
-## onSizeUpdate
+### onSizeUpdate
 
 **参数：**  
 xxx
@@ -1241,7 +1254,7 @@ xxx
 
 ```
 
-## toggleAnchorMode
+### toggleAnchorMode
 
 **参数：**  
 xxx
@@ -1258,7 +1271,7 @@ xxx
 
 ```
 
-## addAnchorHand
+### addAnchorHand
 
 **参数：**  
 xxx
@@ -1275,7 +1288,7 @@ xxx
 
 ```
 
-## removeAnchorHand
+### removeAnchorHand
 
 **参数：**  
 xxx
@@ -1292,7 +1305,7 @@ xxx
 
 ```
 
-## toggleAnchorHand
+### toggleAnchorHand
 
 **参数：**  
 xxx
@@ -1309,7 +1322,7 @@ xxx
 
 ```
 
-## top
+### top
 
 **参数：**  
 xxx
@@ -1326,7 +1339,7 @@ xxx
 
 ```
 
-## bottom
+### bottom
 
 **参数：**  
 xxx
@@ -1343,7 +1356,7 @@ xxx
 
 ```
 
-## up
+### up
 
 **参数：**  
 xxx
@@ -1360,7 +1373,7 @@ xxx
 
 ```
 
-## down
+### down
 
 **参数：**  
 xxx
@@ -1377,7 +1390,7 @@ xxx
 
 ```
 
-## setLayer
+### setLayer
 
 **参数：**  
 xxx
@@ -1394,7 +1407,7 @@ xxx
 
 ```
 
-## changePenId
+### changePenId
 
 **参数：**  
 xxx
@@ -1411,7 +1424,7 @@ xxx
 
 ```
 
-## getLines
+### getLines
 
 **参数：**  
 xxx
@@ -1428,7 +1441,7 @@ xxx
 
 ```
 
-## nextNode
+### nextNode
 
 **参数：**  
 xxx
@@ -1445,7 +1458,7 @@ xxx
 
 ```
 
-## previousNode
+### previousNode
 
 **参数：**  
 xxx
@@ -1462,7 +1475,7 @@ xxx
 
 ```
 
-## destroy
+### destroy
 
 **参数：**  
 xxx

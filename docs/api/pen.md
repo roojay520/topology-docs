@@ -379,18 +379,6 @@ const pen = {anchorColor: 'red', ...};
 const pen = {text: 'text', ...};
 ```
 
-### calculative
-
-画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
-
-**数据类型：** object
-
-**示例：**
-
-```js
-const rect = pen.calculative.worldRect;
-```
-
 ### progress
 
 进度值。百分比小数（0-1 之间的小数）
@@ -425,6 +413,18 @@ const pen = {progressColor: '#1890ff', ...};
 
 ```js
 const pen = {verticalProgress: true, ...};
+```
+
+### calculative
+
+画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
+
+**数据类型：** object
+
+**示例：**
+
+```js
+const rect = pen.calculative.worldRect;
 ```
 
 ## 函数

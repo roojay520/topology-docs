@@ -2,8 +2,6 @@
 
 画布是 topology 的核心，所有展示和交互都在画布上呈现。
 
-**默认，会在 window 全局对象下注入 topology 对象，表示当前 topology 实例。**
-
 ## 创建画布
 
 1. 指定 html 的父 Element
@@ -28,6 +26,50 @@ var topology = new Topology('topology', options);
 ```js
 // 例如：打开一个topology格式文件
 topology.open(json);
+
+// 获取文件数据
+const json = topology.data();
+```
+
+## 拖拽图形库
+
+**1. 创建图形库工具栏**  
+创建图形库工具栏 html 元素，绑定拖拽事件或 touch 事件
+
+```html
+<div class="tools">
+  <div
+    class="icon"
+    draggable="true"
+    ondragstart="onDragstart($event, menu)"
+    onclick="onTouchstart($event, menu)"
+    ontouchstart="onTouchstart($event, menu)"
+  >
+    <img src="xxx" />
+    <div>Rectangle</div>
+  </div>
+</div>
+```
+
+**2. 传递数据**  
+在工具栏相应事件函数中，给 topology 传递 pen 对象数据即可
+
+```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  width: 100,
+  height: 100,
+};
+
+onDragstart = (e) => {
+  e.dataTransfer.setData('Text', JSON.stringify(pen));
+};
+
+// 支持鼠标单击添加图形
+onTouchstart = (e) => {
+  topology.canvas.addCaches = [pen];
+};
 ```
 
 ## Options 选项
@@ -80,6 +122,65 @@ topology.open(json);
 | animateInterval     | number      | 动画帧时长                                         |
 | dragAllIn           | boolean     | 框选画笔时，是否需要全部在框选区域内               |
 | scroll              | boolean     | 默认是否显示滚动条。与默认缩放互斥                 |
+
+## 文件数据
+
+通过 topology.data()函数获取，返回数据格式如下：
+
+| 名称             | 类型                         | 描述                                               |
+| ---------------- | ---------------------------- | -------------------------------------------------- |
+| color            | string                       | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
+| activeColor      | string                       | 画笔选中颜色                                       |
+| activeBackground | string                       | 画笔选中背景颜色                                   |
+| pens             | [Pen[]](/tutorial/pen)       | 画笔数组                                           |
+| x                | number                       | 画布 x 偏移                                        |
+| y                | number                       | 画布 y 偏移                                        |
+| scale            | number                       | 画布缩放比例                                       |
+| origin           | Point                        | 画布原点                                           |
+| center           | Point                        | 画布缩放中心点                                     |
+| locked           | [LockState](/api/pen#locked) | 画布锁定                                           |
+| websocket        | string                       | websocket 通信地址                                 |
+| mqtt             | string                       | mqtt 通信地址                                      |
+| mqttTopics       | string                       | mqtt 订阅主题                                      |
+| background       | string                       | 画布背景颜色                                       |
+| socketCbJs       | string                       | 消息通信回调函数 js 代码                           |
+| socketCbFn       | Function                     | 消息通信回调函数名                                 |
+| initJs           | string                       | 打开图纸后，执行的初始脚本                         |
+| grid             | boolean                      | 是否显示网格                                       |
+| gridColor        | string                       | 网格颜色                                           |
+| gridSize         | number                       | 网格大小                                           |
+| rule             | boolean                      | 是否显示标尺                                       |
+| ruleColor        | string                       | 标尺颜色                                           |
+| fromArrow        | string                       | 默认起始箭头                                       |
+| toArrow          | string                       | 默认终点箭头                                       |
+| lineWidth        | number                       | 默认线宽                                           |
+
+## 成员属性
+
+| 名称       | 类型                            | 描述                                      |
+| ---------- | ------------------------------- | ----------------------------------------- |
+| canvas     | [Canvas](/api/canvas)           | 绘画画板                                  |
+| store      | [TopologyStore](#topologystore) | 绘画数据。包括文件数据和各种状态数据等    |
+| websocket  | WebSocket                       | 原生 WebSocket 客户端。仅连接成功才有实例 |
+| mqttClient | Mqtt.Client                     | mqtt.js 通信客户端                        |
+
+### TopologyStore
+
+| 名称         | 类型                     | 描述                                              |
+| ------------ | ------------------------ | ------------------------------------------------- |
+| id           | string                   | 当前引擎实例 id。一个页面可以有多个可视化引擎实例 |
+| data         | TopologyData             | 绘画（图纸）数据。包含自动计算的临时变量          |
+| pens         | Object（id: pen）        | 画笔 map。方便检索 pen                            |
+| active       | Pen[]                    | 选中的画笔。数组                                  |
+| hover        | Pen                      | 鼠标经过活动的画笔。单 Pen                        |
+| activeAnchor | Point                    | 选中的锚点                                        |
+| hoverAnchor  | Point                    | 鼠标经过活动的锚点                                |
+| animates     | Set                      | 正在播放动画的 pen                                |
+| dpiRatio     | number                   | 高清屏比例。一般用户不用修改此值                  |
+| clipboard    | Pen[]                    | 剪贴板内容                                        |
+| histories    | EditAction[]             | 撤消重做内容                                      |
+| historyIndex | number                   | 撤消重做游标                                      |
+| options      | [Options](#options-选项) | 可视化引擎选项                                    |
 
 ## Function 函数
 
@@ -171,33 +272,3 @@ topology.open(json);
 | [nextNode](/api/core#nextNode)                       | 获取下一个节点                      |
 | [previousNode](/api/core#previousNode)               | 获取前一个节点                      |
 | [destroy](/api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |
-
-## Data 数据
-
-| 名称             | 类型      | 描述                                               |
-| ---------------- | --------- | -------------------------------------------------- |
-| color            | string    | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
-| activeColor      | string    | 画笔选中颜色                                       |
-| activeBackground | string    | 画笔选中背景颜色                                   |
-| pens             | Pen       | 画笔数组                                           |
-| x                | number    | 画布 x 偏移                                        |
-| y                | number    | 画布 y 偏移                                        |
-| scale            | number    | 画布缩放比例                                       |
-| origin           | Point     | 画布原点                                           |
-| center           | Point     | 画布缩放中心点                                     |
-| locked           | LockState | 画布锁定                                           |
-| websocket        | string    | websocket 通信地址                                 |
-| mqtt             | string    | mqtt 通信地址                                      |
-| mqttTopics       | string    | mqtt 订阅主题                                      |
-| background       | string    | 画布背景颜色                                       |
-| socketCbJs       | string    | 消息通信回调函数 js 代码                           |
-| socketCbFn       | Function  | 消息通信回调函数名                                 |
-| initJs           | string    | 打开图纸后，执行的初始脚本                         |
-| grid             | boolean   | 是否显示网格                                       |
-| gridColor        | string    | 网格颜色                                           |
-| gridSize         | number    | 网格大小                                           |
-| rule             | boolean   | 是否显示标尺                                       |
-| ruleColor        | string    | 标尺颜色                                           |
-| fromArrow        | string    | 默认起始箭头                                       |
-| toArrow          | string    | 默认终点箭头                                       |
-| lineWidth        | number    | 默认线宽                                           |
