@@ -57,11 +57,12 @@ topology.addPen(pen);
 其他相关函数：
 
 - onValue 属性值发生修改
-- onMove 被移动
+- onMove 被移动拖拽
 - onResize 修改大小
 - onRotate 旋转
 - onClick 单击，等同于 mouseup
 - onMouseDown 鼠标按下
+- onMouseMove 鼠标经过
 
 临时设置函数：
 
