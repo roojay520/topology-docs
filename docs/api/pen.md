@@ -379,6 +379,18 @@ const pen = {anchorColor: 'red', ...};
 const pen = {text: 'text', ...};
 ```
 
+### textColor
+
+画笔文本颜色。如果不指定，使用 color 属性
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {textColor: 'red', ...};
+```
+
 ### progress
 
 进度值。百分比小数（0-1 之间的小数）

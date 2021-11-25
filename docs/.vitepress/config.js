@@ -121,21 +121,21 @@ function getTutorialSidebar() {
         { text: '鹰眼地图', link: '/tutorial/map' },
         { text: '放大镜', link: '/tutorial/magnifier' },
         { text: '快捷键', link: '/tutorial/keyboards' },
-        { text: '自定义连线算法', link: '/tutorial/line-ai' },
       ],
     },
     {
       text: '图形库',
       children: [
-        { text: '普通图形库', link: '/tutorial/image' },
-        { text: '字体图形库', link: '/tutorial/icon' },
+        { text: '默认图形库', link: '/tutorial/pens' },
+        { text: '字体图形库', link: '/tutorial/icons' },
         { text: '自定义图形库', link: '/tutorial/make-component' },
+        { text: '自定义连线算法', link: '/tutorial/line-ai' },
         {
           text: '企业图形库',
           children: [
             { text: '表单', link: '/tutorial/forms' },
-            { text: '图表', link: '/tutorial/charts' },
             { text: '表格', link: '/tutorial/table' },
+            { text: '图表', link: '/tutorial/charts' },
           ],
         },
       ],
