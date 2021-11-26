@@ -15,7 +15,7 @@
 
 ```js
 // 'topology'为id或Element实例；options可选
-var topology = new Topology('topology', options);
+var topology = new Topology("topology", options);
 
 // 核心库将自动添加
 // window.topology = topology;
@@ -56,14 +56,14 @@ const json = topology.data();
 
 ```js
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   width: 100,
   height: 100,
 };
 
 onDragstart = (e) => {
-  e.dataTransfer.setData('Text', JSON.stringify(pen));
+  e.dataTransfer.setData("Text", JSON.stringify(pen));
 };
 
 // 支持鼠标单击添加图形
