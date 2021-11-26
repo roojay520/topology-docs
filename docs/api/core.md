@@ -4,1490 +4,1837 @@
 
 ## 属性
 
-| 名称       | 类型                            | 描述                                      |
-| ---------- | ------------------------------- | ----------------------------------------- |
-| canvas     | [Canvas](/api/canvas)           | 绘画画板                                  |
-| store      | [TopologyStore](#topologystore) | 绘画数据。包括文件数据和各种状态数据等    |
-| websocket  | WebSocket                       | 原生 WebSocket 客户端。仅连接成功才有实例 |
-| mqttClient | Mqtt.Client                     | mqtt.js 通信客户端                        |
+| 名称               | 类型                                       | 描述                                       |
+| ------------------ | ------------------------------------------ | ------------------------------------------ |
+| parent             | HTMLElement                                | 可视化引擎的父容器                         |
+| options            | [Options](/tutorial/topology#options-选项) | 可视化引擎选项                             |
+| canvas             | [Canvas](/api/canvas)                      | 绘画画板                                   |
+| store              | [TopologyStore](#topologystore)            | 绘画数据。包括文件数据和各种状态数据等     |
+| websocket          | WebSocket                                  | 原生 WebSocket 客户端。仅连接成功才有实例  |
+| mqttClient         | Mqtt.Client                                | mqtt.js 通信客户端                         |
+| beforeAddPen       | (pen: Pen) => boolean                      | 添加 Pen 前生命周期函数，返回 true 允许    |
+| beforeRemovePen    | (pen: Pen) => boolean                      | 移除 Pen 前生命周期函数，返回 true 允许    |
+| beforeAddAnchor    | (pen: Pen, anchor: Point) => boolean       | 添加 Anchor 前生命周期函数，返回 true 允许 |
+| beforeRemoveAnchor | (pen: Pen, anchor: Point) => boolean       | 移除 Anchor 前生命周期函数，返回 true 允许 |
 
 ## 函数
 
 ### constructor
 
-**参数：**  
-xxx
+构造函数，创建一个可视化引擎对象。
+
+**参数：**
+
+- parent ：string | HTMLElement  
+  可视化引擎的父容器 id 或 Element 元素
+
+- options ：[Options](/tutorial/topology#options-选项)  
+  可视化引擎选项，可缺省
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+var topology = new Topology('topology');
 
+var topology = new Topology('topology', options);
+
+var topology = new Topology(div, options);
 ```
 
 ### setOptions
 
-**参数：**  
-xxx
+设置引擎选项。
+
+**参数：**
+
+- options ：[Options](/tutorial/topology#options-选项)  
+  可视化引擎选项
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+var topology = new Topology('topology');
+topology.setOptions(options);
 ```
 
 ### getOptions
 
+获取引擎选项。
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+var topology = new Topology('topology');
+var options = topology.getOptions();
 ```
 
 ### resize
 
-**参数：**  
-xxx
+重置可视化引擎大小
+
+**参数：**
+
+- width: number  
+  新的宽度。可缺省自适应
+
+- height: number  
+  新的高度。可缺省自适应
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.resize();
 
+topology.resize(1000, 800);
 ```
 
 ### addPen
 
-**参数：**  
-xxx
+添加画笔 Pen 到画布
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
+
+- history: boolean  
+  是否加入编辑历史记录（撤消重做）。缺省不加入历史
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+topology.addPen(pen);
 
+topology.addPen(pen, true);
 ```
 
 ### addPens
 
-**参数：**  
-xxx
+批量添加画笔 Pen 到画布
+
+**参数：**
+
+- pen: [Pen](/api/pen)[]  
+  画笔数组
+
+- history: boolean  
+  是否加入编辑历史记录（撤消重做）。缺省不加入历史
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
 
+const pen2 = {
+  name: 'rectangle',
+  text: '矩形2',
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+topology.addPen([pen, pen2]);
+
+topology.addPen([pen, pen2], true);
 ```
 
 ### render
 
-**参数：**  
-xxx
+重绘。主要用于手动修改数据后，重绘显示最新画面。仅当标识为 dirty 时（topology.canvas.dirty=true），重绘有效
+
+**参数：**
+
+- now: number  
+  时间的毫秒数：  
+  可为空 - 表示当前时间；  
+  Infinity - 标识数据 dirty，并设置为当前时间重绘。
+
+  主要用于避免一帧内，多次频繁调用 render 带来不必要的绘画开销
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 多次频繁调用，有性能保护，且显示最新
+for (let i = 0; i < 100; i++) {
+  topology.render();
+}
 
+// 修改过数据，确认数据已经dirty
+topology.render(Infinity);
 ```
 
 ### open
 
-**参数：**  
-xxx
+打开图纸。图纸指在线绘画的内容，可保存为 json 数据。
+
+**参数：**
+
+- data: [TopologyData](/tutorial/topology#文件数据)  
+  json 图纸数据。可为空，表示打开新的空白文档
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
 
+topology.open({ pens: [pen] });
 ```
 
 ### connectSocket
 
+消息通信重连（默认自动连接）。需要提前已经设置过连接配置。更多用法参考：[实时数据监听](/tutorial/data)
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.store.data.websocket = url;
 
+topology.connectSocket();
 ```
 
 ### drawLine
 
-**参数：**  
-xxx
+开始钢笔绘画。Enter、Escape、鼠标右键完成绘画。
+
+**参数：**
+
+- lineName ：string  
+  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](/tutorial/line-ai)扩展。
+
+  当 lineName 为空时，表示取消画线
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 开始钢笔绘画
+topology.drawLine('curve');
 
-```
-
-### drawingPencil
-
-**参数：**  
-xxx
-
-**返回：**  
-xxx
-
-**用法：**  
-xxx
-
-**示例：**
-
-```js
-
+// 取消绘画
+topology.drawLine();
 ```
 
 ### finishDrawLine
 
-**参数：**  
-xxx
+钢笔绘画完成
+
+**参数：**
+
+- end : boolean  
+  当前鼠标位置是否作为结束点。默认否。
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 开始钢笔绘画
+topology.drawLine('curve');
 
+// 绘画完成
+topology.finishDrawLine();
+```
+
+### drawingPencil
+
+开始铅笔绘画。鼠标抬起完成绘画
+**参数：**  
+无
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.drawingPencil();
 ```
 
 ### finishPencil
 
+铅笔绘画完成
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.drawingPencil();
 
+// 绘画完成
+topology.finishPencil();
 ```
 
 ### updateLineType
 
-**参数：**  
-xxx
+修改连线类型。比如曲线变为直线
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  当前连线
+
+- lineName : string  
+  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](/tutorial/line-ai)扩展。
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.updateLineType(line, 'curve');
 
+topology.updateLineType(line, 'line');
 ```
+
+### addDrawLineFn
+
+扩展自定义连线类型。可参考：[自定义连线算法](/tutorial/line-ai)
+
+**参数：**
+
+- fnName: string  
+  自定义的连线类型名称。
+
+- fn: (store: TopologyStore, pen: Pen, mousedwon?: Point) => void  
+  自定义的连线锚点算法
+
+**返回：**  
+void
+
+**示例：**
+[自定义连线算法](/tutorial/line-ai)
 
 ### removeDrawLineFn
 
-**参数：**  
-xxx
+移除连线类型。仅 shift 切换时，切换列表中移除。
+
+**参数：**
+
+- fnName: string  
+  连线类型名称。
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.removeDrawLineFn('polyline');
 ```
 
 ### showMagnifier
 
-**参数：**  
-xxx
+显示放大镜
 
-**返回：**  
-xxx
+**参数：**
+无
 
-**用法：**  
-xxx
+**返回：**
+void
 
 **示例：**
 
 ```js
-
+topology.showMagnifier();
 ```
 
 ### hideMagnifier
 
-**参数：**  
-xxx
+隐藏放大镜
 
-**返回：**  
-xxx
+**参数：**
+无
 
-**用法：**  
-xxx
+**返回：**
+void
 
 **示例：**
 
 ```js
-
+topology.hideMagnifier();
 ```
 
 ### toggleMagnifier
 
-**参数：**  
-xxx
+显示或隐藏放大镜
 
-**返回：**  
-xxx
+**参数：**
+无
 
-**用法：**  
-xxx
+**返回：**
+void
 
 **示例：**
 
 ```js
-
+topology.hideMagnifier();
 ```
 
 ### clear
 
+清空画布资源。打开空白图纸用 open()
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.clear();
 ```
 
 ### emit
 
-**参数：**  
-xxx
+发送自定义消息。底层采用 mitt.js
+
+**参数：**
+
+- eventType: string | symbol  
+  消息名称
+
+- data : any  
+  消息数据
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.emit('myMessage', { a: 1 });
 ```
 
 ### on
 
-**参数：**  
-xxx
+订阅消息
+
+**参数：**
+
+- eventType: string | symbol  
+  消息名称
+
+- handler : (event, data) => {}  
+  消息处理函数
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+const fn = (event, data) => {};
+topology.on('event', fn);
+// 不用时，又不销毁topology实例，记得取消订阅。
 ```
 
 ### off
 
-**参数：**  
-xxx
+取消订阅消息
+
+**参数：**
+
+- eventType: string | symbol  
+  消息名称
+
+- handler : (event, data) => {}  
+  消息处理函数
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+const fn = (event, data) => {};
+// 订阅
+topology.on('event', fn);
 
+// 取消订阅
+topology.off('event', fn);
 ```
 
 ### register
 
-**参数：**  
-xxx
+注册自定义图形，用 Path2D 绘画
+
+**参数：**
+
+- obj : Object  
+  由<图形名称: 图形绘画函数>组成的 json 对象
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
-```js
-
-```
+参考：[自定义图形库](/tutorial/make-component)
 
 ### registerCanvasDraw
 
-**参数：**  
-xxx
+注册自定义图形，用 CanvasRenderingContext2D 绘画
+
+**参数：**
+
+- obj : Object  
+  由<图形名称: 图形绘画函数>组成的 json 对象
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
-```js
-
-```
+参考：[自定义图形库](/tutorial/make-component)
 
 ### registerAnchors
 
-**参数：**  
-xxx
+注册自定义图形锚点
+
+**参数：**
+
+- obj : Object  
+  由<图形名称: 图形锚点函数>组成的 json 对象
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
-```js
-
-```
+参考：[自定义图形库](/tutorial/make-component)
 
 ### registerDock
 
-**参数：**  
-xxx
+注册辅助线算法
+
+**参数：**
+
+- store: [TopologyStore](/tutorial/topology#topologystore)  
+  引擎数据存储对象
+
+- rect: [Rect](/api/rect)  
+  拖拽区域
 
 **返回：**  
-xxx
+json 对象，包含：xDock, yDock
 
-**用法：**  
-xxx
+- xDock ： x, y, step, prev  
+  水平方向的参考线
+
+- yDock ： x, y, step, prev  
+  垂直方向的参考线
+
+  prev - 参考线的起点  
+  x,y - 参考线的终点  
+  step - 自动吸附需要的偏移量，比如 xDock.step=5，表示 rect.x += 5 是最终希望的位置。
 
 **示例：**
 
 ```js
-
+topology.registerDock((store, rect) => {
+  return {
+    xDock: {
+      x,
+      y,
+      prev,
+      step,
+    },
+    yDock: {
+      x,
+      y,
+      prev,
+      step,
+    },
+  };
+});
 ```
 
 ### find
 
-**参数：**  
-xxx
+根据 id 或 tag 查找画笔
+
+**参数：**
+
+- idOrTag: string  
+  id 或 tag
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+符合结果的 pen 数组
 
 **示例：**
 
 ```js
-
+var pens = topology.find('aaa');
 ```
 
 ### getPenRect
 
-**参数：**  
-xxx
+获取 Pen 相对标尺原点的坐标区域
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔对象
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+[Rect](/api/rect)
 
 **示例：**
 
 ```js
-
+var rect = topology.getPenRect(pen);
 ```
 
 ### setPenRect
 
-**参数：**  
-xxx
+设置 Pen 相对标尺原点的坐标区域
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
+
+- rect: [Rect](/api/rect)
+  区域
+
+- render : boolean  
+  是否立刻重绘。默认是
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.setPenRect(pen, { x: 200, y: 200, width: 100, height: 100 });
 ```
 
 ### startAnimate
 
-**参数：**  
-xxx
+开始播放动画
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.startAnimate('aaa');
 
+topology.startAnimate([pen]);
 ```
 
 ### pauseAnimate
 
-**参数：**  
-xxx
+暂停播放动画
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.pauseAnimate('aaa');
 
+topology.pauseAnimate([pen]);
+```
+
+### stopAnimate
+
+停止播放动画
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.stopAnimate('aaa');
+
+topology.stopAnimate([pen]);
 ```
 
 ### calcAnimateDuration
 
-**参数：**  
-xxx
+计算动画帧时长
 
-**返回：**  
-xxx
+**参数：**
 
-**用法：**  
-xxx
+- pen: [Pen](/api/pen)  
+  画笔
+
+**返回：**
+void。动画帧时长为 pen.calculative.duration
 
 **示例：**
 
 ```js
-
+topology.calcAnimateDuration(pen);
 ```
 
 ### combine
 
-**参数：**  
-xxx
+组合画笔
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void。新画笔为 topology.store.active[0]
 
 **示例：**
 
 ```js
-
+topology.combine(pens);
 ```
 
 ### uncombine
 
-**参数：**  
-xxx
+取消组合画笔
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.uncombine(pen);
 ```
 
 ### active
 
-**参数：**  
-xxx
+选中高亮画笔
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void。高亮画笔为 topology.store.active
 
 **示例：**
 
 ```js
-
+topology.active(pens);
 ```
 
 ### inactive
 
+清空高亮画笔
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.inactive();
 ```
 
 ### delete
 
-**参数：**  
-xxx
+删除画笔
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.delete(pens);
 ```
 
 ### scale
 
-**参数：**  
-xxx
+缩放画布
+
+**参数：**
+
+- scale: number  
+  缩放比例。1 表示 100%
+
+- center : Point  
+  缩放中心点。默认左上角 0 的位置
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+// 缩放到120%
+topology.scale(1.2);
 ```
 
 ### translate
 
-**参数：**  
-xxx
+平移画布
+
+**参数：**
+
+- x: number  
+  水平偏移量
+
+- y: number  
+  垂直偏移量
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.translate(10, 10);
 ```
 
 ### translatePens
 
-**参数：**  
-xxx
+平移画笔
+
+**参数：**
+
+- pens : Pen[]  
+  画笔数组
+
+- x: number  
+  水平偏移量
+
+- y: number  
+  垂直偏移量
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.translatePens([pen], 10, 10);
 ```
 
 ### getParent
 
-**参数：**  
-xxx
+获取父画笔
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
+
+- root : boolean  
+  是否获取根祖父画笔。默认否，直接父画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+Pen
 
 **示例：**
 
 ```js
+// 获取父画笔
+topology.getParent(pen);
 
+// 获取根祖父画笔
+topology.getParent(pen, true);
 ```
 
 ### data
 
+获取文件保存数据。
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+json 数据
 
 **示例：**
 
 ```js
-
+topology.data();
 ```
 
 ### copy
 
-**参数：**  
-xxx
+复制画笔
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。如果为空，表示复制选中画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.copy();
 
+topology.copy([pen]);
 ```
 
 ### cut
 
-**参数：**  
-xxx
+剪切画笔
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。如果为空，表示剪切选中画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.cut();
 
+topology.cut([pen]);
 ```
 
 ### paste
 
-**参数：**  
-xxx
+粘贴画笔
+
+**参数：**
+
+空
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.paste();
 ```
 
 ### undo
 
-**参数：**  
-xxx
+撤消
+
+**参数：**
+
+空
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.undo();
 ```
 
 ### redo
 
-**参数：**  
-xxx
+重做
+
+**参数：**
+
+空
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
-```
-
-### redo
-
-**参数：**  
-xxx
-
-**返回：**  
-xxx
-
-**用法：**  
-xxx
-
-**示例：**
-
-```js
-
+topology.redo();
 ```
 
 ### connectWebsocket
 
-**参数：**  
-xxx
+连接 websocket。
+
+**参数：**
+
+- websocket : string  
+  websocket url 地址。如果为空，重连老的地址；否则，更新新地址并连接
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 重连
+topology.connectWebsocket();
 
+// 连接新url
+topology.connectWebsocket(url);
 ```
 
 ### closeWebsocket
 
+关闭 websocket 连接
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.closeWebsocket();
 ```
 
 ### connectMqtt
 
-**参数：**  
-xxx
+连接 mqtt。底层采用 mqtt.js。
+
+**参数：**
+
+- params : mqtt 配置参数
+
+```js
+{
+  mqtt: string;  // url
+  mqttTopics: string; // 多个topic用,分隔
+  mqttOptions?: {
+    clientId?: string;
+    username?: string;
+    password?: string;
+    customClientId?: boolean;  // ture - clientId不变；false - clientId随机，避免相同连接clientId冲突
+  };
+}
+```
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 重连
+topology.connectMqtt();
 
+// 连接新配置
+topology.connectMqtt(params);
 ```
 
 ### closeMqtt
 
+关闭 mqtt 连接
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.closeMqtt();
 ```
 
 ### setValue
 
-**参数：**  
-xxx
+修改 [Pen](/api/pen) 属性值
+
+**参数：**
+
+- data: any  
+  更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+// 修改id为aaa的画笔的text属性
+topology.setValue({ id: 'aaa', text: 'new text' });
 
+// 修改tag为aaa的画笔的text属性
+topology.setValue({ tag: 'aaa', text: 'new text' });
+
+// 查找id = pen.id的画笔，修改id为111
+topology.setValue({ id: pen.id, newId: '111' });
 ```
 
 ### pushHistory
 
-**参数：**  
-xxx
+添加一个编辑历史到队列
+
+**参数：**
+
+- action: EditAction  
+   历史行为数据
+
+  ```js
+  enum EditType {
+    Add,
+    Update,
+    Delete,
+  }
+
+  interface EditAction {
+    type?: EditType;
+    initPens?: Pen[];  // 更新前的数据
+    pens?: Pen[];      // 更新后的数据
+  }
+  ```
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.pushHistory({ type: EditType.Add, pens: [pen] });
 
+topology.pushHistory({
+  type: EditType.Update,
+  pens: currentPens,
+  initPens,
+});
+
+topology.pushHistory({ type: EditType.Delete, pens });
 ```
 
 ### showInput
 
-**参数：**  
-xxx
+显示输入框
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.showInput(pen);
 ```
 
 ### hideInput
 
-**参数：**  
-xxx
+隐藏输入框
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.hideInput(pen);
 ```
 
 ### clearDropdownList
 
+移除画布下拉列表 HTML Element
+
+当设置 pen.dropdownList=[{text,...}]属性，pen 可以作为下拉框使用，并生成画布下拉列表 HTML Element 对象。选中下拉列表选项后，会触发 pen.setValue({id:pen.id,text,...})行为。
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.clearDropdownList();
 ```
 
 ### pushChildren
 
-**参数：**  
-xxx
+给画笔添加子对象
+
+**参数：**
+
+- parent: [Pen](/api/pen)  
+  父画笔
+
+- children: Pen[]  
+  子元素
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.pushChildren(pen, [child]);
 ```
 
 ### renderPenRaw
 
-**参数：**  
-xxx
+使用 CanvasRenderingContext2D 绘画 Pen。主要用于在第三方 canvas 中绘画
+
+**参数：**
+
+- ctx: CanvasRenderingContext2D
+  CanvasRenderingContext2D
+
+- pen: [Pen](/api/pen)
+  画笔
+
+- rect: [Rect](/api/rect)
+  区域。默认 pen 自身区域
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.pushChildren(ctx, pen);
 ```
 
 ### toPng
 
-**参数：**  
-xxx
+生成 png 图像
+
+**参数：**
+
+- padding: Padding(number)  
+  图片留白边距。默认 0
+
+- callback: (blob: Blob ) => void
+  回调函数。默认不传，返回给当前函数的返回值；否则返回给回调函数的 blob 参数
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+当 callback 为空时，返回 blob。
 
 **示例：**
 
 ```js
-
+var blob = topology.toPng();
 ```
 
 ### downloadPng
 
-**参数：**  
-xxx
+下载为 png 文件
+
+**参数：**
+
+- name: string  
+  文件名
+
+- padding: Padding(number)  
+  图片留白边距。默认 0
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.downloadPng();
 ```
 
 ### getRect
 
-**参数：**  
-xxx
+获取图纸区域
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。默认为空，表示整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+[Rect](/api/rect)
 
 **示例：**
 
 ```js
-
+var rect = topology.getRect();
 ```
 
 ### fitView
 
-**参数：**  
-xxx
+自适应屏幕显示。会缩放画布到合适尺寸
+
+**参数：**
+
+- fit: boolean  
+  true，完整展示整个图纸；false，短边展示图纸，长边会被截取显示不完整
+
+- viewPadding: Padding（number）  
+   图片留白边距。默认 10
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.fitView();
 
+topology.fitView(true, 20);
 ```
 
 ### gotoView
 
-**参数：**  
-xxx
+定位画笔到屏幕中心显示
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  定位的画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.gotoView(pen);
 ```
 
 ### centerView
 
+居中显示可视区域。不缩放
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.centerView();
 ```
 
 ### hasView
 
+是否存在画笔对象
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+var hasPens = topology.hasView();
 ```
 
 ### alignNodes
 
-**参数：**  
-xxx
+节点对齐
+
+**参数：**
+
+- align: string  
+  对齐方式: left, right, top, bottom, center, middle
+
+- pens: Pen[]  
+  画笔数组。默认为整个图纸
+
+- rect: Rect  
+  对齐区域。默认当前 pens 占据区域
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.alignNodes('left');
 
+topology.alignNodes('left', pens);
 ```
 
 ### spaceBetween
 
-**参数：**  
-xxx
+水平等分对齐
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。默认为整个图纸
+
+- width: number  
+  宽度。默认当前 pens 占据区域
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.spaceBetween();
 
+topology.spaceBetween(null, 1000);
 ```
 
 ### spaceBetweenColumn
 
-**参数：**  
-xxx
+垂直等分对齐
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。默认为整个图纸
+
+- height: number  
+  高度。默认当前 pens 占据区域
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.spaceBetweenColumn();
 
+topology.spaceBetweenColumn(null, 1000);
 ```
 
 ### layout
 
-**参数：**  
-xxx
+均匀分布排版
+
+**参数：**
+
+- pens: Pen[]  
+  画笔数组。默认为整个图纸
+
+- width: number  
+  宽度，超过换行。默认当前 pens 占据区域宽度。
+
+- space: number  
+  间距。默认 30
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
+topology.layout();
 
+topology.layout(null, null, 50);
 ```
 
 ### showMap
 
+显示鹰眼地图
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.showMap();
 ```
 
 ### hideMap
 
+隐藏鹰眼地图
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
-```
-
-### onSizeUpdate
-
-**参数：**  
-xxx
-
-**返回：**  
-xxx
-
-**用法：**  
-xxx
-
-**示例：**
-
-```js
-
+topology.hideMap();
 ```
 
 ### toggleAnchorMode
 
+给 Pen 添加/取消添加锚点
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.toggleAnchorMode();
 ```
 
 ### addAnchorHand
 
+给 选中锚点 添加手柄
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.addAnchorHand();
 ```
 
 ### removeAnchorHand
 
+删除 选中锚点 的手柄
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.removeAnchorHand();
 ```
 
 ### toggleAnchorHand
 
+给选中锚点 添加/删除 手柄
+
 **参数：**  
-xxx
+无
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.toggleAnchorHand();
 ```
 
 ### top
 
-**参数：**  
-xxx
+置顶画笔
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  被置顶的画笔
+
+- pens: Pen[]  
+  置顶到哪个画笔数组。默认为整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.top(pen);
 ```
 
 ### bottom
 
-**参数：**  
-xxx
+置底画笔
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  被置底的画笔
+
+- pens: Pen[]  
+  置底到哪个画笔数组。默认为整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.bottom(pen);
 ```
 
 ### up
 
-**参数：**  
-xxx
+移动画笔到上一层
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  被移动的画笔
+
+- pens: Pen[]  
+  移动到哪个画笔数组。默认为整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.up(pen);
 ```
 
 ### down
 
-**参数：**  
-xxx
+移动画笔到下一层
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  被移动的画笔
+
+- pens: Pen[]  
+  移动到哪个画笔数组。默认为整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.down(pen);
 ```
 
 ### setLayer
 
-**参数：**  
-xxx
+移动画笔到指定层
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  被移动的画笔
+
+- index: number  
+  指定图层
+
+- pens: Pen[]  
+  移动到哪个画笔数组。默认为整个图纸
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.setLayer(pen, 10);
 ```
 
 ### changePenId
 
-**参数：**  
-xxx
+修改画笔 id
+
+**参数：**
+
+- oldId: string  
+  旧 id
+
+- newId: string
+  新 id
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.changePenId('1', '2');
 ```
 
 ### getLines
 
-**参数：**  
-xxx
+获取 Pen 的关联连线
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
+
+- type: 'all' | 'in' | 'out' = 'all'  
+  连线方向。默认所有方向
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+Pen[]
 
 **示例：**
 
 ```js
-
+var lines = topology.getLines(pen);
 ```
 
 ### nextNode
 
-**参数：**  
-xxx
+获取 Pen 关联连线的下一个 Pen[]
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+Pen[]
 
 **示例：**
 
 ```js
-
+var pens = topology.nextNode(pen);
 ```
 
 ### previousNode
 
-**参数：**  
-xxx
+获取 Pen 关联连线的上一个 Pen[]
+
+**参数：**
+
+- pen: [Pen](/api/pen)  
+  画笔
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+Pen[]
 
 **示例：**
 
 ```js
+var pens = topology.previousNode(pen);
+```
 
+### toComponent
+
+生成自定义组件，方便直接（拖拽）复用。
+
+**参数：**
+
+- pens: [Pen](/api/pen)[]  
+  画笔数组。默认整个画布
+
+**返回：**  
+Pen[]。组合成一个组件的画笔数组对象（包含父子 Pen）
+
+**示例：**
+
+```js
+var pens = topology.toComponent();
 ```
 
 ### destroy
 
+销毁画布，清理资源内存。推荐调用
+
 **参数：**  
-xxx
+void
 
 **返回：**  
-xxx
-
-**用法：**  
-xxx
+void
 
 **示例：**
 
 ```js
-
+topology.destroy();
 ```

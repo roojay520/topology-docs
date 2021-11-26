@@ -102,6 +102,12 @@ topology.setValue({
   id: pen.id,
   text: 'le5le',
 });
+
+// 查找id = pen.id的画笔，修改id为111
+topology.setValue({
+  id: pen.id,
+  newId: '111',
+});
 ```
 
 ## 删除

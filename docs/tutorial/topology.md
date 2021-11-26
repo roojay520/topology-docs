@@ -255,7 +255,7 @@ onTouchstart = (e) => {
 | [alignNodes](/api/core#alignNodes)                   | 节点对齐                            |
 | [spaceBetween](/api/core#spaceBetween)               | 水平等分对齐                        |
 | [spaceBetweenColumn](/api/core#spaceBetweenColumn)   | 垂直等分对齐                        |
-| [layout](/api/core#layout)                           | 排版                                |
+| [layout](/api/core#layout)                           | 均匀分布排版                        |
 | [showMap](/api/core#showMap)                         | 显示鹰眼地图                        |
 | [hideMap](/api/core#hideMap)                         | 隐藏鹰眼地图                        |
 | [toggleAnchorMode](/api/core#toggleAnchorMode)       | 切换锚点模式                        |
@@ -271,4 +271,5 @@ onTouchstart = (e) => {
 | [getLines](/api/core#getLines)                       | 获取关联连线                        |
 | [nextNode](/api/core#nextNode)                       | 获取下一个节点                      |
 | [previousNode](/api/core#previousNode)               | 获取前一个节点                      |
+| [toComponent](/api/core#toComponent)                 | 生成自定义组件                      |
 | [destroy](/api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |

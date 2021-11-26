@@ -60,9 +60,10 @@ topology.addPen(pen);
 - onMove 被移动拖拽
 - onResize 修改大小
 - onRotate 旋转
-- onClick 单击，等同于 mouseup
+- onClick 单击
 - onMouseDown 鼠标按下
 - onMouseMove 鼠标经过
+- onMouseUp 鼠标抬起
 
 临时设置函数：
 
