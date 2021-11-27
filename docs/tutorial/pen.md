@@ -169,3 +169,59 @@ topology.addPen(pen);
 // 打印是否选中高亮
 console.log(pen.calculative.active);
 ```
+
+## 交互事件
+
+- 鼠标进入 enter
+- 鼠标离开 leave
+- 选中 active
+- 取消选中 inactive
+- 单击 click
+- 双击 dblclick
+- 鼠标按下 mousedown
+- 鼠标抬起 mouseup
+- 数据更新 valueUpdate
+
+触发 pen 的上述行为时，可配置执行的动作
+
+```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  events: [
+    {
+      name: 'click',
+      action: EventAction.Link, // 执行动作
+      where: {key: 'text', comparison:'==', value: '矩形'} // 触发条件
+      value: 'topology.le5le.com',
+    },
+  ],
+};
+topology.addPen(pen);
+```
+
+```js
+// @topology/core 内置action：
+enum EventAction {
+  Link,
+  SetProps,
+  StartAnimate,
+  PauseAnimate,
+  StopAnimate,
+  Function,
+  WindowFn,
+  Emit,
+}
+
+interface Where {
+  key?: string;
+  comparison?: string;  // 比较条件： >,>=,<,<=,==,!=。例如：pen[key] == value
+  value?: any;
+  fn?: Function;    // 条件函数，最高优先级
+  fnJs?: string;    // 条件函数js代码，次高优先级
+}
+```

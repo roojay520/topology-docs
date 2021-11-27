@@ -1,6 +1,6 @@
 # Pen
 
-继承 Rect。
+继承 [Rect](/api/rect)。
 
 ## 属性
 
@@ -68,8 +68,46 @@ Line,
 **示例：**
 
 ```js
-const node = {type: 0, ...};
-const line = {type: 1, name: 'line', lineName:'curve', ...};
+const node = {
+  type: 0,
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+const line = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+const node2 = {
+  type: 0,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 400,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+topology.addPens([node, line, node2]);
 ```
 
 ### name
@@ -89,7 +127,7 @@ const line = {type:1, name: 'line', lineName:'curve', ...};
 
 连线类型名称。默认有：curve、polyline、line、mind
 
-【注意】仅当 type=1（name='line'）为连线时有效
+【注意】仅当 type=1（name='line'）为连线时有效。仅用于绘画连线过程中，判断如何自动计算锚点；不影响已经显示绘画好的连线。
 
 **数据类型：** string
 
@@ -106,7 +144,38 @@ const line = {type:1, name: 'line', lineName:'curve', ...};
 **示例：**
 
 ```js
-const pen = {name: 'line', close: true, ...};
+const line1 = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+const line2 = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  close: true,
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+topology.addPens([line1, line2]);
 ```
 
 ### anchors
@@ -120,11 +189,16 @@ const pen = {name: 'line', close: true, ...};
 **示例：**
 
 ```js
-const node = {name: 'circle', anchors: [{0.1, 0.1}, {0.1, 1}], ...};
+const node = {name: 'circle', anchors: [{x: 0.1, y:0.1}, {x:0.1, y:1}], ...};
 
 // line.from = {0.1, 0.1}
 // line.to = {0.1, 1}
-const line = {name: 'line', lineName:'curve', anchors: [{0.1, 0.1}, {0.1, 0.2}, {0.1, 0.5}, {0.1, 1}], ...};
+const line = {
+  name: 'line',
+  lineName:'curve',
+  anchors: [{x:0.1, y:0.1}, {x:0.1, y:0.2}, {x:0.1, y:0.5}, {x:0.1, y:1}],
+  ...
+};
 ```
 
 ### x,y,width,height
@@ -427,6 +501,1659 @@ const pen = {progressColor: '#1890ff', ...};
 const pen = {verticalProgress: true, ...};
 ```
 
+### bkType
+
+背景类型
+
+**数据类型：** Gradient
+
+```js
+enum Gradient {
+  None,   // 没有渐变
+  Linear, // 线性渐变
+  Radial, // 发散渐变
+}
+```
+
+**示例：**
+
+```js
+const pen = {bkType: 0, ...};
+```
+
+### gradientFromColor
+
+背景渐变起始颜色
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {bkType: 1, gradientFromColor: 'green', ...};
+```
+
+### gradientToColor
+
+背景渐变结束颜色
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {bkType: 1, gradientFromColor: 'green', gradientToColor: 'blue', ...};
+```
+
+### gradientAngle
+
+背景线性渐变角度
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {bkType: 1, gradientFromColor: 'green', gradientToColor: 'blue', gradientAngle: 90, ...};
+```
+
+### gradientRadius
+
+背景发散渐变半径
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const node = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+const pen = { bkType: 2, gradientFromColor: 'green', gradientToColor: 'blue', gradientRadius: 100 };
+
+topology.addPen(node);
+pen.id = node.id;
+topology.setValue(pen);
+topology.inactive();
+```
+
+### strokeType
+
+线的填充背景类型
+
+**数据类型：** Gradient
+
+```js
+enum Gradient {
+  None,   // 没有渐变
+  Linear, // 线性渐变
+  Radial, // 发散渐变
+}
+```
+
+**示例：**
+
+```js
+const pen = {strokeType: 0, ...};
+```
+
+### lineGradientFromColor
+
+线的填充渐变背景起始颜色
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {strokeType: 1, lineGradientFromColor: 'green', ...};
+```
+
+### lineGradientToColor
+
+线的填充渐变背景结束颜色
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {strokeType: 1, lineGradientFromColor: 'green', lineGradientToColor: 'blue', ...};
+```
+
+### lineGradientAngle
+
+线的填充渐变背景线性渐变角度
+
+**数据类型：** number
+
+**示例：**
+
+```js
+
+const line = {
+  type: 1,
+  name: 'line',
+  lineName:'curve',
+  anchors: [{x:0.1, y:0.1},  {x:0.1, y:0.5}, {x:1, y:1}],
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+};
+
+const pen = {
+  strokeType: 1,
+  lineGradientFromColor: 'green',
+  lineGradientToColor: 'blue',
+  lineGradientAngle: 90,
+  ...
+};
+
+topology.addPen(line);
+pen.id = line.id;
+topology.setValue(pen);
+topology.inactive();
+```
+
+### lineCap
+
+线两端的形状：round - 圆形；butt - 平直；square - 正方形。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineCap: 'round',
+};
+
+const line2 = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 200,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineCap: 'butt',
+};
+
+const line3 = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineCap: 'square',
+};
+
+topology.addPens([line, line2, line3]);
+topology.inactive();
+```
+
+### lineJoin
+
+锚点间线段交汇时的形状：round - 圆形；bevel - 斜角；miter - 尖角。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineJoin: 'round',
+};
+
+const line2 = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 200,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineJoin: 'bevel',
+};
+
+const line3 = {
+  type: 1,
+  name: 'line',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+  lineJoin: 'miter',
+};
+
+topology.addPens([line, line2, line3]);
+topology.inactive();
+```
+
+### shadowColor
+
+阴影颜色。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  fillStyle: 'blue',
+  shadowColor: 'black',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### shadowBlur
+
+阴影模糊度。
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  fillStyle: 'blue',
+  shadowColor: 'black',
+  shadowBlur: 20,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### shadowOffsetX、shadowOffsetY
+
+阴影偏移量。
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  fillStyle: 'blue',
+  shadowColor: 'black',
+  shadowBlur: 20,
+  shadowOffsetX: 10,
+  shadowOffsetY: 5,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### textWidth
+
+文本宽度，超出换行。默认 pen.width
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textWidth: 20,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### textHeight
+
+文本高度，超出显示省略号。默认 pen.height
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textWidth: 20,
+  textHeight: 36,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### textLeft、textTop
+
+文本左偏移和上偏移。
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textLeft: 10,
+  textTop: 20,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### textColor
+
+文本颜色。缺省为 pen.color
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textColor: 'green',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### hoverTextColor
+
+文本鼠标经过活动颜色。缺省为 pen.hoverColor
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  hoverTextColor: 'green',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### activeTextColor
+
+选中 pen 文本的颜色。缺省为 pen.activeColor
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  activeTextColor: 'green',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fontFamily
+
+文本字体
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  fontFamily: '宋体',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fontSize
+
+文本大小
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  fontSize: 24,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### lineHeight
+
+文本行高
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textWidth: 50,
+  lineHeight: 24,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fontStyle
+
+文本风格。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  fontStyle: 'italic',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fontWeight
+
+文本加粗。
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  fontWeight: 700,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### textAlign、textBaseline
+
+文本对齐。参考 css 用法。
+
+### textBackground
+
+文本背景颜色。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textBackground: 'blue',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### whiteSpace
+
+文本换行方式。默认单词换行；nowrap - 不换行；pre-line - 换行符换行
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textWidth: 50,
+  whiteSpace: 'nowrap',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### ellipsis
+
+文本是否显示省略号。默认显示省略号，仅当 == false 时，不显示省略号。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'zhe shi yi chang duan wen zi.',
+  textWidth: 50,
+  textHeight: 30,
+  ellipsis: false,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### image
+
+图片 url。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  image: '/favicon.ico',
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### imageRatio
+
+图片是否保持原始长宽比。
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  image: '/favicon.ico',
+  imageRatio: true,
+};
+
+topology.addPen(pen);
+topology.inactive();
+```
+
+### icon
+
+图标 Unicode 编码。可参考： [字体图形库教程](/tutorial/icons)
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'image',
+  x: 100,
+  y: 100,
+  width: 20,
+  height: 20,
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  // iconSize: 20, // 缺省自适应
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### iconRotate
+
+图标旋转角度
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '字体图标',
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconSize: 20,
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  iconRotate: 30,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### iconWidth、iconHeight
+
+图标最大宽高。默认为 pen.width, pen.height
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '字体图标',
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconWidth: 20,
+  iconHeight: 20,
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### iconSize
+
+图标大小。默认自适应 iconWidth、iconHeight
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '字体图标',
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconSize: 20,
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### iconTop、iconLeft
+
+图标偏移量。默认居中
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '字体图标',
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconTop: 20,
+  iconLeft: 20,
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### iconFamily、iconColor、iconAlign
+
+图标字体名称、颜色、对齐方式。其中，对齐方式为：
+
+- top
+- bottom
+- left
+- right
+- left-top
+- right-top
+- left-bottom
+- right-bottom
+- center
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '字体图标',
+  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconAlign: 'left-top',
+  iconColor: 'green', // 可缺省
+  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### disableInput
+
+双击禁止出现文本输入框
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  disableInput: true,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### disableRotate
+
+禁止旋转手柄
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  disableRotate: true,
+};
+topology.addPen(pen);
+```
+
+### disableSize
+
+禁止出现大小编辑控制点
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  disableSize: true,
+};
+topology.addPen(pen);
+```
+
+### disableAnchor
+
+禁止出现锚点
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  disableAnchor: true,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### paddingTop
+
+还有 paddingBottom、paddingLeft、paddingRight，表示 padding 距离
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  paddingTop: 20,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### backgroundImage
+
+填充背景图片 url。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  backgroundImage: '/favicon.ico',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### strokeImage
+
+线条填充图片 url。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  strokeImage: '/favicon.ico',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### children
+
+子画笔 id 数组。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  children: ['id1', 'id2'],
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### anchorRadius
+
+锚点大小。
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  anchorRadius: 10,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### anchorBackground
+
+锚点背景颜色。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  anchorBackground: 'blue',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### path
+
+svg path 字符串。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  path: 'M250 150 L150 350 L350 350 Z',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fromArrow、toArrow
+
+连线箭头。
+
+- triangleSolid
+- triangle
+- circleSolid
+- circle
+- diamondSolid
+- diamond
+- line
+- lineUp
+- lineDown
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  fromArrow: 'triangleSolid',
+};
+
+topology.addPen(line);
+topology.inactive();
+```
+
+### fromArrowSize、toArrowSize
+
+箭头大小。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  fromArrow: 'triangleSolid',
+  fromArrowSize: 12,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### fromArrowColor、toArrowColor
+
+箭头大小。
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  fromArrow: 'triangleSolid',
+  fromArrowColor: 'red',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### connectedLines
+
+关联的连线。数组
+
+**数据类型：**
+
+```js
+{
+  lineId: string; // 关联的连线id
+  lineAnchor: string; // 关联的连线的锚点id
+  anchor: string; // 关联自己的锚点id
+}
+[];
+```
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  connectedLines: [{ lineId, lineAnchor, anchor }],
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### animateCycle
+
+动画播放次数。默认无限循环
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  animateCycle: 3,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### nextAnimate
+
+动画播放结束后，要播放的下一个动画的 pen.id 或 pen.tag
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  nextAnimate: 'id/tag',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### autoPlay
+
+topology.open 时，是否自动播放
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  autoPlay: true,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### playLoop
+
+pen 为音视频时，是否自动循环播放
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: 'video',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 10,
+  audio: 'https://down.ear0.com:3321/preview?soundid=37418&type=mp3',
+  autoPlay: true,
+  playLoop: true,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### duration
+
+动画时长。通常自动计算
+
+**数据类型：** number
+
+### linear
+
+动画播放时，数字属性是否匀速渐变。默认是。
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  linear: false,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### scale
+
+动画帧中的缩放比例。
+
+**数据类型：** number
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### animateSpan
+
+连线动画速度。
+
+**数据类型：** number
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### animateColor
+
+连线动画颜色。
+
+**数据类型：** string
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### animateLineDash
+
+连线动画虚线样式。
+
+**数据类型：** string
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### animateReverse
+
+连线动画是否反向播放。
+
+**数据类型：** boolean
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### keepAnimateState
+
+动画播放（次数）结束，是否回到初始状态，默认是。
+
+**数据类型：** boolean
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### lineAnimateType
+
+连线动画类型
+
+**数据类型：** string
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### frames
+
+节点动画帧
+
+**数据类型：** Pen[]
+
+**示例：**
+
+参考[动画教程](/tutorial/animate)
+
+### input
+
+是否单击，就显示文本输入框
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  input: true,
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### dropdownList
+
+单击，是否显示下拉选项框
+
+**数据类型：** any[]
+
+- 简单数据类型  
+  例如：[1,2,3]。选中选项后，直接赋值 pen.text = 1
+
+- 复杂数据类型  
+  例如：[ { text: 1, a: 'a', ... }, { text: 2, a: 'b' },]。选中选项后，直接赋值 pen.text = 1;pen.a = 'a'  
+  必须存在 text 作为显示文本，其他可以为扩展属性
+
+**示例：**
+
+```js
+// 简单类型
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  dropdownList: [1, 2, 3],
+};
+topology.addPen(pen);
+topology.inactive();
+
+// 复杂类型
+const pen = {
+  name: ' rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: 'Text',
+  dropdownList: [
+    { text: 1, a: 'a' },
+    { text: 2, a: 'b' },
+  ],
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### events
+
+交互事件数组。
+
+**数据类型：** Pen[]
+
+**示例：**
+
+参考[教程](/tutorial/pen#交互事件)
+
+### iframe
+
+pen.name='iframe'时，嵌入网页的 url
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: ' iframe',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  iframe: 'http://topology.le5le.com',
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### video、audio
+
+pen.name='video'时，音视频 url
+
+**数据类型：** string
+
+**示例：**
+
+参考[视频教程](/tutorial/video)
+
+### autoPolyline
+
+当连线为 polyline（pen.lineName === 'polyline'）时，连接的画笔移动了，是否自动重计算连线的锚点。
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  lineName: 'polyline',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 0.1, y: 0.5 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+  autoPolyline: true,
+};
+
+topology.addPen(line);
+topology.inactive();
+
+// 需要连线连接到一个Pen，这里暂时没有构造关联数据
+```
+
+### progress
+
+当前进度值。 0 - 1 之间的数
+
+**数据类型：** number
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  progress: 0.8,
+  // progressColor: 'green',
+  // verticalProgress: false,  // 水平方向还是垂直方向
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### progressColor
+
+进度背景颜色
+
+**数据类型：** string
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  progress: 0.8,
+  progressColor: 'green',
+  // verticalProgress: false,  // 水平方向还是垂直方向
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+### verticalProgress
+
+进度条水平方向还是垂直方向，默认水平
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const pen = {
+  name: 'rectangle',
+  text: '矩形',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  progress: 0.8,
+  // progressColor: 'green',
+  verticalProgress: true, // 垂直方向
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
 ### calculative
 
 画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
@@ -437,6 +2164,20 @@ const pen = {verticalProgress: true, ...};
 
 ```js
 const rect = pen.calculative.worldRect;
+```
+
+### 扩展属性
+
+画笔支持任意扩展属性，比如业务属性温度 temperature。即 json 支持的可以任意扩展，方便自定义组件或业务扩展
+
+**示例：**
+
+```js
+const pen = {
+  name: 'text',
+  temperature: 27,
+  ...
+};
 ```
 
 ## 函数
