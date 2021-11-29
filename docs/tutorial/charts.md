@@ -1,7 +1,8 @@
 # 图表
 
-原生 topology 图表控件，更方便的支持原生交互事件和图层。包含：折线图、柱状图、饼图、仪表盘。
-目前市面上的图表控件已经做得非常强大且丰富，例如 [echarts](http://echarts.apache.org/zh/index.html)、[highcharts](https://www.highcharts.com.cn/) 等，当然，我们的 topoloy 也支持 echarts 和 highcharts 这两种图表库,我们的原生 topology 图表控件也正是向 echarts 看齐的。
+原生 topology 图表控件，更方便的支持原生交互事件和图层。包含：折线图、柱状图、饼图、仪表盘等，更多欢迎联系我们。
+
+数据格式参考：echarts。
 
 ## lineChart 折线图
 
