@@ -9,12 +9,14 @@
 xxxx
 
 - **数据**
-  | 名称 | 类型 | 描述 |
-  | ---------- | -------- | ----------------------------------------- |
-  | color | string[] | 调色盘颜色列表 |
-  | xAxis.data | string[] | 横坐标值 |
-  | series[i].data | number[] | 纵坐标数据值 |
-  | series[i].smooth | boolean |折线图是否平滑 |
+
+当前支持的配置如下：
+| 名称 | 类型 | 描述 |
+| ---------- | -------- | ----------------------------------------- |
+| color | string[] | 调色盘颜色列表 |
+| xAxis.data | string[] | 横坐标值 |
+| series[i].data | number[] | 纵坐标数据值 |
+| series[i].smooth | boolean |折线图是否平滑 |
 
 - **使用**
 
@@ -63,11 +65,14 @@ topology.addPen(linechart);
 xxxx
 
 - **数据**
+
+  当前支持的配置如下：
   | 名称 | 类型 | 描述 |
   | ---------- | -------- | ----------------------------------------- |
   | color | string[] | 调色盘颜色列表 |
   | xAxis.data | string[] | 横坐标值 |
   | series[i].data | number[] | 纵坐标数据值 |
+
 - **使用**
 
 ```js
@@ -114,17 +119,20 @@ topology.addPen(histogram);
 xxxx
 
 - **数据**
+
+  当前支持的配置如下：
   | 名称 | 类型 | 描述 |
-  | ---------- | -------- | ----------------------------------------- |
+  | ------------------------------- | -------- | -------------------------------- |
   | color | string[] | 调色盘颜色列表 |
   | series[i].radius | string[] | 饼图的半径范围 |
   | series[i].itemStyle.borderColor | string | 饼图描边颜色 |
-  | series[i].itemStyle.borderWidth | number |描边线宽 |
-  | series[i].label.show | boolean |是否显示文本标签 |+
-  | series[i].label.position | number |文本标签位置('outside'/'inside') |
-  | series[i].labelLine.show | boolean |文本标签引导线是否显示 |
-  | series[i].data[j].name | string |数据名 |
-  | series[i].data[j].value | number |数据值 |
+  | series[i].itemStyle.borderWidth | number | 描边线宽 |
+  | series[i].label.show | boolean | 是否显示文本标签 |
+  | series[i].label.position | number | 文本标签位置('outside'/'inside') |
+  | series[i].labelLine.show | boolean | 文本标签引导线是否显示 |
+  | series[i].data[j].name | string | 数据名 |
+  | series[i].data[j].value | number | 数据值 |
+
 - **使用**
 
 ```js
@@ -200,6 +208,7 @@ topology.addPen(pie);
 xxxx
 
 - **数据**
+
   series 的可用属性配置如下：
   | 名称 | 类型 | 描述 |
   | ------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
