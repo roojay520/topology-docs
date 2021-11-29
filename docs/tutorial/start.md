@@ -1,10 +1,14 @@
 # 快速上手
 
-<font color=#fa541c >**【注意】** 初始化引擎后，会在 window 下注入 topology 对象（window.topology），表示当前 topology 实例。默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。</font>
+<br/>
+<div style="color:#fa541c">【注意】初始化引擎后，会在 window 下注入 topology 对象（window.topology），表示当前 topology 实例。默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。</div>
+<br/>
 
 ---
 
-<font color=#fa541c >**【画重点】** 所有标准 js 语法均可以在 [topology 官网编辑器](http://topology.le5le.com/workspace) 直接运行查看效果。</font>
+<br/>
+
+<div style="color:#fa541c">【画重点】所有标准 js 语法均可以在 [topology 官网编辑器](http://topology.le5le.com/workspace) 直接运行查看效果。</div>
 
 例如：
 

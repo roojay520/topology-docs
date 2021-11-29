@@ -2,13 +2,13 @@
 
 乐吾乐 Topology 是一个集动态交互、丰富展示、数据管理等一体的全功能可视化引擎，为物联网、工业互联网、电力能源、水利工程、智慧农业、智慧医疗、智慧城市等智能可视化场景而生。支持拓扑图、流程图、脑图、折线图、饼图、仪表盘、web 组态、SCADA 等场景。
 
-<center style="display:flex;justify-content:">
+<div style="display:flex;justify-content:">
 <img style="height:200px;margin: 10px" src="/img/1.gif" >
 
 <img style="height:200px;margin: 10px" src="/img/2.png" >
 
 <img style="height:200px;margin: 10px" src="/img/3.png">  
-</center>
+</div>
 
 <br>
 
