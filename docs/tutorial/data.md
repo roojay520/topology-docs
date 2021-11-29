@@ -2,7 +2,7 @@
 
 topology 支持 mqtt、websocket 和 http 轮询 3 种方式进行实时数据监听。
 
-<font color=#fa541c >如果配置过 mqtt 或 websocket，下次打开时，会自动连接。</font>
+<div style="color:#fa541c">如果配置过 mqtt 或 websocket，下次打开时，会自动连接。</div>
 
 ## MQTT
 
@@ -36,7 +36,7 @@ topology.connectMqtt();
 
 topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/api/pen) 数据格式发送数据即可。
 
-<font color=#fa541c >注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</font>
+<div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
 ```js
 // 修改text
@@ -82,7 +82,7 @@ topology.connectWebsocket();
 
 topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/api/pen) 数据格式发送数据即可。
 
-<font color=#fa541c >注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</font>
+<div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
 ```js
 // 修改text
