@@ -37,12 +37,12 @@ topology.addPen(button);
 
 - **数据**
 
-| 名称       | 类型     | 描述                                      |
-| ---------- | -------- | ----------------------------------------- |
-| direction  | string   | 单选框的排列方向('vertical'/'horizontal') |
-| options    | string[] | 选项值                                    |
-| selection  | string   | 选中值                                    |
-| forbiddens | string[] | 禁用选项                                  |
+| 名称       | 类型                 | 描述                                      |
+| ---------- | -------------------- | ----------------------------------------- |
+| direction  | string               | 单选框的排列方向('vertical'/'horizontal') |
+| options    | string[] \| object[] | 选项值                                    |
+| selection  | string               | 选中值                                    |
+| forbiddens | string[]             | 禁用选项                                  |
 
 - **使用**
 
@@ -55,6 +55,12 @@ const radio = {
   height: 100,
   direction: "vertical",
   options: ["水果", "蔬菜", "谷物"],
+  /*
+  options: [
+    { text: "水果", background: "#ff0000" },
+    { text: "蔬菜", background: "#00ff00" },
+    { text: "谷物", background: "#0000ff" },
+  ],*/
   selection: "水果",
   forbiddens: ["蔬菜"],
 };
@@ -66,12 +72,12 @@ topology.addPens([radio]);
 
 - **数据**
 
-| 名称       | 类型     | 描述                                      |
-| ---------- | -------- | ----------------------------------------- |
-| direction  | string   | 单选框的排列方向('vertical'/'horizontal') |
-| options    | string[] | 选项值                                    |
-| selections | string[] | 选中选项                                  |
-| forbiddens | string[] | 禁用选项                                  |
+| 名称       | 类型                | 描述                                      |
+| ---------- | ------------------- | ----------------------------------------- |
+| direction  | string              | 单选框的排列方向('vertical'/'horizontal') |
+| options    | string[]\| object[] | 选项值                                    |
+| selections | string[]            | 选中选项                                  |
+| forbiddens | string[]            | 禁用选项                                  |
 
 - **使用**
 
@@ -83,7 +89,12 @@ const checkbox = {
   width: 150,
   height: 100,
   direction: "vertical",
-  options: ["水果", "蔬菜", "谷物"],
+  // options: ["水果", "蔬菜", "谷物"],
+  options: [
+    { text: "水果", background: "#ff0000" },
+    { text: "蔬菜", background: "#00ff00" },
+    { text: "谷物", background: "#0000ff" },
+  ],
   selections: ["蔬菜"],
   forbiddens: ["水果"],
 };
