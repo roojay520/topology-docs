@@ -176,3 +176,54 @@ const slider = {
 
 topology.addPen(slider);
 ```
+
+## 输入框
+
+- **使用**
+
+```js
+const input = {
+  x: 100,
+  y: 100,
+  height: 50,
+  width: 200,
+  name: "rectangle",
+  borderRadius: 0.05,
+  ellipsis: true,
+  text: "输入数据",
+  textAlign: "left",
+  color: "#D9D9D9FF",
+  textColor: "#000000FF",
+  hoverTextColor: "#000000FF",
+  activeTextColor: "#000000FF",
+  textLeft: 10,
+};
+
+topology.addPen(input);
+```
+
+## 选择器
+
+- **使用**
+
+```js
+const select = {
+  x: 100,
+  y: 100,
+  height: 50,
+  width: 200,
+  name: "rectangle",
+  borderRadius: 0.05,
+  ellipsis: true,
+  text: "选项1",
+  textAlign: "left",
+  color: "#D9D9D9FF",
+  textColor: "#000000FF",
+  hoverTextColor: "#000000FF",
+  activeTextColor: "#000000FF",
+  textLeft: 10,
+  dropdownList: ["选项1", "选项2", "选项3"],
+};
+
+topology.addPen(select);
+```
