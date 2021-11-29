@@ -91,7 +91,7 @@ const checkbox = {
 topology.addPens([checkbox]);
 ```
 
-## leSwitch 开关
+## switch 开关
 
 - **数据**
 
