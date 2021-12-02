@@ -6,7 +6,7 @@
 padding 规则与 css padding 相同
 
 **参数：**  
-padding: Padding
+- padding: Padding
 ```ts
 type Padding = number | string | number[];
 ```
@@ -35,7 +35,7 @@ formatPadding([3, 4, 5, 6])
 直接通过 JSON.parse(JSON.stringify(pens)) 会报错，推荐使用该方法进行深拷贝
 
 **参数：**  
-o: any
+- o: any
 
 **返回：**  
 any
@@ -44,4 +44,38 @@ any
 
 ```ts
 deepClone(pens)
+```
+
+## s8
+
+生成随机数，通常用于生成画笔 id
+
+**返回：**  
+string
+
+**示例：**
+
+```ts
+s8()
+// 54344dfa
+```
+
+## rgba
+
+生成具有透明度的颜色，通常用于生成当前色的浅色
+
+**参数：**  
+- c: string  
+  不带透明度的十六进制颜色，如：#1890ff
+- p: number  
+  透明度，0-1
+
+**返回：**  
+string
+
+**示例：**
+
+```ts
+rgba('#f40', 0.1)
+// 'rgba(255,68,0,0.1)'
 ```
