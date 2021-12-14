@@ -10,9 +10,9 @@ table 类型控件
   | cellHight | number | 行高，默认 30 |
   | cellWidth | number | 列宽，默认 100 |
   | activeCellStyle | string | 选中框颜色 |
-  | button | object |操作列按钮配置。 可参考[Pen](/api/pen) \(pen.name ='button'\) |
-  | header | object |表头配置。可参考[Pen](/api/pen) \(pen.name = 'rectangle'\) |
-  | header.beginIndex | number |行索引开始值 |
+  |buttonInterval|number | 操作列按钮之间的间距，button 为 Array 时有效 |
+  | button | object\|Array |操作列按钮配置。为 object 时按钮居中显示。可参考[Pen](/api/pen) \(pen.name ='button'\) |
+  | header | object |表头样式配置。可参考[Pen](/api/pen) \(pen.name = 'rectangle'\) |
   | col | {<br/> name:string,//列名 <br/>key:string,//列关键字，序号列和操作列内置 key 分别为'index'、'operation' <br/>width:number//列宽 <br/>}[] |列配置 |
   | row | { <br/> 列名 n:'数据值 n', <br/> ...行样式配置<br/> }[] |每一行数据及样式配置，样式配置可参考[Pen](/api/pen) \(pen.name = 'rectangle'\) |
 
@@ -33,20 +33,37 @@ const table = {
     colCount: 5,
     cellWidth: 150,
     activeCellStyle: "#1890ff",
-    button: {
-      width: 50,
-      height: 20,
-      text: "提交",
-      events: [
-        //为按钮添加事件
-        //pen.currentData中保存了该行的数据
-        {
-          action: 5,
-          name: "click",
-          value: 'console.log("topology",pen.currentData)',
-        },
-      ],
-    },
+    button: [
+      {
+        width: 50,
+        height: 20,
+        text: "提交",
+        events: [
+          {
+            action: 5,
+            name: "click",
+            value: "console.log(pen.dataSet)", //dataSet字段提供给用户可操作的数据
+          },
+        ],
+      },
+      {
+        width: 50,
+        height: 20,
+        text: "删除",
+        events: [
+          {
+            action: 5,
+            name: "click",
+            value: `
+                       let tablePen = topology.find(pen.dataSet.tableId)[0];
+                       console.log(tablePen)
+                       tablePen.data.splice(pen.dataSet.index,1);
+                       topology.setValue(tablePen);
+                    `,
+          },
+        ],
+      },
+    ],
     col: [
       {
         width: 50,
@@ -66,19 +83,13 @@ const table = {
         key: "colC",
       },
       {
-        width: 100,
+        width: 130,
         name: "操作",
         key: "operation", //内置列关键字
       },
     ],
     header: {
-      background: "#708090",
-      globalAlpha: 0.5,
-      textColor: "#ff0000",
-      hoverTextColor: "#ff0000",
-      activeTextColor: "#ff0000",
-      height: 20,
-      beginIndex: 1,
+      fontWeight: "bold",
     },
   },
   data: [
@@ -117,4 +128,4 @@ topology.addPens([table]);
 1. 编辑模式下操作视图可以直接引起数据的更新;
 2. 操作列的按钮点击事件可以直接获取该行数据。
 
-【注意】table 控件行数和列数配置后就不能再次修改。不要缩放画布。
+【注意】table 控件行数和列数配置后就不能再次修改。缩放画布后不要对 table 操作。
