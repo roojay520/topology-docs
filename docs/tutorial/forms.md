@@ -1,6 +1,6 @@
 # 表单
 
-表单控件包含：按钮、单选框、多选框、开关、滑动输入条
+表单控件包含：按钮、单选框、多选框、开关、滑动输入条。
 
 ## button 按钮
 
@@ -37,12 +37,13 @@ topology.addPen(button);
 
 - **数据**
 
-| 名称       | 类型                 | 描述                                      |
-| ---------- | -------------------- | ----------------------------------------- |
-| direction  | string               | 单选框的排列方向('vertical'/'horizontal') |
-| options    | string[] \| object[] | 选项值                                    |
-| selection  | string               | 选中值                                    |
-| forbiddens | string[]             | 禁用选项                                  |
+| 名称       | 类型                 | 描述                                          |
+| ---------- | -------------------- | --------------------------------------------- |
+| direction  | string               | 单选框的排列方向('vertical'\|'horizontal')    |
+| interval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
+| options    | string[] \| object[] | 选项值                                        |
+| selection  | string               | 选中值                                        |
+| forbiddens | string[]             | 禁用选项                                      |
 
 - **使用**
 
@@ -72,12 +73,13 @@ topology.addPens([radio]);
 
 - **数据**
 
-| 名称       | 类型                | 描述                                      |
-| ---------- | ------------------- | ----------------------------------------- |
-| direction  | string              | 单选框的排列方向('vertical'/'horizontal') |
-| options    | string[]\| object[] | 选项值                                    |
-| selections | string[]            | 选中选项                                  |
-| forbiddens | string[]            | 禁用选项                                  |
+| 名称       | 类型                | 描述                                          |
+| ---------- | ------------------- | --------------------------------------------- |
+| direction  | string              | 复选框的排列方向('vertical'\|'horizontal')    |
+| interval   | number              | 复选框选项间的间距（默认 20，仅针对垂直分布） |
+| options    | string[]\| object[] | 选项值                                        |
+| selections | string[]            | 选中选项                                      |
+| forbiddens | string[]            | 禁用选项                                      |
 
 - **使用**
 
@@ -118,10 +120,10 @@ topology.addPens([checkbox]);
 - **使用**
 
 ```js
-const leSwitch = {
-  name: "leSwitch",
-  x: 300,
-  y: 300,
+const lSwitch = {
+  name: "switch",
+  x: 100,
+  y: 100,
   height: 30,
   width: 60,
   isOpen: false,
@@ -132,7 +134,7 @@ const leSwitch = {
   //isForbidden: true,
 };
 
-topology.addPen(leSwitch);
+topology.addPen(lSwitch);
 ```
 
 ## slider 滑动输入条
@@ -222,7 +224,12 @@ const select = {
   hoverTextColor: "#000000FF",
   activeTextColor: "#000000FF",
   textLeft: 10,
-  dropdownList: ["选项1", "选项2", "选项3"],
+  // dropdownList: ["选项1", "选项2", "选项3"],
+  dropdownList: [
+    { text: "选项1", background: "#ff0000" },
+    { text: "选项2", background: "#00ff00" },
+    { text: "选项3", background: "#0000ff" },
+  ],
 };
 
 topology.addPen(select);

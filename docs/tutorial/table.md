@@ -7,9 +7,9 @@ table 类型控件
   | ------------------------------- | -------- | -------------------------------- |
   | rowCount | number | 行数，默认 5 |
   | colCount | number | 列数，默认 5 |
-  | rowHight | number | 行高，默认 30 |
-  | colWidth | number | 列宽，默认 100 |
-  | selectStyle | string | 选中框颜色 |
+  | cellHight | number | 行高，默认 30 |
+  | cellWidth | number | 列宽，默认 100 |
+  | activeCellStyle | string | 选中框颜色 |
   | button | object |操作列按钮配置。 可参考[Pen](/api/pen) \(pen.name ='button'\) |
   | header | object |表头配置。可参考[Pen](/api/pen) \(pen.name = 'rectangle'\) |
   | header.beginIndex | number |行索引开始值 |
@@ -30,13 +30,22 @@ const table = {
   color: "#000000",
   table: {
     rowCount: 10,
-    colCount: 6,
-    colWidth: 150,
-    selectStyle: "#1890ff",
+    colCount: 5,
+    cellWidth: 150,
+    activeCellStyle: "#1890ff",
     button: {
       width: 50,
       height: 20,
       text: "提交",
+      events: [
+        //为按钮添加事件
+        //pen.currentData中保存了改行的数据
+        {
+          action: 5,
+          name: "click",
+          value: 'console.log("topology",pen.currentData)',
+        },
+      ],
     },
     col: [
       {
@@ -71,33 +80,33 @@ const table = {
       height: 20,
       beginIndex: 1,
     },
-    row: [
-      {
-        colA: "第一行 第一列",
-        colB: "第一行 第二列",
-        colC: "第一行 第三列",
-      },
-      {
-        colA: "第二行 第一列",
-        colB: "第二行 第二列",
-        colC: "第二行 第三列",
-      },
-      {
-        colA: "第三行 第一列",
-        colB: "第三行 第二列",
-        colC: "第三行 第三列",
-      },
-      {
-        colA: "第四行 第一列",
-        colB: "第四行 第二列",
-        colC: "第四行 第三列",
-        textColor: "#ff0000",
-        height: 50,
-        hoverTextColor: "#ff0000",
-        activeTextColor: "#ff0000",
-      },
-    ],
   },
+  data: [
+    {
+      colA: "第一行 第一列",
+      colB: "第一行 第二列",
+      colC: "第一行 第三列",
+    },
+    {
+      colA: "第二行 第一列",
+      colB: "第二行 第二列",
+      colC: "第二行 第三列",
+    },
+    {
+      colA: "第三行 第一列",
+      colB: "第三行 第二列",
+      colC: "第三行 第三列",
+    },
+    {
+      colA: "第四行 第一列",
+      colB: "第四行 第二列",
+      colC: "第四行 第三列",
+      textColor: "#ff0000",
+      height: 50,
+      hoverTextColor: "#ff0000",
+      activeTextColor: "#ff0000",
+    },
+  ],
 };
 
 topology.addPens([table]);
@@ -108,4 +117,4 @@ topology.addPens([table]);
 1. 编辑模式下操作视图可以直接引起数据的更新;
 2. 操作列的按钮点击事件可以直接获取该行数据。
 
-【注意】table 控件行数和列数配置后就不能再次修改。
+【注意】table 控件行数和列数配置后就不能再次修改。不要缩放画布。

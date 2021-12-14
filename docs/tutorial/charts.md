@@ -6,8 +6,6 @@
 
 ## lineChart 折线图
 
-xxxx
-
 - **数据**
 
 当前支持的配置如下：
@@ -27,7 +25,7 @@ const linechart = {
   y: 100,
   width: 400,
   height: 200,
-  lecharts: {
+  charts: {
     option: {
       color: [
         "#1890ff",
@@ -58,11 +56,42 @@ const linechart = {
 };
 
 topology.addPen(linechart);
+
+//修改数据
+topology.setValue({
+  id: "折线图节点id",
+  charts: {
+    option: {
+      color: [
+        "#1890ff",
+        "#2FC25B",
+        "#FACC14",
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+      ],
+      xAxis: {
+        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      },
+      series: [
+        {
+          name: "Email",
+          data: [180, 1932, 1901, 1934, 190, 1830, 1920],
+          smooth: false,
+        },
+        {
+          name: "Video Ads",
+          data: [1710, 192, 1901, 1834, 1700, 180, 1720],
+          smooth: true,
+        },
+      ],
+    },
+  },
+});
 ```
 
 ## histogram 柱状图
-
-xxxx
 
 - **数据**
 
@@ -82,7 +111,7 @@ const histogram = {
   y: 100,
   width: 400,
   height: 200,
-  lecharts: {
+  charts: {
     option: {
       color: [
         "#1890ff",
@@ -116,8 +145,6 @@ topology.addPen(histogram);
 
 ## pieChart 饼图
 
-xxxx
-
 - **数据**
 
   当前支持的配置如下：
@@ -142,7 +169,7 @@ const pie = {
   y: 300,
   width: 400,
   height: 200,
-  lecharts: {
+  charts: {
     option: {
       color: [
         "#1890ff",
@@ -205,8 +232,6 @@ topology.addPen(pie);
 
 ## gauge 仪表盘
 
-xxxx
-
 - **数据**
 
   series 的可用属性配置如下：
@@ -255,7 +280,7 @@ const gauge = {
   width: 400,
   height: 400,
   animateCycle: 1, //动画执行一次
-  lecharts: {
+  charts: {
     option: {
       series: [
         {
@@ -328,8 +353,8 @@ const clock = {
   width: 400,
   height: 400,
   animateCycle: 1,
-  lechartsType: "clock", //时钟效果
-  lecharts: {
+  chartsType: "clock", //时钟效果
+  charts: {
     option: {
       series: [
         {
