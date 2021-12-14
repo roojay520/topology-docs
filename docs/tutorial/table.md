@@ -39,7 +39,7 @@ const table = {
       text: "提交",
       events: [
         //为按钮添加事件
-        //pen.currentData中保存了改行的数据
+        //pen.currentData中保存了该行的数据
         {
           action: 5,
           name: "click",

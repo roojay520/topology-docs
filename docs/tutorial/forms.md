@@ -189,6 +189,7 @@ const input = {
   y: 100,
   height: 50,
   width: 200,
+  input: true,
   name: "rectangle",
   borderRadius: 0.05,
   ellipsis: true,
