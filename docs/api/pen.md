@@ -2154,6 +2154,66 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+### autoFrom
+
+仅连线有效。表示连线起点是否为自动计算关联的最近的锚点。
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+  autoFrom: true,
+};
+
+topology.addPen(line);
+topology.inactive();
+
+// 需要连线连接到一个Pen，这里暂时没有构造关联数据
+```
+
+### autoTo
+
+仅连线有效。表示连线终点是否为自动计算关联的最近的锚点。
+
+**数据类型：** boolean
+
+**示例：**
+
+```js
+const line = {
+  type: 1,
+  name: 'line',
+  lineName: 'curve',
+  anchors: [
+    { x: 0.1, y: 0.1 },
+    { x: 1, y: 1 },
+  ],
+  x: 300,
+  y: 100,
+  width: 100,
+  height: 100,
+  autoTo: true,
+};
+
+topology.addPen(line);
+topology.inactive();
+
+// 需要连线连接到一个Pen，这里暂时没有构造关联数据
+```
+
 ### calculative
 
 画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
