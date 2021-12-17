@@ -225,3 +225,21 @@ interface Where {
   fnJs?: string;    // 条件函数js代码，次高优先级
 }
 ```
+
+## 文本区域
+
+### worldTextRect
+
+- 影响  
+该区域是文字的区域，它的改变会影响双击展示输入框的大小；会影响文字的换行情况，即横向超出；会影响文字行数超出的省略号，即纵向超出。
+- 受影响  
+该区域在 worldRect 区域的基础上，受到 padding，textLeft，textTop，textWidth，textHeight 属性的影响。
+- 图示
+![worldTextRect](/img/worldTextRect.png)
+
+
+### textDrawRect
+
+该区域是文字的实际绘制所占的区域，它的宽度为多行文本中最大的宽度，高度为 `行数 * lineHeight * fontSize`。  
+可以通过设置 textBackground 属性来查看当前 textDrawRect 的区域大小。
+
