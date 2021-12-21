@@ -2,7 +2,7 @@ module.exports = {
   title: '乐吾乐 Topology',
   description: '乐吾乐Topology文档中心',
 
-  base: 'topology-documents',
+  base: '/topology-documents/',
 
   themeConfig: {
     logo: '/img/logo.png',
