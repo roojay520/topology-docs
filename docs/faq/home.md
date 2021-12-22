@@ -32,7 +32,7 @@ yarn build
 
 ## 关于企业版
 
-参考： [教程 - 企业版](/tutorial/commercial.html)
+参考： [教程 - 企业版](/topology-documents/tutorial/commercial.html)
 
 ## 开源版有核心算法没开放
 
@@ -46,7 +46,7 @@ yarn build
 
 Github： https://github.com/le5le-com/topology.js/issues
 
-交流群： [交流群](/community/wechat.html)
+交流群： [交流群](/topology-documents/community/wechat.html)
 
 Email： business@le5le.com
 

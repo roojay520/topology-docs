@@ -221,8 +221,8 @@ export default TopologyContainer;
 
 ## 如何学习
 
-1. 跟着[快速上手](/tutorial/start)做一遍，先有个总体认知
+1. 跟着[快速上手](/topology-documents/tutorial/start)做一遍，先有个总体认知
 
-2. 看一遍我们的[视频教程](/videos/home)，有个全面认识
+2. 看一遍我们的[视频教程](/topology-documents/videos/home)，有个全面认识
 
-3. 多学习[社区](/awesome/home)教程、示例等
+3. 多学习[社区](/topology-documents/awesome/home)教程、示例等

@@ -1,6 +1,6 @@
 # 放大镜
 
-![乐吾乐topology放大镜](/img/magnifier.png)
+![乐吾乐topology放大镜](/topology-documents/img/magnifier.png)
 
 在线体验： http://topology.le5le.com/workspace
 

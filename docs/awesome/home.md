@@ -2,9 +2,9 @@
 
 ## 官方教程
 
-[快速上手](/tutorial/start)
+[快速上手](/topology-documents/tutorial/start)
 
-[用户使用手册](/instruction/home)
+[用户使用手册](/topology-documents/instruction/home)
 
 ## 开发者教程
 

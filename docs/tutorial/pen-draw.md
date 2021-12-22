@@ -2,7 +2,7 @@
 
 钢笔是和其他众多绘图工具（Protoshop、Sketch、Illustrator）中一致的钢笔工具，能够很方便的在线绘制各种小图标
 
-![乐吾乐topology钢笔工具](/img/pen.png)
+![乐吾乐topology钢笔工具](/topology-documents/img/pen.png)
 
 在线体验： http://topology.le5le.com/workspace
 
