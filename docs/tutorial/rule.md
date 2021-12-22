@@ -2,7 +2,7 @@
 
 画布顶部和左边标尺栏
 
-![乐吾乐topology标尺](/topology-documents/img/rule.png)
+![乐吾乐topology标尺](/img/rule.png)
 
 在线体验： http://topology.le5le.com/workspace
 

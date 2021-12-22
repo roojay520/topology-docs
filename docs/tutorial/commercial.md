@@ -8,10 +8,10 @@ Topology 企业版是基于 topology 核心库开发的功能丰富的商用版�
 企业版属于核心引擎的上层应用开发的产品之一。具体可参考区别下面图示：
 
 **开源版：只是画布 Canvas，可以定制开发各种上层产品**  
-![开源核心库](/topology-documents/img/canvas.png)
+![开源核心库](/img/canvas.png)
 
 **企业版：具有丰富功能的编辑器**  
-![企业版](/topology-documents/img/business.png)
+![企业版](/img/business.png)
 
 ## 为什么选企业版
 

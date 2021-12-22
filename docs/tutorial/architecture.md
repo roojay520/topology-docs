@@ -2,7 +2,7 @@
 
 topology 可视化引擎主要由：画笔（节点、连线）、属性数据、算法、状态、事件、动画等构成。
 
-![乐吾乐topology架构图](/topology-documents/img/architecture.png)
+![乐吾乐topology架构图](/img/architecture.png)
 
 **画笔**  
 画笔继承 rect，加上自有属性组成。

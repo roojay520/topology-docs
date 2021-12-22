@@ -2,7 +2,7 @@
 
 铅笔是可以任意涂鸦的绘图小工具
 
-![乐吾乐topology铅笔工具](/topology-documents/img/pencil.png)
+![乐吾乐topology铅笔工具](/img/pencil.png)
 
 在线体验： http://topology.le5le.com/workspace
 

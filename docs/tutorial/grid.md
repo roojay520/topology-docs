@@ -2,7 +2,7 @@
 
 画布背景网格
 
-![乐吾乐topology网格](/topology-documents/img/grid.png)
+![乐吾乐topology网格](/img/grid.png)
 
 在线体验： http://topology.le5le.com/workspace
 

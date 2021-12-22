@@ -1,6 +1,6 @@
 # 画笔
 
-画笔是 topology 的绘画单元。详情可参考： [Pen API](/topology-documents/api/pen)
+画笔是 topology 的绘画单元。详情可参考： [Pen API](/api/pen)
 
 ## 类型 type
 
@@ -235,7 +235,7 @@ interface Where {
 - 受影响  
   该区域在 worldRect 区域的基础上，受到 padding，textLeft，textTop，textWidth，textHeight 属性的影响。
 - 图示
-  ![worldTextRect](/topology-documents/img/worldTextRect.png)
+  ![worldTextRect](/img/worldTextRect.png)
 
 ### textDrawRect
 

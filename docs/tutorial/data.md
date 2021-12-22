@@ -34,7 +34,7 @@ topology.connectMqtt();
 
 2. 自动监听 mqtt 数据
 
-topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/topology-documents/api/pen) 数据格式发送数据即可。
+topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/api/pen) 数据格式发送数据即可。
 
 <div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
@@ -80,7 +80,7 @@ topology.connectWebsocket();
 
 2. 自动监听 websocket 数据
 
-topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/topology-documents/api/pen) 数据格式发送数据即可。
+topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](/api/pen) 数据格式发送数据即可。
 
 <div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
@@ -127,7 +127,7 @@ setInterval(() => {
 
 ## 解析自定义数据格式
 
-当数据格式不是引擎可识别的 [Pen](/topology-documents/api/pen) 数据格式，支持自定义函数解析
+当数据格式不是引擎可识别的 [Pen](/api/pen) 数据格式，支持自定义函数解析
 
 ```js
 // 方式1：直接设置socket回调函数
