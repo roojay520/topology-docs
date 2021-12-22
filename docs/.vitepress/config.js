@@ -8,7 +8,7 @@ module.exports = {
     logo: '/img/logo.png',
 
     algolia: {
-      apiKey: '',
+      apiKey: '76f638d8a8116f54f5032c23161d1518',
       indexName: 'le5le-topology',
     },
 
