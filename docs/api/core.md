@@ -4,18 +4,18 @@
 
 ## 属性
 
-| 名称               | 类型                                       | 描述                                       |
-| ------------------ | ------------------------------------------ | ------------------------------------------ |
-| parent             | HTMLElement                                | 可视化引擎的父容器                         |
-| options            | [Options](/tutorial/topology#options-选项) | 可视化引擎选项                             |
-| canvas             | [Canvas](/api/canvas)                      | 绘画画板                                   |
-| store              | [TopologyStore](#topologystore)            | 绘画数据。包括文件数据和各种状态数据等     |
-| websocket          | WebSocket                                  | 原生 WebSocket 客户端。仅连接成功才有实例  |
-| mqttClient         | Mqtt.Client                                | mqtt.js 通信客户端                         |
-| beforeAddPen       | (pen: Pen) => boolean                      | 添加 Pen 前生命周期函数，返回 true 允许    |
-| beforeRemovePen    | (pen: Pen) => boolean                      | 移除 Pen 前生命周期函数，返回 true 允许    |
-| beforeAddAnchor    | (pen: Pen, anchor: Point) => boolean       | 添加 Anchor 前生命周期函数，返回 true 允许 |
-| beforeRemoveAnchor | (pen: Pen, anchor: Point) => boolean       | 移除 Anchor 前生命周期函数，返回 true 允许 |
+| 名称               | 类型                                         | 描述                                       |
+| ------------------ | -------------------------------------------- | ------------------------------------------ |
+| parent             | HTMLElement                                  | 可视化引擎的父容器                         |
+| options            | [Options](../tutorial/topology#options-选项) | 可视化引擎选项                             |
+| canvas             | [Canvas](./canvas)                           | 绘画画板                                   |
+| store              | [TopologyStore](#topologystore)              | 绘画数据。包括文件数据和各种状态数据等     |
+| websocket          | WebSocket                                    | 原生 WebSocket 客户端。仅连接成功才有实例  |
+| mqttClient         | Mqtt.Client                                  | mqtt.js 通信客户端                         |
+| beforeAddPen       | (pen: Pen) => boolean                        | 添加 Pen 前生命周期函数，返回 true 允许    |
+| beforeRemovePen    | (pen: Pen) => boolean                        | 移除 Pen 前生命周期函数，返回 true 允许    |
+| beforeAddAnchor    | (pen: Pen, anchor: Point) => boolean         | 添加 Anchor 前生命周期函数，返回 true 允许 |
+| beforeRemoveAnchor | (pen: Pen, anchor: Point) => boolean         | 移除 Anchor 前生命周期函数，返回 true 允许 |
 
 ## 函数
 
@@ -28,7 +28,7 @@
 - parent ：string | HTMLElement  
   可视化引擎的父容器 id 或 Element 元素
 
-- options ：[Options](/tutorial/topology#options-选项)  
+- options ：[Options](../tutorial/topology#options-选项)  
   可视化引擎选项，可缺省
 
 **返回：**  
@@ -50,7 +50,7 @@ var topology = new Topology(div, options);
 
 **参数：**
 
-- options ：[Options](/tutorial/topology#options-选项)  
+- options ：[Options](../tutorial/topology#options-选项)  
   可视化引擎选项
 
 **返回：**  
@@ -109,7 +109,7 @@ topology.resize(1000, 800);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 - history: boolean  
@@ -140,7 +140,7 @@ topology.addPen(pen, true);
 
 **参数：**
 
-- pen: [Pen](/api/pen)[]  
+- pen: [Pen](./pen)[]  
   画笔数组
 
 - history: boolean  
@@ -209,7 +209,7 @@ topology.render(Infinity);
 
 **参数：**
 
-- data: [TopologyData](/tutorial/topology#文件数据)  
+- data: [TopologyData](../tutorial/topology#文件数据)  
   json 图纸数据。可为空，表示打开新的空白文档
 
 **返回：**  
@@ -232,7 +232,7 @@ topology.open({ pens: [pen] });
 
 ### connectSocket
 
-消息通信重连（默认自动连接）。需要提前已经设置过连接配置。更多用法参考：[实时数据监听](/tutorial/data)
+消息通信重连（默认自动连接）。需要提前已经设置过连接配置。更多用法参考：[实时数据监听](../tutorial/data)
 
 **参数：**  
 无
@@ -255,7 +255,7 @@ topology.connectSocket();
 **参数：**
 
 - lineName ：string  
-  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](/tutorial/line-ai)扩展。
+  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](../tutorial/line-ai)扩展。
 
   当 lineName 为空时，表示取消画线
 
@@ -334,11 +334,11 @@ topology.finishPencil();
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   当前连线
 
 - lineName : string  
-  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](/tutorial/line-ai)扩展。
+  线类型名称：内置 curve、polyline、line、mind 4 种。可[自定义](../tutorial/line-ai)扩展。
 
 **返回：**  
 void
@@ -353,7 +353,7 @@ topology.updateLineType(line, 'line');
 
 ### addDrawLineFn
 
-扩展自定义连线类型。可参考：[自定义连线算法](/tutorial/line-ai)
+扩展自定义连线类型。可参考：[自定义连线算法](../tutorial/line-ai)
 
 **参数：**
 
@@ -367,7 +367,7 @@ topology.updateLineType(line, 'line');
 void
 
 **示例：**
-[自定义连线算法](/tutorial/line-ai)
+[自定义连线算法](../tutorial/line-ai)
 
 ### removeDrawLineFn
 
@@ -535,7 +535,7 @@ void
 
 **示例：**
 
-参考：[自定义图形库](/tutorial/make-component)
+参考：[自定义图形库](../tutorial/make-component)
 
 ### registerCanvasDraw
 
@@ -551,7 +551,7 @@ void
 
 **示例：**
 
-参考：[自定义图形库](/tutorial/make-component)
+参考：[自定义图形库](../tutorial/make-component)
 
 ### registerAnchors
 
@@ -567,7 +567,7 @@ void
 
 **示例：**
 
-参考：[自定义图形库](/tutorial/make-component)
+参考：[自定义图形库](../tutorial/make-component)
 
 ### registerDock
 
@@ -575,10 +575,10 @@ void
 
 **参数：**
 
-- store: [TopologyStore](/tutorial/topology#topologystore)  
+- store: [TopologyStore](../tutorial/topology#topologystore)  
   引擎数据存储对象
 
-- rect: [Rect](/api/rect)  
+- rect: [Rect](./rect)  
   拖拽区域
 
 **返回：**  
@@ -639,11 +639,11 @@ var pens = topology.find('aaa');
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔对象
 
 **返回：**  
-[Rect](/api/rect)
+[Rect](./rect)
 
 **示例：**
 
@@ -657,10 +657,10 @@ var rect = topology.getPenRect(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
-- rect: [Rect](/api/rect)
+- rect: [Rect](./rect)
   区域
 
 - render : boolean  
@@ -741,7 +741,7 @@ topology.stopAnimate([pen]);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**
@@ -777,7 +777,7 @@ topology.combine(pens);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**  
@@ -914,7 +914,7 @@ topology.translatePens([pen], 10, 10);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 - root : boolean  
@@ -1130,7 +1130,7 @@ topology.closeMqtt();
 
 ### setValue
 
-修改 [Pen](/api/pen) 属性值
+修改 [Pen](./pen) 属性值
 
 **参数：**
 
@@ -1199,7 +1199,7 @@ topology.pushHistory({ type: EditType.Delete, pens });
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**  
@@ -1217,7 +1217,7 @@ topology.showInput(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**  
@@ -1253,7 +1253,7 @@ topology.clearDropdownList();
 
 **参数：**
 
-- parent: [Pen](/api/pen)  
+- parent: [Pen](./pen)  
   父画笔
 
 - children: Pen[]  
@@ -1277,10 +1277,10 @@ topology.pushChildren(pen, [child]);
 - ctx: CanvasRenderingContext2D
   CanvasRenderingContext2D
 
-- pen: [Pen](/api/pen)
+- pen: [Pen](./pen)
   画笔
 
-- rect: [Rect](/api/rect)
+- rect: [Rect](./rect)
   区域。默认 pen 自身区域
 
 **返回：**  
@@ -1344,7 +1344,7 @@ topology.downloadPng();
   画笔数组。默认为空，表示整个图纸
 
 **返回：**  
-[Rect](/api/rect)
+[Rect](./rect)
 
 **示例：**
 
@@ -1381,7 +1381,7 @@ topology.fitView(true, 20);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   定位的画笔
 
 **返回：**  
@@ -1625,7 +1625,7 @@ topology.toggleAnchorHand();
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   被置顶的画笔
 
 - pens: Pen[]  
@@ -1646,7 +1646,7 @@ topology.top(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   被置底的画笔
 
 - pens: Pen[]  
@@ -1667,7 +1667,7 @@ topology.bottom(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   被移动的画笔
 
 - pens: Pen[]  
@@ -1688,7 +1688,7 @@ topology.up(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   被移动的画笔
 
 - pens: Pen[]  
@@ -1709,7 +1709,7 @@ topology.down(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   被移动的画笔
 
 - index: number  
@@ -1754,7 +1754,7 @@ topology.changePenId('1', '2');
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 - type: 'all' | 'in' | 'out' = 'all'  
@@ -1775,7 +1775,7 @@ var lines = topology.getLines(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**  
@@ -1793,7 +1793,7 @@ var pens = topology.nextNode(pen);
 
 **参数：**
 
-- pen: [Pen](/api/pen)  
+- pen: [Pen](./pen)  
   画笔
 
 **返回：**  
@@ -1811,7 +1811,7 @@ var pens = topology.previousNode(pen);
 
 **参数：**
 
-- pens: [Pen](/api/pen)[]  
+- pens: [Pen](./pen)[]  
   画笔数组。默认整个画布
 
 **返回：**  

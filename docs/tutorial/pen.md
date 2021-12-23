@@ -1,6 +1,6 @@
 # 画笔
 
-画笔是 topology 的绘画单元。详情可参考： [Pen API](/api/pen)
+画笔是 topology 的绘画单元。详情可参考： [Pen API](../api/pen)
 
 ## 类型 type
 

@@ -2,7 +2,7 @@
 
 连线是连接 pen.anchors 组成的多线段。
 
-其中，锚点类型为[Point](/api/point)。
+其中，锚点类型为[Point](../api/point)。
 
 当两个锚点都没有 prev 和 next 时，表示直线端。
 

@@ -13,7 +13,7 @@ module.exports = {
     },
 
     nav: [
-      { text: '教程', link: '/tutorial/start', activeMatch: '^/tutorial/' },
+      { text: '教程', link: '/tutorial/introduction', activeMatch: '^/tutorial/' },
       { text: 'API', link: '/api/core', activeMatch: '^/api/' },
       {
         text: '视频教程',

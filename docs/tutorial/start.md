@@ -1,16 +1,16 @@
 # 快速上手
 
-<br/>
-<div style="color:#fa541c">【注意】初始化引擎后，会在 window 下注入 topology 对象（window.topology），表示当前 topology 实例。默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。</div>
-<br/>
+::: tip 提示  
+初始化引擎后，会在 window 下注入 topology 对象（即 window.topology）。
 
----
+默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。
+:::
 
-<br/>
+::: tip 划重点
+所有标准 js 语法均可打开 [topology 官网编辑器](http://topology.le5le.com/workspace) ，在浏览器控制台直接运行查看效果
+:::
 
-<div style="color:#fa541c">【画重点】所有标准 js 语法均可以在 [topology 官网编辑器](http://topology.le5le.com/workspace) 直接运行查看效果。</div>
-
-例如：
+例如，在[topology 官网编辑器](http://topology.le5le.com/workspace) 页面的控制台运行：
 
 ```js
 // 定义一个pen，矩形
@@ -221,8 +221,8 @@ export default TopologyContainer;
 
 ## 如何学习
 
-1. 跟着[快速上手](/tutorial/start)做一遍，先有个总体认知
+1. 跟着[快速上手](./start)做一遍，先有个总体认知
 
-2. 看一遍我们的[视频教程](/videos/home)，有个全面认识
+2. 看一遍我们的[视频教程](../videos/home)，有个全面认识
 
-3. 多学习[社区](/awesome/home)教程、示例等
+3. 多学习[社区](../awesome/home)教程、示例等

@@ -1,6 +1,6 @@
 # Pen
 
-继承 [Rect](/api/rect)。
+继承 [Rect](./rect)。
 
 ## 属性
 
@@ -1229,7 +1229,7 @@ topology.inactive();
 
 ### icon
 
-图标 Unicode 编码。可参考： [字体图形库教程](/tutorial/icons)
+图标 Unicode 编码。可参考： [字体图形库教程](../tutorial/icons)
 
 **数据类型：** string
 
@@ -1870,7 +1870,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### animateSpan
 
@@ -1880,7 +1880,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### animateColor
 
@@ -1890,7 +1890,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### animateLineDash
 
@@ -1900,7 +1900,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### animateReverse
 
@@ -1910,7 +1910,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### keepAnimateState
 
@@ -1920,7 +1920,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### lineAnimateType
 
@@ -1930,7 +1930,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### frames
 
@@ -1940,7 +1940,7 @@ topology.inactive();
 
 **示例：**
 
-参考[动画教程](/tutorial/animate)
+参考[动画教程](../tutorial/animate)
 
 ### input
 
@@ -2018,7 +2018,7 @@ topology.inactive();
 
 **示例：**
 
-参考[教程](/tutorial/pen#交互事件)
+参考[教程](../tutorial/pen#交互事件)
 
 ### iframe
 
@@ -2049,7 +2049,7 @@ pen.name='video'时，音视频 url
 
 **示例：**
 
-参考[视频教程](/tutorial/video)
+参考[视频教程](../tutorial/video)
 
 ### autoPolyline
 
@@ -2308,7 +2308,7 @@ getAllChildren(pen);
 
 ### calcPenRect
 
-根据世界坐标计算画布中相对[坐标](/api/pen#x-y-width-height) 。一般手动用于修改了画笔世界坐标位置后，更新相对坐标，以便保存。
+根据世界坐标计算画布中相对[坐标](./pen#x-y-width-height) 。一般手动用于修改了画笔世界坐标位置后，更新相对坐标，以便保存。
 
 **参数：**
 

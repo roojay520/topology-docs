@@ -127,39 +127,39 @@ onTouchstart = (e) => {
 
 通过 topology.data()函数获取，返回数据格式如下：
 
-| 名称             | 类型                         | 描述                                               |
-| ---------------- | ---------------------------- | -------------------------------------------------- |
-| color            | string                       | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
-| activeColor      | string                       | 画笔选中颜色                                       |
-| activeBackground | string                       | 画笔选中背景颜色                                   |
-| pens             | [Pen[]](/tutorial/pen)       | 画笔数组                                           |
-| x                | number                       | 画布 x 偏移                                        |
-| y                | number                       | 画布 y 偏移                                        |
-| scale            | number                       | 画布缩放比例                                       |
-| origin           | Point                        | 画布原点                                           |
-| center           | Point                        | 画布缩放中心点                                     |
-| locked           | [LockState](/api/pen#locked) | 画布锁定                                           |
-| websocket        | string                       | websocket 通信地址                                 |
-| mqtt             | string                       | mqtt 通信地址                                      |
-| mqttTopics       | string                       | mqtt 订阅主题                                      |
-| background       | string                       | 画布背景颜色                                       |
-| socketCbJs       | string                       | 消息通信回调函数 js 代码                           |
-| socketCbFn       | Function                     | 消息通信回调函数名                                 |
-| initJs           | string                       | 打开图纸后，执行的初始脚本                         |
-| grid             | boolean                      | 是否显示网格                                       |
-| gridColor        | string                       | 网格颜色                                           |
-| gridSize         | number                       | 网格大小                                           |
-| rule             | boolean                      | 是否显示标尺                                       |
-| ruleColor        | string                       | 标尺颜色                                           |
-| fromArrow        | string                       | 默认起始箭头                                       |
-| toArrow          | string                       | 默认终点箭头                                       |
-| lineWidth        | number                       | 默认线宽                                           |
+| 名称             | 类型                           | 描述                                               |
+| ---------------- | ------------------------------ | -------------------------------------------------- |
+| color            | string                         | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
+| activeColor      | string                         | 画笔选中颜色                                       |
+| activeBackground | string                         | 画笔选中背景颜色                                   |
+| pens             | [Pen[]](./pen)                 | 画笔数组                                           |
+| x                | number                         | 画布 x 偏移                                        |
+| y                | number                         | 画布 y 偏移                                        |
+| scale            | number                         | 画布缩放比例                                       |
+| origin           | Point                          | 画布原点                                           |
+| center           | Point                          | 画布缩放中心点                                     |
+| locked           | [LockState](../api/pen#locked) | 画布锁定                                           |
+| websocket        | string                         | websocket 通信地址                                 |
+| mqtt             | string                         | mqtt 通信地址                                      |
+| mqttTopics       | string                         | mqtt 订阅主题                                      |
+| background       | string                         | 画布背景颜色                                       |
+| socketCbJs       | string                         | 消息通信回调函数 js 代码                           |
+| socketCbFn       | Function                       | 消息通信回调函数名                                 |
+| initJs           | string                         | 打开图纸后，执行的初始脚本                         |
+| grid             | boolean                        | 是否显示网格                                       |
+| gridColor        | string                         | 网格颜色                                           |
+| gridSize         | number                         | 网格大小                                           |
+| rule             | boolean                        | 是否显示标尺                                       |
+| ruleColor        | string                         | 标尺颜色                                           |
+| fromArrow        | string                         | 默认起始箭头                                       |
+| toArrow          | string                         | 默认终点箭头                                       |
+| lineWidth        | number                         | 默认线宽                                           |
 
 ## 成员属性
 
 | 名称       | 类型                            | 描述                                      |
 | ---------- | ------------------------------- | ----------------------------------------- |
-| canvas     | [Canvas](/api/canvas)           | 绘画画板                                  |
+| canvas     | [Canvas](../api/canvas)         | 绘画画板                                  |
 | store      | [TopologyStore](#topologystore) | 绘画数据。包括文件数据和各种状态数据等    |
 | websocket  | WebSocket                       | 原生 WebSocket 客户端。仅连接成功才有实例 |
 | mqttClient | Mqtt.Client                     | mqtt.js 通信客户端                        |
@@ -184,92 +184,92 @@ onTouchstart = (e) => {
 
 ## Function 函数
 
-| 名称                                                 | 描述                                |
-| ---------------------------------------------------- | ----------------------------------- |
-| [constructor](/api/core#constructor)                 | 可视化引擎构造函数                  |
-| [setOptions](/api/core#setOptions)                   | 设置引擎选项                        |
-| [getOptions](/api/core#getOptions)                   | 获取引擎选项                        |
-| [resize](/api/core#resize)                           | 重置画布大小                        |
-| [addPen](/api/core#addPen)                           | 添加单个画笔                        |
-| [addPens](/api/core#addPens)                         | 批量添加画笔                        |
-| [render](/api/core#render)                           | 渲染（重绘）                        |
-| [open](/api/core#open)                               | 打开图纸                            |
-| [connectSocket](/api/core#connectSocket)             | 消息通信重连（默认自动连接）        |
-| [drawLine](/api/core#drawLine)                       | 开始钢笔绘画                        |
-| [drawingPencil](/api/core#drawingPencil)             | 开始铅笔绘画                        |
-| [finishDrawLine](/api/core#finishDrawLine)           | 完成钢笔绘画                        |
-| [finishPencil](/api/core#finishPencil)               | 完成铅笔绘画                        |
-| [updateLineType](/api/core#updateLineType)           | 修改连线类型                        |
-| [addDrawLineFn](/api/core#addDrawLineFn)             | 添加自定义连线绘画函数              |
-| [removeDrawLineFn](/api/core#removeDrawLineFn)       | 移除自定义连线绘画函数              |
-| [showMagnifier](/api/core#showMagnifier)             | 显示放大镜                          |
-| [hideMagnifier](/api/core#hideMagnifier)             | 隐藏放大镜                          |
-| [toggleMagnifier](/api/core#toggleMagnifier)         | 显示或隐藏放大镜                    |
-| [clear](/api/core#clear)                             | 清空画布资源。打开空白图纸用 open() |
-| [emit](/api/core#emit)                               | 发送自定义消息                      |
-| [on](/api/core#on)                                   | 监听消息                            |
-| [off](/api/core#off)                                 | 取消监听消息                        |
-| [register](/api/core#register)                       | 注册画笔(Path2D 类型)               |
-| [registerCanvasDraw](/api/core#registerCanvasDraw)   | 注册原生 canvas 上下文画笔          |
-| [registerAnchors](/api/core#registerAnchors)         | 注册画笔锚点函数                    |
-| [registerDock](/api/core#registerDock)               | 注册辅助线算法                      |
-| [find](/api/core#find)                               | 查找画笔                            |
-| [getPenRect](/api/core#getPenRect)                   | 获取画笔区域位置                    |
-| [setPenRect](/api/core#setPenRect)                   | 设置画笔区域位置                    |
-| [startAnimate](/api/core#startAnimate)               | 开始播放动画                        |
-| [pauseAnimate](/api/core#pauseAnimate)               | 暂停动画                            |
-| [stopAnimate](/api/core#stopAnimate)                 | 结束动画                            |
-| [calcAnimateDuration](/api/core#calcAnimateDuration) | 计算动画时长                        |
-| [combine](/api/core#combine)                         | 组合                                |
-| [uncombine](/api/core#uncombine)                     | 取消组合                            |
-| [active](/api/core#active)                           | 高亮选中画笔                        |
-| [inactive](/api/core#inactive)                       | 取消高亮选中画笔                    |
-| [delete](/api/core#delete)                           | 删除画笔                            |
-| [scale](/api/core#scale)                             | 缩放画布                            |
-| [translate](/api/core#translate)                     | 平移画布                            |
-| [translatePens](/api/core#translatePens)             | 平移画笔                            |
-| [getParent](/api/core#getParent)                     | 获取画笔父对象                      |
-| [data](/api/core#data)                               | 图纸数据                            |
-| [copy](/api/core#copy)                               | 复制                                |
-| [cut](/api/core#cut)                                 | 剪切                                |
-| [paste](/api/core#paste)                             | 粘贴                                |
-| [undo](/api/core#undo)                               | 撤消                                |
-| [redo](/api/core#redo)                               | 恢复                                |
-| [connectWebsocket](/api/core#connectWebsocket)       | 手动连接 websocket。默认自动连接    |
-| [closeWebsocket](/api/core#closeWebsocket)           | 关闭 websocket 连接                 |
-| [connectMqtt](/api/core#connectMqtt)                 | 手动连接 mqtt 。默认自动连接        |
-| [closeMqtt](/api/core#closeMqtt)                     | 关闭 mqtt 连接                      |
-| [setValue](/api/core#setValue)                       | 设置修改画笔数据                    |
-| [pushHistory](/api/core#pushHistory)                 | 添加一个编辑历史到队列              |
-| [showInput](/api/core#showInput)                     | 显示文字输入框                      |
-| [hideInput](/api/core#hideInput)                     | 隐藏文字输入框                      |
-| [clearDropdownList](/api/core#clearDropdownList)     | 清除画笔下拉列表选项                |
-| [pushChildren](/api/core#pushChildren)               | 给画笔添加子对象                    |
-| [toPng](/api/core#toPng)                             | 生成 png 图像                       |
-| [downloadPng](/api/core#downloadPng)                 | 下载 png                            |
-| [getRect](/api/core#getRect)                         | 获取图纸区域                        |
-| [fitView](/api/core#fitView)                         | 自适应屏幕显示                      |
-| [gotoView](/api/core#gotoView)                       | 定位画笔到屏幕中心显示              |
-| [centerView](/api/core#centerView)                   | 居中显示可视区域                    |
-| [hasView](/api/core#hasView)                         | 画布是否有内容                      |
-| [alignNodes](/api/core#alignNodes)                   | 节点对齐                            |
-| [spaceBetween](/api/core#spaceBetween)               | 水平等分对齐                        |
-| [spaceBetweenColumn](/api/core#spaceBetweenColumn)   | 垂直等分对齐                        |
-| [layout](/api/core#layout)                           | 均匀分布排版                        |
-| [showMap](/api/core#showMap)                         | 显示鹰眼地图                        |
-| [hideMap](/api/core#hideMap)                         | 隐藏鹰眼地图                        |
-| [toggleAnchorMode](/api/core#toggleAnchorMode)       | 切换锚点模式                        |
-| [addAnchorHand](/api/core#addAnchorHand)             | 添加锚点手柄                        |
-| [removeAnchorHand](/api/core#removeAnchorHand)       | 移除锚点手柄                        |
-| [toggleAnchorHand](/api/core#toggleAnchorHand)       | 添加或移除锚点手柄                  |
-| [top](/api/core#top)                                 | 置顶画笔                            |
-| [bottom](/api/core#bottom)                           | 置底画笔                            |
-| [up](/api/core#up)                                   | 向上移动画笔图层                    |
-| [down](/api/core#down)                               | 向下移动画笔图层                    |
-| [setLayer](/api/core#setLayer)                       | 指定画笔图层                        |
-| [changePenId](/api/core#changePenId)                 | 修改画笔 id                         |
-| [getLines](/api/core#getLines)                       | 获取关联连线                        |
-| [nextNode](/api/core#nextNode)                       | 获取下一个节点                      |
-| [previousNode](/api/core#previousNode)               | 获取前一个节点                      |
-| [toComponent](/api/core#toComponent)                 | 生成自定义组件                      |
-| [destroy](/api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |
+| 名称                                                   | 描述                                |
+| ------------------------------------------------------ | ----------------------------------- |
+| [constructor](../api/core#constructor)                 | 可视化引擎构造函数                  |
+| [setOptions](../api/core#setOptions)                   | 设置引擎选项                        |
+| [getOptions](../api/core#getOptions)                   | 获取引擎选项                        |
+| [resize](../api/core#resize)                           | 重置画布大小                        |
+| [addPen](../api/core#addPen)                           | 添加单个画笔                        |
+| [addPens](../api/core#addPens)                         | 批量添加画笔                        |
+| [render](../api/core#render)                           | 渲染（重绘）                        |
+| [open](../api/core#open)                               | 打开图纸                            |
+| [connectSocket](../api/core#connectSocket)             | 消息通信重连（默认自动连接）        |
+| [drawLine](../api/core#drawLine)                       | 开始钢笔绘画                        |
+| [drawingPencil](../api/core#drawingPencil)             | 开始铅笔绘画                        |
+| [finishDrawLine](../api/core#finishDrawLine)           | 完成钢笔绘画                        |
+| [finishPencil](../api/core#finishPencil)               | 完成铅笔绘画                        |
+| [updateLineType](../api/core#updateLineType)           | 修改连线类型                        |
+| [addDrawLineFn](../api/core#addDrawLineFn)             | 添加自定义连线绘画函数              |
+| [removeDrawLineFn](../api/core#removeDrawLineFn)       | 移除自定义连线绘画函数              |
+| [showMagnifier](../api/core#showMagnifier)             | 显示放大镜                          |
+| [hideMagnifier](../api/core#hideMagnifier)             | 隐藏放大镜                          |
+| [toggleMagnifier](../api/core#toggleMagnifier)         | 显示或隐藏放大镜                    |
+| [clear](../api/core#clear)                             | 清空画布资源。打开空白图纸用 open() |
+| [emit](../api/core#emit)                               | 发送自定义消息                      |
+| [on](../api/core#on)                                   | 监听消息                            |
+| [off](../api/core#off)                                 | 取消监听消息                        |
+| [register](../api/core#register)                       | 注册画笔(Path2D 类型)               |
+| [registerCanvasDraw](../api/core#registerCanvasDraw)   | 注册原生 canvas 上下文画笔          |
+| [registerAnchors](../api/core#registerAnchors)         | 注册画笔锚点函数                    |
+| [registerDock](../api/core#registerDock)               | 注册辅助线算法                      |
+| [find](../api/core#find)                               | 查找画笔                            |
+| [getPenRect](../api/core#getPenRect)                   | 获取画笔区域位置                    |
+| [setPenRect](../api/core#setPenRect)                   | 设置画笔区域位置                    |
+| [startAnimate](../api/core#startAnimate)               | 开始播放动画                        |
+| [pauseAnimate](../api/core#pauseAnimate)               | 暂停动画                            |
+| [stopAnimate](../api/core#stopAnimate)                 | 结束动画                            |
+| [calcAnimateDuration](../api/core#calcAnimateDuration) | 计算动画时长                        |
+| [combine](../api/core#combine)                         | 组合                                |
+| [uncombine](../api/core#uncombine)                     | 取消组合                            |
+| [active](../api/core#active)                           | 高亮选中画笔                        |
+| [inactive](../api/core#inactive)                       | 取消高亮选中画笔                    |
+| [delete](../api/core#delete)                           | 删除画笔                            |
+| [scale](../api/core#scale)                             | 缩放画布                            |
+| [translate](../api/core#translate)                     | 平移画布                            |
+| [translatePens](../api/core#translatePens)             | 平移画笔                            |
+| [getParent](../api/core#getParent)                     | 获取画笔父对象                      |
+| [data](../api/core#data)                               | 图纸数据                            |
+| [copy](../api/core#copy)                               | 复制                                |
+| [cut](../api/core#cut)                                 | 剪切                                |
+| [paste](../api/core#paste)                             | 粘贴                                |
+| [undo](../api/core#undo)                               | 撤消                                |
+| [redo](../api/core#redo)                               | 恢复                                |
+| [connectWebsocket](../api/core#connectWebsocket)       | 手动连接 websocket。默认自动连接    |
+| [closeWebsocket](../api/core#closeWebsocket)           | 关闭 websocket 连接                 |
+| [connectMqtt](../api/core#connectMqtt)                 | 手动连接 mqtt 。默认自动连接        |
+| [closeMqtt](../api/core#closeMqtt)                     | 关闭 mqtt 连接                      |
+| [setValue](../api/core#setValue)                       | 设置修改画笔数据                    |
+| [pushHistory](../api/core#pushHistory)                 | 添加一个编辑历史到队列              |
+| [showInput](../api/core#showInput)                     | 显示文字输入框                      |
+| [hideInput](../api/core#hideInput)                     | 隐藏文字输入框                      |
+| [clearDropdownList](../api/core#clearDropdownList)     | 清除画笔下拉列表选项                |
+| [pushChildren](../api/core#pushChildren)               | 给画笔添加子对象                    |
+| [toPng](../api/core#toPng)                             | 生成 png 图像                       |
+| [downloadPng](../api/core#downloadPng)                 | 下载 png                            |
+| [getRect](../api/core#getRect)                         | 获取图纸区域                        |
+| [fitView](../api/core#fitView)                         | 自适应屏幕显示                      |
+| [gotoView](../api/core#gotoView)                       | 定位画笔到屏幕中心显示              |
+| [centerView](../api/core#centerView)                   | 居中显示可视区域                    |
+| [hasView](../api/core#hasView)                         | 画布是否有内容                      |
+| [alignNodes](../api/core#alignNodes)                   | 节点对齐                            |
+| [spaceBetween](../api/core#spaceBetween)               | 水平等分对齐                        |
+| [spaceBetweenColumn](../api/core#spaceBetweenColumn)   | 垂直等分对齐                        |
+| [layout](../api/core#layout)                           | 均匀分布排版                        |
+| [showMap](../api/core#showMap)                         | 显示鹰眼地图                        |
+| [hideMap](../api/core#hideMap)                         | 隐藏鹰眼地图                        |
+| [toggleAnchorMode](../api/core#toggleAnchorMode)       | 切换锚点模式                        |
+| [addAnchorHand](../api/core#addAnchorHand)             | 添加锚点手柄                        |
+| [removeAnchorHand](../api/core#removeAnchorHand)       | 移除锚点手柄                        |
+| [toggleAnchorHand](../api/core#toggleAnchorHand)       | 添加或移除锚点手柄                  |
+| [top](../api/core#top)                                 | 置顶画笔                            |
+| [bottom](../api/core#bottom)                           | 置底画笔                            |
+| [up](../api/core#up)                                   | 向上移动画笔图层                    |
+| [down](../api/core#down)                               | 向下移动画笔图层                    |
+| [setLayer](../api/core#setLayer)                       | 指定画笔图层                        |
+| [changePenId](../api/core#changePenId)                 | 修改画笔 id                         |
+| [getLines](../api/core#getLines)                       | 获取关联连线                        |
+| [nextNode](../api/core#nextNode)                       | 获取下一个节点                      |
+| [previousNode](../api/core#previousNode)               | 获取前一个节点                      |
+| [toComponent](../api/core#toComponent)                 | 生成自定义组件                      |
+| [destroy](../api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |
