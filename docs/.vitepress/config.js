@@ -95,7 +95,10 @@ function getTutorialSidebar() {
           text: '快速上手',
           link: '/tutorial/start',
         },
-        { text: '企业版', link: '/tutorial/commercial' },
+        {
+          text: '企业版', link: '/tutorial/commercial',
+          children: [{ text: 'API接口文档', link: '/tutorial/commercial-api' }]
+        },
       ],
     },
     {
