@@ -1,38 +1,6 @@
 # 表单
 
-表单控件包含：按钮、单选框、多选框、开关、滑动输入条、输入框和选择器。
-
-## button 按钮
-
-- **数据**
-
-按钮本质上和 rectangle 一样，但为了达到按钮的效果，我们需要配置一些样式属性。
-
-- **使用**
-
-```js
-const button = {
-  name: "button",
-  x: 100,
-  y: 100,
-  width: 50,
-  height: 30,
-  borderRadius: 0.2,
-  text: "按钮",
-  background: "#1890ff",
-  color: "#1890ff",
-  textColor: "#ffffff",
-  activeBackground: "#40a9ff", //选中
-  activeColor: "#40a9ff",
-  activeTextColor: "#ffffff",
-  hoverBackground: "#40a9ff", //鼠标经过
-  hoverColor: "#40a9ff",
-  hoverTextColor: "#ffffff",
-};
-
-topology.addPen(button);
-```
-
+表单控件包含：单选框、多选框、开关、滑动输入条、按钮、输入框和选择器。
 ## radio 单选框
 
 - **数据**
@@ -41,9 +9,7 @@ topology.addPen(button);
 | ---------- | -------------------- | --------------------------------------------- |
 | direction  | string               | 单选框的排列方向('vertical'\|'horizontal')    |
 | interval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
-| options    | string[] \| object[] | 选项值                                        |
-| selection  | string               | 选中值                                        |
-| forbiddens | string[]             | 禁用选项                                      |
+| options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
 
@@ -55,15 +21,11 @@ const radio = {
   width: 150,
   height: 100,
   direction: "vertical",
-  options: ["水果", "蔬菜", "谷物"],
-  /*
   options: [
     { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00" },
-    { text: "谷物", background: "#0000ff" },
-  ],*/
-  selection: "水果",
-  forbiddens: ["蔬菜"],
+    { text: "蔬菜", background: "#00ff00" isChecked: true},
+    { text: "谷物", background: "#0000ff" ,isForbidden: true},
+  ],
 };
 
 topology.addPens([radio]);
@@ -77,9 +39,7 @@ topology.addPens([radio]);
 | ---------- | ------------------- | --------------------------------------------- |
 | direction  | string              | 复选框的排列方向('vertical'\|'horizontal')    |
 | interval   | number              | 复选框选项间的间距（默认 20，仅针对垂直分布） |
-| options    | string[]\| object[] | 选项值                                        |
-| selections | string[]            | 选中选项                                      |
-| forbiddens | string[]            | 禁用选项                                      |
+| options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
 
@@ -91,14 +51,11 @@ const checkbox = {
   width: 150,
   height: 100,
   direction: "vertical",
-  // options: ["水果", "蔬菜", "谷物"],
   options: [
     { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00" },
-    { text: "谷物", background: "#0000ff" },
+    { text: "蔬菜", background: "#00ff00",isChecked: true },
+    { text: "谷物", background: "#0000ff",isForbidden: true },
   ],
-  selections: ["蔬菜"],
-  forbiddens: ["水果"],
 };
 
 topology.addPens([checkbox]);
@@ -178,7 +135,36 @@ const slider = {
 
 topology.addPen(slider);
 ```
+## button 按钮
 
+- **数据**
+
+按钮本质上和 rectangle 一样，但为了达到按钮的效果，我们需要配置一些样式属性。
+
+- **使用**
+
+```js
+const button = {
+  name: "rectangle",
+  x: 100,
+  y: 100,
+  width: 80,
+  height: 30,
+  borderRadius: 0.2,
+  text: "按钮",
+  background: "#1890ff",
+  color: "#1890ff",
+  textColor: "#ffffff",
+  activeBackground: "#40a9ff", //选中
+  activeColor: "#40a9ff",
+  activeTextColor: "#ffffff",
+  hoverBackground: "#40a9ff", //鼠标经过
+  hoverColor: "#40a9ff",
+  hoverTextColor: "#ffffff",
+};
+
+topology.addPen(button);
+```
 ## 输入框
 
 - **使用**
