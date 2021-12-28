@@ -36,6 +36,10 @@ module.exports = {
             link: 'https://github.com/le5le-com',
           },
           {
+            text: 'Gitee',
+            link: 'https://gitee.com/le5le',
+          },
+          {
             text: '技术交流群',
             link: '/community/wechat',
           },
