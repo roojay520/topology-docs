@@ -41,9 +41,7 @@ topology.addPen(button);
 | ---------- | -------------------- | --------------------------------------------- |
 | direction  | string               | 单选框的排列方向('vertical'\|'horizontal')    |
 | interval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
-| options    | string[] \| object[] | 选项值                                        |
-| selection  | string               | 选中值                                        |
-| forbiddens | string[]             | 禁用选项                                      |
+| options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
 
@@ -55,15 +53,11 @@ const radio = {
   width: 150,
   height: 100,
   direction: "vertical",
-  options: ["水果", "蔬菜", "谷物"],
-  /*
   options: [
     { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00" },
-    { text: "谷物", background: "#0000ff" },
-  ],*/
-  selection: "水果",
-  forbiddens: ["蔬菜"],
+    { text: "蔬菜", background: "#00ff00" isChecked: true},
+    { text: "谷物", background: "#0000ff" ,isForbidden: true},
+  ],
 };
 
 topology.addPens([radio]);
@@ -77,9 +71,7 @@ topology.addPens([radio]);
 | ---------- | ------------------- | --------------------------------------------- |
 | direction  | string              | 复选框的排列方向('vertical'\|'horizontal')    |
 | interval   | number              | 复选框选项间的间距（默认 20，仅针对垂直分布） |
-| options    | string[]\| object[] | 选项值                                        |
-| selections | string[]            | 选中选项                                      |
-| forbiddens | string[]            | 禁用选项                                      |
+| options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
 
@@ -91,14 +83,11 @@ const checkbox = {
   width: 150,
   height: 100,
   direction: "vertical",
-  // options: ["水果", "蔬菜", "谷物"],
   options: [
     { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00" },
-    { text: "谷物", background: "#0000ff" },
+    { text: "蔬菜", background: "#00ff00",isChecked: true },
+    { text: "谷物", background: "#0000ff",isForbidden: true },
   ],
-  selections: ["蔬菜"],
-  forbiddens: ["水果"],
 };
 
 topology.addPens([checkbox]);

@@ -266,7 +266,7 @@ topology.addPen(pie);
   | detail.formatter | string | 仪表盘详情，显示数据的格式。 |
   | detail.color | string | 显示数据的颜色，为'auto'时根据当前值所在轴线分段颜色确定。 |
   | detail.offsetCenter | string[] | 相对于仪表盘中心的偏移位置，数组第一项是水平方向相对半径的偏移百分比，第二项是垂直方向相对半径的偏移百分比。 |
-  | data[j].value | number | 当前值 |
+  | series[j].name+'value' | number | 当前值。 |
 
 - **使用**
 
@@ -280,6 +280,7 @@ const gauge = {
   width: 400,
   height: 400,
   animateCycle: 1, //动画执行一次
+  value:70,
   charts: {
     option: {
       series: [
