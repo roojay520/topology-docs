@@ -1,38 +1,6 @@
 # 表单
 
-表单控件包含：按钮、单选框、多选框、开关、滑动输入条、输入框和选择器。
-
-## button 按钮
-
-- **数据**
-
-按钮本质上和 rectangle 一样，但为了达到按钮的效果，我们需要配置一些样式属性。
-
-- **使用**
-
-```js
-const button = {
-  name: "button",
-  x: 100,
-  y: 100,
-  width: 50,
-  height: 30,
-  borderRadius: 0.2,
-  text: "按钮",
-  background: "#1890ff",
-  color: "#1890ff",
-  textColor: "#ffffff",
-  activeBackground: "#40a9ff", //选中
-  activeColor: "#40a9ff",
-  activeTextColor: "#ffffff",
-  hoverBackground: "#40a9ff", //鼠标经过
-  hoverColor: "#40a9ff",
-  hoverTextColor: "#ffffff",
-};
-
-topology.addPen(button);
-```
-
+表单控件包含：单选框、多选框、开关、滑动输入条、按钮、输入框和选择器。
 ## radio 单选框
 
 - **数据**
@@ -167,7 +135,36 @@ const slider = {
 
 topology.addPen(slider);
 ```
+## button 按钮
 
+- **数据**
+
+按钮本质上和 rectangle 一样，但为了达到按钮的效果，我们需要配置一些样式属性。
+
+- **使用**
+
+```js
+const button = {
+  name: "rectangle",
+  x: 100,
+  y: 100,
+  width: 80,
+  height: 30,
+  borderRadius: 0.2,
+  text: "按钮",
+  background: "#1890ff",
+  color: "#1890ff",
+  textColor: "#ffffff",
+  activeBackground: "#40a9ff", //选中
+  activeColor: "#40a9ff",
+  activeTextColor: "#ffffff",
+  hoverBackground: "#40a9ff", //鼠标经过
+  hoverColor: "#40a9ff",
+  hoverTextColor: "#ffffff",
+};
+
+topology.addPen(button);
+```
 ## 输入框
 
 - **使用**
