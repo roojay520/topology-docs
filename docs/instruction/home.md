@@ -262,6 +262,8 @@
 
 ### **4.3 鼠标提示**
 
+参考Markdown语法编写鼠标提示
+
 ![le5le topology 鼠标提示](/img/shubiaotishi.gif)
 
 ## 5 消息通信
