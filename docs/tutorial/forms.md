@@ -8,7 +8,8 @@
 | 名称       | 类型                 | 描述                                          |
 | ---------- | -------------------- | --------------------------------------------- |
 | direction  | string               | 单选框的排列方向('vertical'\|'horizontal')    |
-| interval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
+| optionInterval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
+|  optionHeight   | number               | 单选框所占高度（默认 20，仅针对垂直分布） |
 | options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
@@ -38,7 +39,8 @@ topology.addPens([radio]);
 | 名称       | 类型                | 描述                                          |
 | ---------- | ------------------- | --------------------------------------------- |
 | direction  | string              | 复选框的排列方向('vertical'\|'horizontal')    |
-| interval   | number              | 复选框选项间的间距（默认 20，仅针对垂直分布） |
+| optionInterval   | number               | 单选框选项间的间距（默认 20，仅针对垂直分布） |
+|  optionHeight   | number               | 单选框所占高度（默认 20，仅针对垂直分布） |
 | options    | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>}                                        |
 
 - **使用**
@@ -102,12 +104,12 @@ topology.addPen(lSwitch);
 
 | 名称        | 类型    | 描述                                       |
 | ----------- | ------- | ------------------------------------------ |
-| sliderRadio | number  | 滑动条占整个图元宽度的比例(靠左对齐)       |
-| inputRadio  | number  | 文字输入部分占整个图元宽度的比例(靠右对齐) |
+| barHeight | number  | 滑动条高度      |
+| textWidth  | number  | 文字区域宽度(靠右对齐) |
 | min         | number  | 最小值                                     |
 | max         | number  | 最大值                                     |
 | unit        | string  | 单位                                       |
-| slider      | boolean | 是否正在执行滑动操作                       |
+| value      | number | 当前值                       |
 
 - **使用**
 
@@ -116,21 +118,17 @@ const slider = {
   name: "slider",
   x: 100,
   y: 100,
+  width:300,
   height: 30,
-  text: "10%",
-  width: 300,
-  sliderRadio: 0.7,
-  inputRadio: 0.2,
+  value: 10,
+  textWidth: 50,
+  barHeight: 4,
   min: 0,
   max: 100,
-  textLeft: 240, //根据属性inputRadio计算
-  background: "#69c0ff", //横条填充颜色
-  color: "#1890ff", //小圆圈滑块线条颜色
-  textColor: "#000000",
-  hoverTextColor: "#000000", //用于屏蔽全局鼠标经过和选中的文字颜色
-  activeTextColor: "#000000",
-  unit: "%",
-  slider: false,
+  color: '#1890ff',
+  background: '#D4D6D9',
+  textColor: '#222222',
+  unit: '%'
 };
 
 topology.addPen(slider);
