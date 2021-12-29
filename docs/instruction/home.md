@@ -337,7 +337,7 @@
 格式有三种：原生代码元素库（JS）、阿里字体元素库（iconfont）、图片元素库（svg、gif），企业版已经写好固定的逻辑，支持良好。
 ​
 
-点击查看：[http://topology.le5le.com/workspace](http://topology.le5le.com/workspace)
+点击查看：[http://t.le5le.com/](http://t.le5le.com/)
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
