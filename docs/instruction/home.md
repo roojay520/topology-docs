@@ -1,4 +1,4 @@
-# 乐吾乐 Topology 使用手册
+# 用户使用手册
 
 ## 1 基本知识
 
@@ -78,7 +78,11 @@
 
      切换手柄类型（Shift）可切换三种类型：①两端手柄完全对称 ②一端手柄可以任意伸缩长度 ③一端手柄可以任意伸缩长度和变换角度
 
+节点（包括图形、图片等）和连线都可以添加/删除锚点
+
 ![le5le topology 编辑文件](/img/bianji.gif)
+
+![le5le topology 添加锚点](/img/tianjiamaodian.gif)
 
 #### 2.1.3 保存文件
 
@@ -256,9 +260,11 @@
 
 ![le5le topology 连线动画案例](/img/lianxiandonghuaanli.gif)
 
-鼠标提示：Markdown
+### **4.3 鼠标提示**
 
-参考搜索引擎Markdown文档
+参考Markdown语法编写鼠标提示
+
+![le5le topology 鼠标提示](/img/shubiaotishi.gif)
 
 ## 5 消息通信
 
@@ -276,9 +282,9 @@
 
 开始：单击左键
 
-结束：单机右键   或   enter
+暂停：单机右键   或   enter
 
-退出：esc
+结束：esc
 
 闭合/取消闭合：enter
 
@@ -288,9 +294,9 @@
 
 开始：连续拖动左键
 
-结束：释放左键
+暂停：释放左键
 
-退出：esc
+结束：esc
 
 闭合/取消闭合：enter
 
@@ -331,7 +337,7 @@
 格式有三种：原生代码元素库（JS）、阿里字体元素库（iconfont）、图片元素库（svg、gif），企业版已经写好固定的逻辑，支持良好。
 ​
 
-点击查看：[http://topology.le5le.com/workspace](http://topology.le5le.com/workspace)
+点击查看：[http://t.le5le.com/](http://t.le5le.com/)
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
