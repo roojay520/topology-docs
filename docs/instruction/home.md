@@ -260,9 +260,9 @@
 
 ![le5le topology 连线动画案例](/img/lianxiandonghuaanli.gif)
 
-鼠标提示：Markdown
+### **4.3 鼠标提示**
 
-参考搜索引擎Markdown文档
+![le5le topology 鼠标提示](/img/shubiaotishi.gif)
 
 ## 5 消息通信
 
