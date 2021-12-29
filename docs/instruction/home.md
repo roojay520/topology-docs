@@ -78,7 +78,11 @@
 
      切换手柄类型（Shift）可切换三种类型：①两端手柄完全对称 ②一端手柄可以任意伸缩长度 ③一端手柄可以任意伸缩长度和变换角度
 
+节点（包括图形、图片等）和连线都可以添加/删除锚点
+
 ![le5le topology 编辑文件](/img/bianji.gif)
+
+![le5le topology 添加锚点](/img/tianjiamaodian.gif)
 
 #### 2.1.3 保存文件
 
