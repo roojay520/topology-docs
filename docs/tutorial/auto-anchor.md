@@ -2,7 +2,7 @@
 
 自动锚点指当节点连线时，鼠标移动到目标节点上，连线会自动选中最近锚点作为连线终点
 
-在线体验： http://topology.le5le.com/workspace
+在线体验： http://t.le5le.com/
 
 示例：
 

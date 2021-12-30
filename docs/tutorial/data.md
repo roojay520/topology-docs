@@ -61,7 +61,7 @@ topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../a
 }]
 ```
 
-在线体验：http://topology.le5le.com/workspace?id=5d4d72356025d7704b11323c
+在线体验：http://t.le5le.com/?id=5d4d72356025d7704b11323c
 
 ## Websocket
 

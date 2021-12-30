@@ -7,10 +7,10 @@
 :::
 
 ::: tip 划重点
-所有标准 js 语法均可打开 [topology 官网编辑器](http://topology.le5le.com/workspace) ，在浏览器控制台直接运行查看效果
+所有标准 js 语法均可打开 [topology 官网编辑器](http://t.le5le.com) ，在浏览器控制台直接运行查看效果
 :::
 
-例如，在[topology 官网编辑器](http://topology.le5le.com/workspace) 页面的控制台运行：
+例如，在[topology 官网编辑器](http://t.le5le.com/) 页面的控制台运行：
 
 ```js
 // 定义一个pen，矩形
