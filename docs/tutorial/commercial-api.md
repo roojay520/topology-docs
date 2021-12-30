@@ -4,14 +4,9 @@
 ​
 
 **默认**：所有接口调用失败时，返回{ error: '错误原因'}。正确时，直接返回所需数据，不再需要error字段。故所有接口返回通过返回是否有error字段判断。
-
-配套使用前端代码：[https://github.com/le5le-com/topology-vue-ts/tree/api](https://github.com/le5le-com/topology-vue-ts/tree/api)   【api分支】
-配套部署安装包[https://gitee.com/le5le/downloads](https://gitee.com/le5le/downloads)
 ​
 
 # 接口列表
-
-​
 
 #### [GET] /api/tools 系统组件
 
