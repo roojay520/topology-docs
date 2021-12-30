@@ -96,8 +96,18 @@ function getTutorialSidebar() {
           link: '/tutorial/start',
         },
         {
-          text: '企业版', link: '/tutorial/commercial',
-          children: [{ text: 'API接口文档', link: '/tutorial/commercial-api' }]
+          text: '企业版',
+          link: '/tutorial/commercial',
+          children: [
+            {
+              text: 'API接口文档',
+              link: '/tutorial/commercial-api',
+            },
+            {
+              text: '部署试用',
+              link: '/tutorial/commercial-trial',
+            },
+          ],
         },
       ],
     },

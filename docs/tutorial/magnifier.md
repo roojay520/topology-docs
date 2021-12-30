@@ -2,7 +2,7 @@
 
 ![乐吾乐topology放大镜](/img/magnifier.png)
 
-在线体验： http://topology.le5le.com/workspace
+在线体验： http://t.le5le.com/
 
 示例：
 
