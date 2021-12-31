@@ -6,4 +6,4 @@
 
 ## 开发
 
-[快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
+[企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
