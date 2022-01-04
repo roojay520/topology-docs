@@ -2214,6 +2214,27 @@ topology.inactive();
 // 需要连线连接到一个Pen，这里暂时没有构造关联数据
 ```
 
+### flip
+
+翻转，目前只支持水平翻转或垂直翻转。
+
+**数据类型：** Flip
+
+```js
+enum Flip {
+  None, // 正常
+  Horizontal, // 水平翻转
+  Vertical, // 垂直翻转
+}
+```
+
+**示例：**
+
+```js
+const pen = {flip: 1, ...};
+```
+
+
 ### calculative
 
 画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
