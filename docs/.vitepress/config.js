@@ -109,6 +109,10 @@ function getTutorialSidebar() {
             },
           ],
         },
+        {
+          text: '对比其他产品',
+          link: '/tutorial/comparison',
+        },
       ],
     },
     {

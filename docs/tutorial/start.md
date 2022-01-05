@@ -43,10 +43,10 @@ new Topology();
 1. 获取 topology.js
 
 ```shell
-npm install topology --save
+npm install topology.js --save
 ```
 
-2. 拷贝 node_modules/topology/topology.js 到静态资源目录（比例 index.html 所在目录）
+2. 拷贝 node_modules/topology.js/topology.js 到静态资源目录（比例 index.html 所在目录）
 
 3. 编写 index.html
 
