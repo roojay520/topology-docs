@@ -17,6 +17,9 @@ topology.emit('event', data);
 const fn = (event, data) => {};
 topology.on('event', fn);
 // 不用时，又不销毁topology实例，记得取消订阅。
+
+// 监听全部消息
+topology.on('*', fn);
 ```
 
 ## 取消监听
