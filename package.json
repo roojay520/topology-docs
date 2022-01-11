@@ -12,5 +12,8 @@
     "start": "vitepress dev docs --host 0.0.0.0 --port 3200",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "http-server": "^14.0.0"
   }
 }

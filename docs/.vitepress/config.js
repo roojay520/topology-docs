@@ -47,6 +47,10 @@ module.exports = {
             text: '关于我们',
             link: '/community/us',
           },
+          {
+            text: '加入我们',
+            link: '/community/join',
+          }
         ],
       },
       {
@@ -209,6 +213,10 @@ function getCommunitySidebar() {
           text: '关于我们',
           link: '/community/us',
         },
+        {
+          text: '加入我们',
+          link: '/community/join',
+        }
       ],
     },
   ];
