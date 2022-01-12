@@ -62,3 +62,49 @@ topology.off('event', fn);
 | input               | pen & text   | 输入框键盘输入                   |
 | valueUpdate         | pen          | 修改属性值                       |
 | contextmenu         | e & bounding | 右键上下文菜单                   |
+
+
+## 事件及触发器
+
+*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。
+
+- **事件**
+1. 选中节点，点击事件面板。
+
+![选中节点](/img/event_select_node.png)
+
+2. 点击添加事件，选择事件类型和行为。
+
+![添加事件](/img/event_add_event.png)
+
+3. 锁定画布，触发事件。
+
+![触发事件](/img/event_condition_success.gif)
+
+
+- **触发器**
+
+1. 点击"添加事件",点击"设置触发条件"；
+
+![触发事件](/img/event_click_add_trigger.png)
+
+2. 设置触发条件以及触发条件成立后的事件；
+
+![触发事件](/img/event_add_trigger.png)
+
+- 如果需要触发条件成立后直接触发事件，事件类型可选择“值变化”。
+
+3. 触发条件成立，执行事件。
+
+![触发事件](/img/event_trigger_success.gif)
+
+- 触发条件中的JavaScript优先级高于上方的“属性名+条件+属性值”组合。
+- 触发条件中的JavaScript能够直接获取到pen参数，需返回。
+
+```
+ 属性名: text
+ 条件: >=
+ 属性值: 100
+ 等价于
+ JavaScript输入 return pen.text>=100
+```

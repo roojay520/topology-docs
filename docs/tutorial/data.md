@@ -178,17 +178,23 @@ topology.websocket.send('data');
     这里以mqtt协议为例，在topology编辑器画布的通信面板中填写MQTT的url地址和Topics,其他可按需配置。
 
 ![配置websocket或mqtt协议](/img/huabuCommunication.png)
-1. 选择图元，获取图元的id或标签
 
-    选中节点，点击数据面板，复制节点的id/tag。
-    - id：唯一；
-    - tag：用于一组图元的属性批量修改。
+2. 选择图元，获取图元的id或标签
+
+  选中节点，点击数据面板，复制节点的id/tag。
+  - id：唯一；
+  - tag：用于一组图元的属性批量修改。
 
 ![获取图元的id或标签](/img/nodeData.png)
 
 3. 服务器发送数据
 
-  发送带有id/tag的json数据，其他可添加你要修改的属性。
+  - 这里推荐使用国产开源 [emqx mqtt服务器](http://tools.emqx.io/),MQTT url地址可填写：ws://broker.emqx.io:8083/mqtt
+
+  - [websocket简单测试服务器]( https://github.com/le5le-com/websocket-test-node)
+
+  发送带有id/tag的json数据，其他属性按需添加。
+
 ```json
 {
   "id": "73c3bcdb",
