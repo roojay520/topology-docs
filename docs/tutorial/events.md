@@ -66,6 +66,8 @@ topology.off('event', fn);
 
 ## 事件及触发器
 
+*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。
+
 - **事件**
 1. 选中节点，点击事件面板。
 
@@ -97,3 +99,12 @@ topology.off('event', fn);
 ![触发事件](/img/event_trigger_success.gif)
 
 - 触发条件中的JavaScript优先级高于上方的“属性名+条件+属性值”组合。
+- 触发条件中的JavaScript能够直接获取到pen参数，需返回。
+
+```
+ 属性名: text
+ 条件: >=
+ 属性值: 100
+ 等价于
+ JavaScript输入 return pen.text>=100
+```
