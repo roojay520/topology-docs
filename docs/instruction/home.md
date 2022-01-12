@@ -266,6 +266,16 @@
 
 ![le5le topology 鼠标提示](/img/shubiaotishi.gif)
 
+### **4.4 视频video**
+
+video标签支持MP4、WebM、Ogg 三种格式
+
+![le5le topology 视频video](/img/shipin.gif)
+
+### **4.4 网页iframe**
+
+![le5le topology 网页iframe](/img/wangye.gif)
+
 ## 5 消息通信
 
 ### **5.1 mqtt通信**
