@@ -2,6 +2,7 @@
 
 原生 topology 图表控件，更方便的支持原生交互事件和图层。包含：折线图、柱状图、饼图、仪表盘等，更多欢迎联系我们。
 
+注意：le5le charts对echarts格式数据做了兼容性处理（过滤掉无效数据）
 数据格式参考：echarts。
 
 ## lineChart 折线图
@@ -268,6 +269,7 @@ topology.addPen(pie);
   | detail.offsetCenter | string[] | 相对于仪表盘中心的偏移位置，数组第一项是水平方向相对半径的偏移百分比，第二项是垂直方向相对半径的偏移百分比。 |
   | series[j].name+'value' | number | 当前值。 |
 
+
 - **使用**
 
 1. 阶段速度仪表盘
@@ -475,4 +477,108 @@ const clock = {
 };
 
 topology.addPen(clock);
+```
+
+
+## dashBoard 仪表盘 简略版
+- **数据**
+  | 名称 | 类型 | 描述 |
+  | ----------- | ---------- | ------------------- |
+  | startAngle|number| 起始角，默认225|
+  | endAngle|number| 结束角，默认-45|
+  | min|number| 量程最小值，默认0|
+  | max|number| 量程最大值，默认100|
+  | axisLine|number| 轴线分段比例及数值|
+  | unit|string| 单位|
+  | value|number| 当前值|
+  | splitNumber|number| 主等分线，默认10|
+  | isClock|boolean| 是否为时钟|
+  | splitNumber|number| 主等分线，默认10|
+
+
+- **使用**
+
+1. 阶段速度仪表盘
+
+```js
+const dashBoard = {
+          name: 'dashBoard',
+          x: 100,
+          y: 100,
+          width: 400,
+          height: 400,
+          disableAnchor: true,
+          value: 90,
+          unit: 'm/s',
+          axisLine: [
+            [0.3, '#67e0e3'],
+            [0.7, '#37a2da'],
+            [1, '#fd666d']
+          ],
+          animateCycle: 1,
+          keepAnimateState: 0
+}
+topology.addPen(dashBoard);
+```
+2. 时钟
+
+```js
+const clock = {
+          name: 'dashBoard',
+          x: 100,
+          y: 100,
+          width: 400,
+          height: 400,
+          disableAnchor: true,
+          isClock: true,
+          startAngle: 90,
+          endAngle: -270,
+          min: 0,
+          max: 12,
+          splitNumber: 12,
+          background: '#3A3A3A',
+          color: '#C0911F'
+}
+topology.addPen(clock);
+```
+
+## 数据实时更新
+
+1. 通过setValue方式
+
+```js
+//1. echarts/highCharts图元
+//这里以echarts的折线图为例
+//① 选中折线图节点
+//② 控制台敲如下代码
+topology.store.active[0].echarts.option.series[0].data = [20, 932, 901, 34, 1290, 1330, 20];
+topology.setValue(topology.store.active[0]);
+```
+
+2. 通过mqtt等协议通信方式
+
+  - 关于配置通信协议可以参考[消息通信](../tutorial/data.md#消息通信)
+
+  - 这里以echarts中的折线图为例，发送的数据格式如下：
+
+```json
+{
+"tag": "topology", 
+"echarts":{
+  "option":{
+    "xAxis":{
+      "type":"category",
+      "data":["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+      },
+      "yAxis":{
+        "type":"value"
+        },
+      "series":[{
+          "data":[20, 932, 901, 34, 1290, 1330, 20],
+          "type":"line"
+      }]
+    }
+  }
+}
+
 ```

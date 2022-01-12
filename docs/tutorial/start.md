@@ -81,13 +81,14 @@ topology.open(json);
 
 1. 获取 @topology/core 等库
 
-```js
+```shell
 npm install @topology/core --save
 
 // Option
 npm install @topology/activity-diagram --save
-npm install @topology/flow-diagram --save
+npm install @topology/chart-diagram --save
 npm install @topology/class-diagram --save
+npm install @topology/flow-diagram --save
 npm install @topology/sequence-diagram --save
 // ...
 npm install @topology/layout --save
@@ -175,8 +176,9 @@ npm install @topology/core --save
 
 // Option
 npm install @topology/activity-diagram --save
-npm install @topology/flow-diagram --save
+npm install @topology/chart-diagram --save
 npm install @topology/class-diagram --save
+npm install @topology/flow-diagram --save
 npm install @topology/sequence-diagram --save
 // ...
 npm install @topology/layout --save
