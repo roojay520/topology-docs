@@ -38,8 +38,9 @@ onDragstart = (e) => {
 };
 
 // 支持鼠标单击添加图形
+import { deepClone } from '@topology/core';
 onTouchstart = (e) => {
-  topology.canvas.addCaches = [pen];
+  topology.canvas.addCaches = deepClone([pen]);
 };
 ```
 
