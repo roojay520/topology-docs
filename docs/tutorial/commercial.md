@@ -89,7 +89,7 @@ http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
 
 <img style="height:172px; margin: 16px" src="http://topology.le5le.com/assets/img/%E5%95%86%E5%8A%A1%E5%92%A8%E8%AF%A2%E4%BA%8C%E7%BB%B4%E7%A0%81.png" >
 
-商务咨询：胡女士 17671654517
+商务咨询：胡女士  17671654517
 
 ## 常见商务问答
 
@@ -113,7 +113,7 @@ http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
 
 ### Q4：可以只购买图形库使用吗？
 
-可以。单独购买图形库无支持服务，需要客户根据文档放到自己的工具栏。开发者需要自己解析 js 中的 json、iconfont、图片等数据做一个数据格式转换，企业版已经写好固定的逻辑。
+可以。单独购买图形库无支持服务，需要客户根据文档放到自己的组件库。开发者需要自己解析 js 中的 json、iconfont、图片等数据做一个数据格式转换，企业版已经写好固定的逻辑。
 
 ### Q5：可以基于开源的核心库源码写编辑器吗？
 
