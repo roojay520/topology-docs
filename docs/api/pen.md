@@ -2235,6 +2235,34 @@ const pen = {flip: 1, ...};
 ```
 
 
+### layer
+
+自定义层
+
+### borderWidth
+
+仅连线有效。表示连线边框宽度。
+### borderColor
+
+仅连线有效。表示连线边框颜色。
+
+### borderRadius
+
+圆角
+
+
+### pathId
+### hiddenText
+
+是否隐藏文本（text）
+
+### keepDecimal
+
+显示格式，undefined 显示原内容；0 显示整数；1 显示一位小数，依次类推。
+
+### lastFrame
+
+最后一个动画帧状态数据
 ### calculative
 
 画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
@@ -2246,6 +2274,8 @@ const pen = {flip: 1, ...};
 ```js
 const rect = pen.calculative.worldRect;
 ```
+
+
 
 ### 扩展属性
 
