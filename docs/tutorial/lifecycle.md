@@ -62,8 +62,12 @@ topology.addPen(pen);
 - onRotate 旋转
 - onClick 单击
 - onMouseDown 鼠标按下
-- onMouseMove 鼠标经过
+- onMouseMove 鼠标移动
 - onMouseUp 鼠标抬起
+- onMouseEnter 鼠标经过
+- onMouseLeave 鼠标离开
+- onShowInput 开始输入
+- onInput 完成输入
 
 临时设置函数：
 
