@@ -15,12 +15,12 @@
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+    name: 'rectangle',
+    text: '矩形',
+    x: 100,
+    y: 100,
+    width: 100,
+    height: 100,
 };
 
 topology.addPen(pen);
@@ -29,7 +29,9 @@ topology.addPen(pen);
 需要编译和依赖环境的代码除外，比如：
 
 ```js
-import { Topology } from '@topology/core';
+import {
+    Topology
+} from '@topology/core';
 
 new Topology();
 ```
@@ -53,15 +55,18 @@ npm install topology.js --save
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title i18n>乐吾乐 Topology</title>
     <meta charset="UTF-8" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="topology"></div>
     <script src="topology.js"></script>
     <script src="index.js"></script>
-  </body>
+</body>
+
 </html>
 ```
 
@@ -99,70 +104,88 @@ npm install @topology/layout --save
 
 ```html
 <template>
-  <div class="main">
-    <div id="topology"></div>
-  </div>
+    <div class="main">
+        <div id="topology"></div>
+    </div>
 </template>
 ```
 
 3. 编写 js 加载 topology
 
 ```js
-<script lang="ts">
-import { Options, Topology } from '@topology/core';
-import { flowPens } from '@topology/flow-diagram';
-import { activityDiagram } from '@topology/activity-diagram';
-import { classPens } from '@topology/class-diagram';
-import { sequencePens, sequencePensbyCtx } from '@topology/sequence-diagram';
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
+< script lang = "ts" >
+    import {
+        Options,
+        Topology
+    } from '@topology/core';
+import {
+    flowPens
+} from '@topology/flow-diagram';
+import {
+    activityDiagram
+} from '@topology/activity-diagram';
+import {
+    classPens
+} from '@topology/class-diagram';
+import {
+    sequencePens,
+    sequencePensbyCtx
+} from '@topology/sequence-diagram';
+import {
+    defineComponent,
+    onMounted,
+    onUnmounted,
+    ref
+} from 'vue';
 
 declare const window: any;
 declare const topology: Topology;
 
 export default defineComponent({
-  name: 'TopologyCanvas',
-  components: {  },
-  setup() {
-    const topologyOptions: Options = {};
+    name: 'TopologyCanvas',
+    components: {},
+    setup() {
+        const topologyOptions: Options = {};
 
-    onMounted(() => {
-      new Topology('topology', topologyOptions);
-      topology.register(flowPens());
-      topology.register(activityDiagram());
-      topology.register(classPens());
-      topology.register(sequencePens());
-      topology.registerCanvasDraw(sequencePensbyCtx());
+        onMounted(() => {
+            new Topology('topology', topologyOptions);
+            topology.register(flowPens());
+            topology.register(activityDiagram());
+            topology.register(classPens());
+            topology.register(sequencePens());
+            topology.registerCanvasDraw(sequencePensbyCtx());
 
-      // 监听消息事件
-      topology.on('contextmenu', contextmenu);
-      topology.on('click', click);
+            // 监听消息事件
+            topology.on('contextmenu', contextmenu);
+            topology.on('click', click);
 
-      // 打开文件
-      topology.open(json);
-    });
-    onUnmounted(() => {
-      if (topology) {
-        topology.off('contextmenu', contextmenu);
-        topology.off('click', click);
-        topology.destroy();
-      }
-    });
+            // 打开文件
+            topology.open(json);
+        });
+        onUnmounted(() => {
+            if (topology) {
+                topology.off('contextmenu', contextmenu);
+                topology.off('click', click);
+                topology.destroy();
+            }
+        });
 
-    const contextMenuVisible = ref(false);
-    function contextmenu() {
-      contextMenuVisible.value = true;
-    }
+        const contextMenuVisible = ref(false);
 
-    function click() {
-      contextMenuVisible.value = false;
-    }
+        function contextmenu() {
+            contextMenuVisible.value = true;
+        }
 
-    return {
-      contextMenuVisible,
-    };
-  },
-});
-</script>
+        function click() {
+            contextMenuVisible.value = false;
+        }
+
+        return {
+            contextMenuVisible,
+        };
+    },
+}); <
+/script>
 ```
 
 **参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/vue
@@ -188,32 +211,48 @@ npm install @topology/layout --save
 2. 编写 React jsx
 
 ```js
-import React, { useEffect } from 'react';
-import { Options, Topology } from '@topology/core';
-import { flowPens } from '@topology/flow-diagram';
-import { activityDiagram } from '@topology/activity-diagram';
-import { classPens } from '@topology/class-diagram';
-import { sequencePens, sequencePensbyCtx } from '@topology/sequence-diagram';
+import React, {
+    useEffect
+} from 'react';
+import {
+    Options,
+    Topology
+} from '@topology/core';
+import {
+    flowPens
+} from '@topology/flow-diagram';
+import {
+    activityDiagram
+} from '@topology/activity-diagram';
+import {
+    classPens
+} from '@topology/class-diagram';
+import {
+    sequencePens,
+    sequencePensbyCtx
+} from '@topology/sequence-diagram';
 
 const TopologyContainer = () => {
-  useEffect(() => {
-    window.topology = new Topology('topology');
+    useEffect(() => {
+        window.topology = new Topology('topology');
 
-    topology.register(flowPens());
-    topology.register(activityDiagram());
-    topology.register(classPens());
-    topology.register(sequencePens());
-    topology.registerCanvasDraw(sequencePensbyCtx());
+        topology.register(flowPens());
+        topology.register(activityDiagram());
+        topology.register(classPens());
+        topology.register(sequencePens());
+        topology.registerCanvasDraw(sequencePensbyCtx());
 
-    // 打开文件
-    topology.open(json);
-  }, []);
+        // 打开文件
+        topology.open(json);
+    }, []);
 
-  return (
-    <div className='main'>
-      <div className='topology' id='topology'></div>
-    </div>
-  );
+    return ( <
+        div className = 'main' >
+        <
+        div className = 'topology'
+        id = 'topology' > < /div> < /
+        div >
+    );
 };
 
 export default TopologyContainer;
