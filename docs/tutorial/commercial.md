@@ -91,7 +91,6 @@ http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
 
 商务咨询：胡女士  17671654517
 
-<div style="display:flex; justify-content:">
 <img style="height:200px; " src="http://topology.le5le.com/img/bin_wechat.9366bba6.jpg" >
 
 技术咨询
