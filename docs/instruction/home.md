@@ -1,5 +1,7 @@
 # 用户使用手册
 
+开始设计： http://t.le5le.com/
+
 ## 1 基本知识
 
 ### 1.1 画布
@@ -457,3 +459,5 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 41   | Iot-Blowers（鼓风机）                 | svg、gif | 18   |
 | 42   | 大屏可视化                            | svg      | 19   |
 | 合计 |                                       |          | 1839 |
+
+开始设计： http://t.le5le.com/

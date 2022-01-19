@@ -1153,6 +1153,31 @@ topology.setValue({ tag: 'aaa', text: 'new text' });
 topology.setValue({ id: pen.id, newId: '111' });
 ```
 
+### updateValue
+
+修改 [Pen](./pen) 属性值  
+与 setValue 的区别，不触发 valueUpdate 事件  
+适用于收到 ws 和 mqtt 消息时，更改其它属性
+
+**参数：**
+
+- pen: Pen  
+  需要更新的画笔
+
+- data: any  
+  更新的数据
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+const pen = topology.store.data.pen[0];
+
+topology.updateValue(pen, {background: '#f40'});
+```
+
 ### pushHistory
 
 添加一个编辑历史到队列
