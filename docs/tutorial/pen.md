@@ -196,7 +196,7 @@ const pen = {
     {
       name: 'click',
       action: EventAction.Link, // 执行动作
-      where: {key: 'text', comparison:'==', value: '矩形'} // 触发条件
+      where: {key: 'text', comparison:'==', value: '矩形'}, // 触发条件
       value: 'topology.le5le.com',
     },
   ],
