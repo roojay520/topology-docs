@@ -287,7 +287,9 @@ const pen = {name: 'line', length: 自动计算得出, ...};
 
 ### title
 
-tooltip 提示框，支持 markdown 格式
+tooltip 提示框，支持 markdown 格式  
+支持 markdown 格式需要引入 marked.min.js，可使用如下路径的包
+[https://github.com/le5le-com/topology.js/blob/master/examples/vue/public/marked.min.js]
 
 **数据类型：** string
 
