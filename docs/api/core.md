@@ -9,7 +9,7 @@
 | parent             | HTMLElement                                  | 可视化引擎的父容器                         |
 | options            | [Options](../tutorial/topology#options-选项) | 可视化引擎选项                             |
 | canvas             | [Canvas](./canvas)                           | 绘画画板                                   |
-| store              | [TopologyStore](#topologystore)              | 绘画数据。包括文件数据和各种状态数据等     |
+| store              | [TopologyStore](../tutorial/topology#topologystore)              | 绘画数据。包括文件数据和各种状态数据等     |
 | websocket          | WebSocket                                    | 原生 WebSocket 客户端。仅连接成功才有实例  |
 | mqttClient         | Mqtt.Client                                  | mqtt.js 通信客户端                         |
 | beforeAddPen       | (pen: Pen) => boolean                        | 添加 Pen 前生命周期函数，返回 true 允许    |
