@@ -569,9 +569,9 @@ void
 
 参考：[自定义图形库](../tutorial/make-component)
 
-### registerDock
+### registerMoveDock
 
-注册辅助线算法
+注册移动辅助线算法
 
 **参数：**
 
@@ -581,35 +581,98 @@ void
 - rect: [Rect](./rect)  
   拖拽区域
 
+- pens: [Pen](./pen)[]  
+  本次拖拽的画笔们
+
+- offset: [Point](./point)  
+  本次偏移量，即画笔们的 worldRect + offset 得到的即 rect  
+
 **返回：**  
 json 对象，包含：xDock, yDock
 
-- xDock ： x, y, step, prev  
+- xDock ： x, y, step, prev, penId  
   水平方向的参考线
 
-- yDock ： x, y, step, prev  
+- yDock ： x, y, step, prev, penId  
   垂直方向的参考线
 
   prev - 参考线的起点  
   x,y - 参考线的终点  
-  step - 自动吸附需要的偏移量，比如 xDock.step=5，表示 rect.x += 5 是最终希望的位置。
+  step - 自动吸附需要的偏移量，比如 xDock.step=5，表示 rect.x += 5 是最终希望的位置。  
+  penId - 自动吸附的画笔，对应画笔产生变化
 
 **示例：**
 
 ```js
-topology.registerDock((store, rect) => {
+topology.registerMoveDock((store, rect, pens, offset) => {
   return {
     xDock: {
       x,
       y,
       prev,
       step,
+      penId
     },
     yDock: {
       x,
       y,
       prev,
       step,
+      penId
+    },
+  };
+});
+```
+### registerResizeDock
+
+注册修改大小辅助线算法
+
+**参数：**
+
+- store: [TopologyStore](../tutorial/topology#topologystore)  
+  引擎数据存储对象
+
+- rect: [Rect](./rect)  
+  拖拽区域
+
+- pens: [Pen](./pen)[]  
+  本次拖拽的画笔们
+
+- resizeIndex: number
+  本次 resize 拖动是哪个点，左上，右上，右下等（可打印查看）
+
+**返回：**  
+json 对象，包含：xDock, yDock
+
+- xDock ： x, y, step, prev, penId  
+  水平方向的参考线
+
+- yDock ： x, y, step, prev, penId  
+  垂直方向的参考线
+
+  prev - 参考线的起点  
+  x,y - 参考线的终点  
+  step - 自动吸附需要的偏移量，比如 xDock.step=5，表示 rect.x += 5 是最终希望的位置。  
+  penId - 自动吸附的画笔，对应画笔产生变化
+
+**示例：**
+
+```js
+topology.registerResizeDock((store, rect, pens, resizeIndex) => {
+  return {
+    xDock: {
+      x,
+      y,
+      prev,
+      step,
+      penId
+    },
+    yDock: {
+      x,
+      y,
+      prev,
+      step,
+      penId
     },
   };
 });
