@@ -136,3 +136,7 @@ http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
 ### Q8：图形库哪些是编辑器自带的？
 
 基本形状、箭头、流程图、活动图、时序图和类图、图表控件、脑图、拓扑图未分类。
+
+### Q9：topology 1.0 企业版，为什么没有组件版？
+
+topology 1.0 企业版引入了vuex ，vuex相关代码无法打包为lib组件
