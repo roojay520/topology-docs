@@ -274,4 +274,5 @@ onTouchstart = (e) => {
 | [nextNode](../api/core#nextnode)                       | 获取下一个节点                      |
 | [previousNode](../api/core#previousnode)               | 获取前一个节点                      |
 | [toComponent](../api/core#tocomponent)                 | 生成自定义组件                      |
+| [setVisible](../api/core#setvisible)                   | 设置图形的可见（包含子节点）          |
 | [destroy](../api/core#destroy)                         | 销毁画布，清理资源内存。推荐调用    |

@@ -1912,6 +1912,25 @@ Pen[]。组合成一个组件的画笔数组对象（包含父子 Pen）
 var pens = topology.toComponent();
 ```
 
+### setVisible  
+
+设置画笔是否可见，并且修改子节点们的 visible。
+
+**参数：**
+
+- pen: [Pen](./pen)  
+  画笔
+
+- visible: boolean  
+  可见
+
+**示例：**
+
+```js
+const pen = topology.find('id')[0];
+topology.setVisible(pen, false);
+```
+
 ### destroy
 
 销毁画布，清理资源内存。推荐调用
