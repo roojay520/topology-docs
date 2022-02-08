@@ -223,9 +223,9 @@ topology.combine(pens, showChild);  // 若组合成状态，showChild 必填
 
 官网示例: 
 
-![组合为状态](/img/实时数据监听/zuheweizhuangtai.png)
+![组合为状态](/img/realUpdate/zuheweizhuangtai.png)
 组合成功后，只显示其中一个子节点
-![组合为状态-成功后](/img/实时数据监听/zuhezhuangtaihou.png)
+![组合为状态-成功后](/img/realUpdate/zuhezhuangtaihou.png)
 
 2. 消息通信更改状态
 在前一小节消息通信的基础上，服务器发送如下的 json.
