@@ -1,5 +1,9 @@
 # 资源
 
+## 解决方案
+
+[解决方案](http://topology.le5le.com/search) 
+
 ## 官方教程
 
 [快速上手](../tutorial/start)
