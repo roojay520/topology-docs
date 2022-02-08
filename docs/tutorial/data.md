@@ -208,3 +208,33 @@ topology.websocket.send('data');
 ```
 
 ![服务器发送数据](/img/EMQoperationPage.png)
+
+## 状态
+
+多个状态的自由切换。  
+适用场景：开关的断开，闭合等。  
+
+1. 将多个状态组合成一个组合。
+
+```js
+const showChild = 0;
+topology.combine(pens, showChild);  // 若组合成状态，showChild 必填
+```
+
+官网示例: 
+
+![组合为状态](/img/实时数据监听/zuheweizhuangtai.png)
+组合成功后，只显示其中一个子节点
+![组合为状态-成功后](/img/实时数据监听/zuhezhuangtaihou.png)
+
+2. 消息通信更改状态
+在前一小节消息通信的基础上，服务器发送如下的 json.
+
+```json
+{
+  "id": "6e402f9c",
+  "showChild": 1 
+}
+```
+
+示例图纸：http://t.le5le.com/?id=620215dad84658ad4f8c07e5
