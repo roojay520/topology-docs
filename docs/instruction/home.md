@@ -349,6 +349,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 ### 7.2 系统组件
 
 搜索：输入关键词可以搜索相应的系统组件
+<br>
 取消搜索：删除关键词，回车
 
 ![le5le topology 搜索组件](/img/sousuozujian.gif)
@@ -370,6 +371,8 @@ video标签支持MP4、WebM、Ogg 三种格式
 ​
 
 点击查看：[http://t.le5le.com/](http://t.le5le.com/)
+
+如何搜索：[系统组件](http://developer.le5le.com/topology-documents/instruction/home.html#_7-2-%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6)
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
