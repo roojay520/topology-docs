@@ -107,3 +107,282 @@ topology.register(classPens());
 | -------------- | -------- |
 | simpleClass    | 简单类图 |
 | interfaceClass | 普通类图 |
+
+
+## Echarts图表
+
+- 注册
+
+```js
+import { register as registerEcharts } from '@topology/chart-diagram';
+
+registerEcharts();
+```
+
+- 使用
+  
+```js
+const pen = {
+    name: 'echarts',
+    x:100,
+    y:100,
+    width: 400,
+    height: 300,
+    externElement: true,
+    disableAnchor: true,
+    echarts: {
+      option: {
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+          }
+        ]
+      }
+    }
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+## highcharts图表
+
+- 注册
+
+```js
+import { registerHighcharts } from '@topology/chart-diagram';
+
+registerHighcharts();
+```
+
+- 使用
+  
+```js
+const pen = {
+    name: 'highcharts',
+    x:100,
+    y:100,
+    width: 400,
+    height: 200,
+    disableAnchor: true,
+    externElement: true,
+    highcharts: {
+      option: {
+        chart: {
+          backgroundColor: '#ffffff00'
+        },
+        credits: {
+          enabled: false
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+          }
+        ]
+      }
+    }
+};
+topology.addPen(pen);
+topology.inactive();
+```
+
+## LightningChart图表
+
+参考echarts的配置格式，在lightningCharts库的基础上进行封装，目前支持的属性配置（lightningCharts.option）如下：
+| 名称 | 类型 | 描述 |
+| ---------- | -------- | ----------------------------------------- |
+| type | string | 图表类型。可选'line'\|'bar'\|'pie'\|'gauge' |
+| theme | string | 主题。参考 [默认库颜色主题](https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/interfaces/themes.html) |
+| data | any | 数据 |
+| title | string |图表标题 |
+| groups | string[] |'bar'类型分组 |
+| categories | string[] |'bar'类型分类 |
+| yTitle | string |'bar'类型y轴标题 |
+| innerRadius | number |'pie'类型内圆占比 |
+| startAngle | string |'gauge'类型起始角度，默认225 |
+| endAngle | string |'gauge'类型结束角度，默认-45 |
+| min | number |'gauge'类型最小值，默认0 |
+| max | number |'gauge'类型最大值，默认100 |
+| background | string |'gauge'类型填充颜色 |
+
+
+
+- 注册
+
+```js
+import { registerLightningChart } from '@topology/chart-diagram';
+
+registerLightningChart();
+```
+
+- 使用
+  
+```js
+//折线图
+const line = {
+    name: 'lightningCharts',
+    x:100,
+    y:100,
+    width: 400,
+    height: 200,
+    disableAnchor: true,
+    externElement: true,
+    lightningCharts: {
+      option: {
+        type: 'line',
+        theme: 'darkGreen',
+        data: [
+          {
+            name: 'Sports Car',
+            data: [
+              { x: 0, y: 0 },
+              { x: 50, y: 10 },
+              { x: 80, y: 20 },
+              { x: 100, y: 30 },
+              { x: 150, y: 40 },
+              { x: 180, y: 50 },
+              { x: 230, y: 60 },
+              { x: 290, y: 70 }
+            ]
+          },
+          {
+            name: 'Family Car',
+            data: [
+              { x: 0, y: 0 },
+              { x: 100, y: 10 },
+              { x: 230, y: 20 },
+              { x: 390, y: 30 },
+              { x: 470, y: 40 },
+              { x: 540, y: 50 },
+              { x: 600, y: 60 },
+              { x: 800, y: 70 }
+            ]
+          },
+          {
+            name: 'Pick-up Car',
+            data: [
+              { x: 0, y: 0 },
+              { x: 80, y: 10 },
+              { x: 100, y: 20 },
+              { x: 150, y: 30 },
+              { x: 230, y: 40 },
+              { x: 380, y: 50 },
+              { x: 450, y: 60 },
+              { x: 580, y: 70 }
+            ]
+          }
+        ],
+        title: 'title'
+      }
+    }
+};
+topology.addPen(line);
+topology.inactive();
+
+//柱状图
+const bar = {
+    name: 'lightningCharts',
+    x:100,
+    y:100,
+    width: 400,
+    height: 200,
+    disableAnchor: true,
+    externElement: true,
+    lightningCharts: {
+        option: {
+          type: 'bar',
+          theme: 'darkGreen',
+          groups: ['Finland', 'Germany', 'UK'],
+          categories: ['Engineers', 'Sales', 'Marketing'],
+          data: [
+            [48, 27, 24],
+            [19, 40, 14],
+            [33, 33, 62]
+          ],
+          title: 'My first chart',
+          yTitle: '纵坐标'
+        }
+      }
+};
+topology.addPen(bar);
+topology.inactive();
+
+//饼图
+const pie = {
+    name: 'lightningCharts',
+    x:100,
+    y:100,
+    width: 600,
+    height: 300,
+    disableAnchor: true,
+    externElement: true,
+    lightningCharts: {
+          option: {
+            type: 'pie',
+            innerRadius: 50,
+            data: [
+              {
+                name: 'Planning',
+                value: 40
+              },
+              {
+                name: 'Development',
+                value: 120
+              },
+              {
+                name: 'Testing',
+                value: 60
+              },
+              {
+                name: 'Review',
+                value: 24
+              },
+              {
+                name: 'Bug Fixing',
+                value: 90
+              }
+            ]
+          }
+        }
+};
+topology.addPen(pie);
+topology.inactive();
+
+//进度条
+const gauge = {
+    name: 'lightningCharts',
+    x:100,
+    y:100,
+    width: 300,
+    height: 300,
+    disableAnchor: true,
+    externElement: true,
+    lightningCharts: {
+          option: {
+            type: 'gauge',
+            data: 80,
+            // title: '进度条',
+            // startAngle: 90,
+            // endAngle: -270,
+            background: '#0000ff'
+          }
+        }
+};
+topology.addPen(gauge);
+topology.inactive();
+```

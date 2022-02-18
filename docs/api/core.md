@@ -1199,7 +1199,11 @@ topology.closeMqtt();
 **参数：**
 
 - data: any  
-  更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen
+  更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
+
+- emit: boolean = false  
+  是否执行 valueUpdate 事件  
+  在 events 执行 js 代码中，该参数不可以为 true
 
 **返回：**  
 void
@@ -1208,7 +1212,7 @@ void
 
 ```js
 // 修改id为aaa的画笔的text属性
-topology.setValue({ id: 'aaa', text: 'new text' });
+topology.setValue({ id: 'aaa', text: 'new text' }, false);
 
 // 修改tag为aaa的画笔的text属性
 topology.setValue({ tag: 'aaa', text: 'new text' });
@@ -1220,8 +1224,8 @@ topology.setValue({ id: pen.id, newId: '111' });
 ### updateValue
 
 修改 [Pen](./pen) 属性值  
-与 setValue 的区别，不触发 valueUpdate 事件  
-适用于收到 ws 和 mqtt 消息时，更改其它属性
+该方法不调用 render 方法，需要手动调用 render  
+推荐使用 setValue 
 
 **参数：**
 
