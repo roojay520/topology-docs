@@ -50,7 +50,32 @@ module.exports = {
           {
             text: '加入我们',
             link: '/community/join',
-          }
+          },
+        ],
+      },
+      {
+        text: '产品',
+        items: [
+          {
+            text: 'Topology 2D',
+            link: 'tutorial/introduction',
+          },
+          {
+            text: 'Topology 2D 企业版',
+            link: 'tutorial/commercial',
+          },
+          {
+            text: 'Topology 3D 预览版',
+            link: 'http://3d.preview.le5le.com/',
+          },
+          {
+            text: '物联平台',
+            link: 'http://iot.demo.le5le.com/',
+          },
+          {
+            text: 'Topology 0.5.x',
+            link: 'https://www.yuque.com/alsmile/topology',
+          },
         ],
       },
       {
@@ -216,7 +241,7 @@ function getCommunitySidebar() {
         {
           text: '加入我们',
           link: '/community/join',
-        }
+        },
       ],
     },
   ];
