@@ -1619,7 +1619,7 @@ svg path 字符串。
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: 'svgPath',
   x: 100,
   y: 100,
   width: 100,
