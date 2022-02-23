@@ -1928,6 +1928,10 @@ var pens = topology.toComponent();
 - visible: boolean  
   可见
 
+- emit: boolean = false  
+  是否执行 valueUpdate 事件  
+  在 events 执行 js 代码中，该参数不可以为 true
+
 **示例：**
 
 ```js
