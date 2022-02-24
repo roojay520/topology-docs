@@ -13,4 +13,7 @@
 topology.drawingPencil();
 
 // 鼠标抬起结束
+
+// 停止铅笔绘画（关闭铅笔绘画状态）
+topology.stopPencil();
 ```

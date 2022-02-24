@@ -296,7 +296,7 @@ topology.finishDrawLine();
 
 ### drawingPencil
 
-开始铅笔绘画。鼠标抬起完成绘画
+开始铅笔绘画。鼠标抬起完成绘画  
 **参数：**  
 无
 
@@ -307,6 +307,21 @@ void
 
 ```js
 topology.drawingPencil();
+```
+
+### stopPencil
+
+停止铅笔绘画，鼠标恢复默认状态  
+**参数：**  
+无
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.stopPencil();
 ```
 
 ### finishPencil

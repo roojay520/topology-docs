@@ -1163,7 +1163,7 @@ topology.inactive();
 
 文本是否显示省略号。默认显示省略号，仅当 == false 时，不显示省略号。
 
-**数据类型：** string
+**数据类型：** boolean
 
 **示例：**
 
@@ -1257,7 +1257,7 @@ topology.inactive();
 
 图标旋转角度
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
@@ -1281,25 +1281,22 @@ topology.inactive();
 
 ### iconWidth、iconHeight
 
-图标最大宽高。默认为 pen.width, pen.height
+图片最大宽高。默认为 pen.width, pen.height
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: 'rectangle',
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '字体图标',
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
   iconWidth: 20,
   iconHeight: 20,
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  image: 'logo.png'
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1307,9 +1304,9 @@ topology.inactive();
 
 ### iconSize
 
-图标大小。默认自适应 iconWidth、iconHeight
+图标大小。默认自适应 pen.width, pen.height 中的小值
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
@@ -1334,7 +1331,7 @@ topology.inactive();
 
 图标偏移量。默认居中
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
@@ -1547,7 +1544,7 @@ topology.inactive();
 
 子画笔 id 数组。
 
-**数据类型：** string
+**数据类型：** string[]
 
 **示例：**
 
@@ -1674,7 +1671,7 @@ topology.inactive();
 
 箭头大小。
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
@@ -1898,7 +1895,7 @@ topology.inactive();
 
 连线动画虚线样式。
 
-**数据类型：** string
+**数据类型：** number[]
 
 **示例：**
 
@@ -1928,7 +1925,7 @@ topology.inactive();
 
 连线动画类型
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
