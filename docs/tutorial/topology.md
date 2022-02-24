@@ -198,6 +198,7 @@ onTouchstart = (e) => {
 | [connectSocket](../api/core#connectsocket)             | 消息通信重连（默认自动连接）        |
 | [drawLine](../api/core#drawline)                       | 开始钢笔绘画                        |
 | [drawingPencil](../api/core#drawingpencil)             | 开始铅笔绘画                        |
+| [stopPencil](../api/core#stoppencil)             | 停止铅笔绘画                        |
 | [finishDrawLine](../api/core#finishdrawline)           | 完成钢笔绘画                        |
 | [finishPencil](../api/core#finishpencil)               | 完成铅笔绘画                        |
 | [updateLineType](../api/core#updatelinetype)           | 修改连线类型                        |
