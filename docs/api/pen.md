@@ -1895,7 +1895,7 @@ topology.inactive();
 
 连线动画虚线样式。
 
-**数据类型：** string
+**数据类型：** number[]
 
 **示例：**
 
@@ -1925,7 +1925,7 @@ topology.inactive();
 
 连线动画类型
 
-**数据类型：** string
+**数据类型：** number
 
 **示例：**
 
