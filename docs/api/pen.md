@@ -70,8 +70,8 @@ Line,
 ```js
 const node = {
   type: 0,
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
@@ -80,8 +80,8 @@ const node = {
 
 const line = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -95,7 +95,7 @@ const line = {
 
 const node2 = {
   type: 0,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -146,8 +146,8 @@ const line = {type:1, name: 'line', lineName:'curve', ...};
 ```js
 const line1 = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -161,8 +161,8 @@ const line1 = {
 
 const line2 = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -569,14 +569,19 @@ const pen = {bkType: 1, gradientFromColor: 'green', gradientToColor: 'blue', gra
 
 ```js
 const node = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
 };
 
-const pen = { bkType: 2, gradientFromColor: 'green', gradientToColor: 'blue', gradientRadius: 100 };
+const pen = {
+  bkType: 2,
+  gradientFromColor: "green",
+  gradientToColor: "blue",
+  gradientRadius: 100,
+};
 
 topology.addPen(node);
 pen.id = node.id;
@@ -674,7 +679,7 @@ topology.inactive();
 ```js
 const line = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -684,12 +689,12 @@ const line = {
   y: 100,
   width: 100,
   height: 100,
-  lineCap: 'round',
+  lineCap: "round",
 };
 
 const line2 = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -699,12 +704,12 @@ const line2 = {
   y: 100,
   width: 100,
   height: 100,
-  lineCap: 'butt',
+  lineCap: "butt",
 };
 
 const line3 = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -714,7 +719,7 @@ const line3 = {
   y: 100,
   width: 100,
   height: 100,
-  lineCap: 'square',
+  lineCap: "square",
 };
 
 topology.addPens([line, line2, line3]);
@@ -732,7 +737,7 @@ topology.inactive();
 ```js
 const line = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -742,12 +747,12 @@ const line = {
   y: 100,
   width: 100,
   height: 100,
-  lineJoin: 'round',
+  lineJoin: "round",
 };
 
 const line2 = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -757,12 +762,12 @@ const line2 = {
   y: 100,
   width: 100,
   height: 100,
-  lineJoin: 'bevel',
+  lineJoin: "bevel",
 };
 
 const line3 = {
   type: 1,
-  name: 'line',
+  name: "line",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -772,7 +777,7 @@ const line3 = {
   y: 100,
   width: 100,
   height: 100,
-  lineJoin: 'miter',
+  lineJoin: "miter",
 };
 
 topology.addPens([line, line2, line3]);
@@ -789,13 +794,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  fillStyle: 'blue',
-  shadowColor: 'black',
+  fillStyle: "blue",
+  shadowColor: "black",
 };
 
 topology.addPen(pen);
@@ -812,13 +817,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  fillStyle: 'blue',
-  shadowColor: 'black',
+  fillStyle: "blue",
+  shadowColor: "black",
   shadowBlur: 20,
 };
 
@@ -836,13 +841,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  fillStyle: 'blue',
-  shadowColor: 'black',
+  fillStyle: "blue",
+  shadowColor: "black",
   shadowBlur: 20,
   shadowOffsetX: 10,
   shadowOffsetY: 5,
@@ -862,12 +867,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textWidth: 20,
 };
 
@@ -885,12 +890,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textWidth: 20,
   textHeight: 36,
 };
@@ -909,12 +914,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textLeft: 10,
   textTop: 20,
 };
@@ -933,13 +938,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  textColor: 'green',
+  text: "zhe shi yi chang duan wen zi.",
+  textColor: "green",
 };
 
 topology.addPen(pen);
@@ -956,13 +961,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  hoverTextColor: 'green',
+  text: "zhe shi yi chang duan wen zi.",
+  hoverTextColor: "green",
 };
 
 topology.addPen(pen);
@@ -979,13 +984,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  activeTextColor: 'green',
+  text: "zhe shi yi chang duan wen zi.",
+  activeTextColor: "green",
 };
 
 topology.addPen(pen);
@@ -1002,13 +1007,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  fontFamily: '宋体',
+  text: "zhe shi yi chang duan wen zi.",
+  fontFamily: "宋体",
 };
 
 topology.addPen(pen);
@@ -1025,12 +1030,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   fontSize: 24,
 };
 
@@ -1048,12 +1053,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textWidth: 50,
   lineHeight: 24,
 };
@@ -1072,13 +1077,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  fontStyle: 'italic',
+  text: "zhe shi yi chang duan wen zi.",
+  fontStyle: "italic",
 };
 
 topology.addPen(pen);
@@ -1095,12 +1100,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   fontWeight: 700,
 };
 
@@ -1122,13 +1127,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
-  textBackground: 'blue',
+  text: "zhe shi yi chang duan wen zi.",
+  textBackground: "blue",
 };
 
 topology.addPen(pen);
@@ -1145,14 +1150,14 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textWidth: 50,
-  whiteSpace: 'nowrap',
+  whiteSpace: "nowrap",
 };
 
 topology.addPen(pen);
@@ -1169,12 +1174,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'zhe shi yi chang duan wen zi.',
+  text: "zhe shi yi chang duan wen zi.",
   textWidth: 50,
   textHeight: 30,
   ellipsis: false,
@@ -1194,12 +1199,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  image: '/favicon.ico',
+  image: "/favicon.ico",
 };
 
 topology.addPen(pen);
@@ -1216,12 +1221,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  image: '/favicon.ico',
+  image: "/favicon.ico",
   imageRatio: true,
 };
 
@@ -1239,15 +1244,15 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'image',
+  name: "image",
   x: 100,
   y: 100,
   width: 20,
   height: 20,
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
   // iconSize: 20, // 缺省自适应
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  iconColor: "green", // 可缺省
+  icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1263,16 +1268,16 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '字体图标',
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  text: "字体图标",
+  iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
   iconSize: 20,
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  iconColor: "green", // 可缺省
+  icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
   iconRotate: 30,
 };
 topology.addPen(pen);
@@ -1289,14 +1294,14 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
   iconWidth: 20,
   iconHeight: 20,
-  image: 'logo.png'
+  image: "logo.png",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1312,16 +1317,16 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '字体图标',
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  text: "字体图标",
+  iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
   iconSize: 20,
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  iconColor: "green", // 可缺省
+  icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1337,17 +1342,17 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '字体图标',
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
+  text: "字体图标",
+  iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
   iconTop: 20,
   iconLeft: 20,
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  iconColor: "green", // 可缺省
+  icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1373,16 +1378,16 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '字体图标',
-  iconFamily: 't-icon', // 必须正确设置，具体参考每个字体图标的项目设置
-  iconAlign: 'left-top',
-  iconColor: 'green', // 可缺省
-  icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
+  text: "字体图标",
+  iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
+  iconAlign: "left-top",
+  iconColor: "green", // 可缺省
+  icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1398,12 +1403,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   disableInput: true,
 };
 topology.addPen(pen);
@@ -1420,12 +1425,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   disableRotate: true,
 };
 topology.addPen(pen);
@@ -1441,12 +1446,12 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   disableSize: true,
 };
 topology.addPen(pen);
@@ -1462,12 +1467,12 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   disableAnchor: true,
 };
 topology.addPen(pen);
@@ -1484,12 +1489,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   paddingTop: 20,
 };
 topology.addPen(pen);
@@ -1506,13 +1511,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  backgroundImage: '/favicon.ico',
+  text: "Text",
+  backgroundImage: "/favicon.ico",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1528,13 +1533,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  strokeImage: '/favicon.ico',
+  text: "Text",
+  strokeImage: "/favicon.ico",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1550,13 +1555,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  children: ['id1', 'id2'],
+  text: "Text",
+  children: ["id1", "id2"],
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1572,12 +1577,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   anchorRadius: 10,
 };
 topology.addPen(pen);
@@ -1594,13 +1599,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  anchorBackground: 'blue',
+  text: "Text",
+  anchorBackground: "blue",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1616,13 +1621,13 @@ svg path 字符串。
 
 ```js
 const pen = {
-  name: 'svgPath',
+  name: "svgPath",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  path: 'M250 150 L150 350 L350 350 Z',
+  text: "Text",
+  path: "M250 150 L150 350 L350 350 Z",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1649,8 +1654,8 @@ topology.inactive();
 ```js
 const line = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -1660,7 +1665,7 @@ const line = {
   y: 100,
   width: 100,
   height: 100,
-  fromArrow: 'triangleSolid',
+  fromArrow: "triangleSolid",
 };
 
 topology.addPen(line);
@@ -1677,13 +1682,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  fromArrow: 'triangleSolid',
+  text: "Text",
+  fromArrow: "triangleSolid",
   fromArrowSize: 12,
 };
 topology.addPen(pen);
@@ -1700,14 +1705,14 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  fromArrow: 'triangleSolid',
-  fromArrowColor: 'red',
+  text: "Text",
+  fromArrow: "triangleSolid",
+  fromArrowColor: "red",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1732,12 +1737,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   connectedLines: [{ lineId, lineAnchor, anchor }],
 };
 topology.addPen(pen);
@@ -1754,12 +1759,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   animateCycle: 3,
 };
 topology.addPen(pen);
@@ -1776,13 +1781,13 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
-  nextAnimate: 'id/tag',
+  text: "Text",
+  nextAnimate: "id/tag",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -1798,12 +1803,12 @@ topology.open 时，是否自动播放
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   autoPlay: true,
 };
 topology.addPen(pen);
@@ -1820,12 +1825,12 @@ pen 为音视频时，是否自动循环播放
 
 ```js
 const pen = {
-  name: 'video',
+  name: "video",
   x: 100,
   y: 100,
   width: 100,
   height: 10,
-  audio: 'https://down.ear0.com:3321/preview?soundid=37418&type=mp3',
+  audio: "https://down.ear0.com:3321/preview?soundid=37418&type=mp3",
   autoPlay: true,
   playLoop: true,
 };
@@ -1849,12 +1854,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   linear: false,
 };
 topology.addPen(pen);
@@ -1951,12 +1956,12 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   input: true,
 };
 topology.addPen(pen);
@@ -1981,12 +1986,12 @@ topology.inactive();
 ```js
 // 简单类型
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   dropdownList: [1, 2, 3],
 };
 topology.addPen(pen);
@@ -1994,15 +1999,15 @@ topology.inactive();
 
 // 复杂类型
 const pen = {
-  name: ' rectangle',
+  name: " rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: 'Text',
+  text: "Text",
   dropdownList: [
-    { text: 1, a: 'a' },
-    { text: 2, a: 'b' },
+    { text: 1, a: "a" },
+    { text: 2, a: "b" },
   ],
 };
 topology.addPen(pen);
@@ -2029,12 +2034,12 @@ pen.name='iframe'时，嵌入网页的 url
 
 ```js
 const pen = {
-  name: ' iframe',
+  name: " iframe",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  iframe: 'http://topology.le5le.com',
+  iframe: "http://topology.le5le.com",
 };
 topology.addPen(pen);
 topology.inactive();
@@ -2061,8 +2066,8 @@ pen.name='video'时，音视频 url
 ```js
 const line = {
   type: 1,
-  name: 'line',
-  lineName: 'polyline',
+  name: "line",
+  lineName: "polyline",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 0.1, y: 0.5 },
@@ -2091,8 +2096,8 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
@@ -2115,14 +2120,14 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
   progress: 0.8,
-  progressColor: 'green',
+  progressColor: "green",
   // verticalProgress: false,  // 水平方向还是垂直方向
 };
 topology.addPen(pen);
@@ -2139,8 +2144,8 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
@@ -2164,8 +2169,8 @@ topology.inactive();
 ```js
 const line = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 1, y: 1 },
@@ -2194,8 +2199,8 @@ topology.inactive();
 ```js
 const line = {
   type: 1,
-  name: 'line',
-  lineName: 'curve',
+  name: "line",
+  lineName: "curve",
   anchors: [
     { x: 0.1, y: 0.1 },
     { x: 1, y: 1 },
@@ -2233,7 +2238,6 @@ enum Flip {
 const pen = {flip: 1, ...};
 ```
 
-
 ### layer
 
 自定义层
@@ -2241,6 +2245,7 @@ const pen = {flip: 1, ...};
 ### borderWidth
 
 仅连线有效。表示连线边框宽度。
+
 ### borderColor
 
 仅连线有效。表示连线边框颜色。
@@ -2249,8 +2254,8 @@ const pen = {flip: 1, ...};
 
 圆角
 
-
 ### pathId
+
 ### hiddenText
 
 是否隐藏文本（text）
@@ -2262,6 +2267,7 @@ const pen = {flip: 1, ...};
 ### lastFrame
 
 最后一个动画帧状态数据
+
 ### calculative
 
 画笔临时自动计算变量。例如：世界坐标、动画渐变等属性。保存文件时，会自动删除。
@@ -2273,8 +2279,6 @@ const pen = {flip: 1, ...};
 ```js
 const rect = pen.calculative.worldRect;
 ```
-
-
 
 ### 扩展属性
 
@@ -2308,7 +2312,7 @@ void
 **示例：**
 
 ```js
-import { randomId } from '@topology/core';
+import { randomId } from "@topology/core";
 
 randomId(pen);
 ```
@@ -2331,7 +2335,7 @@ Pen。如果没有父元素，返回 undefined
 **示例：**
 
 ```js
-import { getParent } from '@topology/core';
+import { getParent } from "@topology/core";
 
 getParent(pen);
 ```
@@ -2351,7 +2355,7 @@ Pen[]。如果没有子元素或孙元素，返回 []
 **示例：**
 
 ```js
-import { getAllChildren } from '@topology/core';
+import { getAllChildren } from "@topology/core";
 
 getAllChildren(pen);
 ```
@@ -2371,7 +2375,7 @@ void
 **示例：**
 
 ```js
-import { calcPenRect } from '@topology/core';
+import { calcPenRect } from "@topology/core";
 
 calcPenRect(pen);
 ```
@@ -2397,7 +2401,7 @@ void
 **示例：**
 
 ```js
-import { scalePen } from '@topology/core';
+import { scalePen } from "@topology/core";
 
 // 相对自身中点缩放120%
 scalePen(pen, 1.2, pen.calculative.worldRect.center);
@@ -2421,7 +2425,7 @@ Point。世界坐标下的锚点
 **示例：**
 
 ```js
-import { pushPenAnchor } from '@topology/core';
+import { pushPenAnchor } from "@topology/core";
 
 // 这里的x,y仅为示例值
 pushPenAnchor(pen, { x: 100, y: 100 });
@@ -2448,7 +2452,7 @@ Point。世界坐标下的锚点
 **示例：**
 
 ```js
-import { addLineAnchor } from '@topology/core';
+import { addLineAnchor } from "@topology/core";
 
 // 这里的x,y仅为示例值
 addLineAnchor(line, { x: 100, y: 100 }, 0);
@@ -2473,9 +2477,9 @@ void
 **示例：**
 
 ```js
-import { removePenAnchor } from '@topology/core';
+import { removePenAnchor } from "@topology/core";
 
-removePenAnchor(pen, { id: 'id' });
+removePenAnchor(pen, { id: "id" });
 if (line.type) {
   topology.canvas.initLineRect(line);
 }
@@ -2499,7 +2503,7 @@ Point：锚点
 **示例：**
 
 ```js
-import { nearestAnchor } from '@topology/core';
+import { nearestAnchor } from "@topology/core";
 
 const pt = nearestAnchor(pen, { x: 100, y: 100 });
 ```
@@ -2532,7 +2536,7 @@ enum Direction {
 **示例：**
 
 ```js
-import { facePen } from '@topology/core';
+import { facePen } from "@topology/core";
 
 const direction = facePen({ x: 100, y: 100 }, pen);
 ```
@@ -2555,9 +2559,9 @@ Point: 锚点
 **示例：**
 
 ```js
-import { getAnchor } from '@topology/core';
+import { getAnchor } from "@topology/core";
 
-const pt = getAnchor(pen, 'id');
+const pt = getAnchor(pen, "id");
 ```
 
 ### getFromAnchor
@@ -2575,7 +2579,7 @@ Point: 起点
 **示例：**
 
 ```js
-import { getFromAnchor } from '@topology/core';
+import { getFromAnchor } from "@topology/core";
 
 const from = getFromAnchor(pen);
 ```
@@ -2595,7 +2599,7 @@ Point: 终点
 **示例：**
 
 ```js
-import { getToAnchor } from '@topology/core';
+import { getToAnchor } from "@topology/core";
 
 const to = getToAnchor(pen);
 ```
@@ -2618,7 +2622,69 @@ void
 **示例：**
 
 ```js
-import { setHover } from '@topology/core';
+import { setHover } from "@topology/core";
 
 setHover(pen);
+```
+
+### connectLine
+
+添加 line 到 pen 的 connectedLines 中，并关联相关属性。  
+该方法并不添加连线到画布中，请确保画布中已经有该连线。  
+该方法并不改动 line.anchors 中的 connectTo 和 anchorId ，请手动更改
+
+**参数：**
+
+- pen: Pen  
+  画笔, 连接的节点
+
+- lineId: string  
+  连接线的 id
+
+- lineAnchor: string  
+  连接线对应的连接点（Point） id, 即 line.anchors 中的 id
+
+- anchor: string  
+  连接节点的锚点 id , 即 pen.anchors 中的 id
+
+**示例：**
+
+```js
+import { connectLine, s8 } from "@topology/core";
+
+const pen: Pen = {
+  name: "rectangle",
+  width: 100,
+  height: 100,
+  x: 100,
+  y: 100,
+};
+topology.addPen(pen);
+// 添加进入画布后，会为 pen 添加 id , anchors
+const anchorId = pen.anchors[1].id;
+const line: Pen = {
+  x: 200,
+  y: 150,
+  width: 100,
+  height: 100,
+  type: 1,
+  name: "line",
+  lineName: "curve",
+  anchors: [
+    {
+      x: 0,
+      y: 0,
+      id: s8(),
+      connectTo: pen.id,
+      anchorId,
+    },
+    {
+      x: 1,
+      y: 1,
+      id: s8(),
+    },
+  ],
+};
+topology.addPen(line);
+connectLine(pen, line.id, line.anchors[0].id, anchorId);
 ```
