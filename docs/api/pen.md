@@ -1906,6 +1906,16 @@ topology.inactive();
 
 参考[动画教程](../tutorial/animate)
 
+### animateDotSize
+
+连线动画圆点大小
+
+**数据类型：** number
+
+**示例：**
+
+参考[动画教程](../tutorial/animate)
+
 ### animateReverse
 
 连线动画是否反向播放。
