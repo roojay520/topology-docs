@@ -163,6 +163,8 @@ pen.animateSpan = 1;
 pen.animateColor = 'red';
 // 虚线段，pen.lineAnimateType = 1 有效
 pen.animateLineDash = [5, 5];
+// 圆点大小，pen.lineAnimateType = 2 有效，最小值 6
+pen.animateDotSize = 20;
 // 反向播放
 pen.animateReverse = fasle;
 
