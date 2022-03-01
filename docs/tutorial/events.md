@@ -108,3 +108,26 @@ topology.off('event', fn);
  等价于
  JavaScript输入 return pen.text>=100
 ```
+
+- **自定义消息(弹框示例)**
+
+1. 为节点配置自定义消息事件
+
+参考上方事件，事件行为选择“自定义消息”，配置消息名和参数。
+![自定义消息事件配置](/img/userdefinedMessage_event.png)
+
+2. 监听自定义消息
+
+```js
+import { message } from 'ant-design-vue';
+
+topology.on('userDefindMessage', (e) => {
+    const pen = e.pen;
+    const params = e.params;
+    message.info(pen.name + params);
+});
+```
+
+3. 触发事件
+   
+![自定义消息事件弹出全局提示框](/img/userDefinedMessage.gif)
