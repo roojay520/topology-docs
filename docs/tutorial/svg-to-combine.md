@@ -1,7 +1,7 @@
 # Svg to combine
 
 将 svg 字符串转换成 le5le topology.js 可识别的 combine 组合画笔。  
-本质上是将svg图片转化为由各个基本形状构成的组合节点，所以可以对各个子节点进行样式配置。
+本质上是将svg图片转化为由各个 [基本图形](./pens.html#%E5%9F%BA%E7%A1%80%E5%9B%BE%E5%BD%A2) 构成的组合节点，所以可以对各个子节点进行样式配置。
 
 ![乐吾乐topology svg to combine](/img/svgToCombine.gif)
 

@@ -173,7 +173,6 @@ function getTutorialSidebar() {
         { text: '右键菜单', link: '/tutorial/right-menu' },
         { text: '鹰眼地图', link: '/tutorial/map' },
         { text: '放大镜', link: '/tutorial/magnifier' },
-        { text: 'svg to combine', link: '/tutorial/svg-to-combine' },
         { text: '快捷键', link: '/tutorial/keyboards' },
       ],
     },
@@ -181,6 +180,7 @@ function getTutorialSidebar() {
       text: '图形库',
       children: [
         { text: '默认图形库', link: '/tutorial/pens' },
+        { text: 'svg to combine', link: '/tutorial/svg-to-combine' },
         { text: '字体图形库', link: '/tutorial/icons' },
         { text: '自定义图形库', link: '/tutorial/make-component' },
         { text: '自定义连线算法', link: '/tutorial/line-ai' },
