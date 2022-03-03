@@ -96,7 +96,8 @@ npm install @topology/class-diagram --save
 npm install @topology/flow-diagram --save
 npm install @topology/sequence-diagram --save
 // ...
-npm install @topology/layout --save
+# 新版本尚未发布，待
+# npm install @topology/layout --save
 
 ```
 
@@ -204,7 +205,8 @@ npm install @topology/class-diagram --save
 npm install @topology/flow-diagram --save
 npm install @topology/sequence-diagram --save
 // ...
-npm install @topology/layout --save
+# 新版本尚未发布，待
+# npm install @topology/layout --save
 
 ```
 
