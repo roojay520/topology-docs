@@ -37,6 +37,11 @@ formatPadding([3, 4, 5, 6])
 **参数：**  
 - o: any
 
+- keepCalc: boolean = false  
+  保留计算属性
+  - false 时 calculative 不保留
+  - true 时 calculative 保留，但 calculative.canvas 属性丢失，仍需要重新赋值，无法拷贝的值也会丢失，例如: calculative.img 
+
 **返回：**  
 any
 
@@ -44,6 +49,7 @@ any
 
 ```ts
 deepClone(pens)
+deepClone(pens, true)
 ```
 
 ## s8

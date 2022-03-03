@@ -182,7 +182,8 @@ console.log(pen.calculative.active);
 - 鼠标抬起 mouseup
 - 数据更新 valueUpdate
 
-触发 pen 的上述行为时，可配置执行的动作
+触发 pen 的上述行为时，可配置执行的动作  
+锁画布后(topology.store.data.locked = 1 or 2)，可触发交互事件。
 
 ```js
 const pen = {
