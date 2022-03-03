@@ -252,9 +252,11 @@
 
 ![le5le topology 节点动画](/img/donghua.gif)
 
-自定义动画：
+自定义动画示例1：进度条，通常用来展示水位变化
 
 ![le5le topology 自定义动画](/img/zidingyidonghua02.gif)
+
+自定义动画示例2：特殊效果
 
 ![le5le topology 自定义动画](/img/zidingyidonghua03.gif)
 
