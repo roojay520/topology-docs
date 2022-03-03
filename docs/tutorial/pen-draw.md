@@ -19,6 +19,9 @@ topology.drawLine();
 // 默认Enter、Escape、鼠标右键完成绘画。
 // 手动完成绘画
 topology.finishDrawLine();
+
+// drawingLineName 有值时，认为在钢笔状态
+if (topology.canvas.drawingLineName)  // 钢笔绘画状态
 ```
 
 **快捷键**
