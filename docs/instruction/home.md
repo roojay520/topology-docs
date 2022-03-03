@@ -366,6 +366,8 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 我的组件](/img/wodezujian.gif)
 
+![le5le topology 我的组件](/img/wodezujian2.gif)
+
 ## 8 图形库
 
 乐吾乐图形库一共分为三大类：基础图形库、电力图形库、物联网图形库，总共约3700个图元，能满足大部分行业的基本需求。
