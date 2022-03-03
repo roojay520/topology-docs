@@ -198,9 +198,12 @@
 
 ![le5le topology 位置和大小](/img/weizhidaxiao.png)
 
-案例：“全民”进度条
+案例：通常用进度来代表水位高低
+
+![le5le topology 进度条](/img/jindudonghua.gif)
 
 ![le5le topology 进度条](/img/jindutiao.png)
+
 
 #### 2.4.2 样式
 
@@ -367,6 +370,8 @@ video标签支持MP4、WebM、Ogg 三种格式
 新建文件夹、上传图片、创建组件、删除文件夹、删除我的组件
 
 ![le5le topology 我的组件](/img/wodezujian.gif)
+
+例如常用的电网图元组合可以组合成一个组件，保存在“我的组件”里面，方便下次直接拖拽使用，同时也可以将绘制好的组件下载JSON分享给同事使用
 
 ![le5le topology 我的组件](/img/wodezujian2.gif)
 
