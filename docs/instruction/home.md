@@ -16,8 +16,7 @@
 
 #### 1.2.1 节点
 
-节点即是零部件、图元、组件，用户可以自定义节点 http://developer.le5le.com/topology-documents/tutorial/make-component.html
-
+节点即是零部件、图元、组件，用户可以自定义节点 
 
 ![le5le topology 节点](/img/jiedian.png)
 
