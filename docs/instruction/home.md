@@ -2,6 +2,8 @@
 
 开始设计： http://t.le5le.com/
 
+![le5le topology 编辑器](/img/bianjiqi.png)
+
 ## 1 基本知识
 
 ### 1.1 画布
@@ -10,57 +12,57 @@
 
 ![le5le topology 画布](/img/huabu.png)
 
-### 1.2 图形
-
-绘画对象，分为节点和连线2种
-
-#### 1.2.1 节点
-
-节点即是零部件、图元、组件，用户可以自定义节点 http://developer.le5le.com/topology-documents/tutorial/make-component.html
-
-![le5le topology 节点](/img/jiedian.png)
-
-#### 1.2.2 连线
-
-连线是用于绘画的线条，可以选择钢笔工具绘制连线(快捷键V)
-
-![le5le topology 连线](/img/lianxian2.gif)
-
-### 1.3 菜单栏
+### 1.2 菜单栏
 
 顶部菜单导航，可设置Logo、公司名称、文件编辑、钢笔、铅笔、放大镜、地图、连线起点、连线终点、连线线宽、视图比例、自动锚点、锁定/解锁、预览、分享、帮助中心、语言、登录
 
 ![le5le topology 菜单栏](/img/caidanlan.png)
 
-### 1.4 组件库
+### 1.3 组件库
 
 组件库功能：搜索、图纸、系统组件、我的组件、图形库管理
 
 ![le5le topology 组件库](/img/zujianku.png)
 
-### 1.5 属性面板
+#### 1.3.1 图形
 
-<br/> 
+绘画对象，分为节点和连线2种
 
-#### 1.5.1 文件属性面板
+####  节点
+
+节点即是零部件、图元、组件，用户可以自定义节点 http://developer.le5le.com/topology-documents/tutorial/make-component.html
+
+![le5le topology 节点](/img/jiedian.png)
+
+####  连线
+
+连线是用于绘画的线条，可以选择钢笔工具绘制连线(快捷键V)
+
+![le5le topology 连线](/img/lianxian2.gif)
+
+### 1.4 属性面板
+
+#### 1.4.1 文件属性面板
 
 ![le5le topology 文件属性面板](/img/wenjianshuxingmianban.png)
 
-#### 1.5.2 图形属性面板
+#### 1.4.2 图形属性面板
 
 ![le5le topology 图形属性面板](/img/tuxingshuxingmianban.png)
 
-#### 1.5.2 多选属性面板
+#### 1.4.3 多选属性面板
 
 ![le5le topology 多选属性面板](/img/duoxuanshuxingmianban.png)
 
 ![le5le topology 多选对齐](/img/duoxuanduiqi.gif)
 
-### 1.6 右键菜单
+### 1.5 右键菜单
 
 功能：置顶、置底、上一个图层、下一个图层、组合/取消组合、锁定、删除、撤销、恢复、剪切、复制、粘贴
 
 ![le5le topology 右键菜单](/img/youjiancaidan.png)
+
+<br/> 
 
 ## 2 基本操作
 
