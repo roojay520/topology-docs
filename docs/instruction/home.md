@@ -16,13 +16,13 @@
 
 #### 1.2.1 节点
 
-节点是可以通过线连接到其他节点的零部件
+节点即是零部件、图元、组件，用户可以自定义节点（http://developer.le5le.com/topology-documents/tutorial/make-component.html）
 
 ![le5le topology 节点](/img/jiedian.png)
 
 #### 1.2.2 连线
 
-连线是用于绘画的线条，也可以是连接任意2个画笔对象的虚拟关系，用户可以连接任意2个节点绘制连线，也可以选择钢笔工具绘制连线
+连线是用于绘画的线条，可以选择钢笔工具绘制连线(快捷键V)
 
 ![le5le topology 连线](/img/lianxian2.gif)
 
