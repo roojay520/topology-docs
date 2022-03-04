@@ -183,7 +183,12 @@ console.log(pen.calculative.active);
 - 数据更新 valueUpdate
 
 触发 pen 的上述行为时，可配置执行的动作  
-锁画布后(topology.store.data.locked = 1 or 2)，可触发交互事件。
+锁画布后(topology.store.data.locked = 1 or 2)，可触发交互事件。  
+事件采用冒泡机制，先执行子节点，后执行父节点。  
+事件配置参考：
+
+1. 在 [官网](http://t.le5le.com/) 拖拽一个节点，配置需要的事件。
+2. 选中节点，在控制台输入 ``topology.store.active[0].events`` , 如果报错，确保已经选中该节点。 
 
 ```js
 const pen = {
@@ -205,7 +210,16 @@ const pen = {
 topology.addPen(pen);
 ```
 
-```js
+```ts
+interface Event {
+  name: string;   // 事件行为，例如 'click'，'dblclick' 等 参照上面。
+  action: EventAction;  // 事件动作
+  where?: Where;  // 若无条件，必须为 undefined or null，不可为空对象
+  value?: any;   // 不同 action 下，该值含义不同，例如：动画相关的，即为 节点 tag; Function 类型即为 字符串函数 
+  params?: string;
+  fn?: Function;
+}
+
 // @topology/core 内置action：
 enum EventAction {
   Link,
