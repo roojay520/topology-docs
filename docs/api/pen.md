@@ -1358,9 +1358,10 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
-### iconFamily、iconColor、iconAlign
+### iconFamily、iconColor、iconAlign、iconWeight
 
-图标字体名称、颜色、对齐方式。其中，对齐方式为：
+图标字体名称、颜色、对齐方式、加粗。  
+其中，对齐方式为：
 
 - top
 - bottom
@@ -1385,6 +1386,7 @@ const pen = {
   height: 100,
   text: "字体图标",
   iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
+  iconWeight: '700',
   iconAlign: "left-top",
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
