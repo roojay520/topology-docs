@@ -79,6 +79,8 @@ topology.inactive();
 // 1. 编写图形绘画函数
 // 其中，calculative.worldRect为canvas的世界坐标。更多信息，参考 “架构” - “概要” 和 Pen 相关文档
 export function triangle(ctx: CanvasRenderingContext2D, pen: Pen) {
+  // 若在绘画函数中，配置了 ctx.strokeStyle or fillStyle ，那么画笔的 color or background 无法对它生效
+  // ctx.strokeStyle = '#1890ff';
   ctx.moveTo(pen.calculative.worldRect.x + pen.calculative.worldRect.width / 2, pen.calculative.worldRect.y);
   ctx.lineTo(
     pen.calculative.worldRect.x + pen.calculative.worldRect.width,
@@ -88,6 +90,8 @@ export function triangle(ctx: CanvasRenderingContext2D, pen: Pen) {
   ctx.lineTo(pen.calculative.worldRect.x + pen.calculative.worldRect.width / 2, pen.calculative.worldRect.y);
 
   ctx.closePath();
+  ctx.stroke();
+  // 若需要填充 ctx.fill();
 }
 
 // 2. 如果需要，编写锚点函数。通常，可以使用默认锚点，然后通过快捷键动态添加锚点

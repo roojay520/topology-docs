@@ -1220,6 +1220,10 @@ topology.closeMqtt();
   是否执行 valueUpdate 事件  
   在 events 执行 js 代码中，该参数不可以为 true
 
+- willRender: boolean = true  
+  更改数据后是否重新渲染画布  
+  默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render(Infinity)
+
 **返回：**  
 void
 
@@ -1234,6 +1238,12 @@ topology.setValue({ tag: 'aaa', text: 'new text' });
 
 // 查找id = pen.id的画笔，修改id为111
 topology.setValue({ id: pen.id, newId: '111' });
+
+// for 循环设置 pens 的 text
+for (const pen of pens) {
+  topology.setValue({ id: pen.id, text: 'new text' }, false, false);
+}
+topology.render(Infinity);
 ```
 
 ### updateValue
@@ -1933,7 +1943,8 @@ var pens = topology.toComponent();
 
 ### setVisible  
 
-设置画笔是否可见，并且修改子节点们的 visible。
+设置画笔是否可见，并且修改子节点们的 visible。  
+该方法不会重新渲染画布，执行后需要手动执行 render。
 
 **参数：**
 
@@ -1952,6 +1963,7 @@ var pens = topology.toComponent();
 ```js
 const pen = topology.find('id')[0];
 topology.setVisible(pen, false);
+topology.render(Infinity);
 ```
 
 ### destroy
