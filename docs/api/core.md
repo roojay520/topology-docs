@@ -1943,7 +1943,8 @@ var pens = topology.toComponent();
 
 ### setVisible  
 
-设置画笔是否可见，并且修改子节点们的 visible。
+设置画笔是否可见，并且修改子节点们的 visible。  
+该方法不会重新渲染画布，执行后需要手动执行 render。
 
 **参数：**
 
@@ -1962,6 +1963,7 @@ var pens = topology.toComponent();
 ```js
 const pen = topology.find('id')[0];
 topology.setVisible(pen, false);
+topology.render(Infinity);
 ```
 
 ### destroy
