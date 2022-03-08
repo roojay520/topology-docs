@@ -42,6 +42,14 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+### 约定图形
+
+约定如此，并非强制要求。
+| name        | 描述     |
+| ----------- | -------- |
+| text   | 纯文本     |
+| image      | 纯图片，纯 icon       |
+
 ## 流程图
 
 ```js
