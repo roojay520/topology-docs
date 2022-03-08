@@ -160,6 +160,37 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+- 数据更新
+通常来讲，echarts 拖拽到画布后，只关注它的数据变化，即 x 轴的变化，单条线（或多条线）值的变化。  
+而 setValue 处理起来，每次都需要更改 echarts.options 下的全部值，对于用户来说，过于复杂，于是提供了一种固定的规则处理。  
+
+```ts
+/**
+ * 图表追加或替换数据，只关注数据
+ */
+export interface ChartData {
+  dataX: any | any[],  // x 轴数据变化
+  dataY: any | any[],  // y 轴数据变化
+  overwrite?: boolean,   // 追加 or 替换 ， false 追加
+}
+
+// id: 'le5le' x 轴追加 两个值， y 轴追加两个值
+topology.setValue({
+  id: 'le5le',
+  dataX: ['eight', 'nine'],
+  dataY: [500, 600]
+  // overwrite: true   // 若需要覆盖，使用 true
+});
+
+
+// 多条线的场景使用，顺序与 option.series 相同
+topology.setValue({
+  id: 'le5le',
+  dataX: ['eight', 'nine'],
+  dataY: [[500, 300], [700, 400], [300,1200],[600,1200],[400,50]]
+})
+```
+
 ## highcharts图表
 
 - 注册
