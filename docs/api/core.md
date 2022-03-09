@@ -823,12 +823,12 @@ topology.stopAnimate([pen]);
   画笔
 
 **返回：**
-void。动画帧时长为 pen.calculative.duration
+number 动画帧时长
 
 **示例：**
 
 ```js
-topology.calcAnimateDuration(pen);
+const duration = topology.calcAnimateDuration(pen);
 ```
 
 ### combine
