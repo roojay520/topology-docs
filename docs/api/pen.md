@@ -29,9 +29,9 @@ tag 标签。可用于唯一标记、群组标记等。
 **示例：**
 
 ```js
-const pen1 = {tag:['a', 'b'], ...};
-const pen2 = {tag:['a', 'c'], ...};
-const pen3 = {tag:['b', 'c'], ...};
+const pen1 = {tags:['a', 'b'], ...};
+const pen2 = {tags:['a', 'c'], ...};
+const pen3 = {tags:['b', 'c'], ...};
 
 // 查找指定id的pen
 topology.find('a')
