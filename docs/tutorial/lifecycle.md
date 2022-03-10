@@ -10,38 +10,38 @@
 
 ```js
 topolog.beforeAddPen = (pen: Pen) => {
-  console.log('addPen', pen);
+  console.log("addPen", pen);
   // 返回 true 允许add
   return true;
 };
 
 topolog.beforeRemovePen = (pen: Pen) => {
-  console.log('removePen', pen);
+  console.log("removePen", pen);
   // 返回 true 允许remove
   return true;
 };
 
 topolog.beforeAddAnchor = (pen: Pen) => {
-  console.log('addAnchor', pen);
+  console.log("addAnchor", pen);
   // 返回 true 允许add
   return true;
 };
 
 topolog.beforeRemoveAnchor = (pen: Pen) => {
-  console.log('removeAnchor', pen);
+  console.log("removeAnchor", pen);
   // 返回 true 允许remove
   return true;
 };
 
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 // print: addPen, pen
@@ -49,13 +49,14 @@ topology.addPen(pen);
 
 ## 画笔相关函数
 
-默认无。可以在自定义图形库的时候设置，或临时设置。生命周期函数类型均为：(pen: Pen) => void
+默认无。可以在自定义图形库的时候设置，或临时设置。生命周期函数类型均为：(pen: Pen) => void , 除了 onBeforeValue
 
 - onAdd 画笔添加到画布后
 - onDestroy 画笔被删除后
 
 其他相关函数：
 
+- onBeforeValue 属性值发生改变前，用作数据格式转换（目前只有 echarts 实现了该功能，详细查看 [echarts 数据更新](./pens.html#echarts%E5%9B%BE%E8%A1%A8)）
 - onValue 属性值发生修改
 - onMove 被移动拖拽
 - onResize 修改大小
@@ -73,13 +74,13 @@ topology.addPen(pen);
 
 ```js
 const onAddPen = (pen: Pen) => {
-  console.log('onAddPen', pen);
+  console.log("onAddPen", pen);
 };
 
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
