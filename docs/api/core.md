@@ -1215,6 +1215,7 @@ topology.closeMqtt();
 
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
+  不可直接修改 x, y, width, height ,详细可理解[坐标](../tutorial/architecture.html)，也可参照下面示例
 
 - emit: boolean = false  
   是否执行 valueUpdate 事件  
@@ -1244,6 +1245,12 @@ for (const pen of pens) {
   topology.setValue({ id: pen.id, text: 'new text' }, false, false);
 }
 topology.render(Infinity);
+
+// 修改 x,y,width,height 
+const pen = topology.find('le5le')[0];
+// 展示时使用该 rect 来代表 pen 的坐标
+const rect = topology.getPenRect(pen);
+topology.setValue({ id: pen.id, ...rect, width: 200 });
 ```
 
 ### updateValue
