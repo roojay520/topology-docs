@@ -16,43 +16,15 @@ module.exports = {
     nav: [
       { text: '教程', link: '/tutorial/introduction', activeMatch: '^/tutorial/' },
       { text: 'API', link: '/api/core', activeMatch: '^/api/' },
-      {
-        text: '视频教程',
-        link: '/videos/home',
-        activeMatch: '^/videos/',
-      },
+      // {
+      //   text: '视频教程',
+      //   link: '/videos/home',
+      //   activeMatch: '^/videos/',
+      // },
       {
         text: '资源',
         link: '/awesome/home',
         activeMatch: '^/awesome/',
-      },
-      { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
-      // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
-      {
-        text: '社区',
-        activeMatch: '^/community/',
-        items: [
-          {
-            text: 'Github',
-            link: 'https://github.com/le5le-com',
-          },
-          {
-            text: 'Gitee',
-            link: 'https://gitee.com/le5le',
-          },
-          {
-            text: '技术交流群',
-            link: '/community/wechat',
-          },
-          {
-            text: '关于我们',
-            link: '/community/us',
-          },
-          {
-            text: '加入我们',
-            link: '/community/join',
-          },
-        ],
       },
       {
         text: '产品',
@@ -79,19 +51,48 @@ module.exports = {
           },
         ],
       },
+      { text: '关于我们', link: '/community/us', activeMatch: '^/community/' },
+      // { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
+      // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
       {
-        text: '多语言',
+        text: '社区',
+        activeMatch: '^/community/',
         items: [
           {
-            text: '中文',
-            link: '/tutorial/start',
+            text: 'Github',
+            link: 'https://github.com/le5le-com',
           },
           {
-            text: 'English',
-            link: '/en/tutorial/start',
+            text: 'Gitee',
+            link: 'https://gitee.com/le5le',
+          },
+          {
+            text: '技术交流群',
+            link: '/community/wechat',
+          },
+          // {
+          //   text: '关于我们',
+          //   link: '/community/us',
+          // },
+          {
+            text: '加入我们',
+            link: '/community/join',
           },
         ],
       },
+      // {
+      //   text: '多语言',
+      //   items: [
+      //     {
+      //       text: '中文',
+      //       link: '/tutorial/start',
+      //     },
+      //     {
+      //       text: 'English',
+      //       link: '/en/tutorial/start',
+      //     },
+      //   ],
+      // },
     ],
 
     sidebar: {
