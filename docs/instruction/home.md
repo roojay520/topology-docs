@@ -72,39 +72,12 @@
 
 ![le5le topology 文件](/img/wenjian.png)
 
-#### 2.1.1 新建文件
+#### 2.1.1 设置文件名  
 
-![le5le topology 新建文件](/img/xinjianwenjian.png)
-
-#### 2.1.2 编辑文件
-
- 编辑：添加/删除锚点（A）、添加手柄（H）、删除手柄（D）、切换手柄类型（Shift）
-
-     切换手柄类型（Shift）可切换三种类型：①两端手柄完全对称 ②一端手柄可以任意伸缩长度 ③一端手柄可以任意伸缩长度和变换角度
-
-节点（包括图形、图片等）和连线都可以添加/删除锚点
-
-![le5le topology 编辑文件](/img/bianji.gif)
-
-![le5le topology 添加锚点](/img/tianjiamaodian.gif)
-
-#### 2.1.3 保存文件
-
-![le5le topology 保存文件](/img/baocun.png)
-
-#### 2.1.4 文件下载
-
-![le5le topology 文件下载](/img/xiazai.gif)
-
-#### 2.1.5 文件属性设置
-
-<br/> 
-
-##### 2.1.5.1 设置文件名  
 
 ![le5le topology 设置文件名](/img/shezhiwenjianming.png)
 
-##### 2.1.5.2 设置画布属性
+#### 2.1.2 设置画布属性
 
 锁：无、禁止编辑、禁止移动、禁用
 
@@ -122,19 +95,19 @@
 
 ![le5le topology 标尺](/img/biaochi.png)
 
-##### 2.1.5.3 设置文件通信
+##### 2.1.3 设置文件通信
 
 支持websocket或MQTT协议，能够“0代码”实现消息通信、数据实时修改和触发事件交互。
 
 ![le5le topology 设置文件通信](/img/tongxin.png)
 
-##### 2.1.5.4 设置文件布局
+##### 2.1.4 设置文件布局
 
 ​画布和组合组件的排版布局
 
 ![le5le topology 设置文件布局](/img/buju.gif)
 
-##### 2.1.5.5 设置文件结构
+##### 2.1.5 设置文件结构
 
 可编辑：可以编辑属性事件  
 被锁定：可以执行事件和交互  
@@ -142,7 +115,28 @@
 
 ![le5le topology 设置文件结构](/img/jiegou.gif)
 
-### 2.2 拖拽编辑
+
+### 2.2 锚点编辑
+
+添加/删除锚点（A）：节点（包括图形、图片等）和连线都可以添加/删除锚点
+ <br>
+移动锚点（G）:将光标移动到锚点上，按一下快捷键G，拖动鼠标完成锚点移动
+<br>
+添加手柄（H）
+<br>
+删除手柄（D）
+<br>
+切换手柄类型（Shift）：①两端手柄完全对称 ②一端手柄可以任意伸缩长度 ③一端手柄可以任意伸缩长度和变换角度
+<br>
+
+![le5le topology 添加锚点](/img/tianjiamaodian.gif)
+
+![le5le topology 锚点编辑](/img/bianji.gif)
+
+![le5le topology 移动锚点](/img/yidongmaodian.gif)
+
+
+### 2.3 拖拽编辑
 
 可拖拽任意节点到画布
 
@@ -152,7 +146,7 @@
 
 ![le5le topology 拖拽编辑](/img/tuozhuai03.gif)
 
-### 2.3 连线
+### 2.4 连线
 
 曲线
 
@@ -182,11 +176,11 @@
 
 ![le5le topology 线宽](/img/xiankuan.png)
 
-### 2.4 外观设置
+### 2.5 外观设置
 
 <br/> 
 
-#### 2.4.1 位置和大小
+#### 2.5.1 位置和大小
 
 设置节点的外观样式
 
@@ -205,7 +199,7 @@
 ![le5le topology 进度条](/img/jindutiao.png)
 
 
-#### 2.4.2 样式
+#### 2.5.2 样式
 
 设置连线的外观样式
 
@@ -215,15 +209,15 @@
 
 ![le5le topology 连线案例](/img/wuhanditie.png)
 
-#### 2.4.3 文字
+#### 2.5.3 文字
 
 ![le5le topology 文字外观](/img/wenziwaiguan.gif)
 
-#### 2.4.3 图片
+#### 2.5.3 图片
 
 ![le5le topology 图片外观](/img/tupianwaiguan.gif)
 
-#### 2.4.4 字体图标
+#### 2.5.4 字体图标
 
 ![le5le topology 字体图标外观](/img/aliziti.gif)
 
