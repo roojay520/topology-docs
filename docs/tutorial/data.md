@@ -112,17 +112,32 @@ topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../a
 
 ## http 轮询
 
-http 轮询需要执行请求 http 数据，然后调用 topology.setValue(pen)更新数据
+采用 http 轮询的方式是及其不建议的，反复的轮询会导致流量与性能损耗。  
+请求方式固定为 get ；若想要传参给后端，自行进行 url 拼接然后赋值给 http 属性。
 
-```js
-setInterval(() => {
-  fetch('url')
-    .then((response) => response.json())
-    .then((data) => {
-      const pen = data;
-      topology.setValue(pen);
-    });
-}, 1000);
+1. 设置 url , 打开连接  
+
+```ts
+const url = '/test';   // 可访问的 http 
+topology.store.data.http = url;
+topology.store.data.httpTimeInterval = 500; // 轮询间隔时间, 默认 1000
+topology.connectHttp();
+```
+
+2. 自动监听 http 数据  
+topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。  
+数据格式参照上方 mqtt 或 ws。
+
+<div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
+
+示例 json (与 http 接口返回数据格式相同)：
+```json
+[
+  {
+    "id": "le5le",
+    "background": "#f40"
+  }
+]
 ```
 
 ## 解析自定义数据格式
