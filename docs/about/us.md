@@ -19,21 +19,27 @@
 
 我们拥有完全自主研发的三款产品：
 
-乐吾乐Topology，web可视化组态软件，可广泛用于智能物联，智能智造，智慧城市，智慧农业，智能医疗等领域，IT架构图、知识图谱、帮助企业打造智慧新平台，推动企业发展。
+**乐吾乐Topology**，是乐吾乐公司自主设计、研发的web可视化绘图工具，拥有为电力能源、水利、物联网、工业互联网、智慧城市、智慧医疗、智慧农业、IT运维、UML建模等提供解决方案的可视化平台。乐吾乐Topology具有跨平台、高效、可扩展、实时监控、动态交互、支持自动算法等特点，最大程度减少研发和运维的成本，并致力于普通业务人员0代码开发实现web组态、SCADA等场景，目前已经在电力能源、水利水务、工业物联网、智慧城市、智慧交通、IT运维、UML建模等方面进行了应用。
 
-乐吾乐物联平台，具备应用可视化搭建、组态监控、场景联动、数据采集和转发等核心功能，具有快速构建、定制灵活、操作简单等特点。支持适配不同的协议类型，实现传感器和智能硬件的快速接入；丰富模板和灵活配置的能力能快速帮助搭建各类行业应用和物联平台，有效降低物联网应用时间成本和开发成本，满足物联网领域设备连接、协议适配、数据存储、数据分析等平台级服务需求。
+**乐吾乐物联平台**，具备应用可视化搭建、组态监控、场景联动、数据采集和转发等核心功能，具有快速构建、定制灵活、操作简单等特点。支持适配不同的协议类型，实现传感器和智能硬件的快速接入；丰富模板和灵活配置的能力能快速帮助搭建各类行业应用和物联平台，有效降低物联网应用时间成本和开发成本，满足物联网领域设备连接、协议适配、数据存储、数据分析等平台级服务需求。
 
-乐吾乐Topology 3D，是一款基于零代码的web可视化系统，无需开发人员，即可完成3D业务设计，提供三维场景体系的构建和实时交互效果的联动，能够快速展示项目和实施，助力企业数字化转型升级。
+**乐吾乐Topology 3D**，是一款基于零代码的web可视化系统，无需开发人员，即可完成3D业务设计，提供三维场景体系的构建和实时交互效果的联动，能够快速展示项目和实施，助力企业数字化转型升级。
 
 拥抱开源，努力使我们成为开源社区中优秀的中国智造产品。
 2019年9月开源便广受欢迎，连续两年被推荐参与最受欢迎中国开源软件评选。
 
-官方网站：http://topology.le5le.com/
+<br>  
+
+**官方网站：http://topology.le5le.com/**
+
+<br>  
+
+## 产品列表
 
 | 产品 |         | 体验地址 |  
 | ---- | ------------ | ---- | 
 | 乐吾乐Topology1.0    | 开始设计     | http://t.le5le.com/  | 
-|     | 开源地址       | Github：https://github.com/le5le-com/topology.js       Gitee：  https://gitee.com/le5le/topology.js| 
+|     | 开源地址       | - Github：https://github.com/le5le-com/topology.js      Gitee：  https://gitee.com/le5le/topology.js| 
 |    | 官方文档         | http://developer.le5le.com/  | 
 | 乐吾乐物联平台   | 体验地址       | http://iot.demo.le5le.com/| 
 |    | 文档地址       | https://www.yuque.com/alsmile/topology/daf7sb | 
@@ -54,8 +60,8 @@
 <br>
 
 <div style="display:flex; justify-content:">
-<img style="height:200px; " src="http://topology.le5le.com/img/bin_wechat.9366bba6.jpg" >
+<img style="height:175px; " src="http://topology.le5le.com/img/bin_wechat.9366bba6.jpg" >
 
-<img style="height:172px; margin: 16px" src="http://topology.le5le.com/assets/img/%E5%95%86%E5%8A%A1%E5%92%A8%E8%AF%A2%E4%BA%8C%E7%BB%B4%E7%A0%81.png" >
+<img style="height:150px; margin: 16px" src="http://topology.le5le.com/assets/img/%E5%95%86%E5%8A%A1%E5%92%A8%E8%AF%A2%E4%BA%8C%E7%BB%B4%E7%A0%81.png" >
 
 </div>
