@@ -14,7 +14,10 @@ module.exports = {
     },
 
     nav: [
-      { text: '教程', link: '/tutorial/introduction', activeMatch: '^/tutorial/' },
+      {
+        text: '教程', link: '/tutorial/introduction',
+        // activeMatch: '^/tutorial/'
+      },
       { text: 'API', link: '/api/core', activeMatch: '^/api/' },
       // {
       //   text: '视频教程',
@@ -33,10 +36,10 @@ module.exports = {
             text: 'Topology 2D',
             link: 'tutorial/introduction',
           },
-          {
-            text: 'Topology 2D 企业版',
-            link: 'tutorial/commercial',
-          },
+          // {
+          //   text: 'Topology 2D 企业版',
+          //   link: 'tutorial/commercial',
+          // },
           {
             text: 'Topology 3D 预览版',
             link: 'http://3d.preview.le5le.com/',
@@ -51,9 +54,28 @@ module.exports = {
           },
         ],
       },
-      { text: '关于我们', link: '/community/us', activeMatch: '^/community/' },
+      {
+        text: '企业版',
+        link: '/tutorial/commercial',
+        // activeMatch: '^/tutorial/',
+      },
+      // { text: '关于我们', link: '/about/us', activeMatch: '^/community/' },
       // { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
       // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
+      {
+        text: '关于我们',
+        activeMatch: '^/about/',
+        items: [
+          {
+            text: '关于我们',
+            link: '/about/us',
+          },
+          {
+            text: '加入我们',
+            link: '/about/join',
+          },
+        ]
+  },
       {
         text: '社区',
         activeMatch: '^/community/',
@@ -72,12 +94,16 @@ module.exports = {
           },
           // {
           //   text: '关于我们',
-          //   link: '/community/us',
+          //   link: '/about/us',
+          // },
+          // {
+          //   text: '加入我们',
+          //   link: '/about/join',
           // },
           {
-            text: '加入我们',
-            link: '/community/join',
-          },
+            text: '常见问题',
+            link:'/faq/home'
+          }
         ],
       },
       // {
@@ -111,7 +137,8 @@ module.exports = {
         },
       ],
       '/faq/': getFaqSidebar(),
-      '/community/': getCommunitySidebar(),
+      '/about/': getAboutSidebar(),
+      '/community/': getCommunitySidebar()
     },
   },
 };
@@ -131,18 +158,26 @@ function getTutorialSidebar() {
           link: '/tutorial/commercial',
           children: [
             {
-              text: 'API接口文档',
-              link: '/tutorial/commercial-api',
+              text: '对比其他产品',
+              link: '/tutorial/comparison',
             },
-            {
-              text: '部署试用',
-              link: '/tutorial/commercial-trial',
-            },
+            // {
+            //   text: 'API接口文档',
+            //   link: '/tutorial/commercial-api',
+            // },
+            // {
+            //   text: '部署试用',
+            //   link: '/tutorial/commercial-trial',
+            // },
           ],
         },
         {
-          text: '对比其他产品',
-          link: '/tutorial/comparison',
+          text: 'API接口文档',
+          link: '/tutorial/commercial-api',
+        },
+        {
+          text: '部署试用',
+          link: '/tutorial/commercial-trial',
         },
       ],
     },
@@ -198,6 +233,21 @@ function getTutorialSidebar() {
   ];
 }
 
+function getAboutSidebar() {
+  return [
+    {
+      text: '关于我们',
+      children: [
+        {
+          text: '关于我们',
+          link: '/about/us',
+        },
+        {
+          text: '加入我们',
+          link: '/about/join',
+        },]
+    }]
+}
 function getAPISidebar() {
   return [
     {
@@ -234,17 +284,25 @@ function getCommunitySidebar() {
           link: '/community/github',
         },
         {
+          text: 'Gitee',
+          link: '/community/gitee',
+        },
+        {
           text: '技术交流群',
           link: '/community/wechat',
         },
         {
-          text: '关于我们',
-          link: '/community/us',
-        },
-        {
-          text: '加入我们',
-          link: '/community/join',
-        },
+          text: '常见问题',
+          link: '/faq/home',
+        }
+        // {
+        //   text: '关于我们',
+        //   link: '/about/us',
+        // },
+        // {
+        //   text: '加入我们',
+        //   link: '/about/join',
+        // },
       ],
     },
   ];
