@@ -34,7 +34,7 @@ module.exports = {
         items: [
           {
             text: 'Topology 2D',
-            link: 'tutorial/introduction',
+            link: 'http://topology.le5le.com/',
           },
           // {
           //   text: 'Topology 2D 企业版',
