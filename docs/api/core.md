@@ -1988,3 +1988,61 @@ void
 ```js
 topology.destroy();
 ```
+
+### setBackgroundColor  
+
+更改背景颜色
+
+**参数：**  
+string
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.setBackgroundColor('#1890ff');
+topology.render(Infinity);
+```
+
+### setGrid
+
+更改背景网格
+
+**参数：**  
+{ grid: boolean; gridColor: string; gridSize: number; gridRotate: number }  
+对象 object
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.setGrid({
+  grid: true
+});
+topology.render(Infinity);
+```
+
+
+### setRule
+
+更改背景标尺
+
+**参数：**  
+{ rule: boolean; ruleColor: string; }  
+对象 object
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.setRule({
+  rule: true
+});
+topology.render(Infinity);
+```
