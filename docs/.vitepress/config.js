@@ -75,7 +75,7 @@ module.exports = {
             link: '/about/join',
           },
         ]
-  },
+      },
       {
         text: '社区',
         activeMatch: '^/community/',
@@ -102,7 +102,7 @@ module.exports = {
           // },
           {
             text: '常见问题',
-            link:'/faq/home'
+            link: '/faq/home'
           }
         ],
       },
@@ -156,20 +156,20 @@ function getTutorialSidebar() {
         {
           text: '企业版',
           link: '/tutorial/commercial',
-          children: [
-            {
-              text: '对比其他产品',
-              link: '/tutorial/comparison',
-            },
-            // {
-            //   text: 'API接口文档',
-            //   link: '/tutorial/commercial-api',
-            // },
-            // {
-            //   text: '部署试用',
-            //   link: '/tutorial/commercial-trial',
-            // },
-          ],
+          // children: [
+          //   {
+          //     text: '对比其他产品',
+          //     link: '/tutorial/comparison',
+          //   },
+          // {
+          //   text: 'API接口文档',
+          //   link: '/tutorial/commercial-api',
+          // },
+          // {
+          //   text: '部署试用',
+          //   link: '/tutorial/commercial-trial',
+          // },
+          // ],
         },
         {
           text: 'API接口文档',
