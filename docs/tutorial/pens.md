@@ -50,6 +50,16 @@ topology.inactive();
 | text   | 纯文本     |
 | image      | 纯图片，纯 icon       |
 
+### 图片层级
+
+@topology/core 1.1.0 版本后，为了提升性能，额外创建了两个 canvas 用来绘制图片，一个在原画布的底下，一个在原画布的上面。  
+带图片的画笔的图片默认是在上层的 canvas 的，它会遮住所有的非图片画笔，并且使用置顶，置底是没有作用的，新增了一个 isBottom 的属性，将该画笔移动到下层的 canvas ，从而实现非图片画笔遮住该图片。
+
+```ts
+topology.setValue({ id: 'le5le', isBottom: true });
+```
+
+
 ## 流程图
 
 ```js
