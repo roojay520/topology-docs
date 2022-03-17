@@ -129,6 +129,15 @@ topology.register(classPens());
 
 ## Echarts图表
 
+- 引入
+
+在 html 中引入 echarts
+
+```html
+<script src="/echarts.min.js"></script>
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.min.js"></script> -->
+```
+
 - 注册
 
 ```js
@@ -203,6 +212,14 @@ topology.setValue({
 ```
 
 ## highcharts图表
+
+- 引入
+
+在 html 中引入 highcharts , cdn 若挂了，下载到本地
+```html
+<script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://cdn.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+```
 
 - 注册
 
