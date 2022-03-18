@@ -13,24 +13,24 @@
 ## 视频教程
 
 ### 开发
-[企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
+①  [企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
+
+②  [炫酷组件，自己定义](https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw)
+
+③  [条件变化触发实时告警](https://www.bilibili.com/video/BV1dT4y1U7V1?spm_id_from=333.999.0.0)
+
+④  [消息通信](https://www.bilibili.com/video/BV1wL4y1M76g?spm_id_from=333.999.0.0)
+
+⑤  [交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
+
+⑥  [Topology 在线绘图工具支持事件与图表组件交互](https://juejin.cn/post/6919754781850337294) (老版本)
+
+⑦  [React+Topology 在线绘图工具支持 UI 组件啦](https://juejin.cn/post/6917020125765828615) (老版本)
 
 ### 演示
 
 [Topology可视化绘图工具介绍](https://www.bilibili.com/video/BV1BQ4y1S7ef?spm_id_from=333.999.0.0)
 
-[消息通信](https://www.bilibili.com/video/BV1wL4y1M76g?spm_id_from=333.999.0.0)
-
-[交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
-
-
-## 开发者教程
-
-[炫酷组件，自己定义](https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw)
-
-[Topology 在线绘图工具支持事件与图表组件交互](https://juejin.cn/post/6919754781850337294) (老版本)
-
-[React+Topology 在线绘图工具支持 UI 组件啦](https://juejin.cn/post/6917020125765828615) (老版本)
 
 ## 官方示例
 
