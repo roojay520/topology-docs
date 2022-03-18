@@ -66,7 +66,7 @@ topology.off('event', fn);
 
 ## 事件及触发器
 
-*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。
+*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。若想通过 setValue 触发值变化事件，第二个参数必须传 true ，详见 [setValue](../api/core#setvalue)
 
 - **事件**
 1. 选中节点，点击事件面板。
@@ -94,19 +94,25 @@ topology.off('event', fn);
 
 - 如果需要触发条件成立后直接触发事件，事件类型可选择“值变化”。
 
-3. 触发条件成立，执行事件。
+3. 触发条件成立，执行事件。*注意*：图片未更新，使用 setValue 触发值变化，第二个参数 true。
 
 ![触发事件](/img/event_trigger_success.gif)
 
 - 触发条件中的JavaScript优先级高于上方的“属性名+条件+属性值”组合。
 - 触发条件中的JavaScript能够直接获取到pen参数，需返回。
 
+单个条件
 ```
  属性名: text
  条件: >=
  属性值: 100
  等价于
  JavaScript输入 return pen.text>=100
+```
+
+多个条件
+```
+高优先级 JavaScript 输入 return pen.text >= 100 && pen.text <= 200;
 ```
 
 - **自定义消息(弹框示例)**
@@ -119,12 +125,13 @@ topology.off('event', fn);
 2. 监听自定义消息
 
 ```js
-import { message } from 'ant-design-vue';
+// import { message } from 'ant-design-vue';
 
 topology.on('userDefindMessage', (e) => {
     const pen = e.pen;
     const params = e.params;
-    message.info(pen.name + params);
+    alert(pen.name + params);
+    // message.info(pen.name + params);
 });
 ```
 
