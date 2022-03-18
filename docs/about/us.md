@@ -39,7 +39,7 @@
 | 产品 |         | 体验地址 |  
 | ---- | ------------ | ---- | 
 | 乐吾乐Topology1.0    | 开始设计     | http://t.le5le.com/  | 
-|     | 开源地址       | - Github：https://github.com/le5le-com/topology.js      Gitee：  https://gitee.com/le5le/topology.js| 
+|     | 开源地址       | Github：https://github.com/le5le-com/topology.js  <br/>  Gitee：  https://gitee.com/le5le/topology.js| 
 |    | 官方文档         | http://developer.le5le.com/  | 
 | 乐吾乐物联平台   | 体验地址       | http://iot.demo.le5le.com/| 
 |    | 文档地址       | https://www.yuque.com/alsmile/topology/daf7sb | 
