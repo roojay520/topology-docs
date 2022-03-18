@@ -61,7 +61,7 @@ topology.setValue({ id: 'le5le', isBottom: true });
 
 官网设置
 将图片置到文字的底下
-![图片层级](/img/图片层级.png)
+![图片层级](/img/image_bottom.png)
 
 
 ## 流程图
