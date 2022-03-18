@@ -1,5 +1,9 @@
 # 自定义图形库
 
+::: tip     
+酷炫组件自己定义：https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw
+:::
+
 topology 图形库是一种可扩展、开放性的图形库，可以根据需求任意定制开发。
 
 其中，图形库支持 Path2D 绘画和 CanvasRenderingContext2D 两种方式：  

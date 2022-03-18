@@ -23,9 +23,6 @@
 
 ⑤  [交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
 
-⑥  [Topology 在线绘图工具支持事件与图表组件交互](https://juejin.cn/post/6919754781850337294) (老版本)
-
-⑦  [React+Topology 在线绘图工具支持 UI 组件啦](https://juejin.cn/post/6917020125765828615) (老版本)
 
 ### 演示
 
