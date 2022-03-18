@@ -1,5 +1,16 @@
 # 快速上手
 
+## 如何学习
+
+1. 跟着[快速上手](./start)做一遍，先有个总体认知
+
+2. 看一遍我们的[视频教程](/awesome/home.html#官方教程)，有个全面认识
+
+3. 多学习[社区](/community/github.html)教程、示例等
+<br>  
+  
+  
+
 ::: tip 提示  
 初始化引擎后，会在 window 下注入 topology 对象（即 window.topology）。
 
