@@ -216,7 +216,7 @@ function getTutorialSidebar() {
       text: '图形库',
       children: [
         { text: '默认图形库', link: '/tutorial/pens' },
-        { text: 'svg to combine', link: '/tutorial/svg-to-combine' },
+        { text: 'SVG', link: '/tutorial/svg-to-combine' },
         { text: '字体图形库', link: '/tutorial/icons' },
         { text: '自定义图形库', link: '/tutorial/make-component' },
         { text: '自定义连线算法', link: '/tutorial/line-ai' },
