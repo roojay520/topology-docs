@@ -1989,6 +1989,22 @@ void
 topology.destroy();
 ```
 
+### setBackgroundImage
+
+更改背景图片
+
+**参数：**  
+string
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.setBackgroundImage('/img/logo.png');
+```
+
 ### setBackgroundColor  
 
 更改背景颜色
