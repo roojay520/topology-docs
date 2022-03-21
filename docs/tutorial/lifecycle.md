@@ -49,7 +49,7 @@ topology.addPen(pen);
 
 ## 画笔相关函数
 
-默认无。可以在自定义图形库的时候设置，或临时设置。生命周期函数类型均为：(pen: Pen) => void , 除了 onBeforeValue
+默认无。可以在自定义图形库的时候设置，或临时设置。生命周期函数类型均为：(pen: Pen) => void , 除了 onBeforeValue, onChangeId
 
 - onAdd 画笔添加到画布后
 - onDestroy 画笔被删除后
@@ -69,6 +69,7 @@ topology.addPen(pen);
 - onMouseLeave 鼠标离开
 - onShowInput 开始输入
 - onInput 完成输入
+- onChangeId id 改变
 
 临时设置函数：
 
