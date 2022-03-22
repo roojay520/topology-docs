@@ -123,6 +123,29 @@ onTouchstart = (e) => {
 | animateInterval     | number      | 动画帧时长                                         |
 | dragAllIn           | boolean     | 框选画笔时，是否需要全部在框选区域内               |
 | scroll              | boolean     | 默认是否显示滚动条。与默认缩放互斥                 |
+| defaultAnchors   | [Point](../api/point.md)[]     | 默认图形的默认锚点，例如：正方形等。                 |
+
+### 默认值
+```ts
+  const defaultAnchors = [
+    {
+      x: 0.5,
+      y: 0,
+    },
+    {
+      x: 1,
+      y: 0.5,
+    },
+    {
+      x: 0.5,
+      y: 1,
+    },
+    {
+      x: 0,
+      y: 0.5,
+    },
+  ],
+```
 
 ## 文件数据
 
