@@ -43,7 +43,7 @@ topology.off('event', fn);
 | active              | Pen[]        | 选中一个/多个画笔                |
 | inactive            | Pen[]        | 取消选中                         |
 | add                 | Pen          | 添加一个画笔                     |
-| update              | Pen[]        | 编辑画笔                         |
+| update              | { previous: Pen[],  current: Pen[] }      | 编辑画笔                         |
 | delete              | Pen[]        | 删除画笔                         |
 | scale               | number       | 缩放画布                         |
 | translate           | Object: x, y | 平移画布                         |
