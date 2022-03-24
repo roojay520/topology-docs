@@ -13,15 +13,15 @@
 ## 视频教程
 
 ### 开发
-①  [企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
+①  [企业版快速上手](https://mp.weixin.qq.com/s/HVoEjsV6pVhExeO64DOciQ)
 
 ②  [炫酷组件，自己定义](https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw)
 
-③  [条件变化触发实时告警](https://www.bilibili.com/video/BV1dT4y1U7V1?spm_id_from=333.999.0.0)
+③  [条件变化触发实时告警](https://mp.weixin.qq.com/s/JgAUkyaw-BJlMWJwt3D6qg)
 
-④  [消息通信](https://www.bilibili.com/video/BV1wL4y1M76g?spm_id_from=333.999.0.0)
+④  [消息通信](https://mp.weixin.qq.com/s/8VKbPc__a1GRq5_ZrqL19g)
 
-⑤  [交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
+⑤  [交互事件](https://mp.weixin.qq.com/s/ufMyN35J5hufIee5LvZTyQ)
 
 
 ### 演示
