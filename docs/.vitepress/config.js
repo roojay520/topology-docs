@@ -179,6 +179,10 @@ function getTutorialSidebar() {
           text: '部署试用',
           link: '/tutorial/commercial-trial',
         },
+        {
+          text: '版本发布记录',
+          link: '/tutorial/version-record',
+        },
       ],
     },
     {
