@@ -1209,7 +1209,7 @@ topology.closeMqtt();
 
 ### setValue
 
-修改 [Pen](./pen) 属性值
+修改 [Pen](./pen) 属性值, 触发对应画笔们的值变化事件。（若想要不触发值变化事件使用 _setValue）
 
 **参数：**
 
@@ -1249,6 +1249,11 @@ const pen = topology.find('le5le')[0];
 const rect = topology.getPenRect(pen);
 topology.setValue({ id: pen.id, ...rect, width: 200 });
 ```
+
+
+### _setValue
+
+同 setValue ，不同在于 不触发对应画笔们的值变化事件。
 
 ### updateValue
 
