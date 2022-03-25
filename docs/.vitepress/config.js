@@ -15,7 +15,8 @@ module.exports = {
 
     nav: [
       {
-        text: '教程', link: '/tutorial/introduction',
+        text: '教程',
+        link: '/tutorial/introduction',
         // activeMatch: '^/tutorial/'
       },
       { text: 'API', link: '/api/core', activeMatch: '^/api/' },
@@ -74,7 +75,7 @@ module.exports = {
             text: '加入我们',
             link: '/about/join',
           },
-        ]
+        ],
       },
       {
         text: '社区',
@@ -102,8 +103,8 @@ module.exports = {
           // },
           {
             text: '常见问题',
-            link: '/faq/home'
-          }
+            link: '/faq/home',
+          },
         ],
       },
       // {
@@ -138,7 +139,7 @@ module.exports = {
       ],
       '/faq/': getFaqSidebar(),
       '/about/': getAboutSidebar(),
-      '/community/': getCommunitySidebar()
+      '/community/': getCommunitySidebar(),
     },
   },
 };
@@ -180,8 +181,8 @@ function getTutorialSidebar() {
           link: '/tutorial/commercial-trial',
         },
         {
-          text: '版本发布记录',
-          link: '/tutorial/version-record',
+          text: '更新日志',
+          link: '/tutorial/changelog',
         },
       ],
     },
@@ -249,8 +250,10 @@ function getAboutSidebar() {
         {
           text: '加入我们',
           link: '/about/join',
-        },]
-    }]
+        },
+      ],
+    },
+  ];
 }
 function getAPISidebar() {
   return [
@@ -298,7 +301,7 @@ function getCommunitySidebar() {
         {
           text: '常见问题',
           link: '/faq/home',
-        }
+        },
         // {
         //   text: '关于我们',
         //   link: '/about/us',
