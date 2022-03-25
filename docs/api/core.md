@@ -1209,7 +1209,7 @@ topology.closeMqtt();
 
 ### setValue
 
-修改 [Pen](./pen) 属性值
+修改 [Pen](./pen) 属性值, 触发对应画笔们的值变化事件。（若想要不触发值变化事件使用 _setValue）
 
 **参数：**
 
@@ -1217,11 +1217,8 @@ topology.closeMqtt();
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
   不可直接修改 x, y, width, height ,详细可理解[坐标](../tutorial/architecture.html)，也可参照下面示例
 
-- emit: boolean = false  
-  是否执行 valueUpdate 事件  
-  在 events 执行 js 代码中，该参数不可以为 true
-
-- willRender: boolean = true  
+- { willRender: boolean = true }  
+  命名参数，参照下方示例  
   更改数据后是否重新渲染画布  
   默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render(Infinity)
 
@@ -1232,7 +1229,7 @@ void
 
 ```js
 // 修改id为aaa的画笔的text属性
-topology.setValue({ id: 'aaa', text: 'new text' }, false);
+topology.setValue({ id: 'aaa', text: 'new text' });
 
 // 修改tag为aaa的画笔的text属性
 topology.setValue({ tag: 'aaa', text: 'new text' });
@@ -1242,7 +1239,7 @@ topology.setValue({ id: pen.id, newId: '111' });
 
 // for 循环设置 pens 的 text
 for (const pen of pens) {
-  topology.setValue({ id: pen.id, text: 'new text' }, false, false);
+  topology.setValue({ id: pen.id, text: 'new text' }, { willRender: false });
 }
 topology.render(Infinity);
 
@@ -1252,6 +1249,11 @@ const pen = topology.find('le5le')[0];
 const rect = topology.getPenRect(pen);
 topology.setValue({ id: pen.id, ...rect, width: 200 });
 ```
+
+
+### _setValue
+
+同 setValue ，不同在于 不触发对应画笔们的值变化事件。
 
 ### updateValue
 

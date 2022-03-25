@@ -66,7 +66,7 @@ topology.off('event', fn);
 
 ## 事件及触发器
 
-*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。若想通过 setValue 触发值变化事件，第二个参数必须传 true ，详见 [setValue](../api/core#setvalue)
+*注意*：事件或者触发器都必须在画布锁定的情况下才会执行。详见 [setValue](../api/core#setvalue)
 
 - **事件**
 1. 选中节点，点击事件面板。
@@ -94,7 +94,7 @@ topology.off('event', fn);
 
 - 如果需要触发条件成立后直接触发事件，事件类型可选择“值变化”。
 
-3. 触发条件成立，执行事件。*注意*：图片未更新，使用 setValue 触发值变化，第二个参数 true。
+1. 触发条件成立，执行事件。
 
 ![触发事件](/img/event_trigger_success.gif)
 
