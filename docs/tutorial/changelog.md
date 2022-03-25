@@ -2,13 +2,27 @@
 
 ## 1.1.1 next
 
-2022-03-25
-
 ### Bug fixes
 
 - **slider图元**
 
   修复：通过topology.open()方式打开不显示问题
+
+- **复制粘贴**
+
+  修复：跨标签页复制粘贴 组合节点 问题
+
+- **撤销 dom 类型画笔**
+
+  修复：[Github issue 20](https://github.com/le5le-com/topology.js/issues/20)  
+
+- **置顶置底图片节点**
+
+  修复：当图片在同一层时，置顶置底未 render 图片层
+
+- **图片水平垂直翻转**
+
+  修复：图片水平垂直翻转
 
 ## 1.1.1
 
