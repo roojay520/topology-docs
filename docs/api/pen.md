@@ -2230,26 +2230,25 @@ topology.inactive();
 // 需要连线连接到一个Pen，这里暂时没有构造关联数据
 ```
 
-### flip
+### flipX
 
-翻转，目前只支持水平翻转或垂直翻转。
+是否水平翻转
 
-**数据类型：** Flip
-
-```js
-enum Flip {
-  None, // 正常
-  Horizontal, // 水平翻转
-  Vertical, // 垂直翻转
-}
-```
-
-**示例：**
+**数据类型：** boolean
 
 ```js
-const pen = {flip: 1, ...};
+const pen = { flipX: true };
 ```
 
+### flipY
+
+是否垂直翻转
+
+**数据类型：** boolean
+
+```js
+const pen = { flipY: true };
+```
 ### layer
 
 自定义层

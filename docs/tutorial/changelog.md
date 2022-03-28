@@ -24,6 +24,10 @@
 
   修复：图片水平垂直翻转
 
+- **组合翻转**
+
+  修复：翻转重构， flip 枚举变成了 flipX 和 flipY 属性，[Github issue 22](https://github.com/le5le-com/topology.js/issues/18)
+
 ## 1.1.1
 
 2022-03-24
