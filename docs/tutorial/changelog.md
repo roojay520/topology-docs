@@ -28,6 +28,14 @@
 
   修复：翻转重构， flip 枚举变成了 flipX 和 flipY 属性，[Github issue 22](https://github.com/le5le-com/topology.js/issues/18)
 
+- **组合旋转撤销**
+
+  修复：组合旋转撤销
+
+- **setValue rotate**
+
+  通过 setValue 修改 rotate 属性，若是组合并且修改子节点属性。
+
 ## 1.1.1
 
 2022-03-24
