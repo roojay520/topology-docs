@@ -206,37 +206,85 @@ file: (binary)，文件二进制内容
 // 保存 图纸
 // topology.pureData()内容
 {
-  component: false
-  folder: "123"
-  fromArrow: ""
+  folder: "123" //文件名
+  fromArrow: "" //默认起始箭头,
   image: "/image/topology/...."     // 缩略图
-  lineName: "curve"
-  locked: 0
-  mqttOptions: {clientId: "c5061f"}
-  mqttUrl: ""
+  lineName: "curve" //默认连线类型
+  locked: 0 //图纸是否锁定
+  mqttOptions: {clientId: "c5061f"} //mqtt连接选项
+  mqttUrl: "" //mqtt连接地址
+  mqttTopics: "" //mqtt 连接topics
   name: "2222"
-  pens: […]
-  scale: 1
-  toArrow: "triangleSolid"
-  websocket: ""
+  pens: […] //图纸画布节点连线数据
+  scale: 1 //图纸缩放比例
+  toArrow: "triangleSolid" //默认终点箭头
+  websocket: "" //websocket连接地址
+  component: false  //'图纸类型： 0 - 图纸；1 - “我创建的”组件'
+  componentDataS: [] //复合组件内容
+  userId: "" //所属用户id
+  username: "" //用户名
+  editorID:"" //编辑用户id
+  editorName:"" //编辑用户名
+  class: "" //所属分类名称
+  scale: 1 //图纸缩放比例
+  bkImage: "" //图纸背景图片
+  background:"" //背景颜色
+  color: "" //默认颜色
+  createdAt: "" //创建时间
+  updatedAt: "" //更新时间
+  deletedAt: "" //删除时间
+  x: 0 //画布x偏移
+  y: 0 //画布y偏移
+  initJS: "" //初始化js
+  origin: {} //画布原点
+  center: {} //画布缩放中心点
+	grid: false //是否显示网格    
+	gridColor: "" //网格颜色 
+	gridSize: "" //网格大小 
+	gridRotate: "" //网格角度 
+	rule: false //是否显示标尺 
+	ruleColor: "" //标尺颜色
+	lineWidth: 1  //默认线宽
+	version: "" //topology版本
+	paths: [...] //存储无法解析的svgPath
+	penBackground: "" //节点默认背景颜色
+  socketFn: "" //消息通信回调函数名
+	socketCbJs: "" //消息通信回调函数 js 代码
+	http: "" //http请求地址
+	httpTimeInterval:1000 //http请求频率
+  socketEvent: false //老版本 是否监听自定义的socket消息
+  bkColor: "" //老版本 背景颜色
+  bkImageRect: {} //老版本 背景图片范围
+  bkImageStatic: false //老版本 背景是否跟着移动
+  componentData: {} //老版本 如果为 “我创建的”组件，则为复合组件内容
 }
 
 // 保存 自定义组件
 {
-  component: true
-  componentData: {imageRatio: true,…}
-  folder: "a-12"
-  fromArrow: ""
+  component: true //图纸类型
+  componentDatas: [...] ////复合组件内容
+  folder: "a-12" //文件名
+  fromArrow: "" //默认起始箭头
 	image: "/image/topology/...."     // 缩略图
-  lineName: "curve"
-  locked: 0
-  mqttOptions: {clientId: "1a3044f9"}
-  mqttUrl: ""
-  name: "topology.2021/3/11上午1:29:57"
-  pens: [,…]
-  scale: 1
-  toArrow: "triangleSolid"
-  websocket: ""
+  lineName: "curve" //默认连线类型
+  locked: 0 //图纸是否锁定
+  mqttOptions: {clientId: "1a3044f9"} //mqtt连接选项
+  mqttUrl: "" //mqtt连接地址
+  name: "topology.2021/3/11上午1:29:57" //图纸名称
+  pens: [,…] //图纸画布节点连线数据
+  scale: 1 //图纸缩放比例
+  toArrow: "triangleSolid" //默认终点箭头
+  websocket: "" //websocket连接地址
+  center: {} //画布缩放中心点
+  class: "" //所属分类名称
+  createdAt: "" //创建时间
+  updatedAt: "" //更新时间
+  userId: "" //所属用户id
+  username: "" //用户名
+  editorID:"" //编辑用户id
+  editorName:"" //编辑用户名
+  id: "" //图纸id
+  origin: {} //画布原点
 }
 ```
 
