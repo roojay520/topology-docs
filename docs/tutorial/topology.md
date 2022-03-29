@@ -154,6 +154,7 @@ onTouchstart = (e) => {
 | 名称             | 类型                           | 描述                                               |
 | ---------------- | ------------------------------ | -------------------------------------------------- |
 | color            | string                         | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
+| penBackground    | string                         | 画笔默认背景色 |
 | activeColor      | string                         | 画笔选中颜色                                       |
 | activeBackground | string                         | 画笔选中背景颜色                                   |
 | pens             | [Pen[]](./pen)                 | 画笔数组                                           |
