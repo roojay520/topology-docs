@@ -36,6 +36,10 @@
 
   通过 setValue 修改 rotate 属性，若是组合并且修改子节点属性。
 
+- **setProps visible**
+
+  通过事件更改属性 setProps 更改其它组合节点的 visible 属性，隐藏或显示。
+
 ## 1.1.1
 
 2022-03-24
