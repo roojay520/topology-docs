@@ -40,6 +40,14 @@
 
   通过事件更改属性 setProps 更改其它组合节点的 visible 属性，隐藏或显示。
 
+- **moving 包含连线**
+
+  移动包含连接线时，无需 translateLine .
+
+- **combine status 组合为状态包含 dom**
+  
+  组合为状态包含 dom 类型节点时，切换状态，dom 节点也隐藏。
+
 ## 1.1.1
 
 2022-03-24
