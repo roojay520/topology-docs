@@ -1,5 +1,13 @@
 # 更新日志
 
+## 1.1.2 next
+
+### Bug fixes
+
+- **缩放撤销**
+
+  修复：[Github issue 11](https://github.com/le5le-com/topology.js/issues/11)  
+
 ## 1.1.1 next
 
 ### Bug fixes
