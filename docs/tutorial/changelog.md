@@ -13,6 +13,10 @@
   原 disableAnchor 使 worldAnchors 成为空数组，现 disableAnchor 只是不绘制图形瞄点，不允许连线，不允许移动线锚点，不允许操作线手柄。  
   修复：[Github issue 23](https://github.com/le5le-com/topology.js/issues/23)
 
+- **image canvas render**
+
+  选择一个矩形节点，设置图片，随后清除图片，图片层画布更新不及时。 bug 已修复
+
 ## 1.1.1 next
 
 ### Bug fixes
