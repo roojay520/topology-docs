@@ -8,6 +8,11 @@
 
   修复：[Github issue 11](https://github.com/le5le-com/topology.js/issues/11)  
 
+- **disableAnchor 重构**
+  
+  原 disableAnchor 使 worldAnchors 成为空数组，现 disableAnchor 只是不绘制图形瞄点，不允许连线，不允许移动线锚点，不允许操作线手柄。  
+  修复：[Github issue 23](https://github.com/le5le-com/topology.js/issues/23)
+
 ## 1.1.1 next
 
 ### Bug fixes
