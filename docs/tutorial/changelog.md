@@ -21,6 +21,10 @@
 
   在不同的缩放比下，复制粘贴不改变 getPenRect 的结果。
 
+- **下载 svg bug**
+
+  修复：svg 可下载 icon
+  
 ## 1.1.1 next
 
 ### Bug fixes
