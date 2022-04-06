@@ -33,6 +33,8 @@
 
 - **下载 png active 状态取消**
 
+- **setPenRect 执行 onResize 生命周期**
+
 ### Features
 
 - **移动线锚点，连接另一条线**
