@@ -1,6 +1,6 @@
 # 更新日志
 
-## 1.1.2 next
+## 1.1.3
 
 ### Bug fixes
 
@@ -35,6 +35,8 @@
 
 - **setPenRect 执行 onResize 生命周期**
 
+  修复：[Github issue 26](https://github.com/le5le-com/topology.js/issues/26)
+
 ### Features
 
 - **移动线锚点，连接另一条线**
@@ -45,7 +47,7 @@
 
   调用会关闭钢笔铅笔。
   
-## 1.1.1 next
+## 1.1.2
 
 ### Bug fixes
 
