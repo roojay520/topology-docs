@@ -2,6 +2,13 @@
 
 ## 1.1.3 next
 
+
+### Bug fixes
+
+- **背景图片设置到最底层的 canvas**
+
+  背景图片本来在中间层的 canvas 上，移动到底层 canvas dom 上。
+
 ### Features
 
 - **地图可视框**
