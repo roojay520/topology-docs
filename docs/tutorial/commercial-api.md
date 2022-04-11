@@ -204,7 +204,7 @@ file: (binary)，文件二进制内容
 
 ```json
 // 保存 图纸
-// topology.pureData()内容
+// topology.pureData()内容，1.0 版本 topology.data()
 {
   folder: "123" //文件名
   fromArrow: "" //默认起始箭头,

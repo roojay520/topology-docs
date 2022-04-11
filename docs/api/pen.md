@@ -346,19 +346,6 @@ const pen = {lineDash: [5,5], ...};
 ```js
 const pen = {lineDashOffset: 5, ...};
 ```
-
-### lineDashOffset
-
-虚线偏移量，具体参考 canvas 的 lineDashOffset 用法
-
-**数据类型：** number
-
-**示例：**
-
-```js
-const pen = {lineDashOffset: 5, ...};
-```
-
 ### color
 
 画笔颜色，如果没特别设置，颜色包括：文字和边框

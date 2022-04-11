@@ -1030,6 +1030,7 @@ topology.getParent(pen, true);
 
 获取文件保存数据。  
 与画布数据失去关联关系，即修改该值不影响画布数据。  
+若要修改后影响画布数据，请使用 topology.store.data 
 
 **参数：**  
 无
