@@ -9,6 +9,16 @@
 
   背景图片本来在中间层的 canvas 上，移动到底层 canvas dom 上。
 
+- **globalStore.paths 移除**
+
+  globalStore.paths 移除，使用 store.data.paths .
+
+
+- **gif onValue**
+
+  gif 图片 src 获取使用 getAttribute .
+
+
 ### Features
 
 - **地图可视框**
