@@ -18,6 +18,10 @@
 
   gif 图片 src 获取使用 getAttribute .
 
+- **changePenId 修改父子 id 关系，修改连接线 id**
+
+  修复：[Github issue 32](https://github.com/le5le-com/topology.js/issues/32)  
+
 
 ### Features
 
