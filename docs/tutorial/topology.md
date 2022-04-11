@@ -154,6 +154,7 @@ onTouchstart = (e) => {
 | 名称             | 类型                           | 描述                                               |
 | ---------------- | ------------------------------ | -------------------------------------------------- |
 | color            | string                         | 画笔默认颜色，如果没特别设置，颜色包括：文字和边框 |
+| penBackground    | string                         | 画笔默认背景色 |
 | activeColor      | string                         | 画笔选中颜色                                       |
 | activeBackground | string                         | 画笔选中背景颜色                                   |
 | pens             | [Pen[]](./pen)                 | 画笔数组                                           |
@@ -222,6 +223,7 @@ onTouchstart = (e) => {
 | [drawLine](../api/core#drawline)                       | 开始钢笔绘画                        |
 | [drawingPencil](../api/core#drawingpencil)             | 开始铅笔绘画                        |
 | [stopPencil](../api/core#stoppencil)             | 停止铅笔绘画                        |
+| [lock](../api/core#lock)             | 锁画布                        |
 | [finishDrawLine](../api/core#finishdrawline)           | 完成钢笔绘画                        |
 | [finishPencil](../api/core#finishpencil)               | 完成铅笔绘画                        |
 | [updateLineType](../api/core#updatelinetype)           | 修改连线类型                        |

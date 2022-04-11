@@ -227,7 +227,7 @@ topology.websocket.send('data');
 ## 状态
 
 多个状态的自由切换。  
-适用场景：开关的断开，闭合等。  
+适用场景：开关的断开，闭合；图片的切换，动变静，静变动等。  
 
 1. 将多个状态组合成一个组合。
 
@@ -241,6 +241,9 @@ topology.combine(pens, showChild);  // 若组合成状态，showChild 必填
 ![组合为状态](/img/realUpdate/zuheweizhuangtai.png)
 组合成功后，只显示其中一个子节点
 ![组合为状态-成功后](/img/realUpdate/zuhezhuangtaihou.png)
+
+- **图片功能示例**
+  ![动静图](/img/realUpdate/gifCombine.gif)  
 
 2. 消息通信更改状态
 在前一小节消息通信的基础上，服务器发送如下的 json.

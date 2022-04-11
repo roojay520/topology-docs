@@ -324,6 +324,21 @@ void
 topology.stopPencil();
 ```
 
+### lock
+
+更改画布锁定状态，并且关闭铅笔，钢笔  
+**参数：**  
+lock [LockState](../api/pen#locked)
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.lock(1);
+```
+
 ### finishPencil
 
 铅笔绘画完成
