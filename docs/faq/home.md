@@ -125,6 +125,15 @@ pen.tags.push('1号位置-温度传感器');
 2. 修正画布位置： topology.resize();
 
 
+## drawImage width or height 0
+
+原因：
+
+父 dom 的宽高度为 0 就 new Topology 了，可能是存在动画
+
+解决方案：
+
+1. 等待父 dom 元素存在宽高再 new Topology 
 
 ## 其他问题
 
