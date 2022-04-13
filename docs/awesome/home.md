@@ -23,6 +23,11 @@
 
 ⑤  [交互事件](https://mp.weixin.qq.com/s/ufMyN35J5hufIee5LvZTyQ)
 
+⑥  [开关的断开与闭合如何快速实现](https://mp.weixin.qq.com/s/K0eLb_gTUHVIGUDqomqyoQ)
+
+⑦  [点击组件，显示弹框](https://mp.weixin.qq.com/s/nmcRwjJnI0hWbXqpGhsAMw)
+
+
 
 ### 演示
 
