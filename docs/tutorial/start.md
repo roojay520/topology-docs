@@ -95,7 +95,7 @@ topology.open(json);
 
 **参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/es5
 
-## 在 Vue 中使用
+## 在 Vue3 中使用
 
 1. 获取 @topology/core 等库
 
