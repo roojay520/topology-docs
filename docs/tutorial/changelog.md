@@ -1,6 +1,16 @@
 # 更新日志
 
-## 1.1.3 next
+## 1.1.4 next
+
+### Bug fixes
+
+- **createStore paths {}**
+
+  创建 store 时，data 中的 path 需是空对象。
+
+### Features
+
+## 1.1.4
 
 
 ### Bug fixes
