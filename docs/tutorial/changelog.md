@@ -8,6 +8,8 @@
 
   创建 store 时，data 中的 path 需是空对象。
 
+- **maxRows 最小为 1**
+
 ### Features
 
 ## 1.1.4
