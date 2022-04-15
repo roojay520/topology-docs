@@ -26,6 +26,10 @@
 
   修复[Github issue 33](https://github.com/le5le-com/topology.js/issues/33)
 
+- **highChart 生成的 dom 绑定了 id**
+
+  修改 id 后，需要更改对应的 dom id.
+
 ### Features
 
 ## 1.1.4
