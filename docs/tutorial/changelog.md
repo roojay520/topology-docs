@@ -34,6 +34,10 @@
 
   不影响当前节点与子节点的顺序关系。
 
+- **pushChildren 添加历史记录**
+
+  pushChildren 添加历史记录，可回退。
+
 ### Features
 
 ## 1.1.4
