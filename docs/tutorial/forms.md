@@ -15,7 +15,7 @@
 
 - **使用**
 
-```js
+```ts
 const radio = {
   name: "radio",
   x: 100,
@@ -25,8 +25,8 @@ const radio = {
   direction: "vertical",
   options: [
     { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00" isChecked: true},
-    { text: "谷物", background: "#0000ff" ,isForbidden: true},
+    { text: "蔬菜", background: "#00ff00", isChecked: true },
+    { text: "谷物", background: "#0000ff", isForbidden: true },
   ],
 };
 
@@ -48,16 +48,16 @@ topology.addPens([radio]);
 
 ```js
 const checkbox = {
-  name: 'checkbox',
+  name: "checkbox",
   x: 100,
   y: 100,
   width: 150,
   height: 100,
-  direction: 'vertical',
+  direction: "vertical",
   options: [
-    { text: '水果', background: '#ff0000' },
-    { text: '蔬菜', background: '#00ff00', isChecked: true },
-    { text: '谷物', background: '#0000ff', isForbidden: true },
+    { text: "水果", background: "#ff0000" },
+    { text: "蔬菜", background: "#00ff00", isChecked: true },
+    { text: "谷物", background: "#0000ff", isForbidden: true },
   ],
 };
 
@@ -81,16 +81,16 @@ topology.addPens([checkbox]);
 
 ```js
 const lSwitch = {
-  name: 'switch',
+  name: "switch",
   x: 100,
   y: 100,
   height: 30,
   width: 60,
   checked: false,
-  offColor: '#BFBFBF',
-  onColor: '#1890ff',
-  disableOffColor: '#E5E5E5',
-  disableOnColor: '#A3D3FF',
+  offColor: "#BFBFBF",
+  onColor: "#1890ff",
+  disableOffColor: "#E5E5E5",
+  disableOnColor: "#A3D3FF",
   //disable: true,
 };
 
@@ -116,7 +116,7 @@ topology.addPen(lSwitch);
 
 ```js
 const slider = {
-  name: 'slider',
+  name: "slider",
   x: 100,
   y: 100,
   width: 300,
@@ -126,10 +126,10 @@ const slider = {
   barHeight: 4,
   min: 0,
   max: 100,
-  color: '#1890ff',
-  background: '#D4D6D9',
-  textColor: '#222222',
-  unit: '%',
+  color: "#1890ff",
+  background: "#D4D6D9",
+  textColor: "#222222",
+  unit: "%",
 };
 
 topology.addPen(slider);
@@ -145,22 +145,22 @@ topology.addPen(slider);
 
 ```js
 const button = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 80,
   height: 30,
   borderRadius: 0.2,
-  text: '按钮',
-  background: '#1890ff',
-  color: '#1890ff',
-  textColor: '#ffffff',
-  activeBackground: '#40a9ff', //选中
-  activeColor: '#40a9ff',
-  activeTextColor: '#ffffff',
-  hoverBackground: '#40a9ff', //鼠标经过
-  hoverColor: '#40a9ff',
-  hoverTextColor: '#ffffff',
+  text: "按钮",
+  background: "#1890ff",
+  color: "#1890ff",
+  textColor: "#ffffff",
+  activeBackground: "#40a9ff", //选中
+  activeColor: "#40a9ff",
+  activeTextColor: "#ffffff",
+  hoverBackground: "#40a9ff", //鼠标经过
+  hoverColor: "#40a9ff",
+  hoverTextColor: "#ffffff",
 };
 
 topology.addPen(button);
@@ -177,15 +177,15 @@ const input = {
   height: 50,
   width: 200,
   input: true,
-  name: 'rectangle',
+  name: "rectangle",
   borderRadius: 0.05,
   ellipsis: true,
-  text: '输入数据',
-  textAlign: 'left',
-  color: '#D9D9D9FF',
-  textColor: '#000000FF',
-  hoverTextColor: '#000000FF',
-  activeTextColor: '#000000FF',
+  text: "输入数据",
+  textAlign: "left",
+  color: "#D9D9D9FF",
+  textColor: "#000000FF",
+  hoverTextColor: "#000000FF",
+  activeTextColor: "#000000FF",
   textLeft: 10,
 };
 
@@ -202,21 +202,21 @@ const select = {
   y: 100,
   height: 50,
   width: 200,
-  name: 'rectangle',
+  name: "rectangle",
   borderRadius: 0.05,
   ellipsis: true,
-  text: '选项1',
-  textAlign: 'left',
-  color: '#D9D9D9FF',
-  textColor: '#000000FF',
-  hoverTextColor: '#000000FF',
-  activeTextColor: '#000000FF',
+  text: "选项1",
+  textAlign: "left",
+  color: "#D9D9D9FF",
+  textColor: "#000000FF",
+  hoverTextColor: "#000000FF",
+  activeTextColor: "#000000FF",
   textLeft: 10,
   // dropdownList: ["选项1", "选项2", "选项3"],
   dropdownList: [
-    { text: '选项1', background: '#ff0000' },
-    { text: '选项2', background: '#00ff00' },
-    { text: '选项3', background: '#0000ff' },
+    { text: "选项1", background: "#ff0000" },
+    { text: "选项2", background: "#00ff00" },
+    { text: "选项3", background: "#0000ff" },
   ],
 };
 

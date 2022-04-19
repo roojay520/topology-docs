@@ -116,8 +116,8 @@ onTouchstart = (e) => {
 | rule                | boolean     | 是否显示标尺                                       |
 | ruleColor           | string      | 标尺颜色                                           |
 | drawingLineName     | string      | 默认连线类型名称                                   |
-| fromArrow           | string      | 默认连线起始箭头                                   |
-| toArrow             | string      | 默认连线终点箭头                                   |
+| fromArrow           | [string](../api/pen.md#fromarrow、toarrow)     | 默认连线起始箭头                                   |
+| toArrow             | [string](../api/pen.md#fromarrow、toarrow)      | 默认连线终点箭头                                   |
 | autoPolyline        | boolean     | 是否自动计算多线段锚点                             |
 | interval            | number      | 绘画帧时长                                         |
 | animateInterval     | number      | 动画帧时长                                         |
@@ -176,8 +176,8 @@ onTouchstart = (e) => {
 | gridSize         | number                         | 网格大小                                           |
 | rule             | boolean                        | 是否显示标尺                                       |
 | ruleColor        | string                         | 标尺颜色                                           |
-| fromArrow        | string                         | 默认起始箭头                                       |
-| toArrow          | string                         | 默认终点箭头                                       |
+| fromArrow        | [string](../api/pen.md#fromarrow、toarrow)                         | 默认起始箭头                                       |
+| toArrow          | [string](../api/pen.md#fromarrow、toarrow)                         | 默认终点箭头                                       |
 | lineWidth        | number                         | 默认线宽                                           |
 
 ## 成员属性

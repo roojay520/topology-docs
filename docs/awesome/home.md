@@ -40,7 +40,7 @@
 
 [ES5 示例](https://github.com/le5le-com/topology.js/tree/master/examples/es5)
 
-[Vue 示例](https://github.com/le5le-com/topology.js/tree/master/examples/vue)
+[Vue3 示例](https://github.com/le5le-com/topology.js/tree/master/examples/vue)
 
 [React 示例](https://github.com/le5le-com/topology.js/tree/master/examples/react)
 

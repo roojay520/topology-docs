@@ -462,7 +462,7 @@ void
 **示例：**
 
 ```js
-topology.hideMagnifier();
+topology.toggleMagnifier();
 ```
 
 ### clear

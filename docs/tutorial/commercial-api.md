@@ -150,6 +150,8 @@ file: (binary)，文件二进制内容
 
 #### [GET]  /api/user/topologies 获取当前用户的图纸或自定义组件
 
+获取当前用户的
+
 **参数**
 [query] pageIndex - 当前第几页
 [query] pageCount - 每页显示个数
@@ -192,7 +194,9 @@ file: (binary)，文件二进制内容
       "tags": [],
       "createdAt": "2021-03-05T23:05:31.862+08:00",
       "updatedAt": "2021-03-09T22:14:47.825+08:00",
-      "deletedAt": "0001-01-01T00:00:00Z"
+      "deletedAt": "0001-01-01T00:00:00Z",
+      "componentDatas": [],     // 新版本 1.0 组件内容
+      "componentData": {},      // 老版本组件内容
     }
   ]
 }  
@@ -313,6 +317,8 @@ file: (binary)，文件二进制内容
 ```
 
 #### [GET] /api/topologies 获取图纸
+
+获取全部用户的，用作解决方案展示。
 
 **Query参数：**
 pageIndex - 当前第几页，起始为1

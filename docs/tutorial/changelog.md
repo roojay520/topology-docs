@@ -8,6 +8,32 @@
 
   创建 store 时，data 中的 path 需是空对象。
 
+- **maxRows 最小为 1**
+
+- **calcInView 可以计算子**
+
+  两个组合节点，再组合成状态，未及时计算计算子 inView
+
+- **toPng 不包含 visible == false 的画笔**
+
+- **showChild 改变 visible 属性**
+
+  使 showChild 不展示的子节点，不会出现在 toPng 中
+
+- **移动的画笔 movingPens 不展示 inView == false 的画笔**
+
+- **空白画布开缩略图，点击出现问题**
+
+  修复[Github issue 33](https://github.com/le5le-com/topology.js/issues/33)
+
+- **highChart 生成的 dom 绑定了 id**
+
+  修改 id 后，需要更改对应的 dom id.
+
+- **top 和 bottom 置顶置底修改自身以及子节点**
+
+  不影响当前节点与子节点的顺序关系。
+
 ### Features
 
 ## 1.1.4
