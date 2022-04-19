@@ -15,10 +15,12 @@ topolog.beforeAddPen = (pen: Pen) => {
   return true;
 };
 
-topolog.beforeRemovePen = (pen: Pen) => {
-  console.log("removePen", pen);
-  // 返回 true 允许remove
-  return true;
+topolog.beforeRemovePens = async (pens: Pen[]) => {
+  console.log("removePens", pens);
+  // showDialog 伪代码，需自行实现
+  const res = await showDialog('确认删除，是否删除所选图元？');
+  // 返回 true 允许 remove
+  return res.ok;
 };
 
 topolog.beforeAddAnchor = (pen: Pen) => {

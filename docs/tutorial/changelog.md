@@ -40,6 +40,10 @@
 
 ### Features
 
+- **beforeRemovePen 更改为 beforeRemovePens 并实现它**
+
+  beforeRemovePens 移除前的生命周期，常用场景：可弹出对话框确认删除。
+
 ## 1.1.4
 
 
