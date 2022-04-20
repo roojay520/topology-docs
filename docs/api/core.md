@@ -12,7 +12,8 @@
 | store              | [TopologyStore](../tutorial/topology#topologystore)              | 绘画数据。包括文件数据和各种状态数据等     |
 | websocket          | WebSocket                                    | 原生 WebSocket 客户端。仅连接成功才有实例  |
 | mqttClient         | Mqtt.Client                                  | mqtt.js 通信客户端                         |
-| beforeAddPen       | (pen: Pen) => boolean                        | 添加 Pen 前生命周期函数，返回 true 允许    |
+| beforeAddPen **弃用**  | (pen: Pen) => boolean                    | 添加 Pen 前生命周期函数，返回 true 允许    |
+| beforeAddPens      | `(pens: Pen[]) => Promise<boolean>`          | 添加 Pen[] 前生命周期函数，返回 true 允许    |
 | beforeRemovePens   | `(pens: Pen[]) => Promise<boolean>`          | 移除 Pen[] 前生命周期函数，返回 true 允许    |
 | beforeAddAnchor    | (pen: Pen, anchor: Point) => boolean         | 添加 Anchor 前生命周期函数，返回 true 允许 |
 | beforeRemoveAnchor | (pen: Pen, anchor: Point) => boolean         | 移除 Anchor 前生命周期函数，返回 true 允许 |

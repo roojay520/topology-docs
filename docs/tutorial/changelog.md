@@ -44,6 +44,8 @@
 
   beforeRemovePens 移除前的生命周期，常用场景：可弹出对话框确认删除。
 
+- **新增 beforeAddPens**
+
 ## 1.1.4
 
 

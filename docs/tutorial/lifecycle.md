@@ -9,16 +9,31 @@
 默认无。可以如下设置即可：
 
 ```js
+/**
+ * @deprecated 已弃用，推荐 beforeAddPens
+ * */
 topolog.beforeAddPen = (pen: Pen) => {
   console.log("addPen", pen);
   // 返回 true 允许add
   return true;
 };
 
+topology.beforeAddPens = async (pens: Pen[]) => {
+  console.log("addPens", pens);
+  // 1. window.confirm 会阻塞后面代码，不推荐
+  // return window.confirm("是否添加此类图元？");
+
+  // 2. Promise 类型 Modal
+  // showDialog 伪代码，需自行实现
+  const res = await showDialog("是否添加此类图元？");
+  // 返回 true 允许 remove
+  return res.ok;
+};
+
 topolog.beforeRemovePens = async (pens: Pen[]) => {
   console.log("removePens", pens);
   // showDialog 伪代码，需自行实现
-  const res = await showDialog('确认删除，是否删除所选图元？');
+  const res = await showDialog("是否删除所选图元？");
   // 返回 true 允许 remove
   return res.ok;
 };
@@ -48,6 +63,15 @@ const pen = {
 topology.addPen(pen);
 // print: addPen, pen
 ```
+
+### beforeAddPens
+
+pens 参数是全部的画笔们。
+
+### beforeRemovePens
+
+由于 delete 方法是递归删除子节点的，于是在删除组合节点时， beforeRemovePens 会多次触发。  
+若想要使用对话框，建议在父节点 beforeRemovePens 触发时就进行拦截，而不再次拦截子节点的。
 
 ## 画笔相关函数
 
