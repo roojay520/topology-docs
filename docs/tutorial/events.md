@@ -82,7 +82,10 @@ topology.off('event', fn);
 ![触发事件](/img/event_condition_success.gif)
 
 
-- **触发器**
+- **触发器**   
+
+演示视频【条件变化触发实时告警】：https://www.bilibili.com/video/BV1dT4y1U7V1?spm_id_from=333.999.0.0   
+
 
 1. 点击"添加事件",点击"设置触发条件"；
 
@@ -134,6 +137,7 @@ topology.on('userDefindMessage', (e) => {
     // message.info(pen.name + params);
 });
 ```
+演示视频【点击组件，显示弹框】https://www.bilibili.com/video/BV1634y1v7Yz?spm_id_from=333.999.0.0
 
 3. 触发事件
    
