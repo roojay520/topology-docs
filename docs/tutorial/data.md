@@ -227,7 +227,8 @@ topology.websocket.send('data');
 ## 状态
 
 多个状态的自由切换。  
-适用场景：开关的断开，闭合；图片的切换，动变静，静变动等。  
+适用场景：开关的断开，闭合；图片的切换，动变静，静变动等。    
+
 
 1. 将多个状态组合成一个组合。
 
@@ -255,4 +256,7 @@ topology.combine(pens, showChild);  // 若组合成状态，showChild 必填
 }
 ```
 
-示例图纸：http://t.le5le.com/?id=620215dad84658ad4f8c07e5
+示例图纸：http://t.le5le.com/?id=620215dad84658ad4f8c07e5   
+
+
+演示视频【开关的断开与闭合如何快速实现】：https://www.bilibili.com/video/BV1i44y1376U?spm_id_from=333.999.0.0 
