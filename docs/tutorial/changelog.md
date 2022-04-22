@@ -1,6 +1,14 @@
 # 更新日志
 
-## 1.1.4 next
+## 1.1.6
+
+### Features
+
+- **cube 设置斜率**
+
+  cube z 属性可以设置斜率， flowData offsetX 可设置斜率（需更新 flow-diagram 1.0.2 ）
+
+## 1.1.5
 
 ### Bug fixes
 
@@ -44,7 +52,7 @@
 
   beforeRemovePens 移除前的生命周期，常用场景：可弹出对话框确认删除。
 
-- **新增 beforeAddPens**
+- **新增 beforeAddPens beforeAddAnchor beforeRemoveAnchor**
 
 ## 1.1.4
 
