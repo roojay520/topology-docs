@@ -38,16 +38,22 @@ topolog.beforeRemovePens = async (pens: Pen[]) => {
   return res.ok;
 };
 
-topolog.beforeAddAnchor = (pen: Pen) => {
-  console.log("addAnchor", pen);
-  // 返回 true 允许add
-  return true;
+topology.beforeAddAnchor = async (pen: Pen, anchor: Point) => {
+  // 1. window.confirm 会阻塞后面代码，不推荐
+  // return window.confirm('是否添加锚点？');
+
+  // 2. Promise 类型 Modal
+  // showDialog 伪代码，需自行实现
+  return await showModal("添加锚点");
 };
 
-topolog.beforeRemoveAnchor = (pen: Pen) => {
-  console.log("removeAnchor", pen);
-  // 返回 true 允许remove
-  return true;
+topology.beforeRemoveAnchor = async (pen: Pen, anchor: Point) => {
+  // 1. window.confirm 会阻塞后面代码，不推荐
+  // return window.confirm('是否删除锚点？');
+
+  // 2. Promise 类型 Modal
+  // showDialog 伪代码，需自行实现
+  return await showModal("删除锚点");
 };
 
 // 定义一个pen，矩形
