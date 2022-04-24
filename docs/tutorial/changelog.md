@@ -1,5 +1,20 @@
 # 更新日志
 
+
+## 1.1.6 next
+
+### Bug fixes
+
+- **maxRows 最小为1**
+
+  之前未考虑到负数的情况。
+
+### Features
+
+- **highcharts 数据更新**
+
+  参照 echarts 文档的中数据更新实现。@topology/chart-diagram 1.0.5
+
 ## 1.1.6
 
 ### Features

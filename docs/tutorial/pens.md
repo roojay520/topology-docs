@@ -272,6 +272,10 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+- 数据更新
+
+同 [echarts 数据更新](./pens.html#echarts%E5%9B%BE%E8%A1%A8)
+
 ## LightningChart图表
 
 参考echarts的配置格式，在lightningCharts库的基础上进行封装，目前支持的属性配置（lightningCharts.option）如下：

@@ -88,7 +88,7 @@ pens 参数是全部的画笔们。
 
 其他相关函数：
 
-- onBeforeValue 属性值发生改变前，用作数据格式转换（目前只有 echarts 实现了该功能，详细查看 [echarts 数据更新](./pens.html#echarts%E5%9B%BE%E8%A1%A8)）
+- onBeforeValue 属性值发生改变前，用作数据格式转换（目前只有 echarts，highcharts 实现了该功能，详细查看 [echarts 数据更新](./pens.html#echarts%E5%9B%BE%E8%A1%A8)）
 - onValue 属性值发生修改
 - onMove 被移动拖拽
 - onResize 修改大小
