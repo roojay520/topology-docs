@@ -9,6 +9,18 @@
 
   之前未考虑到负数的情况。
 
+- **movedActivePens 方法内，单独处理 dirtyLines**
+
+  movedActivePens 方法内的 updateLines 执行的晚，导致 line 的 calculative 可能不正确，方法内再单独处理 dirtyLines 。
+
+- **setValue, updateValue 更改坐标不再需要传 x,y,width,height 四个值**
+
+  传入修改值即可，并且修复 bug [Github issue 47](https://github.com/le5le-com/topology.js/issues/47)
+
+- **updateValue 若传入 width 与 rotate，先更改坐标再更改 rotate**
+
+  修复[Github issue 324](https://github.com/le5le-com/topology/issues/324)
+
 ### Features
 
 - **highcharts 数据更新**
