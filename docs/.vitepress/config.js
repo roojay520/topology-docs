@@ -10,7 +10,7 @@ module.exports = {
     algolia: {
       appId: '3UU73GDKU1',
       apiKey: '4d05a9750de2dd2ecdc6611ce62e545e',
-      indexName: 'topology',
+      indexName: 'le5le-topology',
     },
 
     nav: [
