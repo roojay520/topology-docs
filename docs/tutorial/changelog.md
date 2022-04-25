@@ -21,6 +21,10 @@
 
   修复[Github issue 324](https://github.com/le5le-com/topology/issues/324)
 
+- **toComponent 生成可复用的组件图形，不可影响原画布数据**
+
+  修复[Github issue 46](https://github.com/le5le-com/topology.js/issues/46)
+  
 ### Features
 
 - **highcharts 数据更新**
