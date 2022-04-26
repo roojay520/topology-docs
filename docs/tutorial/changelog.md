@@ -31,6 +31,11 @@
 
   参照 echarts 文档的中数据更新实现。@topology/chart-diagram 1.0.5
 
+- **toPng 添加一个参数，下载图片中包含 bkImage**
+
+  downloadPng 下载的图片中，包含背景图片。
+  [Github issue 49](https://github.com/le5le-com/topology.js/issues/49)
+
 ## 1.1.6
 
 ### Features
