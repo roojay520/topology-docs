@@ -11,6 +11,14 @@ module.exports = {
       appId: '3UU73GDKU1',
       apiKey: '4d05a9750de2dd2ecdc6611ce62e545e',
       indexName: 'le5le-topology',
+      placeholder: '搜索后，请刷新',
+      transformItems(items) {
+        for (const item of items) {
+          item.objectID.replace('topology-documents/', '');
+          item.url.replace('topology-documents/', '');
+        }
+        return items;
+      },
     },
 
     nav: [

@@ -1,6 +1,50 @@
 # 更新日志
 
-## 1.1.4 next
+
+## 1.1.6 next
+
+### Bug fixes
+
+- **maxRows 最小为1**
+
+  之前未考虑到负数的情况。
+
+- **movedActivePens 方法内，单独处理 dirtyLines**
+
+  movedActivePens 方法内的 updateLines 执行的晚，导致 line 的 calculative 可能不正确，方法内再单独处理 dirtyLines 。
+
+- **setValue, updateValue 更改坐标不再需要传 x,y,width,height 四个值**
+
+  传入修改值即可，并且修复 bug [Github issue 47](https://github.com/le5le-com/topology.js/issues/47)
+
+- **updateValue 若传入 width 与 rotate，先更改坐标再更改 rotate**
+
+  修复[Github issue 324](https://github.com/le5le-com/topology/issues/324)
+
+- **toComponent 生成可复用的组件图形，不可影响原画布数据**
+
+  修复[Github issue 46](https://github.com/le5le-com/topology.js/issues/46)
+  
+### Features
+
+- **highcharts 数据更新**
+
+  参照 echarts 文档的中数据更新实现。@topology/chart-diagram 1.0.5
+
+- **toPng 添加一个参数，下载图片中包含 bkImage**
+
+  downloadPng 下载的图片中，包含背景图片。
+  [Github issue 49](https://github.com/le5le-com/topology.js/issues/49)
+
+## 1.1.6
+
+### Features
+
+- **cube 设置斜率**
+
+  cube z 属性可以设置斜率， flowData offsetX 可设置斜率（需更新 flow-diagram 1.0.2 ）
+
+## 1.1.5
 
 ### Bug fixes
 
@@ -44,7 +88,7 @@
 
   beforeRemovePens 移除前的生命周期，常用场景：可弹出对话框确认删除。
 
-- **新增 beforeAddPens**
+- **新增 beforeAddPens beforeAddAnchor beforeRemoveAnchor**
 
 ## 1.1.4
 

@@ -1615,7 +1615,7 @@ void
 ```js
 topology.spaceBetween();
 
-topology.spaceBetween(null, 1000);
+topology.spaceBetween(undefined, 1000);
 ```
 
 ### spaceBetweenColumn
@@ -1664,7 +1664,7 @@ void
 ```js
 topology.layout();
 
-topology.layout(null, null, 50);
+topology.layout(undefined, undefined, 50);
 ```
 
 ### showMap
