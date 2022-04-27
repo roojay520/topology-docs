@@ -1,7 +1,7 @@
 # 更新日志
 
 
-## 1.1.6 next
+## 1.1.7
 
 ### Bug fixes
 
@@ -24,6 +24,10 @@
 - **toComponent 生成可复用的组件图形，不可影响原画布数据**
 
   修复[Github issue 46](https://github.com/le5le-com/topology.js/issues/46)
+
+- **getPenRect setPenRect 计算子节点不使用 origin 和 scale**
+
+- **showChild 会改变 visible false or true**
   
 ### Features
 
