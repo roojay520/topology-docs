@@ -1,6 +1,16 @@
 # 更新日志
 
-## 1.1.7 next
+## 1.1.8 next
+
+### Bug fixes
+
+- **measureTextWidth option 使用 ctx.measureText**
+
+  代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
+
+### Features
+
+## 1.1.8
 
 ### Bug fixes
 
