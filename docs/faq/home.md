@@ -117,7 +117,7 @@ pen.tags.push('1号位置-温度传感器');
 原因：
 
 1. 父dom元素css还没渲染完，就加载画布，确认方式：new Topology 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
-2. 修改了父dom元素位置
+2. 修改了父dom元素位置，可能是存在动画
 
 解决方案：
 
