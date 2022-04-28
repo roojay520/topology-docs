@@ -1,7 +1,20 @@
 # 更新日志
 
+## 1.1.7 next
 
-## 1.1.6 next
+### Bug fixes
+
+- **showChild 不可更改 visible 属性，toPng 计算 showChild**
+
+### Features
+
+- **线连接线，按下 alt 键合并连线**
+
+  原来不按快捷键也会合并连线，可能不是用户想要的，先按下 alt 键才会合并连线。
+
+- **在线上锚点 hover，按下 s 快捷键 可切断成两条线**
+
+## 1.1.7
 
 ### Bug fixes
 
@@ -24,6 +37,10 @@
 - **toComponent 生成可复用的组件图形，不可影响原画布数据**
 
   修复[Github issue 46](https://github.com/le5le-com/topology.js/issues/46)
+
+- **getPenRect setPenRect 计算子节点不使用 origin 和 scale**
+
+- **showChild 会改变 visible false or true**
   
 ### Features
 

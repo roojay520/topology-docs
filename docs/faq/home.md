@@ -116,13 +116,13 @@ pen.tags.push('1号位置-温度传感器');
 
 原因：
 
-1. 父dom元素css还没渲染完，就加载画布；
+1. 父dom元素css还没渲染完，就加载画布，确认方式：new Topology 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
 2. 修改了父dom元素位置
 
 解决方案：
 
 1. 等待父dom元素css加载完成后在new Topology
-2. 修正画布位置： topology.resize();
+2. 确定画布位置已经稳定时，修正画布位置： topology.resize();
 
 
 ## drawImage width or height 0
@@ -133,7 +133,7 @@ pen.tags.push('1号位置-温度传感器');
 
 解决方案：
 
-1. 等待父 dom 元素存在宽高再 new Topology 
+1. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology 
 
 ## 脏数据处理
 
@@ -141,6 +141,9 @@ pen.tags.push('1号位置-温度传感器');
 下面是一些解决方案：
 
 ### 场景一：与大部分画笔位置相差较远
+
+视频讲解：
+[如何处理脏数据-场景1](https://www.bilibili.com/video/BV1NL4y1c7v7?spm_id_from=333.999.0.0)
 
 确认方式：
 
