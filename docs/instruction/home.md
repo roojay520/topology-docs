@@ -442,7 +442,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 16   | 鞋子专属定制                          | svg      | 9    |
 | 17   | 2.5D Room（2.5D房间）                 | svg      | 16   |
 | 18   | Iot-logistics（物流）                 | svg      | 35   |
-| 19   | Iot-water tank（水槽）                | svg      | 95   |
+| 19   | Iot-water tank（水槽）                | svg     | 95   |
 | 20   | Iot-Food（食品）                      | svg      | 60   |
 | 21   | Iot-building（建筑）                  | svg      | 9    |
 | 22   | Iot-machining（机器）                 | svg      | 60   |
