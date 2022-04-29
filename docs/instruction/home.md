@@ -148,6 +148,18 @@
 
 ### 2.4 连线
 
+**钢笔绘制连线**   
+
+开始：单击左键
+
+暂停：单击右键   或   enter
+
+结束：esc
+
+![le5le topology 连线](/img/gangbilianxian.gif)
+
+**连接绘制连线**    
+
 曲线
 
 ![le5le topology 连线](/img/lianxian.gif)
@@ -338,6 +350,13 @@ video标签支持MP4、WebM、Ogg 三种格式
 ​开启时自动选择2个最近锚点，关闭时可自由选择锚点
 
 ![le5le topology 自动锚点](/img/zidongmaodian.gif)
+
+### **6.6 禁用锚点**
+
+​禁用锚点，即不显示锚点
+
+![le5le topology 禁用锚点](/img/jinyongmaodian.gif)    
+  
 
 ## 7 组件库
 
