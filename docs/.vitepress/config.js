@@ -192,6 +192,10 @@ function getTutorialSidebar() {
           text: '更新日志',
           link: '/tutorial/changelog',
         },
+        {
+          text: '常见问题',
+          link: '/faq/home',
+        },
       ],
     },
     {
