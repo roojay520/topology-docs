@@ -1255,7 +1255,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1304,7 +1304,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1329,7 +1329,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1366,7 +1366,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1392,7 +1392,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1414,7 +1414,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1435,7 +1435,7 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1456,7 +1456,7 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1478,7 +1478,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1500,7 +1500,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1522,7 +1522,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1544,7 +1544,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1566,7 +1566,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1588,7 +1588,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1671,7 +1671,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1694,7 +1694,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1726,7 +1726,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1748,7 +1748,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1770,7 +1770,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1792,7 +1792,7 @@ topology.open 时，是否自动播放
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1843,7 +1843,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1955,7 +1955,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1985,7 +1985,7 @@ topology.inactive();
 ```js
 // 简单类型
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1998,7 +1998,7 @@ topology.inactive();
 
 // 复杂类型
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -2033,7 +2033,7 @@ pen.name='iframe'时，嵌入网页的 url
 
 ```js
 const pen = {
-  name: " iframe",
+  name: "iframe",
   x: 100,
   y: 100,
   width: 100,
