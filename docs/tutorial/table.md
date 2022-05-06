@@ -8,8 +8,8 @@ table 类型控件
 
    | 名称      | 类型            | 描述                                                                                                 |
    | --------- | --------------- | ---------------------------------------------------------------------------------------------------- |
-   | cellHight | number          | 行高，默认 30                                                                                        |
-   | cellWidth | number          | 列宽，默认 100                                                                                       |
+   | rowHight | number          | 行高，默认 30                                                                                        |
+   | colWidth | number          | 列宽，默认 100                                                                                       |
    | header    | object          | 表头配置，见下方header配置。                                                                         |
    | data      | object[]\|array | 数据配置。1.当类型为objec[]时，见下方data配置；2.当数据类型为array时，参见下方data配置中的data属性。 |
 

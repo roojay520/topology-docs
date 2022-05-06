@@ -148,6 +148,18 @@
 
 ### 2.4 连线
 
+**钢笔绘制连线**   
+
+开始：单击左键
+
+暂停：单击右键   或   enter
+
+结束：esc
+
+![le5le topology 连线](/img/gangbilianxian.gif)
+
+**连接绘制连线**    
+
 曲线
 
 ![le5le topology 连线](/img/lianxian.gif)
@@ -339,6 +351,13 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 自动锚点](/img/zidongmaodian.gif)
 
+### **6.6 禁用锚点**
+
+​禁用锚点，即不显示锚点
+
+![le5le topology 禁用锚点](/img/jinyongmaodian.gif)    
+  
+
 ## 7 组件库
 
 ### 7.1 图纸
@@ -385,15 +404,20 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 | 序号 | 类别         | 格式 | 数量 |
 | ---- | ------------ | ---- | ---- |
-| 1    | 基本形状     | js   | 24   |
-| 2    | 脑图         | js   | 2    |
-| 3    | 箭头         | js   | 34   |
-| 4    | 流程图       | js   | 16   |
+| 1    | 基本形状     | js   | 22   |
+| 2    | 表单     | js   | 8   |
+| 3    | 脑图         | js   | 2    |
+| 4    | 流程图       | js   | 15   |
 | 5    | 活动图       | js   | 8    |
 | 6    | 时序图和类图 | js   | 4    |
-| 7    | 拓扑图未分类 | js   | 54   |
-| 8    | Echarts图表  | js   | 4    |
-| 合计 |              |      | 146  |
+| 7    | Echarts图表  | js   | 4    |
+| 8    | Highcharts图表  | js   | 4    |
+| 9    | LightningCharts图表  | js   | 4    |
+| 10    | Le5le charts  | js   | 5   |
+| 11    | 故障树  | js   | 12   |
+| 12    | 箭头  | js   | 34   |
+| 13    | 拓扑图未分类 | js   | 54   |
+| 合计 |              |      | 176  |
 
 ### 8.2 电力图形库
 
