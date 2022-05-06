@@ -227,6 +227,7 @@ function getTutorialSidebar() {
         { text: '鹰眼地图', link: '/tutorial/map' },
         { text: '放大镜', link: '/tutorial/magnifier' },
         { text: '快捷键', link: '/tutorial/keyboards' },
+        { text: '数据', link: '/tutorial/service-data' },
       ],
     },
     {
