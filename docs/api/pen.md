@@ -844,9 +844,16 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+### textHasShadow
+
+设置 shadow 阴影后，文字是否具备阴影，默认无。
+
+**数据类型：** boolean
+
 ### textWidth
 
-文本宽度，超出换行。默认 pen.width
+文本宽度，超出换行。默认 pen.width  
+影响 worldTextRect 的宽度，可设置 < 1 的值，认为是宽度的百分比
 
 **数据类型：** number
 
@@ -869,7 +876,8 @@ topology.inactive();
 
 ### textHeight
 
-文本高度，超出显示省略号。默认 pen.height
+文本高度，超出显示省略号。默认 pen.height  
+影响 worldTextRect 的高度，可设置 < 1 的值，认为是高度的百分比
 
 **数据类型：** number
 
@@ -893,7 +901,8 @@ topology.inactive();
 
 ### textLeft、textTop
 
-文本左偏移和上偏移。
+文本左偏移和上偏移。  
+影响 worldTextRect 的位置，可设置 < 1 的值，认为是百分比。
 
 **数据类型：** number
 
@@ -1100,13 +1109,25 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
-### textAlign、textBaseline
+### textAlign
 
-文本对齐。参考 css 用法。
+左右对齐方式。
+决定 worldTextRect 在 worldRect 中的位置，（左中右）
+决定 文字 在 worldTextRect 中的位置。（左中右）
+
+**数据类型：** 'left' | 'center' | 'right'
+
+### textBaseline
+
+上下对齐方式。
+决定 worldTextRect 在 worldRect 中的位置，（上中下）
+决定 文字 在 worldTextRect 中的位置。（上中下）
+
+**数据类型：** 'top' | 'middle' | 'bottom'
 
 ### textBackground
 
-文本背景颜色。
+文本背景颜色。填充 textDrawRect
 
 **数据类型：** string
 
@@ -1129,7 +1150,7 @@ topology.inactive();
 
 ### whiteSpace
 
-文本换行方式。默认单词换行；nowrap - 不换行；pre-line - 换行符换行
+文本换行方式。默认单词换行；nowrap - 不换行；pre-line - 换行符换行； break-all - 永远换行
 
 **数据类型：** string
 
