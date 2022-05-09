@@ -69,7 +69,6 @@ module.exports = {
         // activeMatch: '^/tutorial/',
       },
       // { text: '关于我们', link: '/about/us', activeMatch: '^/community/' },
-      // { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
       // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
       {
         text: '关于我们',
@@ -111,7 +110,7 @@ module.exports = {
           // },
           {
             text: '常见问题',
-            link: '/faq/home',
+            link: '/tutorial/faq',
           },
         ],
       },
@@ -194,7 +193,7 @@ function getTutorialSidebar() {
         },
         {
           text: '常见问题',
-          link: '/faq/home',
+          link: '/tutorial/faq',
         },
       ],
     },
@@ -289,7 +288,7 @@ function getFaqSidebar() {
   return [
     {
       text: '常见问题',
-      link: '/faq/home',
+      link: '/tutorial/faq',
     },
   ];
 }
@@ -313,7 +312,7 @@ function getCommunitySidebar() {
         },
         {
           text: '常见问题',
-          link: '/faq/home',
+          link: '/tutorial/faq',
         },
         // {
         //   text: '关于我们',
