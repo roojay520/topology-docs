@@ -241,18 +241,92 @@ interface Where {
 }
 ```
 
-## 文本区域
+## 文本
 
-### worldTextRect
+文字是一个很复杂的场景，中英文宽度不一致；默认换行，回车换行，不换行，永远换行；超出省略等。  
+如何可以通过一些简单的配置来达到用户通常想要的效果，以下是制定的一些规则，欢迎讨论！
+
+### 文本区域
+
+
+
+#### worldTextRect
 
 - 影响  
   该区域是文字的区域，它的改变会影响双击展示输入框的大小；会影响文字的换行情况，即横向超出；会影响文字行数超出的省略号，即纵向超出。
 - 受影响  
-  该区域在 worldRect 区域的基础上，受到 padding，textLeft，textTop，textWidth，textHeight 属性的影响。
-- 图示
-  ![worldTextRect](/img/worldTextRect.png)
+  该区域在 worldRect 区域的基础上，受到 padding，textLeft，textTop，textWidth，textHeight, textAlign, textBaseline 属性的影响。  
+  而 textAlign 与 textBaseline 影响该区域 worldTextRect 在 worldRect 中的位置。
+- 查看区域
+  控制台设置：
 
-### textDrawRect
+  ```js
+  topology.store.fillWorldTextRect = true;
+  topology.render(Infinity);
+  ```
+
+#### textDrawRect
 
 该区域是文字的实际绘制所占的区域，它的宽度为多行文本中最大的宽度，高度为 `行数 * lineHeight * fontSize`。  
 可以通过设置 textBackground 属性来查看当前 textDrawRect 的区域大小。
+
+### 换行与超出省略  
+
+换行中的不换行与回车换行都比较好理解，此处不赘述了。   
+
+默认换行：每个单词即认为是一组的，同一个单词是会在同一行的，一个单词指的是一个中文或一个英文单词，例如说：'乐' 是一个单词，’乐吾乐' 是三个单词，'word word'是两个单词，'mmmmmmmmmm'是一个单词，即英文使用空格分割单词的。
+
+永远换行：每个字母一组，只要宽度超了就换行。  
+
+超出省略在不同的换行下是不同的：
+
+1. 不换行
+
+  判断宽度是否超出，宽度超出则删除超出部分，末尾添加 ...
+
+2. 回车换行、默认、永远换行
+
+  判断高度是否超出，若行数超过最大可展示行数，最后一行添加 ...
+
+
+### 示例
+
+以下示例只介绍了一些场景，后续会进行更多的补充，也欢迎完善。  
+
+1. 只需要一行文本，超出的部分省略。
+
+```ts
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '长文本长文本长文本长文本长文本长文本',
+  whiteSpace: 'nowrap'
+}
+topology.addPen(pen);
+```
+
+2. 最大两行文本，永远换行，超出省略
+
+当一定是两行文本时，需要设置 textHeight ，大于两行的高度，小于三行的高度。  
+`2 * fontSize * lineHeight <= textHeight <= 3 * fontSize * lineHeight`。  
+fontSize 默认 12 , lineHeight 默认 1.5.
+即 `36 <= textHeight <= 54`  
+由于计算误差，尽可能的不要设置等于的值  
+多行文本同理
+
+```ts
+const pen = {
+  name: 'rectangle',
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  text: '长文本长文本长文本长文本长文本长文本',
+  textHeight: 50,
+  whiteSpace: 'break-all'
+}
+topology.addPen(pen);
+```

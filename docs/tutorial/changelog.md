@@ -1,6 +1,17 @@
 # 更新日志
 
-## 1.1.8 next
+## 1.1.9 next
+
+### Bug fixes
+
+- **移动端双指缩小放大**
+
+  修复移动端双指缩放。
+  单指发出 click 消息以及当前 hover pen
+
+### Features
+
+## 1.1.9
 
 ### Bug fixes
 
@@ -8,7 +19,15 @@
 
   代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
 
+- **iframe src onValue**
+
+  iframe onValue 判断 src 并更改
+
 ### Features
+
+- **setValue 类型提示**
+
+- **文本展示规则制定**
 
 ## 1.1.8
 

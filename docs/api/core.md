@@ -727,6 +727,24 @@ topology.registerResizeDock((store, rect, pens, resizeIndex) => {
 var pens = topology.find('aaa');
 ```
 
+### findOne
+ 
+根据 id 或 tag 查找画笔，使用 Array.find ，找到一个即返回，找不到 undefined
+
+**参数：**
+
+- idOrTag: string  
+  id 或 tag
+
+**返回：**  
+符合结果的 pen 对象
+
+**示例：**
+
+```js
+const pen = topology.find('id');
+```
+
 ### getPenRect
 
 获取 Pen 相对标尺原点的坐标区域
