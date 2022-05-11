@@ -1,6 +1,6 @@
 ---
 home: true
-title: aaa
+title: 开发者中心
 pageClass: le5le-home
 # heroImage: /img/home.png
 heroAlt: Le5le Topology
