@@ -1,6 +1,6 @@
 # 更新日志
 
-## 1.1.10 next
+## 1.1.12
 
 ### Bug fixes
 
@@ -16,6 +16,10 @@
 ### Features
 
 - **移动连线的锚点，若是折线 polyline , 关闭自动计算 autoPolyline**
+
+- **register 方法约束类型**
+
+  需同步更新 fta class sequence activity flow 等包至最新。
 
 ## 1.1.10
 
