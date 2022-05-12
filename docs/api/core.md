@@ -874,6 +874,11 @@ const duration = topology.calcAnimateDuration(pen);
 - pens: Pen[]  
   画笔数组
 
+- showChild: number
+
+  可选参数，默认无需传递。
+  若组合为 [状态](../tutorial/data.html#状态) ，需传递该参数，默认展示第一个即传 0 ，第二个 1。
+
 **返回：**  
 void。新画笔为 topology.store.active[0]
 
@@ -881,6 +886,9 @@ void。新画笔为 topology.store.active[0]
 
 ```js
 topology.combine(pens);
+
+// 组合为状态
+topology.combine(pens, 0);
 ```
 
 ### uncombine
@@ -1976,13 +1984,21 @@ var pens = topology.previousNode(pen);
 - pens: [Pen](./pen)[]  
   画笔数组。默认整个画布
 
+- showChild: number
+
+  可选参数，默认无需传递。
+  若组合为 [状态](../tutorial/data.html#状态) ，需传递该参数，默认展示第一个即传 0 ，第二个 1。
+
+
 **返回：**  
 Pen[]。组合成一个组件的画笔数组对象（包含父子 Pen）
 
 **示例：**
 
 ```js
-var pens = topology.toComponent();
+const pens = topology.toComponent();
+
+const pens = topology.toComponent(undefined, 0);
 ```
 
 ### setVisible  

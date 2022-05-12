@@ -1,6 +1,23 @@
 # 更新日志
 
-## 1.1.9 next
+## 1.1.10 next
+
+### Bug fixes
+
+- **Echarts 数据更新 , xAxis 是数组，但长度为 1**
+
+  xAxis 是数组，长度为 1 ，取第一个。
+  不考虑多 X 轴情况
+
+- **disableAnchor 禁止添加/删除锚点**
+
+- **globalAlpha 改变图片透明度**
+
+### Features
+
+- **移动连线的锚点，若是折线 polyline , 关闭自动计算 autoPolyline**
+
+## 1.1.10
 
 ### Bug fixes
 
