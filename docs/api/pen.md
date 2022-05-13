@@ -346,6 +346,7 @@ const pen = {lineDash: [5,5], ...};
 ```js
 const pen = {lineDashOffset: 5, ...};
 ```
+
 ### color
 
 画笔颜色，如果没特别设置，颜色包括：文字和边框
@@ -1394,7 +1395,7 @@ const pen = {
   height: 100,
   text: "字体图标",
   iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
-  iconWeight: '700',
+  iconWeight: "700",
   iconAlign: "left-top",
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
@@ -2257,6 +2258,7 @@ const pen = { flipX: true };
 ```js
 const pen = { flipY: true };
 ```
+
 ### layer
 
 自定义层
@@ -2706,4 +2708,66 @@ const line: Pen = {
 };
 topology.addPen(line);
 connectLine(pen, line.id, line.anchors[0].id, anchorId);
+```
+
+### disconnectLine
+
+从 pen.connectedLines 中删除 lineId 和 lineAnchor  
+不改动 line.anchors 中的 connectTo 和 anchorId ，请手动更改。
+
+参数与 connectLine 相同
+
+**示例：**
+
+```js
+import { disconnectLine, Pen } from "@topology/core";
+
+const pen: Pen = {
+  name: "rectangle",
+  width: 100,
+  height: 100,
+  x: 100,
+  y: 100,
+  anchors: [
+    {
+      id: "0",
+      x: 1,
+      y: 0.5,
+    },
+  ],
+  connectedLines: [
+    {
+      lineId: "line",
+      lineAnchor: "lineAnchor1",
+      anchor: "0",
+    },
+  ],
+};
+topology.addPen(pen);
+const line: Pen = {
+  id: 'line',
+  x: 200,
+  y: 150,
+  width: 100,
+  height: 100,
+  type: 1,
+  name: "line",
+  lineName: "curve",
+  anchors: [
+    {
+      x: 0,
+      y: 0,
+      id: 'lineAnchor1',
+      connectTo: pen.id,
+      anchorId: "0",
+    },
+    {
+      x: 1,
+      y: 1,
+      id: 'lineAnchor2',
+    },
+  ],
+};
+topology.addPen(line);
+disconnectLine(pen, line.id, line.anchors[0].id, pen.anchors[0].id);
 ```
