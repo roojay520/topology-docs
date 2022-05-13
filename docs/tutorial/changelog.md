@@ -13,6 +13,8 @@
 
 - **globalAlpha 改变图片透明度**
 
+- **删除画笔后，从 store.animates 中清除**
+
 ### Features
 
 - **移动连线的锚点，若是折线 polyline , 关闭自动计算 autoPolyline**
