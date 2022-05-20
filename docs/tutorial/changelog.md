@@ -6,6 +6,12 @@
 
 - **text 属性允许为数字 0**
 
+- **renderPenRaw 会 renderArrow**
+
+  会绘制连线箭头
+
+- **初始化钢笔，drawingLine.calculative.lineWidth = lineWidth * scale**
+
 ### Features
 
 - **单属性绑定单变量**
