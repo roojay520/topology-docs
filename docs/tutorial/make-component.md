@@ -77,7 +77,7 @@ topology.inactive();
 ```ts
 // 1. 编写图形绘画函数
 // 其中，calculative.worldRect为canvas的世界坐标。更多信息，参考 “架构” - “概要” 和 Pen 相关文档
-export function triangle(ctx: CanvasRenderingContext2D, pen: Pen) {
+export function triangle(ctx: CanvasRenderingContext2D, pen: Pen): void {
   // 在绘画中若更改了 ctx 的某个属性，例如：fillStyle, strokeStyle, lineWidth 等样式属性，需使用 save 和 restore
   // 注意 save restore 需要成对调用
   // ctx.save();

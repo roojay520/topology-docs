@@ -1,5 +1,47 @@
 # 更新日志
 
+## 1.1.13 next
+
+### Bug fixes
+
+- **text 属性允许为数字 0**
+
+- **renderPenRaw 会 renderArrow**
+
+  会绘制连线箭头
+
+- **初始化钢笔，drawingLine.calculative.lineWidth = lineWidth * scale**
+
+### Features
+
+- **单属性绑定单变量**
+
+  文档待补充，属于实时数据通信的拓展功能。
+
+- **showInput 文字颜色**
+
+- **Echarts 数据更新 onBeforeValue**
+
+  新增一种方式，个别替换（常用于饼图）
+
+- **单属性绑定多变量，Echarts**
+
+  文档待补充，属于 Echarts 实时数据通信拓展功能。
+
+## 1.1.13
+
+### Bug fixes
+
+- **移动连线**
+
+  连线允许移动，即使它连接了其它的画笔。  
+  移动画笔中包含连线，判断连线所连接的 画笔们（节点与连线） 是否在此次移动中，若不在则断开连接。
+
+
+- **移动子节点**
+
+  ctrl + shift 移动子节点报错修复。
+
 ## 1.1.12
 
 ### Bug fixes
@@ -12,6 +54,8 @@
 - **disableAnchor 禁止添加/删除锚点**
 
 - **globalAlpha 改变图片透明度**
+
+- **删除画笔后，从 store.animates 中清除**
 
 ### Features
 
