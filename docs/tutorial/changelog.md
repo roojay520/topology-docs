@@ -12,6 +12,8 @@
 
 - **初始化钢笔，drawingLine.calculative.lineWidth = lineWidth * scale**
 
+- **垂直进度错误**
+
 ### Features
 
 - **单属性绑定单变量**
