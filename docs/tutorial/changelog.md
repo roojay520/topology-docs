@@ -18,6 +18,11 @@
 
   当 connectedLines 的 lineId 不在 store.pens 中时，不会报错，会给予一个提示信息，该条线认为是一个错误的连线。
 
+- **缩放画布table文字存在超出问题**
+
+
+- **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
+
 ### Features
 
 - **单属性绑定单变量**
@@ -92,23 +97,9 @@
 
   代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
 
-<<<<<<< HEAD
-- **缩放画布table文字存在超出问题**
-
-
-- **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
-=======
-- **iframe src onValue**
-
-  iframe onValue 判断 src 并更改
->>>>>>> 4d1cc46592a9250a963aa7bdd84ee1e21fc19675
-
-### Features
-
 - **setValue 类型提示**
 
 - **文本展示规则制定**
-
 ## 1.1.8
 
 ### Bug fixes
