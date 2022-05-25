@@ -20,8 +20,9 @@
 
 - **缩放画布table文字存在超出问题**
 
-
 - **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
+
+- **clear 擦除 canvasImage，即两层图片层**
 
 ### Features
 
