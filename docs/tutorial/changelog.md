@@ -1,6 +1,90 @@
 # 更新日志
 
-## 1.1.8 next
+## 1.1.13 next
+
+### Bug fixes
+
+- **text 属性允许为数字 0**
+
+- **renderPenRaw 会 renderArrow**
+
+  会绘制连线箭头
+
+- **初始化钢笔，drawingLine.calculative.lineWidth = lineWidth * scale**
+
+- **垂直进度错误**
+
+- **nextNode getLines 报错问题**
+
+  当 connectedLines 的 lineId 不在 store.pens 中时，不会报错，会给予一个提示信息，该条线认为是一个错误的连线。
+
+### Features
+
+- **单属性绑定单变量**
+
+  文档待补充，属于实时数据通信的拓展功能。
+
+- **showInput 文字颜色**
+
+- **Echarts 数据更新 onBeforeValue**
+
+  新增一种方式，个别替换（常用于饼图）
+
+- **单属性绑定多变量，Echarts**
+
+  文档待补充，属于 Echarts 实时数据通信拓展功能。
+
+- **若连线只剩下 2 个锚点，删除锚点操作，会删除该连线**
+
+## 1.1.13
+
+### Bug fixes
+
+- **移动连线**
+
+  连线允许移动，即使它连接了其它的画笔。  
+  移动画笔中包含连线，判断连线所连接的 画笔们（节点与连线） 是否在此次移动中，若不在则断开连接。
+
+
+- **移动子节点**
+
+  ctrl + shift 移动子节点报错修复。
+
+## 1.1.12
+
+### Bug fixes
+
+- **Echarts 数据更新 , xAxis 是数组，但长度为 1**
+
+  xAxis 是数组，长度为 1 ，取第一个。
+  不考虑多 X 轴情况
+
+- **disableAnchor 禁止添加/删除锚点**
+
+- **globalAlpha 改变图片透明度**
+
+- **删除画笔后，从 store.animates 中清除**
+
+### Features
+
+- **移动连线的锚点，若是折线 polyline , 关闭自动计算 autoPolyline**
+
+- **register 方法约束类型**
+
+  需同步更新 fta class sequence activity flow 等包至最新。
+
+## 1.1.10
+
+### Bug fixes
+
+- **移动端双指缩小放大**
+
+  修复移动端双指缩放。
+  单指发出 click 消息以及当前 hover pen
+
+### Features
+
+## 1.1.9
 
 ### Bug fixes
 
@@ -8,12 +92,22 @@
 
   代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
 
+<<<<<<< HEAD
 - **缩放画布table文字存在超出问题**
 
 
 - **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
+=======
+- **iframe src onValue**
+
+  iframe onValue 判断 src 并更改
+>>>>>>> 4d1cc46592a9250a963aa7bdd84ee1e21fc19675
 
 ### Features
+
+- **setValue 类型提示**
+
+- **文本展示规则制定**
 
 ## 1.1.8
 

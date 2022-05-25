@@ -14,4 +14,4 @@
   不同坐标系说明，可参考 [概要](./architecture)
 
 - **常见问题**  
-  [常见问题](../faq/home)
+  [常见问题](../tutorial/faq)

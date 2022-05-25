@@ -69,7 +69,6 @@ module.exports = {
         // activeMatch: '^/tutorial/',
       },
       // { text: '关于我们', link: '/about/us', activeMatch: '^/community/' },
-      // { text: '常见问题', link: '/faq/home', activeMatch: '^/faq/' },
       // { text: '博客', link: '/blog/index', activeMatch: '^/blog/' },
       {
         text: '关于我们',
@@ -111,7 +110,7 @@ module.exports = {
           // },
           {
             text: '常见问题',
-            link: '/faq/home',
+            link: '/tutorial/faq',
           },
         ],
       },
@@ -192,6 +191,10 @@ function getTutorialSidebar() {
           text: '更新日志',
           link: '/tutorial/changelog',
         },
+        {
+          text: '常见问题',
+          link: '/tutorial/faq',
+        },
       ],
     },
     {
@@ -223,6 +226,7 @@ function getTutorialSidebar() {
         { text: '鹰眼地图', link: '/tutorial/map' },
         { text: '放大镜', link: '/tutorial/magnifier' },
         { text: '快捷键', link: '/tutorial/keyboards' },
+        { text: '数据', link: '/tutorial/service-data' },
       ],
     },
     {
@@ -284,7 +288,7 @@ function getFaqSidebar() {
   return [
     {
       text: '常见问题',
-      link: '/faq/home',
+      link: '/tutorial/faq',
     },
   ];
 }
@@ -308,7 +312,7 @@ function getCommunitySidebar() {
         },
         {
           text: '常见问题',
-          link: '/faq/home',
+          link: '/tutorial/faq',
         },
         // {
         //   text: '关于我们',

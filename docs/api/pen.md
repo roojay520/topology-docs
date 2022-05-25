@@ -346,6 +346,7 @@ const pen = {lineDash: [5,5], ...};
 ```js
 const pen = {lineDashOffset: 5, ...};
 ```
+
 ### color
 
 画笔颜色，如果没特别设置，颜色包括：文字和边框
@@ -844,9 +845,16 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
+### textHasShadow
+
+设置 shadow 阴影后，文字是否具备阴影，默认无。
+
+**数据类型：** boolean
+
 ### textWidth
 
-文本宽度，超出换行。默认 pen.width
+文本宽度，超出换行。默认 pen.width  
+影响 worldTextRect 的宽度，可设置 < 1 的值，认为是宽度的百分比
 
 **数据类型：** number
 
@@ -869,7 +877,8 @@ topology.inactive();
 
 ### textHeight
 
-文本高度，超出显示省略号。默认 pen.height
+文本高度，超出显示省略号。默认 pen.height  
+影响 worldTextRect 的高度，可设置 < 1 的值，认为是高度的百分比
 
 **数据类型：** number
 
@@ -893,7 +902,8 @@ topology.inactive();
 
 ### textLeft、textTop
 
-文本左偏移和上偏移。
+文本左偏移和上偏移。  
+影响 worldTextRect 的位置，可设置 < 1 的值，认为是百分比。
 
 **数据类型：** number
 
@@ -1100,13 +1110,25 @@ topology.addPen(pen);
 topology.inactive();
 ```
 
-### textAlign、textBaseline
+### textAlign
 
-文本对齐。参考 css 用法。
+左右对齐方式。
+决定 worldTextRect 在 worldRect 中的位置，（左中右）
+决定 文字 在 worldTextRect 中的位置。（左中右）
+
+**数据类型：** 'left' | 'center' | 'right'
+
+### textBaseline
+
+上下对齐方式。
+决定 worldTextRect 在 worldRect 中的位置，（上中下）
+决定 文字 在 worldTextRect 中的位置。（上中下）
+
+**数据类型：** 'top' | 'middle' | 'bottom'
 
 ### textBackground
 
-文本背景颜色。
+文本背景颜色。填充 textDrawRect
 
 **数据类型：** string
 
@@ -1129,7 +1151,7 @@ topology.inactive();
 
 ### whiteSpace
 
-文本换行方式。默认单词换行；nowrap - 不换行；pre-line - 换行符换行
+文本换行方式。默认单词换行；nowrap - 不换行；pre-line - 换行符换行； break-all - 永远换行
 
 **数据类型：** string
 
@@ -1255,7 +1277,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1304,7 +1326,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1329,7 +1351,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1366,14 +1388,14 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
   text: "字体图标",
   iconFamily: "t-icon", // 必须正确设置，具体参考每个字体图标的项目设置
-  iconWeight: '700',
+  iconWeight: "700",
   iconAlign: "left-top",
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
@@ -1392,7 +1414,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1414,7 +1436,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1435,7 +1457,7 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1456,7 +1478,7 @@ topology.addPen(pen);
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1478,7 +1500,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1500,7 +1522,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1522,7 +1544,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1544,7 +1566,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1566,7 +1588,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1588,7 +1610,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1671,7 +1693,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1694,7 +1716,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1726,7 +1748,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1748,7 +1770,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1770,7 +1792,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1792,7 +1814,7 @@ topology.open 时，是否自动播放
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1843,7 +1865,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1955,7 +1977,7 @@ topology.inactive();
 
 ```js
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1985,7 +2007,7 @@ topology.inactive();
 ```js
 // 简单类型
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -1998,7 +2020,7 @@ topology.inactive();
 
 // 复杂类型
 const pen = {
-  name: " rectangle",
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
@@ -2033,7 +2055,7 @@ pen.name='iframe'时，嵌入网页的 url
 
 ```js
 const pen = {
-  name: " iframe",
+  name: "iframe",
   x: 100,
   y: 100,
   width: 100,
@@ -2236,6 +2258,7 @@ const pen = { flipX: true };
 ```js
 const pen = { flipY: true };
 ```
+
 ### layer
 
 自定义层
@@ -2685,4 +2708,66 @@ const line: Pen = {
 };
 topology.addPen(line);
 connectLine(pen, line.id, line.anchors[0].id, anchorId);
+```
+
+### disconnectLine
+
+从 pen.connectedLines 中删除 lineId 和 lineAnchor  
+不改动 line.anchors 中的 connectTo 和 anchorId ，请手动更改。
+
+参数与 connectLine 相同
+
+**示例：**
+
+```js
+import { disconnectLine, Pen } from "@topology/core";
+
+const pen: Pen = {
+  name: "rectangle",
+  width: 100,
+  height: 100,
+  x: 100,
+  y: 100,
+  anchors: [
+    {
+      id: "0",
+      x: 1,
+      y: 0.5,
+    },
+  ],
+  connectedLines: [
+    {
+      lineId: "line",
+      lineAnchor: "lineAnchor1",
+      anchor: "0",
+    },
+  ],
+};
+topology.addPen(pen);
+const line: Pen = {
+  id: 'line',
+  x: 200,
+  y: 150,
+  width: 100,
+  height: 100,
+  type: 1,
+  name: "line",
+  lineName: "curve",
+  anchors: [
+    {
+      x: 0,
+      y: 0,
+      id: 'lineAnchor1',
+      connectTo: pen.id,
+      anchorId: "0",
+    },
+    {
+      x: 1,
+      y: 1,
+      id: 'lineAnchor2',
+    },
+  ],
+};
+topology.addPen(line);
+disconnectLine(pen, line.id, line.anchors[0].id, pen.anchors[0].id);
 ```
