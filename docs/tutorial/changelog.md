@@ -8,6 +8,11 @@
 
   代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
 
+- **缩放画布table文字存在超出问题**
+
+
+- **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
+
 ### Features
 
 ## 1.1.8
