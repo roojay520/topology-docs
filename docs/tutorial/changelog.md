@@ -97,6 +97,11 @@
 
   代替原来的近似计算，现采用 ctx.measureText 来计算，可通过 options.measureTextWidth false 采用近似计算
 
+- **iframe src onValue**
+
+  iframe onValue 判断 src 并更改
+### Features
+
 - **setValue 类型提示**
 
 - **文本展示规则制定**
