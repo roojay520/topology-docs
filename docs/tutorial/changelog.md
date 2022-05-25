@@ -14,6 +14,10 @@
 
 - **垂直进度错误**
 
+- **nextNode getLines 报错问题**
+
+  当 connectedLines 的 lineId 不在 store.pens 中时，不会报错，会给予一个提示信息，该条线认为是一个错误的连线。
+
 ### Features
 
 - **单属性绑定单变量**
