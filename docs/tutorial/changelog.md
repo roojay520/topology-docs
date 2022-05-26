@@ -23,6 +23,7 @@
 - **table编辑文本内容后移动table操作按钮消失（实际上是计算x,y超出了table范围）**
 
 - **clear 擦除 canvasImage，即两层图片层**
+- **table 通过setValue方式修改数据后，表格重绘。 但操作列仍无法处理**
 
 ### Features
 
