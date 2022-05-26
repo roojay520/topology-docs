@@ -25,6 +25,10 @@
 - **clear 擦除 canvasImage，即两层图片层**
 - **table 通过setValue方式修改数据后，表格重绘。 但操作列仍无法处理**
 
+- **calcDockByPoints 提升性能**
+
+  水平，垂直区域不重合的画笔，无需进入 for 循环计算中。
+
 ### Features
 
 - **单属性绑定单变量**
