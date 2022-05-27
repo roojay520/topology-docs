@@ -131,32 +131,37 @@ MIT © le5le.com
 <img style="height:400px; margin: 10px" src="/img/wulianwang3.gif" >
 </div>
 
-**5.智慧城市**
+**5.智能楼宇**
+<div style="display:flex; justify-content:">
+<img style="height:400px; margin: 10px" src="/img/rehuanzhan.gif" >
+</div>
+
+**6.智慧城市**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/zhihuichengshi1.png" >
 </div>
 
-**6.智慧交通**
+**7.智慧交通**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/zhihuijiaotong.png" >
 </div>
 
-**7.智慧农业**
+**8.智慧农业**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/zhihuinongye.png" >
 </div>
 
-**8.智慧大屏**
+**9.智慧大屏**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/zhihuidaping.png" >
 </div>
 
-**9.IT运维**
+**10.IT运维**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/ityunwei.png" >
 </div>
 
-**10.思维导图**
+**11.思维导图**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/siweidaotu.jpg" >
 </div>
@@ -171,20 +176,26 @@ MIT © le5le.com
 <img style="height:400px; margin: 10px" src="/img/charts.png" >
 </div>
 
-**12.表单**
+**13.表单**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/biaodan.gif" >
 </div>
 
-**13.自定义图形库**
+**14.自定义图形库**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/zidingyituxingku.png" >
 </div>
 
-**14.自动算法成图**
+**15.自动算法成图**
 <div style="display:flex; justify-content:">
 <img style="height:400px; margin: 10px" src="/img/suanfachengtu.png" >
 </div>
+
+**16.绑定变量**
+<div style="display:flex; justify-content:">
+<img style="height:400px; margin: 10px" src="/img/bangdingbianliang.gif" >
+</div>
+
 <br>
 
 更多案例:http://topology.le5le.com/search
