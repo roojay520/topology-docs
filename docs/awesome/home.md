@@ -13,19 +13,21 @@
 ## 视频教程
 
 ### 开发
-①  [企业版快速上手](https://mp.weixin.qq.com/s/HVoEjsV6pVhExeO64DOciQ)
+①  [企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
 
 ②  [炫酷组件，自己定义](https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw)
 
-③  [条件变化触发实时告警](https://mp.weixin.qq.com/s/JgAUkyaw-BJlMWJwt3D6qg)
+③  [条件变化触发实时告警](https://www.bilibili.com/video/BV1dT4y1U7V1?spm_id_from=333.999.0.0)
 
-④  [消息通信](https://mp.weixin.qq.com/s/8VKbPc__a1GRq5_ZrqL19g)
+④  [消息通信](https://www.bilibili.com/video/BV1wL4y1M76g?spm_id_from=333.999.0.0)
 
-⑤  [交互事件](https://mp.weixin.qq.com/s/ufMyN35J5hufIee5LvZTyQ)
+⑤  [交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
 
-⑥  [开关的断开与闭合如何快速实现](https://mp.weixin.qq.com/s/K0eLb_gTUHVIGUDqomqyoQ)
+⑥  [开关的断开与闭合如何快速实现](https://www.bilibili.com/video/BV1i44y1376U?spm_id_from=333.999.0.0)
 
-⑦  [点击组件，显示弹框](https://mp.weixin.qq.com/s/nmcRwjJnI0hWbXqpGhsAMw)
+⑦  [点击组件，显示弹框](https://www.bilibili.com/video/BV1634y1v7Yz?spm_id_from=333.999.0.0)
+
+⑦  [绑定变量](https://www.bilibili.com/video/BV13a411j7hK?spm_id_from=333.999.0.0)
 
 
 
