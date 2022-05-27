@@ -34,6 +34,10 @@
   calcResizeDock 不计算活动层的画笔 ，即只与其它画笔做对比。
   calcMoveDock 仍与原位置做对比。
 
+- **图元隐藏父节点，子图元取消隐藏，然后拖动这个图元后整个图元消失了**
+
+  calcActiveRect 当可移动的画笔数量为 0 时，不计算 activeRect ，不出现一个脏的 activeRect 。
+
 ### Features
 
 - **单属性绑定单变量**
