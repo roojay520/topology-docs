@@ -29,6 +29,11 @@
 
   水平，垂直区域不重合的画笔，无需进入 for 循环计算中。
 
+- **resizePens dock 不出现**
+
+  calcResizeDock 不计算活动层的画笔 ，即只与其它画笔做对比。
+  calcMoveDock 仍与原位置做对比。
+
 ### Features
 
 - **单属性绑定单变量**
