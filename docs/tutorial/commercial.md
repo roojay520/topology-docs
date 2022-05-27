@@ -133,7 +133,7 @@ http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
 
 **Q10：图形库哪些是编辑器自带的？**
 
-基本形状、箭头、流程图、活动图、时序图和类图、图表控件、脑图、拓扑图未分类。
+基本形状、流程图、活动图、时序图和类图、表单、Echarts图表、脑图、故障树。
 
 **Q11：topology 1.0 企业版，为什么没有组件版？**
 
