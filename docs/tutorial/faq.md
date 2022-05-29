@@ -179,6 +179,10 @@ topology.store.options.minScale = 0
 
 [图片层级](../tutorial/pens.html#图片层级)
 
+## pen 或 pens 无 calculative 属性导致报错
+
+确定 pens 是否从 [topology.data()](../api/core.html#data) 方法中取的，若是，改用 topology.store.data.pens 即可；若不是，欢迎群里讨论，在官网控制台发重现代码，截图。
+
 ## 其他问题
 
 其他问题，欢迎联系我们：
