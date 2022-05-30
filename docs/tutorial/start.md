@@ -1,17 +1,14 @@
 # 快速上手
 
-## 如何学习  
-
+## 如何学习
 
 1. 跟着[快速上手](./start)做一遍，先有个总体认知
 
 2. 看一遍我们的[视频教程](../awesome/home.html#视频教程)，有个全面认识
 
-3. 多学习[官方示例](../awesome/home.html#官方示例)教程、示例等  
+3. 多学习[官方示例](../awesome/home.html#官方示例)教程、示例等
 
-<br>  
-  
-  
+<br>
 
 ::: tip 提示  
 初始化引擎后，会在 window 下注入 topology 对象（即 window.topology）。
@@ -28,12 +25,12 @@
 ```js
 // 定义一个pen，矩形
 const pen = {
-    name: 'rectangle',
-    text: '矩形',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100,
+  name: "rectangle",
+  text: "矩形",
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
 };
 
 topology.addPen(pen);
@@ -42,9 +39,7 @@ topology.addPen(pen);
 需要编译和依赖环境的代码除外，比如：
 
 ```js
-import {
-    Topology
-} from '@topology/core';
+import { Topology } from "@topology/core";
 
 new Topology();
 ```
@@ -68,25 +63,23 @@ npm install topology.js --save
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title i18n>乐吾乐 Topology</title>
     <meta charset="UTF-8" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="topology"></div>
     <script src="topology.js"></script>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
 ```
 
 4. 编写 index.js 加载 topology.js
 
 ```js
-var topology = new Topology('topology');
+var topology = new Topology("topology");
 // Get the json data
 // ...
 // Open the json
@@ -118,16 +111,15 @@ npm install @topology/sequence-diagram --save
 
 ```html
 <template>
-    <div class="main">
-        <div id="topology"></div>
-    </div>
+  <div class="main">
+    <div id="topology"></div>
+  </div>
 </template>
 ```
 
 3. 编写 js 加载 topology
 
-```js
-< script lang = "ts" >
+```ts
     import {
         Options,
         Topology
@@ -151,6 +143,7 @@ import {
     onUnmounted,
     ref
 } from 'vue';
+import { formPens } from '@topology/form-diagram';
 
 declare const window: any;
 declare const topology: Topology;
@@ -168,6 +161,7 @@ export default defineComponent({
             topology.register(classPens());
             topology.register(sequencePens());
             topology.registerCanvasDraw(sequencePensbyCtx());
+            topology.registerCanvasDraw(formPens());
 
             // 监听消息事件
             topology.on('contextmenu', contextmenu);
@@ -199,7 +193,6 @@ export default defineComponent({
         };
     },
 }); <
-/script>
 ```
 
 **参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/vue
@@ -225,53 +218,38 @@ npm install @topology/sequence-diagram --save
 
 2. 编写 React jsx
 
-```js
-import React, {
-    useEffect
-} from 'react';
-import {
-    Options,
-    Topology
-} from '@topology/core';
-import {
-    flowPens
-} from '@topology/flow-diagram';
-import {
-    activityDiagram
-} from '@topology/activity-diagram';
-import {
-    classPens
-} from '@topology/class-diagram';
-import {
-    sequencePens,
-    sequencePensbyCtx
-} from '@topology/sequence-diagram';
+```tsx
+import React, { useEffect } from "react";
+import { Options, Topology } from "@topology/core";
+import { flowPens } from "@topology/flow-diagram";
+import { activityDiagram } from "@topology/activity-diagram";
+import { classPens } from "@topology/class-diagram";
+import { sequencePens, sequencePensbyCtx } from "@topology/sequence-diagram";
+import { formPens } from "@topology/form-diagram";
 
 const TopologyContainer = () => {
-    useEffect(() => {
-        window.topology = new Topology('topology');
+  useEffect(() => {
+    window.topology = new Topology("topology");
 
-        topology.register(flowPens());
-        topology.register(activityDiagram());
-        topology.register(classPens());
-        topology.register(sequencePens());
-        topology.registerCanvasDraw(sequencePensbyCtx());
+    topology.register(flowPens());
+    topology.register(activityDiagram());
+    topology.register(classPens());
+    topology.register(sequencePens());
+    topology.registerCanvasDraw(sequencePensbyCtx());
+    topology.registerCanvasDraw(formPens());
 
-        // 打开文件
-        topology.open(json);
-    }, []);
+    // 打开文件
+    topology.open(json);
+  }, []);
 
-    return ( <
-        div className = 'main' >
-        <
-        div className = 'topology'
-        id = 'topology' > < /div> < /
-        div >
-    );
+  return (
+    <div className="main">
+      <div className="topology" id="topology"></div>
+    </div>
+  );
 };
 
 export default TopologyContainer;
 ```
 
 **参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/react
-
