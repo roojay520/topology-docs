@@ -4,6 +4,10 @@
 
 ### Bug fixes
 
+- **data.grid, option.grid 以及 rule**
+
+  data.grid true 打开网格，false 关闭网格，undefined 由 options.grid 的值来决定，rule 同理
+
 ### Features
 
 - **新增 clearHover 方法**
