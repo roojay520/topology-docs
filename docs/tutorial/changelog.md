@@ -1,6 +1,16 @@
 # 更新日志
 
-## 1.1.13 next
+## 1.1.14 next
+
+### Bug fixes
+
+### Features
+
+- **新增 clearHover 方法**
+
+  清除 store.hover ，解决 [issue 66](https://github.com/le5le-com/topology.js/issues/66)
+
+## 1.1.14
 
 ### Bug fixes
 
