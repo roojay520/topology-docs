@@ -147,7 +147,7 @@ topology.connectHttp();
 
 ```js
 // 方式1：直接设置socket回调函数
-topology.socketFn = (message) => {
+topology.socketFn = (message, topic) => {
   // Do sth
 
   topology.setValue(pen);
@@ -157,7 +157,8 @@ topology.socketFn = (message) => {
 // data = {...}
 data.socketCbJs = `
   // params: e - the message
-  constole.log(e);
+  // params: topic - mqtt 有，ws 和 http 是空串
+  constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
 `;
@@ -167,7 +168,8 @@ topology.open(data);
 // 或
 topology.store.data.socketCbJs = `
   // params: e - the message
-  constole.log(e);
+  // params: topic - mqtt 有，ws 和 http 是空串
+  constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
 `;

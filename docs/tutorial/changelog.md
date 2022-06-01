@@ -1,6 +1,23 @@
 # 更新日志
 
-## 1.1.14 next
+## 1.1.16 next
+
+### Bug fixes
+
+- **拖动过程中若线宽为 0, 拖动状态设置一个 1 线宽**
+
+  [Github issue 70](https://github.com/le5le-com/topology.js/issues/70)
+
+### Features
+
+- **socketFn 添加 topic**
+
+  只有 mqtt 有该参数， ws 和 http 都是 ''
+  [Github issue 69](https://github.com/le5le-com/topology.js/issues/69)
+
+## 1.1.16
+
+## 1.1.15
 
 ### Bug fixes
 
