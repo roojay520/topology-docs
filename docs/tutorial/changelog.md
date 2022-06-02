@@ -4,6 +4,8 @@
 
 ### Bug fixes
 
+- **删除连线 line ，所连接的 node 的 connectedLines 的同样删除**
+
 - **拖动过程中若线宽为 0, 拖动状态设置一个 1 线宽**
 
   [Github issue 70](https://github.com/le5le-com/topology.js/issues/70)
