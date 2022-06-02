@@ -2708,6 +2708,8 @@ const line: Pen = {
 };
 topology.addPen(line);
 connectLine(pen, line.id, line.anchors[0].id, anchorId);
+line.calculative.active = false;
+topology.canvas.updateLines(pen);
 ```
 
 ### disconnectLine
