@@ -17,6 +17,8 @@
   只有 mqtt 有该参数， ws 和 http 都是 ''
   [Github issue 69](https://github.com/le5le-com/topology.js/issues/69)
 
+- **_setValue data.id 使用 findOne 方法**
+
 ## 1.1.16
 
 ## 1.1.15
