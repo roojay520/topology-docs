@@ -314,3 +314,16 @@ table 类型控件
         topology.addPen(table)
 ```
 
+
+- **数据更新**
+
+1.1.16版本以后，我们提供了一个规则来更新一个单元格。使用方式如下：
+
+```js
+topology.setValue({
+    id:'table.id',//表格id
+    row:1,//第几行
+    col:1,//第几列
+    value:200 //新值
+  });
+```
