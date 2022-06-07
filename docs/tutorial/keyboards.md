@@ -10,7 +10,7 @@
 | Ctrl + C                        | 复制                                                                              |
 | Ctrl + X                        | 剪切                                                                              |
 | Ctrl + V                        | 粘贴                                                                              |
-| Ctrl + Z                        | 撤消                                                                              |
+| Ctrl + Z                        | 撤销                                                                              |
 | Ctrl + Y （或 Shift + Z）       | 重做                                                                              |
 | V                               | 钢笔绘画                                                                          |
 | B                               | 铅笔绘画                                                                          |
