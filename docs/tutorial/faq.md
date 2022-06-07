@@ -111,19 +111,17 @@ pen.tags.push('1号位置-温度传感器');
 
 3. 如果是自己的数据格式，写一个中间件转换成 topology 格式即可。
 
-
 ## 鼠标框选错位
 
 原因：
 
-1. 父dom元素css还没渲染完，就加载画布，确认方式：new Topology 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
-2. 修改了父dom元素位置，可能是存在动画
+1. 父 dom 元素 css 还没渲染完，就加载画布，确认方式：new Topology 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
+2. 修改了父 dom 元素位置，可能是存在动画
 
 解决方案：
 
-1. 等待父dom元素css加载完成后在new Topology
+1. 等待父 dom 元素 css 加载完成后在 new Topology
 2. 确定画布位置已经稳定时，修正画布位置： topology.resize();
-
 
 ## drawImage width or height 0
 
@@ -133,7 +131,7 @@ pen.tags.push('1号位置-温度传感器');
 
 解决方案：
 
-1. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology 
+1. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology
 
 ## 脏数据处理
 
@@ -143,15 +141,15 @@ pen.tags.push('1号位置-温度传感器');
 ### 场景一：与大部分画笔位置相差较远
 
 视频讲解：
-[如何处理脏数据-场景1](https://www.bilibili.com/video/BV1NL4y1c7v7?spm_id_from=333.999.0.0)
+[如何处理脏数据-场景 1](https://www.bilibili.com/video/BV1NL4y1c7v7?spm_id_from=333.999.0.0)
 
 确认方式：
 
-1. topology.getRect() 宽度和高度很大，但有值。  
+1. topology.getRect() 宽度和高度很大，但有值。
 2. 已点击窗口大小，但出现空白，或主体区域不在中心区域。
 
 在设计上，画布是无限大的，如果你的主体部分在右下角，而左上角存在一个画笔，而且距离很远，最小缩放比又是一个固定值（老官网 0.3），那么使用**窗口大小（fitView）**，会使画布居中并且按照最小缩放比显示，但仍然看不到主体部分和左上角的画笔。  
-显然在这种情况下，左上角的画笔并不是我们想要的，那么它变成了一个脏数据，是我们需要移除的。  
+显然在这种情况下，左上角的画笔并不是我们想要的，那么它变成了一个脏数据，是我们需要移除的。
 
 解决方法：
 
@@ -159,9 +157,11 @@ pen.tags.push('1号位置-温度传感器');
 
 窗口大小可实现该功能，但按前文所说，受到了最小缩放比的限制，所以我们把最小缩放比设置成 0 ，即允许继续缩放。  
 在控制台执行下面代码
+
 ```js
-topology.options.minScale = 0
+topology.options.minScale = 0;
 ```
+
 然后点击 **视图 窗口大小** 即可。
 
 2. 官网：http://t.le5le.com/
@@ -170,7 +170,7 @@ topology.options.minScale = 0
 代码更改为：
 
 ```js
-topology.store.options.minScale = 0
+topology.store.options.minScale = 0;
 ```
 
 新版本中存在缩略图（地图）功能，打开地图也可以看到。
@@ -178,6 +178,15 @@ topology.store.options.minScale = 0
 ## 图片置底后仍遮住其它图元
 
 [图片层级](../tutorial/pens.html#图片层级)
+
+## pen 或 pens 无 calculative 属性导致报错
+
+确定 pens 是否从 [topology.data()](../api/core.html#data) 方法中取的，若是，改用 topology.store.data.pens 即可；若不是，欢迎群里讨论，在官网控制台发重现代码，截图。
+
+## 预览画布
+
+topology 是没有预览画布的 api 的，官方仅仅是在一个新的路由（页面），重新 new Topology ，将数据 open ，并 [lock](../api/core.html#lock).   
+也可以有其他的做法，例如不跳新页面，仅仅隐藏除画布以外的内容，并且 lock ，注意此处情况可能带来[鼠标错位](./faq.html#鼠标框选错位)的问题。
 
 ## 其他问题
 

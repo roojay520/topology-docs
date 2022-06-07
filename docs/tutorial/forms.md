@@ -2,6 +2,12 @@
 
 表单控件包含：单选框、多选框、开关、滑动输入条、按钮、输入框和选择器。
 
+注册：
+```ts
+import { formPens } from '@topology/form-diagram';
+topology.registerCanvasDraw(formPens());
+```
+
 ## radio 单选框
 
 - **数据**

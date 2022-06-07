@@ -147,7 +147,7 @@ topology.connectHttp();
 
 ```js
 // 方式1：直接设置socket回调函数
-topology.socketFn = (message) => {
+topology.socketFn = (message, topic) => {
   // Do sth
 
   topology.setValue(pen);
@@ -157,7 +157,8 @@ topology.socketFn = (message) => {
 // data = {...}
 data.socketCbJs = `
   // params: e - the message
-  constole.log(e);
+  // params: topic - mqtt 有，ws 和 http 是空串
+  constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
 `;
@@ -167,7 +168,8 @@ topology.open(data);
 // 或
 topology.store.data.socketCbJs = `
   // params: e - the message
-  constole.log(e);
+  // params: topic - mqtt 有，ws 和 http 是空串
+  constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
 `;
@@ -407,4 +409,8 @@ topology.addPen(pen);
    与单折线图的操作类似，仅仅需要勾选对话框标题处的实时数据即可。
 
 3. 单饼图，与单折线图类似，它不存在 x 轴是时间类型的情况，只有分类。  
-   与单折线图的操作类似，开始时拖入一个饼图即可。
+   与单折线图的操作类似，开始时拖入一个饼图即可。  
+
+示例图纸：http://t.le5le.com/?id=629038410d3f8c6ce36e9955
+
+演示视频【绑定变量】：https://www.bilibili.com/video/BV13a411j7hK

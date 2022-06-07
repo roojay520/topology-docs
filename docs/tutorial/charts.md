@@ -435,3 +435,112 @@ topology.setValue(topology.store.active[0]);
 }
 
 ```
+
+## 数据更新
+
+为了与Echarts/Highcharts/LightningChart制定的数据更新规则保持一致，le5le charts也实现了如下的更新方式(gauge仪表盘除外)：
+
+```js
+const linechart = {
+  name: "lineChart",
+  x: 100,
+  y: 100,
+  width: 400,
+  height: 200,
+  chartsColor: [
+    '#1890ff',
+    '#2FC25B',
+    '#FACC14',
+    '#c23531',
+    '#2f4554',
+    '#61a0a8',
+    '#d48265'
+  ],
+  xAxisData: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  smooth: false,
+  data: [
+    [1820, 1932, 1901, 1934, 1990, 1830, 1920],
+    [1710, 1932, 1901, 1834, 1700, 1830, 1720],
+  ]
+};
+
+topology.addPen(linechart);
+
+//linechart.replaceMode = 0 //0 追加(默认)
+topology.setValue({
+  id:linechart.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[500, 600],[500, 600]],
+});
+
+linechart.replaceMode = 1 //1 替换
+topology.setValue({
+  id:linechart.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[1500, 1600],[1500, 1600]],
+});
+
+linechart.replaceMode = 2 //2 替换所有
+topology.setValue({
+  id:linechart.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[1500, 1600],[1600, 1500]],
+});
+
+/*
+  histogram 节点的创建
+*/
+//histogram.replaceMode = 0 //0 追加(默认)
+topology.setValue({
+  id:histogram.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[50, 60],[60, 50],[50, 60]],
+});
+
+histogram.replaceMode = 1 //1 替换
+topology.setValue({
+  id:histogram.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[150, 160],[160, 150],[150, 160]],
+});
+
+histogram.replaceMode = 2 //2 替换所有
+topology.setValue({
+  id:histogram.id, 
+  dataX: ["eight", "nine"],
+  dataY: [[150, 160],[160, 150],[150, 160]],
+});
+
+/*
+  pieChart的创建
+*/
+//pie.replaceMode = 0 //0 追加(默认)
+topology.setValue({
+  id:pie.id, 
+  dataY: [
+    [ { value: 1548, name: 'new1' }],
+    [ { value: 1548, name: 'new2' }]
+    ],
+});
+
+pie.replaceMode = 1 //1 替换
+topology.setValue({
+  id:pie.id, 
+  dataY: [
+    [ { value: 10, name: 'new1' }],
+    [ { value: 10, name: 'new2' }]
+    ],
+});
+
+pie.replaceMode = 2 //2 替换所有
+topology.setValue({
+  id:pie.id, 
+  dataY: [
+    [ { value: 10, name: 'new1' },{ value: 30, name: 'new3' }],
+    [ { value: 20, name: 'new2' },{ value: 40, name: 'new4' },]
+    ],
+});
+
+```
+
+

@@ -1,6 +1,41 @@
 # 更新日志
 
-## 1.1.13 next
+## 1.1.16 next
+
+### Bug fixes
+
+- **删除连线 line ，所连接的 node 的 connectedLines 的同样删除**
+
+- **拖动过程中若线宽为 0, 拖动状态设置一个 1 线宽**
+
+  [Github issue 70](https://github.com/le5le-com/topology.js/issues/70)
+
+### Features
+
+- **socketFn 添加 topic**
+
+  只有 mqtt 有该参数， ws 和 http 都是 ''
+  [Github issue 69](https://github.com/le5le-com/topology.js/issues/69)
+
+- **_setValue data.id 使用 findOne 方法**
+
+## 1.1.16
+
+## 1.1.15
+
+### Bug fixes
+
+- **data.grid, option.grid 以及 rule**
+
+  data.grid true 打开网格，false 关闭网格，undefined 由 options.grid 的值来决定，rule 同理
+
+### Features
+
+- **新增 clearHover 方法**
+
+  清除 store.hover ，解决 [issue 66](https://github.com/le5le-com/topology.js/issues/66)
+
+## 1.1.14
 
 ### Bug fixes
 
@@ -33,6 +68,10 @@
 
   calcResizeDock 不计算活动层的画笔 ，即只与其它画笔做对比。
   calcMoveDock 仍与原位置做对比。
+
+- **图元隐藏父节点，子图元取消隐藏，然后拖动这个图元后整个图元消失了**
+
+  calcActiveRect 当可移动的画笔数量为 0 时，不计算 activeRect ，不出现一个脏的 activeRect 。
 
 ### Features
 

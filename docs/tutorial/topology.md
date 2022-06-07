@@ -169,7 +169,6 @@ onTouchstart = (e) => {
 | mqttTopics       | string                         | mqtt 订阅主题                                      |
 | background       | string                         | 画布背景颜色                                       |
 | socketCbJs       | string                         | 消息通信回调函数 js 代码                           |
-| socketCbFn       | Function                       | 消息通信回调函数名                                 |
 | initJs           | string                         | 打开图纸后，执行的初始脚本                         |
 | grid             | boolean                        | 是否显示网格                                       |
 | gridColor        | string                         | 网格颜色                                           |
