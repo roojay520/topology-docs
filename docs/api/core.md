@@ -178,14 +178,16 @@ topology.addPen([pen, pen2], true);
 
 ### render
 
-重绘。主要用于手动修改数据后，重绘显示最新画面。仅当标识为 dirty 时（topology.canvas.dirty=true），重绘有效
+重绘。主要用于手动修改数据后，重绘显示最新画面。
 
 **参数：**
 
-- now: number  
-  时间的毫秒数：  
-  可为空 - 表示当前时间；  
-  Infinity - 标识数据 dirty，并设置为当前时间重绘。
+- dirty: number | boolean  
+  时间的毫秒数 或 是否脏  
+  可为空 - 表示当前时间，下一个绘画周期重绘  
+  true - 于空完全相同  
+  false - 且 topology.canvas.dirty 为 true 时，在下一个绘画周期重绘。常用在不确定是否需要重绘时使用，例如说本次修改数据可能需要重绘时，在可能的情况下将 (topology.canvas.dirty = true) ，再执行 topology.render(false) ，这样不会导致非重绘的情况也重绘。
+  number - 不推荐使用 number
 
   主要用于避免一帧内，多次频繁调用 render 带来不必要的绘画开销
 
@@ -201,7 +203,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 // 修改过数据，确认数据已经dirty
-topology.render(Infinity);
+topology.render();
 ```
 
 ### open
@@ -1258,12 +1260,11 @@ topology.closeMqtt();
 
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
-  不可直接修改 x, y, width, height ,详细可理解[坐标](../tutorial/architecture.html)，也可参照下面示例
 
-- { willRender: boolean = true }  
+- { render: boolean = true }  
   命名参数，参照下方示例  
   更改数据后是否重新渲染画布  
-  默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render(Infinity)
+  默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render()
 
 **返回：**  
 void
@@ -1282,21 +1283,15 @@ topology.setValue({ id: pen.id, newId: '111' });
 
 // for 循环设置 pens 的 text
 for (const pen of pens) {
-  topology.setValue({ id: pen.id, text: 'new text' }, { willRender: false });
+  topology.setValue({ id: pen.id, text: 'new text' }, { render: false });
 }
-topology.render(Infinity);
-
-// 修改 x,y,width,height 
-const pen = topology.find('le5le')[0];
-// 展示时使用该 rect 来代表 pen 的坐标
-const rect = topology.getPenRect(pen);
-topology.setValue({ id: pen.id, ...rect, width: 200 });
+topology.render();
 ```
 
 
 ### _setValue
 
-同 setValue ，不同在于 不触发对应画笔们的值变化事件。
+同 setValue ，不同在于 不触发对应画笔们的值变化事件。 并且 _setValue 不会执行 render() 方法。
 
 ### updateValue
 
@@ -2021,9 +2016,8 @@ const pens = topology.toComponent(undefined, 0);
 **示例：**
 
 ```js
-const pen = topology.find('id')[0];
+const pen = topology.findOne('id');
 topology.setVisible(pen, false);
-topology.render(Infinity);
 ```
 
 ### destroy
@@ -2072,7 +2066,7 @@ void
 
 ```js
 topology.setBackgroundColor('#1890ff');
-topology.render(Infinity);
+topology.render();
 ```
 
 ### setGrid
@@ -2092,7 +2086,7 @@ void
 topology.setGrid({
   grid: true
 });
-topology.render(Infinity);
+topology.render();
 ```
 
 
@@ -2113,5 +2107,5 @@ void
 topology.setRule({
   rule: true
 });
-topology.render(Infinity);
+topology.render();
 ```

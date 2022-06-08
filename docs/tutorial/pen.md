@@ -295,7 +295,7 @@ export type Comparison =
 
   ```js
   topology.store.fillWorldTextRect = true;
-  topology.render(Infinity);
+  topology.render();
   ```
 
 #### textDrawRect
