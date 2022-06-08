@@ -1,5 +1,20 @@
 # 更新日志
 
+## 1.1.21 next
+
+### Bug fixes
+
+- **valueUpdate title**
+
+  当触发值变化时，鼠标移入展示的 title 也可以同步更新，所以它也可以绑定变量同步展示最新值。
+
+### Features
+
+- **新增 titleFnJs**
+
+  是一个字符串类型函数，它的返回值作为 title 使用，可配置较复杂的规则，展示多个属性的 组合。  
+  例如: pen.titleFnJs = 'return pen.text + pen.id';
+
 ## 1.1.20 1.1.21
 
 ### Features
