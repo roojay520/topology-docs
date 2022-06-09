@@ -37,8 +37,8 @@ const line = {type: 1, name: 'line', anchors:[...], ...};
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
@@ -65,13 +65,13 @@ topology.render();
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 
@@ -79,7 +79,7 @@ topology.addPen(pen);
 const pens1 = topology.find(pen.id);
 
 // 查找方式二：tag查找，返回的是数组
-const pens2 = topology.find('aaa');
+const pens2 = topology.find("aaa");
 ```
 
 ## 更新
@@ -87,26 +87,26 @@ const pens2 = topology.find('aaa');
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 
 // 查找id = pen.id的画笔，
 topology.setValue({
   id: pen.id,
-  text: 'le5le',
+  text: "le5le",
 });
 
 // 查找id = pen.id的画笔，修改id为111
 topology.setValue({
   id: pen.id,
-  newId: '111',
+  newId: "111",
 });
 ```
 
@@ -115,13 +115,13 @@ topology.setValue({
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 
@@ -134,13 +134,13 @@ topology.delete(topology.find(pen.id));
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 
@@ -156,13 +156,13 @@ topology.inactive();
 ```js
 // 定义一个pen，矩形
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  tag: ['aaa'],
+  tag: ["aaa"],
 };
 topology.addPen(pen);
 
@@ -188,22 +188,22 @@ console.log(pen.calculative.active);
 事件配置参考：
 
 1. 在 [官网](http://t.le5le.com/) 拖拽一个节点，配置需要的事件。
-2. 选中节点，在控制台输入 ``topology.store.active[0].events`` , 如果报错，确保已经选中该节点。 
+2. 选中节点，在控制台输入 `topology.store.active[0].events` , 如果报错，确保已经选中该节点。
 
 ```js
 const pen = {
-  name: 'rectangle',
-  text: '矩形',
+  name: "rectangle",
+  text: "矩形",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
   events: [
     {
-      name: 'click',
+      name: "click",
       action: EventAction.Link, // 执行动作
-      where: {key: 'text', comparison:'==', value: '矩形'}, // 触发条件
-      value: 'topology.le5le.com',
+      where: { key: "text", comparison: "==", value: "矩形" }, // 触发条件
+      value: "topology.le5le.com",
     },
   ],
 };
@@ -211,16 +211,29 @@ topology.addPen(pen);
 ```
 
 ```ts
-interface Event {
-  name: string;   // 事件行为，例如 'click'，'dblclick' 等 参照上面。
-  action: EventAction;  // 事件动作
-  where?: Where;  // 若无条件，必须为 undefined or null，不可为空对象
-  value?: any;   // 不同 action 下，该值含义不同，例如：动画相关的，即为 节点 tag; Function 类型即为 字符串函数 
+import { IValue, Pen } from "../pen"; // 这两个类型无需关注
+
+type EventValue = string | IValue | undefined | null;
+// 事件行为
+export type EventName =
+  | "enter"
+  | "leave"
+  | "active"
+  | "inactive"
+  | "click"
+  | "mousedown"
+  | "mouseup"
+  | "dblclick"
+  | "valueUpdate";
+export interface Event {
+  name: EventName;
+  action: EventAction; // 事件动作
+  where?: Where; // 若无条件，必须为 undefined or null，不可为空对象
+  value?: EventValue; // 不同 action 下，该值含义不同，例如：动画相关的，即为 节点 tag; Function 类型即为 字符串函数
   params?: string;
-  fn?: Function;
+  fn?: (pen: Pen, params: string) => void;
 }
 
-// @topology/core 内置action：
 enum EventAction {
   Link,
   SetProps,
@@ -234,11 +247,33 @@ enum EventAction {
 
 interface Where {
   key?: string;
-  comparison?: string;  // 比较条件： >,>=,<,<=,==,!=。例如：pen[key] == value
-  value?: any;
-  fn?: Function;    // 条件函数，最高优先级
-  fnJs?: string;    // 条件函数js代码，次高优先级
+  comparison?: Comparison;
+  value?: unknown;
+  fn?: (pen: Pen) => boolean; // 条件函数，最高优先级
+  fnJs?: string; // 条件函数js代码，次高优先级
 }
+
+/**
+ * 触发器中的符号
+ */
+export type Comparison =
+  | "="
+  | "=="
+  | "!="
+  | ">"
+  | "<"
+  | ">="
+  | "<="
+  | "[)" // 介于，数学中的开闭区间
+  | "![)" // 非介于，与上一个相反
+  /**
+   * 属于，类似于 数组的 includes
+   * .. 属于范围语法，30..50 等价于 介于的 [30, 50]
+   * [1, 2, 3]  2 // true  1.5 // false
+   * [1,20,30..50,65] 1 // true 20 // true 30 // true 30.1 // true
+   */
+  | "[]"
+  | "![]"; // 非属于，与上一个相反
 ```
 
 ## 文本
@@ -247,8 +282,6 @@ interface Where {
 如何可以通过一些简单的配置来达到用户通常想要的效果，以下是制定的一些规则，欢迎讨论！
 
 ### 文本区域
-
-
 
 #### worldTextRect
 
@@ -262,7 +295,7 @@ interface Where {
 
   ```js
   topology.store.fillWorldTextRect = true;
-  topology.render(Infinity);
+  topology.render();
   ```
 
 #### textDrawRect
@@ -270,41 +303,40 @@ interface Where {
 该区域是文字的实际绘制所占的区域，它的宽度为多行文本中最大的宽度，高度为 `行数 * lineHeight * fontSize`。  
 可以通过设置 textBackground 属性来查看当前 textDrawRect 的区域大小。
 
-### 换行与超出省略  
+### 换行与超出省略
 
-换行中的不换行与回车换行都比较好理解，此处不赘述了。   
+换行中的不换行与回车换行都比较好理解，此处不赘述了。
 
 默认换行：每个单词即认为是一组的，同一个单词是会在同一行的，一个单词指的是一个中文或一个英文单词，例如说：'乐' 是一个单词，’乐吾乐' 是三个单词，'word word'是两个单词，'mmmmmmmmmm'是一个单词，即英文使用空格分割单词的。
 
-永远换行：每个字母一组，只要宽度超了就换行。  
+永远换行：每个字母一组，只要宽度超了就换行。
 
 超出省略在不同的换行下是不同的：
 
 1. 不换行
 
-  判断宽度是否超出，宽度超出则删除超出部分，末尾添加 ...
+判断宽度是否超出，宽度超出则删除超出部分，末尾添加 ...
 
 2. 回车换行、默认、永远换行
 
-  判断高度是否超出，若行数超过最大可展示行数，最后一行添加 ...
-
+判断高度是否超出，若行数超过最大可展示行数，最后一行添加 ...
 
 ### 示例
 
-以下示例只介绍了一些场景，后续会进行更多的补充，也欢迎完善。  
+以下示例只介绍了一些场景，后续会进行更多的补充，也欢迎完善。
 
 1. 只需要一行文本，超出的部分省略。
 
 ```ts
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '长文本长文本长文本长文本长文本长文本',
-  whiteSpace: 'nowrap'
-}
+  text: "长文本长文本长文本长文本长文本长文本",
+  whiteSpace: "nowrap",
+};
 topology.addPen(pen);
 ```
 
@@ -319,14 +351,14 @@ fontSize 默认 12 , lineHeight 默认 1.5.
 
 ```ts
 const pen = {
-  name: 'rectangle',
+  name: "rectangle",
   x: 100,
   y: 100,
   width: 100,
   height: 100,
-  text: '长文本长文本长文本长文本长文本长文本',
+  text: "长文本长文本长文本长文本长文本长文本",
   textHeight: 50,
-  whiteSpace: 'break-all'
-}
+  whiteSpace: "break-all",
+};
 topology.addPen(pen);
 ```
