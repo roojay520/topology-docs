@@ -1,14 +1,20 @@
 # 乐吾乐 Topology
 
-乐吾乐 Topology 是一个集动态交互、丰富展示、数据管理等一体的全功能可视化引擎，为物联网、工业互联网、电力能源、水利工程、智慧农业、智慧医疗、智慧城市等智能可视化场景而生。支持拓扑图、流程图、脑图、折线图、饼图、仪表盘、web 组态、SCADA 等场景。
+乐吾乐Topology是乐吾乐公司自主设计、研发的web组态可视化软件，具有跨平台、高效、可扩展、实时监控、动态交互、支持自动算法等特点，最大程度减少研发和运维的成本，并致力于普通业务人员0代码开发实现web组态、SCADA等场景。是拥有为电力能源、水利、物联网、工业互联网、智慧城市、智慧医疗、智慧农业、IT运维等提供解决方案的可视化平台。
 
 <div style="display:flex; justify-content:">
-<img style="height:200px; margin: 10px" src="/img/1.gif" >
+<img style="height:150px; margin: 10px" src="/img/1.gif" >
 
-<img style="height:200px; margin: 10px" src="/img/2.png" >
+<img style="height:150px; margin: 10px" src="/img/2.gif" >
 
-<img style="height:200px; margin: 10px" src="/img/3.png">  
+<img style="height:150px; margin: 10px" src="/img/3.gif" >  
 </div>
+
+<br>
+
+# 视频介绍
+
+[【乐吾乐Topology宣传片】专业的Web组态可视化软件](https://www.bilibili.com/video/BV1SY4y137xy/) 
 
 <br>
 
