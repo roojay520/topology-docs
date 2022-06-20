@@ -1,6 +1,22 @@
 # 更新日志
 
-## 1.1.21 next
+## 1.1.22 next
+
+### Bug fixes
+
+- **bounding**
+
+  优先计算 bounding.x ，低版本浏览器不支持 x 属性，可用 left 属性。
+
+### Features
+
+- **Pen 新增属性 lockedOnCombine**
+
+  默认情况下，组合节点后，子节点的 locked 会变成 DisableMove 2 不可移动。  
+  可设置该属性来配置子节点的 locked 。  
+  例如：gif 类型的节点的该属性推荐配置成 None 0 。
+
+## 1.1.22
 
 ### Bug fixes
 
