@@ -1,6 +1,14 @@
 # 更新日志
 
-## 1.1.22 next
+## 1.1.24
+
+### Bug fixes
+
+- **onWheel 报错**
+
+  Cannot set property x on MouseEvent
+
+## 1.1.23
 
 ### Bug fixes
 
