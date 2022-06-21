@@ -267,6 +267,7 @@ file: (binary)，文件二进制内容
 {
   component: true //图纸类型
   componentDatas: [...] ////复合组件内容
+  componentData: {},   // 老版本复合组件内容
   folder: "a-12" //文件名
   fromArrow: "" //默认起始箭头
 	image: "/image/topology/...."     // 缩略图
@@ -292,6 +293,10 @@ file: (binary)，文件二进制内容
 }
 ```
 
+#### [DELETE] /api/user/topology/:id 删除指定 图纸 或 组件
+
+参数在 url 上
+
 #### [GET] /api/topology/:id 获取图纸数据
 
 返回图纸json
@@ -306,6 +311,7 @@ file: (binary)，文件二进制内容
   "pens": [...],
   "component": true,  // true表示当前为组件；false为图纸
   "componentData": {...},  // 仅当component=true，为组件时，此属性为组合节点的json对象（topology.toComponent()所生成）
+  "componentDatas": [],   // 新版本组件
   "folder": "a-12",
   "userId": "system",
   "username": "乐乐",
