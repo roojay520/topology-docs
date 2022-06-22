@@ -80,6 +80,7 @@ npm install topology.js --save
 
 ```js
 var topology = new Topology("topology");
+registerCommonDiagram(); //注册图形库
 // Get the json data
 // ...
 // Open the json
