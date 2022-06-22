@@ -1,5 +1,13 @@
 # 更新日志
 
+## 1.1.24 next
+
+### Bug fixes
+
+- **clear 未清除 dom, 以及背景图片**
+
+  open 与 destory 方法均使用该方法。
+
 ## 1.1.24
 
 ### Bug fixes
