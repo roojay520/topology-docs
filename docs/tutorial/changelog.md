@@ -6,7 +6,11 @@
 
 - **clear 未清除 dom, 以及背景图片**
 
-  open 与 destory 方法均使用该方法。
+  clear 清除 dom，背景图片， open 与 destory 方法均使用该方法。
+
+- **scale 子节点的 onResize 未执行**
+
+  添加方法 execPenResize ，递归执行当前节点以及子孙节点的 onResize 生命周期方法。
 
 ## 1.1.24
 
