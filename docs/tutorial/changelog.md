@@ -12,6 +12,10 @@
 
   添加方法 execPenResize ，递归执行当前节点以及子孙节点的 onResize 生命周期方法。
 
+- **video 通过 setValue 更改 video 属性，不更新 dom**
+
+  video 类型画笔，onValue 生命周期更新 dom src。
+
 ## 1.1.24
 
 ### Bug fixes
