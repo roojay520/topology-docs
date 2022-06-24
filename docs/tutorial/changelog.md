@@ -1,6 +1,46 @@
 # 更新日志
 
-## 1.1.21 next
+## 1.1.24 next
+
+### Bug fixes
+
+- **clear 未清除 dom, 以及背景图片**
+
+  clear 清除 dom，背景图片， open 与 destory 方法均使用该方法。
+
+- **scale 子节点的 onResize 未执行**
+
+  添加方法 execPenResize ，递归执行当前节点以及子孙节点的 onResize 生命周期方法。
+
+- **video 通过 setValue 更改 video 属性，不更新 dom**
+
+  video 类型画笔，onValue 生命周期更新 dom src。
+
+## 1.1.24
+
+### Bug fixes
+
+- **onWheel 报错**
+
+  Cannot set property x on MouseEvent
+
+## 1.1.23
+
+### Bug fixes
+
+- **bounding**
+
+  优先计算 bounding.x ，低版本浏览器不支持 x 属性，可用 left 属性。
+
+### Features
+
+- **Pen 新增属性 lockedOnCombine**
+
+  默认情况下，组合节点后，子节点的 locked 会变成 DisableMove 2 不可移动。  
+  可设置该属性来配置子节点的 locked 。  
+  例如：gif 类型的节点的该属性推荐配置成 None 0 。
+
+## 1.1.22
 
 ### Bug fixes
 

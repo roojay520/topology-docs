@@ -109,7 +109,7 @@ onTouchstart = (e) => {
 | rightMouseTranslate | boolean     | 禁止右键拖拽画布                                   |
 | minScale            | number      | 画布最小缩放比例                                   |
 | maxScale            | number      | 画布最大缩放比例                                   |
-| keydown             | KeydownType | 快捷键监听对象，默认 canvas                        |
+| keydown             | KeydownType | 快捷键监听对象，默认 document；-1 不监听快捷键，需在 Topology 初始化时配置 |
 | grid                | boolean     | 是否显示网格                                       |
 | gridColor           | string      | 网格颜色                                           |
 | gridSize            | number      | 网格大小                                           |
