@@ -425,10 +425,9 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 6    | 时序图和类图 | js   | 4    |
 | 7    | Echarts图表  | js   | 4    |
 | 8    | Highcharts图表  | js   | 4    |
-| 9    | LightningCharts图表  | js   | 4    |
-| 10    | Le5le charts  | js   | 5   |
-| 11    | 故障树  | js   | 12   |
-| 合计 |              |      | 88 |
+| 9    | Le5le charts  | js   | 5   |
+| 10    | 故障树  | js   | 12   |
+| 合计 |              |      | 84 |
 
 ### 8.2 电力图形库
 
