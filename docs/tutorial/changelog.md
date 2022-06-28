@@ -8,6 +8,8 @@
 
   修改 gif dom css objectFit
 
+- **setValue 改变名字，执行 onDestory ，清空生命周期函数**
+
 ## 1.1.27
 
 ### Bug fixes
