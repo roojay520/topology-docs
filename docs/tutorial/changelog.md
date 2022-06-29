@@ -1,5 +1,31 @@
 # 更新日志
 
+## 1.1.27 next
+
+### Bug fixes
+
+- **gif 保持比例 imageRatio**
+
+  修改 gif dom css objectFit
+
+- **setValue 改变名字，执行 onDestory ，清空生命周期函数**
+
+## 1.1.27
+
+### Bug fixes
+
+- **clear 未清除 dom, 以及背景图片**
+
+  clear 清除 dom，背景图片， open 与 destory 方法均使用该方法。
+
+- **scale 子节点的 onResize 未执行**
+
+  添加方法 execPenResize ，递归执行当前节点以及子孙节点的 onResize 生命周期方法。
+
+- **video 通过 setValue 更改 video 属性，不更新 dom**
+
+  video 类型画笔，onValue 生命周期更新 dom src。
+
 ## 1.1.24
 
 ### Bug fixes

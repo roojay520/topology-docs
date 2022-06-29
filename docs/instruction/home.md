@@ -54,7 +54,9 @@
 
 ![le5le topology 多选属性面板](/img/duoxuanshuxingmianban.png)
 
-![le5le topology 多选对齐](/img/duoxuanduiqi.gif)
+对齐：左对齐、右对齐、顶部对齐、底部对齐、垂直居中、水平剧中、等距分布左右对齐、等距分布上下对齐、相同
+
+![le5le topology 多选对齐](/img/duiqi5.gif)
 
 ### 1.5 右键菜单
 
@@ -188,6 +190,17 @@
 
 ![le5le topology 线宽](/img/xiankuan.png)
 
+**连线变成节点、节点变成连线、切割连线、合并连线**
+
+连线变成节点、节点变成连线：右键   
+
+切割连线：选中线，移入线锚点，按下 S   
+
+合并连线：线连接线时，按下 alt   
+
+
+![le5le topology 线宽](/img/lianxianduankai.gif)
+
 ### 2.5 外观设置
 
 <br/> 
@@ -208,7 +221,7 @@
 
 ![le5le topology 进度条](/img/jindudonghua.gif)
 
-![le5le topology 进度条](/img/jindutiao.png)
+![le5le topology 进度条](/img/2.gif)
 
 
 #### 2.5.2 样式
@@ -412,10 +425,9 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 6    | 时序图和类图 | js   | 4    |
 | 7    | Echarts图表  | js   | 4    |
 | 8    | Highcharts图表  | js   | 4    |
-| 9    | LightningCharts图表  | js   | 4    |
-| 10    | Le5le charts  | js   | 5   |
-| 11    | 故障树  | js   | 12   |
-| 合计 |              |      | 88 |
+| 9    | Le5le charts  | js   | 5   |
+| 10    | 故障树  | js   | 12   |
+| 合计 |              |      | 84 |
 
 ### 8.2 电力图形库
 
@@ -490,4 +502,8 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 42   | 大屏可视化                            | svg      | 19   |
 | 合计 |                                       |          | 1839 |
 
-开始设计： http://t.le5le.com/
+开始设计： http://t.le5le.com/   
+
+快捷键：http://developer.le5le.com/tutorial/keyboards.html   
+
+解决方案：http://topology.le5le.com/search   
