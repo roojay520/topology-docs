@@ -127,11 +127,13 @@ pen.tags.push('1号位置-温度传感器');
 
 原因：
 
+父 dom 的宽高变成 0 了，常见于改变屏幕尺寸  
 父 dom 的宽高度为 0 就 new Topology 了，可能是存在动画
 
 解决方案：
 
-1. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology
+1. 更改屏幕尺寸后，仍要保证父 dom 的宽高不为 0  
+2. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology
 
 ## 脏数据处理
 
