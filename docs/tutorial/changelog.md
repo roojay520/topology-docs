@@ -1,6 +1,16 @@
 # 更新日志
 
-## 1.1.24 next
+## 1.1.27 next
+
+### Bug fixes
+
+- **gif 保持比例 imageRatio**
+
+  修改 gif dom css objectFit
+
+- **setValue 改变名字，执行 onDestory ，清空生命周期函数**
+
+## 1.1.27
 
 ### Bug fixes
 

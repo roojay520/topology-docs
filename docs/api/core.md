@@ -1794,7 +1794,8 @@ topology.toggleAnchorHand();
   被置顶的画笔
 
 - pens: Pen[]  
-  置顶到哪个画笔数组。默认为整个图纸
+  置顶到哪个画笔数组。默认为整个图纸  
+  注意 pen 必须在该数组内才有效(bottom, up, down 同理)
 
 **返回：**  
 void
