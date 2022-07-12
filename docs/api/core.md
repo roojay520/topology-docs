@@ -849,6 +849,68 @@ topology.stopAnimate('aaa');
 topology.stopAnimate([pen]);
 ```
 
+
+
+### startVideo
+
+开始播放视频
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.startVideo('aaa');
+
+topology.startVideo([pen]);
+```
+
+### pauseVideo
+
+暂停播放视频
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.pauseVideo('aaa');
+
+topology.pauseVideo([pen]);
+```
+
+### stopVideo
+
+停止播放视频
+
+**参数：**
+
+- idOrTagOrPens : string | Pen[]  
+  id，或 tags，或 Pen[]对象数组
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+topology.stopVideo('aaa');
+
+topology.stopVideo([pen]);
+```
+
 ### calcAnimateDuration
 
 计算动画帧时长
