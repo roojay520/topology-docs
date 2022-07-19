@@ -354,9 +354,9 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 放大镜](/img/fangdajing.gif)
 
-### **6.4 地图**
+### **6.4 缩略图**
 
-![le5le topology 地图](/img/ditu.gif)
+![le5le topology 缩略图](/img/ditu.gif)
 
 ### **6.5 自动锚点**
 
