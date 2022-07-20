@@ -160,6 +160,17 @@
 
 ![le5le topology 连线](/img/gangbilianxian.gif)
 
+绘制横线：同时按下快捷键ctrl+alt,拖动鼠标左键绘制，右键结束绘制    
+
+![le5le topology 横线](/img/hengxianhuizhi.gif)   
+
+
+
+绘制竖线：按下快捷键alt,拖动鼠标左键绘制，右键结束绘制    
+
+![le5le topology 横线](/img/shuxianhuizhi.gif)    
+
+
 **连接绘制连线**    
 
 曲线
