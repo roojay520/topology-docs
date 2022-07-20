@@ -165,7 +165,6 @@
 ![le5le topology 横线](/img/hengxianhuizhi.gif)   
 
 
-
 绘制竖线：按下快捷键alt,点击鼠标左键绘制，右键结束绘制    
 
 ![le5le topology 横线](/img/shuxianhuizhi.gif)    
