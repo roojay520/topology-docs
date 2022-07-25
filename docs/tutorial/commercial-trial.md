@@ -6,4 +6,4 @@
 https://gitee.com/le5le/downloads
 
 安装视频：  
-https://www.bilibili.com/video/BV1sV411e7Z1/
+https://www.bilibili.com/video/BV1GN4y177RW?spm_id_from=333.999.0.0
