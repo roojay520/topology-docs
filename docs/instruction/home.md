@@ -2,35 +2,27 @@
 
 开始设计： http://t.le5le.com/
 
-![le5le topology 编辑器](/img/bianjiqi.png)
 
 ## 1 基本知识
+![le5le topology 编辑器](/img/bjq.jpg)
 
 ### 1.1 画布
 
-画布即绘画区域  
-
-![le5le topology 画布](/img/huabu.png)
+画布即绘画区域    
 
 ### 1.2 菜单栏
 
-顶部菜单导航，可设置Logo、公司名称、文件编辑、钢笔、铅笔、放大镜、地图、连线起点、连线终点、连线线宽、视图比例、自动锚点、锁定/解锁、预览、分享、帮助中心、语言、登录
-
-![le5le topology 菜单栏](/img/caidanlan.png)
+顶部菜单导航，可设置Logo、公司名称、文件编辑、钢笔、铅笔、放大镜、缩略图、连线起点、连线终点、连线线宽、视图比例、自动锚点、禁用锚点、编辑/预览/锁定/、预览、分享、帮助、语言、登录
 
 ### 1.3 组件库
 
 组件库功能：搜索、图纸、系统组件、我的组件、图形库管理
-
-![le5le topology 组件库](/img/zujianku.png)
 
 #### 1.3.1 图形
 
 绘画对象，分为节点和连线2种
 
 ####  节点
-
-节点即是零部件、图元、组件，用户可以自定义节点 http://developer.le5le.com/topology-documents/tutorial/make-component.html
 
 ![le5le topology 节点](/img/jiedian.png)
 
@@ -414,13 +406,16 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 我的组件](/img/wodezujian2.gif)
 
-## 8 图形库
+## 8 图形库   
+
 
 乐吾乐图形库一共分为三大类：基础图形库、电力图形库、物联网图形库，总共约3700个图元，能满足大部分行业的基本需求。
-格式有三种：原生代码（JS）、阿里字体（iconfont）、图片（svg、gif），企业版已经写好固定的逻辑，支持良好。
-​
+格式有三种：原生代码（JS）、阿里字体（iconfont）、图片（svg、gif），企业版已经写好固定的逻辑，支持良好。    
+同时乐吾乐Topology支持扩展自定义图库：http://developer.le5le.com/topology-documents/tutorial/make-component.html
 
-点击查看：[http://t.le5le.com/](http://t.le5le.com/)
+![le5le topology 新增组件](/img/xinzengzujian.png)
+​
+点击查看系统组件：[http://t.le5le.com/](http://t.le5le.com/)
 
 如何搜索：[系统组件](http://developer.le5le.com/topology-documents/instruction/home.html#_7-2-%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6)
 
