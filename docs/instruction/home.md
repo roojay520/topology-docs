@@ -69,24 +69,26 @@
 
 ![le5le topology 文件](/img/wenjian.png)
 
-#### 2.1.1 设置文件名  
+#### 2.1.1 设置文件名、文件夹名、分类     
+属性面板的文件夹即组件库图纸文件夹   
 
-
-![le5le topology 设置文件名](/img/shezhiwenjianming.png)
+![le5le topology 设置文件名](/img/wenjian.jpg)
 
 #### 2.1.2 设置画布属性
 
-锁：无、禁止编辑、禁止移动、禁用
+默认颜色：预先设置默认颜色，拖拽到画布的节点（基础图形、文字、icon）自动统一默认颜色。     
 
-![le5le topology 设置画布属性](/img/shezhihuabushuxing.png)
+画笔填充颜色：预先设置画笔填充颜色，拖拽到画布的节点（基础图形）自动统一默认填充颜色。    
+
+![le5le topology 默认颜色](/img/morenyanse.png)
 
 背景颜色
 
 ![le5le topology 背景颜色](/img/beijingyanse.png)
 
-背景网格、网格颜色、网格大小
+背景网格、网格颜色、网格大小、网格角度
 
-![le5le topology 背景网格](/img/beijingwangge.png)
+![le5le topology 背景网格](/img/beijingwangge.jpg)
 
 标尺、标尺颜色
 
@@ -94,13 +96,13 @@
 
 ##### 2.1.3 设置文件通信
 
-支持websocket或MQTT协议，能够“0代码”实现消息通信、数据实时修改和触发事件交互。
+支持主流的websocket、MQTT、http协议，能够“0代码”实现消息通信、数据实时修改和触发事件交互。
 
-![le5le topology 设置文件通信](/img/tongxin.png)
+![le5le topology 设置文件通信](/img/xiaoxitongxin.jpg)
 
 ##### 2.1.4 设置文件布局
 
-​画布和组合组件的排版布局
+​画布和组件的排版布局
 
 ![le5le topology 设置文件布局](/img/buju.gif)
 
