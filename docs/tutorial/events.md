@@ -49,7 +49,8 @@ topology.off('event', fn);
 | translate           | Object: x, y | 平移画布                         |
 | resizePens          | Pen[]        | 画笔大小改变                     |
 | rotatePens          | Pen[]        | 画笔被旋转                       |
-| translatePens       | Pen[]        | 移动画笔                         |
+| translatePens       | Pen[]        | 移动画笔结束                      |
+| translatingPens     | Pen[]        | 移动画笔中                         |
 | click               | Point & Pen  | 点击，鼠标右键 up                |
 | mousedown           | Point & Pen  | 鼠标 down                    |
 | dblclick            | Point & Pen  | 双击                             |

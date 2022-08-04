@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.1.32 next
+### Features
+
+- **新增内置api消息 translatingPens**
+
 ## 1.1.32
 ### Features
 
