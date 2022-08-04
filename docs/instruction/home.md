@@ -36,11 +36,11 @@
 
 #### 1.4.1 文件属性面板
 
-![le5le topology 文件属性面板](/img/wenjianshuxingmianban.png)
+![le5le topology 文件属性面板](/img/wjsxmb.jpg)
 
 #### 1.4.2 图形属性面板
 
-![le5le topology 图形属性面板](/img/tuxingshuxingmianban.png)
+![le5le topology 图形属性面板](/img/txsxmb.jpg)
 
 #### 1.4.3 多选属性面板
 
@@ -281,7 +281,7 @@
 
 条件触发器案例：参考[消息事件-条件触发器](../tutorial/events#事件及触发器)
 
-## 4 动画
+## 4 动效
 
 ### **4.1 节点动画**
 
@@ -325,25 +325,43 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ### **4.5 网页iframe**
 
-![le5le topology 网页iframe](/img/wangye.gif)
+![le5le topology 网页iframe](/img/wangye.gif)    
 
-## 5 消息通信
+## 5 数据     
 
-### **5.1 mqtt通信**
+绑定变量，快速实现实时数据动态展示
+
+![le5le topology 数据](/img/shuju2.jpg)      
+
+![le5le topology 数据](/img/shuju1.jpg)  
+
+![le5le topology 数据](/img/shuju3.jpg)  
+
+![le5le topology 数据](/img/shuju4.jpg)  
+
+绑定变量示例
+
+![le5le topology 绑定变量](/img/bdbl.gif)  
+
+参考视频：https://www.bilibili.com/video/BV1Yd4y1D7ys?spm_id_from=333.999.0.0
+
+## 6 消息通信
+
+### **6.1 mqtt通信**
 
 参考：[开发教程 - 实时数据监听](../tutorial/data#mqtt)
 
-### **5.2 websocket通信**
+### **6.2 websocket通信**
 
 参考：[开发教程 - 实时数据监听](../tutorial/data#websocket)
 
-### **5.3 消息通信案例**
+### **6.3 消息通信案例**
 
 [实时数据监听-消息通讯](../tutorial/data#消息通信)
 
-## 6 常用菜单基本命令
+## 7 常用菜单基本命令
 
-### **6.1 钢笔**
+### **7.1 钢笔**
 
 开始：单击左键
 
@@ -355,7 +373,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 钢笔](/img/gangbi.gif)
 
-### **6.2 铅笔**
+### **7.2 铅笔**
 
 开始：连续拖动左键
 
@@ -367,36 +385,36 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 铅笔](/img/qianbi.gif)
 
-### **6.3 放大镜**
+### **7.3 放大镜**
 
 ![le5le topology 放大镜](/img/fangdajing.gif)
 
-### **6.4 缩略图**
+### **7.4 缩略图**
 
 ![le5le topology 缩略图](/img/ditu.gif)
 
-### **6.5 自动锚点**
+### **7.5 自动锚点**
 
 ​开启时自动选择2个最近锚点，关闭时可自由选择锚点
 
 ![le5le topology 自动锚点](/img/zidongmaodian.gif)
 
-### **6.6 禁用锚点**
+### **7.6 禁用锚点**
 
 ​禁用锚点，即不显示锚点
 
 ![le5le topology 禁用锚点](/img/jinyongmaodian.gif)    
   
 
-## 7 组件库
+## 8 组件库
 
-### 7.1 图纸
+### 8.1 图纸
 
 新建文件夹、新建图纸、删除文件夹、删除图纸
 
 ![le5le topology 图纸](/img/tuzhi.gif)
 
-### 7.2 系统组件
+### 8.2 系统组件
 
 搜索：输入关键词可以搜索相应的系统组件
 <br>
@@ -408,7 +426,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 系统组件](/img/xitongzujian.gif)
 
-### 7.3 我的组件
+### 8.3 我的组件
 
 新建文件夹、上传图片、创建组件、删除文件夹、删除我的组件
 
@@ -418,7 +436,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 我的组件](/img/wodezujian2.gif)
 
-## 8 图形库   
+## 9 图形库   
 
 
 乐吾乐图形库一共分为三大类：基础图形库、电力图形库、物联网图形库，总共约3700个图元，能满足大部分行业的基本需求。
@@ -433,7 +451,11 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
-### 8.1 基础图形库
+常用基础组件：文字、图片、视频、iframe、icon
+
+![le5le topology 基础组件](/img/jichuzujian.jpg)
+
+### 9.1 基础图形库
 
 | 序号 | 类别         | 格式 | 数量 |
 | ---- | ------------ | ---- | ---- |
@@ -449,7 +471,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 10    | 故障树  | js   | 12   |
 | 合计 |              |      | 84 |
 
-### 8.2 电力图形库
+### 9.2 电力图形库
 
 | 序号 | 类别                   | 格式     | 数量 |
 | ---- | ---------------------- | -------- | ---- |
@@ -474,7 +496,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 19   | 国家电网图元规范       | iconfont | 344  |
 | 合计 |                        |          | 1671 |
 
-### 8.3  物联网图形库
+### 9.3  物联网图形库
 
 | 序号 | 类别                                  | 格式     | 数量 |
 | ---- | ------------------------------------- | -------- | ---- |
