@@ -60,7 +60,11 @@
 ![le5le topology 右键菜单](/img/yjcd.jpg)
 
 
-组合为状态:常用于展示开关的断开与闭合、风机的转动与停、警示灯的状态切换等
+组合为状态：常用于展示开关的断开与闭合、风机的转动与停止、警示灯的状态切换等
+
+使用参考：http://developer.le5le.com/tutorial/data.html#%E7%8A%B6%E6%80%81
+
+![le5le topology 状态](/img/kaiguanzhuangtai.gif)
 
 ![le5le topology 状态](/img/zhuangtai.gif)
 
