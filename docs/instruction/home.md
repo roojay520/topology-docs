@@ -44,7 +44,7 @@
 
 #### 1.4.3 多选属性面板
 
-![le5le topology 多选属性面板](/img/duoxuanshuxingmianban.png)
+![le5le topology 多选属性面板](/img/dxsxmb.jpg)
 
 对齐：左对齐、右对齐、顶部对齐、底部对齐、垂直居中、水平剧中、等距分布左右对齐、等距分布上下对齐、相同
 
@@ -54,10 +54,16 @@
 
 鼠标右键或平板三指触摸显示右键菜单
 
-功能：置顶、置底、上一个图层、下一个图层、组合/取消组合、锁定、删除、撤销、恢复、剪切、复制、粘贴
+功能：置顶、置底、上一个图层、下一个图层、组合、组合为状态、锁定、删除、撤销、恢复、剪切、复制、粘贴
 
 
-![le5le topology 右键菜单](/img/youjiancaidan.png)
+![le5le topology 右键菜单](/img/yjcd.jpg)
+
+
+组合为状态:常用于展示开关的断开与闭合、风机的转动与停、警示灯的状态切换等
+
+![le5le topology 状态](/img/zhuangtai.gif)
+
 
 <br/> 
 
