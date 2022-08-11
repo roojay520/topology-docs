@@ -5,9 +5,11 @@ Topology 企业版是基于 topology 核心库开发的功能丰富的商用版�
 
 ## 产品价格清单
 
-### 乐吾乐 Topology 组态可视化软件 1.0版    
-demo：http://t.le5le.com/
+### 乐吾乐 Topology 组态可视化软件 1.0版     
 
+企业版demo：http://t.le5le.com/       
+
+ 
 | 功能及规格       | vue /angular<br /> 源码版（前端）   | vue /angular<br /> 源码版（前后端） | 安装包版                    |
 | ---------------- | --------------------------- | ---------------------------- | --------------------------- |
 | 文件打开保存     | ✔                           | ✔                            | ✔                           |
@@ -51,7 +53,7 @@ demo：http://t.le5le.com/
 
 ### 企业图形库
 
-查看  [图形库清单](http://developer.le5le.com/topology-documents/instruction/home.html#_8-%E5%9B%BE%E5%BD%A2%E5%BA%93)
+查看  [图形库清单](http://developer.le5le.com/instruction/home.html#_9-2-%E7%94%B5%E5%8A%9B%E5%9B%BE%E5%BD%A2%E5%BA%93)
 
 | 类型                           | 价格    | 说明                         |
 | ------------------------------ | ------- | ---------------------------- |
