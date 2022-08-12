@@ -1,6 +1,11 @@
 # 更新日志
+## 1.1.33 next
 
-## 1.1.32 next
+### Features
+
+### Bug fixes
+
+## 1.1.33
 ### Features
 
 - **新增内置api消息 translatingPens**
