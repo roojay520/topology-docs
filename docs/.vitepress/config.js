@@ -184,6 +184,11 @@ function getTutorialSidebar() {
           // ],
         },
         {
+          text: "图形库",
+          // link: "/instruction/home.html#_8-图形库",
+          link: "/tutorial/tuxingku",
+        },
+        {
           text: "API接口文档",
           link: "/tutorial/commercial-api",
         },
