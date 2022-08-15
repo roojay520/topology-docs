@@ -2,35 +2,27 @@
 
 开始设计： http://t.le5le.com/
 
-![le5le topology 编辑器](/img/bianjiqi.png)
 
 ## 1 基本知识
+![le5le topology 编辑器](/img/bjq.jpg)
 
 ### 1.1 画布
 
-画布即绘画区域  
-
-![le5le topology 画布](/img/huabu.png)
+画布即绘画区域    
 
 ### 1.2 菜单栏
 
-顶部菜单导航，可设置Logo、公司名称、文件编辑、钢笔、铅笔、放大镜、地图、连线起点、连线终点、连线线宽、视图比例、自动锚点、锁定/解锁、预览、分享、帮助中心、语言、登录
-
-![le5le topology 菜单栏](/img/caidanlan.png)
+顶部菜单导航，可设置Logo、公司名称、文件编辑、钢笔、铅笔、放大镜、缩略图、连线起点、连线终点、连线线宽、视图比例、自动锚点、禁用锚点、编辑/预览/锁定/、预览、分享、帮助、语言、登录
 
 ### 1.3 组件库
 
 组件库功能：搜索、图纸、系统组件、我的组件、图形库管理
-
-![le5le topology 组件库](/img/zujianku.png)
 
 #### 1.3.1 图形
 
 绘画对象，分为节点和连线2种
 
 ####  节点
-
-节点即是零部件、图元、组件，用户可以自定义节点 http://developer.le5le.com/topology-documents/tutorial/make-component.html
 
 ![le5le topology 节点](/img/jiedian.png)
 
@@ -44,15 +36,15 @@
 
 #### 1.4.1 文件属性面板
 
-![le5le topology 文件属性面板](/img/wenjianshuxingmianban.png)
+![le5le topology 文件属性面板](/img/wjsxmb.jpg)
 
 #### 1.4.2 图形属性面板
 
-![le5le topology 图形属性面板](/img/tuxingshuxingmianban.png)
+![le5le topology 图形属性面板](/img/txsxmb.jpg)
 
 #### 1.4.3 多选属性面板
 
-![le5le topology 多选属性面板](/img/duoxuanshuxingmianban.png)
+![le5le topology 多选属性面板](/img/dxsxmb.jpg)
 
 对齐：左对齐、右对齐、顶部对齐、底部对齐、垂直居中、水平剧中、等距分布左右对齐、等距分布上下对齐、相同
 
@@ -60,9 +52,22 @@
 
 ### 1.5 右键菜单
 
-功能：置顶、置底、上一个图层、下一个图层、组合/取消组合、锁定、删除、撤销、恢复、剪切、复制、粘贴
+鼠标右键或平板三指触摸显示右键菜单
 
-![le5le topology 右键菜单](/img/youjiancaidan.png)
+功能：置顶、置底、上一个图层、下一个图层、组合、组合为状态、锁定、删除、撤销、恢复、剪切、复制、粘贴
+
+
+![le5le topology 右键菜单](/img/yjcd.jpg)
+
+
+组合为状态：常用于展示开关的断开与闭合、风机的转动与停止、警示灯的状态切换等
+
+使用参考：http://developer.le5le.com/tutorial/data.html#%E7%8A%B6%E6%80%81
+
+![le5le topology 状态](/img/kaiguanzhuangtai.gif)
+
+![le5le topology 状态](/img/zhuangtai.gif)
+
 
 <br/> 
 
@@ -74,24 +79,26 @@
 
 ![le5le topology 文件](/img/wenjian.png)
 
-#### 2.1.1 设置文件名  
+#### 2.1.1 设置文件名、文件夹名、分类     
+属性面板的文件夹即组件库图纸文件夹   
 
-
-![le5le topology 设置文件名](/img/shezhiwenjianming.png)
+![le5le topology 设置文件名](/img/wenjian.jpg)
 
 #### 2.1.2 设置画布属性
 
-锁：无、禁止编辑、禁止移动、禁用
+默认颜色：预先设置默认颜色，拖拽到画布的节点（基础图形、文字、icon）自动统一默认颜色。     
 
-![le5le topology 设置画布属性](/img/shezhihuabushuxing.png)
+画笔填充颜色：预先设置画笔填充颜色，拖拽到画布的节点（基础图形）自动统一默认填充颜色。    
+
+![le5le topology 默认颜色](/img/morenyanse.png)
 
 背景颜色
 
 ![le5le topology 背景颜色](/img/beijingyanse.png)
 
-背景网格、网格颜色、网格大小
+背景网格、网格颜色、网格大小、网格角度
 
-![le5le topology 背景网格](/img/beijingwangge.png)
+![le5le topology 背景网格](/img/beijingwangge.jpg)
 
 标尺、标尺颜色
 
@@ -99,13 +106,13 @@
 
 ##### 2.1.3 设置文件通信
 
-支持websocket或MQTT协议，能够“0代码”实现消息通信、数据实时修改和触发事件交互。
+支持主流的websocket、MQTT、http协议，能够“0代码”实现消息通信、数据实时修改和触发事件交互。
 
-![le5le topology 设置文件通信](/img/tongxin.png)
+![le5le topology 设置文件通信](/img/xiaoxitongxin.jpg)
 
 ##### 2.1.4 设置文件布局
 
-​画布和组合组件的排版布局
+​画布和组件的排版布局
 
 ![le5le topology 设置文件布局](/img/buju.gif)
 
@@ -159,6 +166,16 @@
 结束：esc
 
 ![le5le topology 连线](/img/gangbilianxian.gif)
+
+绘制横线：按下快捷键ctrl,点击鼠标左键绘制，右键结束绘制    
+
+![le5le topology 横线](/img/hengxianhuizhi.gif)   
+
+
+绘制竖线：按下快捷键alt,点击鼠标左键绘制，右键结束绘制    
+
+![le5le topology 横线](/img/shuxianhuizhi.gif)    
+
 
 **连接绘制连线**    
 
@@ -223,6 +240,7 @@
 
 ![le5le topology 进度条](/img/2.gif)
 
+![le5le topology 水位](/img/shuiwei.gif)  
 
 #### 2.5.2 样式
 
@@ -264,7 +282,7 @@
 
 条件触发器案例：参考[消息事件-条件触发器](../tutorial/events#事件及触发器)
 
-## 4 动画
+## 4 动效
 
 ### **4.1 节点动画**
 
@@ -308,25 +326,43 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ### **4.5 网页iframe**
 
-![le5le topology 网页iframe](/img/wangye.gif)
+![le5le topology 网页iframe](/img/wangye.gif)    
 
-## 5 消息通信
+## 5 数据     
 
-### **5.1 mqtt通信**
+绑定变量，快速实现实时数据动态展示
+
+![le5le topology 数据](/img/shuju2.jpg)      
+
+![le5le topology 数据](/img/shuju1.jpg)  
+
+![le5le topology 数据](/img/shuju3.jpg)  
+
+![le5le topology 数据](/img/shuju4.jpg)  
+
+绑定变量示例
+
+![le5le topology 绑定变量](/img/bdbl.gif)  
+
+参考视频：https://www.bilibili.com/video/BV1Yd4y1D7ys?spm_id_from=333.999.0.0
+
+## 6 消息通信
+
+### **6.1 mqtt通信**
 
 参考：[开发教程 - 实时数据监听](../tutorial/data#mqtt)
 
-### **5.2 websocket通信**
+### **6.2 websocket通信**
 
 参考：[开发教程 - 实时数据监听](../tutorial/data#websocket)
 
-### **5.3 消息通信案例**
+### **6.3 消息通信案例**
 
 [实时数据监听-消息通讯](../tutorial/data#消息通信)
 
-## 6 常用菜单基本命令
+## 7 常用菜单基本命令
 
-### **6.1 钢笔**
+### **7.1 钢笔**
 
 开始：单击左键
 
@@ -338,7 +374,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 钢笔](/img/gangbi.gif)
 
-### **6.2 铅笔**
+### **7.2 铅笔**
 
 开始：连续拖动左键
 
@@ -350,36 +386,36 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 铅笔](/img/qianbi.gif)
 
-### **6.3 放大镜**
+### **7.3 放大镜**
 
 ![le5le topology 放大镜](/img/fangdajing.gif)
 
-### **6.4 地图**
+### **7.4 缩略图**
 
-![le5le topology 地图](/img/ditu.gif)
+![le5le topology 缩略图](/img/ditu.gif)
 
-### **6.5 自动锚点**
+### **7.5 自动锚点**
 
 ​开启时自动选择2个最近锚点，关闭时可自由选择锚点
 
 ![le5le topology 自动锚点](/img/zidongmaodian.gif)
 
-### **6.6 禁用锚点**
+### **7.6 禁用锚点**
 
 ​禁用锚点，即不显示锚点
 
 ![le5le topology 禁用锚点](/img/jinyongmaodian.gif)    
   
 
-## 7 组件库
+## 8 组件库
 
-### 7.1 图纸
+### 8.1 图纸
 
 新建文件夹、新建图纸、删除文件夹、删除图纸
 
 ![le5le topology 图纸](/img/tuzhi.gif)
 
-### 7.2 系统组件
+### 8.2 系统组件
 
 搜索：输入关键词可以搜索相应的系统组件
 <br>
@@ -391,7 +427,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 系统组件](/img/xitongzujian.gif)
 
-### 7.3 我的组件
+### 8.3 我的组件
 
 新建文件夹、上传图片、创建组件、删除文件夹、删除我的组件
 
@@ -401,19 +437,26 @@ video标签支持MP4、WebM、Ogg 三种格式
 
 ![le5le topology 我的组件](/img/wodezujian2.gif)
 
-## 8 图形库
+## 9 图形库   
+
 
 乐吾乐图形库一共分为三大类：基础图形库、电力图形库、物联网图形库，总共约3700个图元，能满足大部分行业的基本需求。
-格式有三种：原生代码（JS）、阿里字体（iconfont）、图片（svg、gif），企业版已经写好固定的逻辑，支持良好。
-​
+格式有三种：原生代码（JS）、阿里字体（iconfont）、图片（svg、gif），企业版已经写好固定的逻辑，支持良好。    
+同时乐吾乐Topology支持扩展自定义图库：http://developer.le5le.com/topology-documents/tutorial/make-component.html
 
-点击查看：[http://t.le5le.com/](http://t.le5le.com/)
+![le5le topology 新增组件](/img/xinzengzujian.png)
+​
+点击查看系统组件：[http://t.le5le.com/](http://t.le5le.com/)
 
 如何搜索：[系统组件](http://developer.le5le.com/topology-documents/instruction/home.html#_7-2-%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6)
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
-### 8.1 基础图形库
+常用基础组件：文字、图片、视频、iframe、icon
+
+![le5le topology 基础组件](/img/jichuzujian.jpg)
+
+### 9.1 基础图形库
 
 | 序号 | 类别         | 格式 | 数量 |
 | ---- | ------------ | ---- | ---- |
@@ -429,7 +472,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 10    | 故障树  | js   | 12   |
 | 合计 |              |      | 84 |
 
-### 8.2 电力图形库
+### 9.2 电力图形库
 
 | 序号 | 类别                   | 格式     | 数量 |
 | ---- | ---------------------- | -------- | ---- |
@@ -454,7 +497,7 @@ video标签支持MP4、WebM、Ogg 三种格式
 | 19   | 国家电网图元规范       | iconfont | 344  |
 | 合计 |                        |          | 1671 |
 
-### 8.3  物联网图形库
+### 9.3  物联网图形库
 
 | 序号 | 类别                                  | 格式     | 数量 |
 | ---- | ------------------------------------- | -------- | ---- |
