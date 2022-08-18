@@ -1,9 +1,23 @@
 # 更新日志
+## 1.1.33 next
 
-## 1.1.32 next
+### Features
+
+### Bug fixes
+
+## 1.1.33
 ### Features
 
 - **新增内置api消息 translatingPens**
+
+
+### Bug fixes
+
+- **lineDash动画修复**
+
+- **默认options配置存入画布数据**
+
+- **节点禁止编辑但可移动**
 
 ## 1.1.32
 ### Features
