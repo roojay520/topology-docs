@@ -53,7 +53,7 @@ Topology 企业版是基于 topology 核心库开发的功能丰富的商用版�
 
 ### 企业图形库
 
-查看  [图形库清单](http://developer.le5le.com/topology-documents/instruction/home.html#_8-%E5%9B%BE%E5%BD%A2%E5%BA%93)
+查看  [图形库清单](http://localhost:3200/tutorial/tuxingku.html)
 
 | 类型                           | 价格    | 说明                         |
 | ------------------------------ | ------- | ---------------------------- |
