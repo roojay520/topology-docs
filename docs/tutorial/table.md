@@ -130,7 +130,7 @@ table 类型控件(table改为table2)
 
 - **数据更新**
 
-更新一个单元格数据。提供如下规则：
+1. 更新一个单元格数据。提供如下规则：
 
 ```js
 topology.setValue({
@@ -141,4 +141,54 @@ topology.setValue({
   });
 ```
 
-除此之外，可以直接更新data(数据)和styles(样式),这种方式会导致子节点的销毁和重新创建;
+2. 更新指定行数据(1.1.35版本及以后)
+
+```js
+const table = {
+  name: 'table2',
+  x:100,
+  y:100,
+  width: 0,
+  height: 0,
+  disableAnchor: true,
+  colWidth: 150,
+  rowHeight: 40,
+  data: [
+    ['X', 'Y', 'Z'],
+    [100, 200, 300],
+    [110, 220, 330],
+    [111, 222, 333],
+  ],
+  styles:[]
+}
+topology.addPen(table);
+
+//table.replaceMode = 0 //0 追加(默认)
+topology.setValue({
+  id:table.id, 
+  dataY: [[1, 2, 3],[11, 22, 33]]
+});
+
+table.replaceMode = 1 //1 替换
+topology.setValue({
+  id:table.id, 
+  dataX: [1,3], //被替代行 行索引
+  dataY: [[1500, 1600, 1700],[1500, 1600, 1700]]
+});
+
+table.replaceMode = 2 //2 替换除首行后所有
+topology.setValue({
+  id:table.id,
+  dataY: [[1500, 1600, 1700],[1600, 1500, 1700]],
+});
+
+//替换所有
+topology.setValue({
+  id:table.id,
+  dataX:['x','y'],  //新首行
+  dataY: [[1500, 1600],[1600, 1500]]
+});
+```
+
+3. 除此之外，可以直接更新data(数据)和styles(样式),这种方式会导致子节点的销毁和重新创建;
+
