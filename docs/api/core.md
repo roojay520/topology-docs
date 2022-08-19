@@ -2172,3 +2172,83 @@ topology.setRule({
 });
 topology.render();
 ```
+
+### getNext
+
+获取当前画笔的所有下一个连接关系
+
+**参数：**  
+
+- pen: [Pen](./pen)  
+  画笔
+
+**返回：**  
+[{
+  from: [Pen](./pen), //该节点      
+  fromAnchor: [Point](./point.md), //该节点的连接锚点     
+  line:[Pen](./pen), //连接线       
+  to: [Pen](./pen), //被连接Pen      
+  toAnchor: [Point](./point.md), //被连接pen的连接锚点    
+},...]
+
+**示例：**
+
+```js
+const pen = topology.findOne('id');
+topology.getNext(pen);
+```
+
+### addAnchor
+
+为画笔添加锚点(包括连线)
+
+**参数：**  
+
+- pen: [Pen](./pen)  
+  画笔
+- anchor: [Point](./point.md)  
+  锚点，可以世界坐标，也可以是相对坐标
+- index:number   
+  添加的位置（连线），可选，默认0
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+const pen = topology.findOne('id');
+topology.addAnchor(pen,{x:0.5,y:0.5,id:'anchor id'});
+
+const line = topology.findOne('id');
+topology.addAnchor(line,{x:200,y:300},-1); //末尾添加
+```
+
+### connectLine
+
+连接两个画笔
+
+**参数：**  
+
+- from: [Pen](./pen)  
+  连接画笔
+- to: [Pen](./pen)  
+  被连接画笔
+- fromAnchor: [Point](./point.md)  
+  连接画笔的连接锚点，可选，默认距离to最近的锚点
+- toAnchor: [Point](./point.md)  
+  被连接画笔的连接锚点，可选，默认距离from最近的锚点
+
+
+**返回：**  
+void
+
+**示例：**
+
+```js
+const from = topology.findOne('from');
+const to = topology.findOne('to');
+topology.connectLine(from,to);
+topology.connectLine(from,to,from.anchors[0],to.anchors[0]);
+topology.connectLine(from,to,from.calculative.worldAnchors[3],to.calculative.worldAnchors[3]);
+```

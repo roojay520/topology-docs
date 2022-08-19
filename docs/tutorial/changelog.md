@@ -3,7 +3,9 @@
 
 ### Features
 
+- **核心库新增三个方法 getNext addAnchor connectLine**
 ### Bug fixes
+
 
 ## 1.1.33
 ### Features
