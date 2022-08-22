@@ -147,7 +147,7 @@ topology.setValue({
 const table = {
   name: 'table2',
   x:100,
-  y:100,
+  y:100,  
   width: 0,
   height: 0,
   disableAnchor: true,
