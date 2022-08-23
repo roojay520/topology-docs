@@ -2657,16 +2657,16 @@ setHover(pen);
 **参数：**
 
 - pen: Pen  
-  画笔, 连接的节点
+  画笔, 连接节点
 
-- lineId: string  
-  连接线的 id
+- anchor: Point  
+  连接节点的连接点
 
-- lineAnchor: string  
-  连接线对应的连接点（Point） id, 即 line.anchors 中的 id
+- line: Pen  
+  连接线
 
-- anchor: string  
-  连接节点的锚点 id , 即 pen.anchors 中的 id
+- lineAnchor: Point  
+  连接线对应的连接点
 
 **示例：**
 
@@ -2682,7 +2682,7 @@ const pen: Pen = {
 };
 topology.addPen(pen);
 // 添加进入画布后，会为 pen 添加 id , anchors
-const anchorId = pen.anchors[1].id;
+const anchorId = pen.anchors[0].id;
 const line: Pen = {
   x: 200,
   y: 150,
@@ -2707,7 +2707,7 @@ const line: Pen = {
   ],
 };
 topology.addPen(line);
-connectLine(pen, line.id, line.anchors[0].id, anchorId);
+connectLine(pen, pen.anchors[0], line, line.anchors[0]);
 line.calculative.active = false;
 topology.canvas.updateLines(pen);
 ```
