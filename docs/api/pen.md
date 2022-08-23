@@ -2771,5 +2771,5 @@ const line: Pen = {
   ],
 };
 topology.addPen(line);
-disconnectLine(pen, line.id, line.anchors[0].id, pen.anchors[0].id);
+disconnectLine(pen, pen.anchors[0], line, line.anchors[0]);
 ```
