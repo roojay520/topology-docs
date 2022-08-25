@@ -2403,7 +2403,7 @@ calcPenRect(pen);
 
 ### scalePen
 
-缩放画笔。仅仅修改世界坐标（临时绘画坐标，不影响原始数据），如果需要配套更新数据，需要调用 topology.canvas.dirtyPenRect(pen)。
+缩放画笔。仅仅修改世界坐标（临时绘画坐标，不影响原始数据），如果需要配套更新数据，需要调用 topology.canvas.updatePenRect(pen)。
 
 **参数：**
 

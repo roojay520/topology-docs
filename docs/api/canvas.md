@@ -52,9 +52,10 @@ topology.canvas.makePen(pen);
 topology.canvas.loadImage(pen);
 ```
 
-### dirtyPenRect
+### updatePenRect
 
 pen 的 rect 有更新，重新计算相关 rect。
+(注：1.1.34版本之前为dirtyPenRect)
 
 **参数：**
 
@@ -73,7 +74,7 @@ pen 的 rect 有更新，重新计算相关 rect。
 **示例：**
 
 ```js
-topology.canvas.dirtyPenRect(pen);
+topology.canvas.updatePenRect(pen);
 
-topology.canvas.dirtyPenRect(pen, true);
+topology.canvas.updatePenRect(pen, true);
 ```
