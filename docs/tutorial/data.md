@@ -413,4 +413,4 @@ topology.addPen(pen);
 
 示例图纸：http://t.le5le.com/?id=629038410d3f8c6ce36e9955
 
-演示视频【绑定变量】：https://www.bilibili.com/video/BV13a411j7hK
+演示视频【绑定变量】：https://www.bilibili.com/video/BV1Yd4y1D7ys?spm_id_from=333.999.0.0
