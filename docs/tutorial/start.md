@@ -196,7 +196,7 @@ export default defineComponent({
 }); <
 ```
 
-**参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/vue
+**参考例子：** https://github.com/le5le-com/topology.js/tree/main/examples/vue
 
 ## 在 React 中使用
 
