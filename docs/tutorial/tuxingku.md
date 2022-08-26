@@ -6,7 +6,6 @@
 
 点击查看：[http://t.le5le.com/](http://t.le5le.com/)
 
-如何搜索：[系统组件](http://developer.le5le.com/topology-documents/instruction/home.html#_7-2-%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6)
 
 ![le5le topology 图形库](/img/tuxingku.png)
 
