@@ -8,7 +8,7 @@
 - **dirtyPenRect重命名为updatePenRect**
 - **locked>=1时，禁止键盘操作**
 
-
+升级变动
 ### Bug fixes
 
 - **dom元素翻转无效**

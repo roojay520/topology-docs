@@ -201,6 +201,10 @@ function getTutorialSidebar() {
           link: "/tutorial/changelog",
         },
         {
+          text: "升级变动",
+          link: "/tutorial/updatelog",
+        },
+        {
           text: "常见问题",
           link: "/tutorial/faq",
         },
