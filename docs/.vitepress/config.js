@@ -5,7 +5,7 @@ module.exports = {
   base: "/",
 
   themeConfig: {
-    logo: "/img/logo.png",
+    logo: "/newlogo.jpg",
 
     algolia: {
       appId: "3UU73GDKU1",
