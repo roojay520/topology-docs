@@ -190,6 +190,12 @@ topology.store.options.minScale = 0;
 topology 是没有预览画布的 api 的，官方仅仅是在一个新的路由（页面），重新 new Topology ，将数据 open ，并 [lock](../api/core.html#lock).   
 也可以有其他的做法，例如不跳新页面，仅仅隐藏除画布以外的内容，并且 lock ，注意此处情况可能带来[鼠标错位](./faq.html#鼠标框选错位)的问题。
 
+## mqtt通信
+
+mqtt支持两种协议，一种是tcp协议（mqtt开头），另一种是websocket协议（ws开头），而浏览器（b/s）只支持ws开头的协议，mqtt开头的协议一般是c/s架构使用，tcp协议和websocket协议的端口也不同，ws开头的协议端口为8083（wss为8084），专业的厂商 [EMQX](http://www.emqx.io/online-mqtt-client) 的产品也是这样做的。
+
+![mqtt通信问题](/img/mqtt_problem.png)
+
 ## 其他问题
 
 其他问题，欢迎联系我们：
