@@ -1,6 +1,25 @@
 # 更新日志
 
-## 1.1.34 next
+## 1.1.38 next
+
+
+## 1.1.38
+
+### Bug fixes
+
+- **组合节点鼠标经过时，右击误删节点问题**
+- **聚焦画布时允许粘贴复制的图片**
+
+### Features
+
+- **gif添加zIndex字段控制层级**
+
+## 1.1.36
+
+### Bug fixes
+
+- **table缩放后复制粘贴问题**
+## 1.1.35 
 
 ### Features
 
@@ -8,7 +27,6 @@
 - **dirtyPenRect重命名为updatePenRect**
 - **locked>=1时，禁止键盘操作**
 
-升级变动
 ### Bug fixes
 
 - **dom元素翻转无效**
