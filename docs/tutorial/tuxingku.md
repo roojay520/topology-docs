@@ -55,48 +55,47 @@
 | 序号 | 类别                                  | 格式     | 数量 |
 | ---- | ------------------------------------- | -------- | ---- |
 | 1    | 云                                    | js       | 313  |
-| 2    | 工业物联网                            | js       | 2    |
-| 3    | 网络设备                              | js       | 81   |
-| 4    | 电子产品                              | js       | 147  |
-| 5    | 楼宇                                  | js       | 37   |
-| 6    | 物联网未分类                          | js       | 35   |
-| 7    | Iot-MNMS（移动网管域）                | svg      | 6    |
-| 8    | City（城市）                          | svg      | 21   |
-| 9    | Iot-pump（泵）                        | svg、gif | 40   |
-| 10   | Iot-HVAC（暖通空调）                  | svg、gif | 35   |
-| 11   | Iot-waste water treatment（废水处理） | svg、gif | 129  |
-| 12   | Iot-Boilers（锅炉）                   | svg      | 21   |
-| 13   | Iot-process heating（制程加热）       | svg      | 20   |
-| 14   | Weather（天气）                       | svg      | 51   |
-| 15   | Iot-Labortory（实验室）               | svg      | 19   |
-| 16   | 鞋子专属定制                          | svg      | 9    |
-| 17   | 2.5D Room（2.5D 房间）                | svg      | 16   |
-| 18   | Iot-logistics（物流）                 | svg      | 35   |
-| 19   | Iot-water tank（水槽）                | svg      | 95   |
-| 20   | Iot-Food（食品）                      | svg      | 60   |
-| 21   | Iot-building（建筑）                  | svg      | 9    |
-| 22   | Iot-machining（机器）                 | svg      | 60   |
-| 23   | Iot-CONTAINERS（容器）                | svg      | 14   |
-| 24   | Iot-light（灯）                       | svg      | 18   |
-| 25   | Iot-PIPES（管道）                     | svg      | 21   |
-| 26   | Iot-valve symbols（阀门符号）         | svg      | 32   |
-| 27   | Iot-WIRE（电线电缆）                  | svg      | 13   |
-| 28   | Iot-Material Handing（物料运输）      | svg      | 55   |
-| 29   | Iot-Flow Meters（流量计）             | svg      | 24   |
-| 30   | Iot-buttom（按钮）                    | svg      | 40   |
-| 31   | Iot-MIXERS（搅拌器）                  | svg      | 21   |
-| 32   | Iot-process cooling（制程冷却）       | svg      | 22   |
-| 33   | Iot-SAFETY（安全）                    | svg      | 27   |
-| 34   | Iot-Chemical（化学）                  | svg      | 36   |
-| 35   | Iot-power（电源）                     | svg      | 58   |
-| 36   | Iot-valve（阀门）                     | svg      | 20   |
-| 37   | Iot-Plant Facilities（工厂设施）      | svg      | 36   |
-| 38   | Iot-Meter（仪表）                     | svg      | 12   |
-| 39   | Iot-Motors（发动机）                  | svg      | 18   |
-| 40   | Iot-Computer Keys（电脑按键）         | svg      | 94   |
-| 41   | Iot-Blowers（鼓风机）                 | svg、gif | 18   |
-| 42   | 大屏可视化                            | svg      | 19   |
-| 合计 |                                       |          | 1839 |
+| 2    | 网络设备                              | js       | 81   |
+| 3    | 电子产品                              | js       | 147  |
+| 4    | 楼宇                                  | js       | 37   |
+| 5    | 物联网未分类                          | js       | 35   |
+| 6    | Iot-MNMS（移动网管域）                | svg      | 6    |
+| 7    | City（城市）                          | svg      | 21   |
+| 8    | Iot-pump（泵）                        | svg、gif | 40   |
+| 9   | Iot-HVAC（暖通空调）                  | svg、gif | 35   |
+| 10   | Iot-waste water treatment（废水处理） | svg、gif | 129  |
+| 11   | Iot-Boilers（锅炉）                   | svg      | 21   |
+| 12   | Iot-process heating（制程加热）       | svg      | 20   |
+| 13   | Weather（天气）                       | svg      | 51   |
+| 14   | Iot-Labortory（实验室）               | svg      | 19   |
+| 15   | 鞋子专属定制                          | svg      | 9    |
+| 16   | 2.5D Room（2.5D 房间）                | svg      | 16   |
+| 17   | Iot-logistics（物流）                 | svg      | 35   |
+| 18   | Iot-water tank（水槽）                | svg      | 95   |
+| 19   | Iot-Food（食品）                      | svg      | 60   |
+| 20   | Iot-building（建筑）                  | svg      | 9    |
+| 21   | Iot-machining（机器）                 | svg      | 60   |
+| 22   | Iot-CONTAINERS（容器）                | svg      | 14   |
+| 23   | Iot-light（灯）                       | svg      | 18   |
+| 24   | Iot-PIPES（管道）                     | svg      | 21   |
+| 25   | Iot-valve symbols（阀门符号）         | svg      | 32   |
+| 26   | Iot-WIRE（电线电缆）                  | svg      | 13   |
+| 27   | Iot-Material Handing（物料运输）      | svg      | 55   |
+| 28   | Iot-Flow Meters（流量计）             | svg      | 24   |
+| 29   | Iot-buttom（按钮）                    | svg      | 40   |
+| 30   | Iot-MIXERS（搅拌器）                  | svg      | 21   |
+| 31   | Iot-process cooling（制程冷却）       | svg      | 22   |
+| 32   | Iot-SAFETY（安全）                    | svg      | 27   |
+| 33   | Iot-Chemical（化学）                  | svg      | 36   |
+| 34   | Iot-power（电源）                     | svg      | 58   |
+| 35   | Iot-valve（阀门）                     | svg      | 20   |
+| 36   | Iot-Plant Facilities（工厂设施）      | svg      | 36   |
+| 37   | Iot-Meter（仪表）                     | svg      | 12   |
+| 38   | Iot-Motors（发动机）                  | svg      | 18   |
+| 39   | Iot-Computer Keys（电脑按键）         | svg      | 94   |
+| 40   | Iot-Blowers（鼓风机）                 | svg、gif | 18   |
+| 41   | 大屏可视化                            | svg      | 19   |
+| 合计 |                                       |          | 1837 |
 
 开始设计： http://t.le5le.com/
 
