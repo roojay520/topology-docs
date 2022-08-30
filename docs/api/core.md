@@ -186,7 +186,7 @@ topology.addPen([pen, pen2], true);
   时间的毫秒数 或 是否脏  
   可为空 - 表示当前时间，下一个绘画周期重绘  
   true - 于空完全相同  
-  false - 且 topology.canvas.dirty 为 true 时，在下一个绘画周期重绘。常用在不确定是否需要重绘时使用，例如说本次修改数据可能需要重绘时，在可能的情况下将 (topology.canvas.dirty = true) ，再执行 topology.render(false) ，这样不会导致非重绘的情况也重绘。
+  false - 且 topology.canvas.dirty(1.1.35及以后版本dirty重命名为patchFlags) 为 true 时，在下一个绘画周期重绘。常用在不确定是否需要重绘时使用，例如说本次修改数据可能需要重绘时，在可能的情况下将 (topology.canvas.dirty = true) ，再执行 topology.render(false) ，这样不会导致非重绘的情况也重绘。
   number - 不推荐使用 number
 
   主要用于避免一帧内，多次频繁调用 render 带来不必要的绘画开销

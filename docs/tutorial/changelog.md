@@ -4,13 +4,17 @@
 
 ### Features
 
+- **dirty重命名为patchFlags**
+- **dirtyPenRect重命名为updatePenRect**
+- **locked>=1时，禁止键盘操作**
 
+升级变动
 ### Bug fixes
 
 - **dom元素翻转无效**
 - **播放下一个video无效**
 - **slider图元文字宽度和进度高度无效**
-- 
+- **处理了表单中表格、单选和多选添加偶发添加不上的问题**
 ## 1.1.34
 
 ### Features
@@ -315,7 +319,7 @@
 
 - **movedActivePens 方法内，单独处理 dirtyLines**
 
-  movedActivePens 方法内的 updateLines 执行的晚，导致 line 的 calculative 可能不正确，方法内再单独处理 dirtyLines 。
+  movedActivePens 方法内的 updateLines 执行的晚，导致 line 的 calculative 可能不正确，方法内再单独处理 dirtyLines（1.1.35及以后版本，方法重命名为patchFlagsLines） 。
 
 - **setValue, updateValue 更改坐标不再需要传 x,y,width,height 四个值**
 

@@ -5,7 +5,7 @@ module.exports = {
   base: "/",
 
   themeConfig: {
-    logo: "/img/logo.png",
+    logo: "/newlogo.jpg",
 
     algolia: {
       appId: "3UU73GDKU1",
@@ -199,6 +199,10 @@ function getTutorialSidebar() {
         {
           text: "更新日志",
           link: "/tutorial/changelog",
+        },
+        {
+          text: "升级变动",
+          link: "/tutorial/updatelog",
         },
         {
           text: "常见问题",
