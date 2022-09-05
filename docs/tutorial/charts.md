@@ -494,21 +494,21 @@ topology.setValue({
 topology.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
-  dataY: [[50, 60],[60, 50],[50, 60]],
+  dataY: [[50, 60],[60, 50],[50, 60]], //三组数据
 });
 
 histogram.replaceMode = 1 //1 替换
 topology.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
-  dataY: [[150, 160],[160, 150],[150, 160]],
+  dataY: [[150, 160],[160, 150],[150, 160]],//三组数据
 });
 
 histogram.replaceMode = 2 //2 替换所有
 topology.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
-  dataY: [[150, 160],[160, 150],[150, 160]],
+  dataY: [[150, 160],[160, 150],[150, 160]], //三组数据
 });
 
 /*
