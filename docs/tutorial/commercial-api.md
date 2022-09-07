@@ -177,7 +177,7 @@ sort - 排序
 }  
 ```
 
-#### [POST] /api/user/topology 保存图纸或自定义组件
+#### [POST] /api/user/topology 新增图纸或自定义组件
 
 **body：图纸json，画布data**
 
@@ -262,6 +262,9 @@ sort - 排序
 }
 ```
 
+#### [PUT] /api/user/topology 修改图纸或自定义组件
+
+**body：图纸json，画布data（同新增）**
 #### [DELETE] /api/user/topology/:id 删除指定 图纸 或 组件
 
 #### [POST] /api/user/folder 设置/新增/修改用户文件夹
