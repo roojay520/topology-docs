@@ -4,6 +4,8 @@ topology 支持 mqtt、websocket 和 http 轮询 3 种方式进行实时数据�
 
 <div style="color:#fa541c">如果配置过 mqtt 或 websocket 或 http，下次打开时，会自动连接。</div>
 
+注意：浏览器（b/s）只支持ws（wss）开头的协议，更多:[mqtt通信](faq.md#mqtt通信)
+
 ## MQTT
 
 1. 设置 mqtt 连接
@@ -208,7 +210,7 @@ topology.websocket.send("data");
 
 3. 服务器发送数据
 
-- 这里推荐使用国产开源 [emqx mqtt 服务器](http://tools.emqx.io/),MQTT url 地址可填写：ws://broker.emqx.io:8083/mqtt
+- 这里推荐使用国产开源 [emqx mqtt 服务器](http://tools.emqx.io/),MQTT url 地址可填写：wss://broker.emqx.io:8084/mqtt
 
 - [websocket 简单测试服务器](https://github.com/le5le-com/websocket-test-node)
 
