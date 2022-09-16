@@ -350,6 +350,44 @@ folder: "所属文件夹名"
 image: "/image/a.jpeg"
 ​
 
+#### [GET] /api/device/data/tree 获取待绑定的变量数据
+
+**返回：**
+
+```json
+[{"children":[
+  {"children":[
+    {"id":"d-1-a-001","name":"车辆"},
+    {"id":"d-1-a-002","name":"访客"}
+    ],
+    "id":"device-001-a",
+    "name":"园区大门"
+  },
+  {
+    //...
+  }],
+  "id":"device-001",
+  "name":"新智慧园区"
+},{
+    //...
+  }]
+
+```
+
+#### [GET] /api/device/data 获取绑定变量推送的数据
+
+**返回：**
+
+```json
+[
+  {"dataId": "device-001", "value": 71},
+  {"dataId": "device-001-a", "value": 21},
+  {
+    //...
+  }
+]
+```
+
 # 数据库结构说明
 
 数据库表主要涉及：
