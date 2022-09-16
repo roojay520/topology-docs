@@ -51,7 +51,7 @@ topology.off('event', fn);
 | rotatePens          | Pen[]        | 画笔被旋转                       |
 | translatePens       | Pen[]        | 移动画笔结束                      |
 | translatingPens     | Pen[]        | 移动画笔中                         |
-| click               | Point & Pen  | 点击，鼠标右键 up                |
+| click               | Point & Pen  | 点击，鼠标左击 up                |
 | mousedown           | Point & Pen  | 鼠标 down                    |
 | dblclick            | Point & Pen  | 双击                             |
 | animateEnd          |              | 单个画笔动画播放完成             |

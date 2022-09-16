@@ -172,19 +172,18 @@ sort - 排序
       "updatedAt": "2021-03-09T22:14:47.825+08:00",
       "deletedAt": "0001-01-01T00:00:00Z",
       "componentDatas": [],     // 新版本 1.0 组件内容
-      "componentData": {},      // 老版本组件内容
     }
   ]
 }  
 ```
 
-#### [POST] /api/user/topology 保存图纸或自定义组件
+#### [POST] /api/user/topology 新增图纸或自定义组件
 
 **body：图纸json，画布data**
 
 ```json
 // 保存 图纸
-// topology.pureData()内容，1.0 版本 topology.data()
+// topology.data()
 {
   folder: "123" //文件名
   fromArrow: "" //默认起始箭头,
@@ -232,18 +231,12 @@ sort - 排序
 	socketCbJs: "" //消息通信回调函数 js 代码
 	http: "" //http请求地址
 	httpTimeInterval:1000 //http请求频率
-  socketEvent: false //老版本 是否监听自定义的socket消息
-  bkColor: "" //老版本 背景颜色
-  bkImageRect: {} //老版本 背景图片范围
-  bkImageStatic: false //老版本 背景是否跟着移动
-  componentData: {} //老版本 如果为 “我创建的”组件，则为复合组件内容
 }
 
 // 保存 自定义组件
 {
   component: true //图纸类型
   componentDatas: [...] ////复合组件内容
-  componentData: {},   // 老版本复合组件内容
   folder: "a-12" //文件名
   fromArrow: "" //默认起始箭头
 	image: "/image/topology/...."     // 缩略图
@@ -269,6 +262,9 @@ sort - 排序
 }
 ```
 
+#### [PUT] /api/user/topology 修改图纸或自定义组件
+
+**body：图纸json，画布data（同新增）**
 #### [DELETE] /api/user/topology/:id 删除指定 图纸 或 组件
 
 #### [POST] /api/user/folder 设置/新增/修改用户文件夹

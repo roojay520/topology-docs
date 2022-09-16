@@ -1,6 +1,29 @@
 # 更新日志
 
-## 1.1.34 next
+## 1.2.1 next
+
+## 1.2.1
+
+### Bug fixes
+
+- **输入框（可编辑div）粘贴样式文本内容bug**
+- **图元宽高设置很小无法选中bug**
+- **完善connectLine方法**
+- **锁定画布后移动dom节点闪动bug**
+## 1.2.0
+
+### Bug fixes
+
+- **组合节点的旋转优化**
+- **复制粘贴问题优化**
+- **form表单中图元优化**
+- **画笔事件优化**
+
+### Features
+
+- **gif添加zIndex字段控制层级**
+
+## 1.1.35 
 
 ### Features
 
@@ -8,7 +31,6 @@
 - **dirtyPenRect重命名为updatePenRect**
 - **locked>=1时，禁止键盘操作**
 
-升级变动
 ### Bug fixes
 
 - **dom元素翻转无效**

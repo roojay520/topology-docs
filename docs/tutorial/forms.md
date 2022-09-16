@@ -17,7 +17,8 @@ topology.registerCanvasDraw(formPens());
 | direction      | string   | 单选框的排列方向('vertical'\|'horizontal')                                                                                                                                                    |
 | optionInterval | number   | 单选框选项间的间距（默认 20，仅针对垂直分布）                                                                                                                                                 |
 | optionHeight   | number   | 单选框所占高度（默认 20，仅针对垂直分布）                                                                                                                                                     |
-| options        | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>} |
+| checked   | string   | 选中项（与text对应）                                                                                                                                                  |
+| options        | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>} |
 
 - **使用**
 
@@ -29,10 +30,11 @@ const radio = {
   width: 150,
   height: 100,
   direction: "vertical",
+  checked: '选项二',
   options: [
-    { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00", isChecked: true },
-    { text: "谷物", background: "#0000ff", isForbidden: true },
+    { text: "选项一", background: "#ff0000" },
+    { text: "选项二", background: "#00ff00" },
+    { text: "选项三", background: "#0000ff", isForbidden: true },
   ],
 };
 
@@ -41,14 +43,15 @@ topology.addPens([radio]);
 
 ## checkbox 复选框
 
+1.2.0 版本以后，复选框重构了。
+
 - **数据**
 
 | 名称           | 类型     | 描述                                                                                                                                                                                          |
 | -------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| direction      | string   | 复选框的排列方向('vertical'\|'horizontal')                                                                                                                                                    |
-| optionInterval | number   | 单选框选项间的间距（默认 20，仅针对垂直分布）                                                                                                                                                 |
-| optionHeight   | number   | 单选框所占高度（默认 20，仅针对垂直分布）                                                                                                                                                     |
-| options        | object[] | 选项值，格式：<br/>{<br/> &nbsp;&nbsp;text:string,//显示文本<br/> &nbsp;&nbsp;isChecked:boolean,//是否选中<br/> &nbsp;&nbsp;isForbidden:boolean,//是否禁用<br/> &nbsp;&nbsp;...样式属性<br/>} |
+| isForbidden      | boolean   | 是否禁用                                                                                                                                                   |
+| checked | boolean   | 是否选中                                                                                                                           |
+| value   | string   | 选项值 |
 
 - **使用**
 
@@ -57,14 +60,11 @@ const checkbox = {
   name: "checkbox",
   x: 100,
   y: 100,
-  width: 150,
-  height: 100,
-  direction: "vertical",
-  options: [
-    { text: "水果", background: "#ff0000" },
-    { text: "蔬菜", background: "#00ff00", isChecked: true },
-    { text: "谷物", background: "#0000ff", isForbidden: true },
-  ],
+  width: 30,
+  height: 30,
+  checked: true,
+  // isForbidden: true,
+  value: '选项一',
 };
 
 topology.addPens([checkbox]);

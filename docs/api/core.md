@@ -2238,10 +2238,12 @@ topology.addAnchor(line,{x:200,y:300},-1); //末尾添加
   连接画笔的连接锚点，可选，默认距离to最近的锚点
 - toAnchor: [Point](./point.md)  
   被连接画笔的连接锚点，可选，默认距离from最近的锚点
-
+- render:[boolean]
+  是否触发重绘，默认是。（1.2.1版本以后)
 
 **返回：**  
-void
+- line:[Pen](./pen)
+  两个画笔的连线，（1.2.1版本以后)
 
 **示例：**
 
