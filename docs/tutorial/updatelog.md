@@ -9,7 +9,7 @@
 
 - **1.2.1版本及以后，window更改为globalThis，事件行为中枚举变量名WindowFn重命名为 GlobalFn**
 
-- **1.2.2版本以后，_setValue方式将逐渐不再使用（但任然兼容），setValue引入了doEvent参数替代**
+- **1.2.2版本以后，_setValue方式将逐渐不再使用（但任然兼容），[setValue](./../api/core.md#setvalue)引入了doEvent参数替代**
 
 ## 图形库
 

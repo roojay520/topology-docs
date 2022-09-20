@@ -1323,10 +1323,15 @@ topology.closeMqtt();
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
 
-- { render: boolean = true }  
+- { render: boolean = true, 
+    history: boolean = true,
+    doEvent: boolean = false}  
   命名参数，参照下方示例  
-  更改数据后是否重新渲染画布  
+  1. render:更改数据后是否重新渲染画布  
   默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render()
+  2. history:是否将值变化添加到历史记录
+  3. doEvent:值变化是否触发画笔事件执行
+
 
 **返回：**  
 void
@@ -1354,6 +1359,7 @@ topology.render();
 ### _setValue
 
 同 setValue ，不同在于 不触发对应画笔们的值变化事件。 并且 _setValue 不会执行 render() 方法。
+注意：1.2.2版本后，该方法将不再被使用。
 
 ### updateValue
 
