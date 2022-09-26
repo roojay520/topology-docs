@@ -1322,6 +1322,7 @@ topology.closeMqtt();
 
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
+  1.2.5 版本及以后，新增dataId 方式修改绑定变量的值,详见下方示例。
 
 - { render: boolean = true, 
     history: boolean = true,
@@ -1353,6 +1354,13 @@ for (const pen of pens) {
   topology.setValue({ id: pen.id, text: 'new text' }, { render: false });
 }
 topology.render();
+
+/*
+1.2.5 版本及以后
+1.属性绑定变量
+2.topology.initBindDatas(); 
+*/
+topology.setValue({dataId:'d-1-a-001',value:20});
 ```
 
 

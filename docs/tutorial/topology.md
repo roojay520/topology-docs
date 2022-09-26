@@ -124,6 +124,7 @@ onTouchstart = (e) => {
 | dragAllIn           | boolean     | 框选画笔时，是否需要全部在框选区域内               |
 | scroll              | boolean     | 默认是否显示滚动条。与默认缩放互斥                 |
 | defaultAnchors   | [Point](../api/point.md)[]     | 默认图形的默认锚点，例如：正方形等。                 |
+|moveConnectedLine | boolean| 是否允许拖动连接线 |
 
 ### 默认值
 ```ts
