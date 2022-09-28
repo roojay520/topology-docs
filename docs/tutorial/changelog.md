@@ -1,6 +1,23 @@
 # 更新日志
 
-## 1.2.next
+
+## 1.2.5 next
+### Features
+
+
+### Bug fixes
+
+
+## 1.2.5
+
+### Features
+- **新增了[setDatas](./../api/core.md#setdatas)方法**
+- 
+### Bug fixes
+
+- **优化了复制粘贴**
+- **优化了setValue方法**
+
 
 ## 1.2.4
 

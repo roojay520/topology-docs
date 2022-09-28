@@ -1369,6 +1369,35 @@ topology.setValue({dataId:'d-1-a-001',value:20});
 同 setValue ，不同在于 不触发对应画笔们的值变化事件。 并且 _setValue 不会执行 render() 方法。
 注意：1.2.2版本后，该方法将不再被使用。
 
+
+### setDatas
+1.2.5 版本及以后,通过dataId的方式（绑定变量），修改 [Pen](./pen) 属性值
+
+**参数：**
+
+- datas: { dataId: string; value: any }[]  
+  dataId 绑定的变量
+  value 更新的数据
+
+- { render: boolean, 
+    history: boolean ,
+    doEvent: boolean}  
+  使用方式同setValue
+
+
+**示例：**
+
+```js
+
+/*
+1.2.5 版本及以后
+1.属性绑定变量
+2.topology.initBindDatas(); 
+*/
+topology.setDatas([{dataId:'d-1-a-001',value:20}]);
+```
+
+
 ### updateValue
 
 修改 [Pen](./pen) 属性值  
