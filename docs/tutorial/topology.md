@@ -106,7 +106,6 @@ onTouchstart = (e) => {
 | disableScale        | boolean     | 禁止画布缩放                                       |
 | disableTranslate    | boolean     | 禁止画布移动                                       |
 | disableDockLine     | boolean     | 取消辅助线                                         |
-| rightMouseTranslate | boolean     | 禁止右键拖拽画布                                   |
 | minScale            | number      | 画布最小缩放比例                                   |
 | maxScale            | number      | 画布最大缩放比例                                   |
 | keydown             | KeydownType | 快捷键监听对象，默认 document；-1 不监听快捷键，需在 Topology 初始化时配置 |
@@ -125,6 +124,8 @@ onTouchstart = (e) => {
 | scroll              | boolean     | 默认是否显示滚动条。与默认缩放互斥                 |
 | defaultAnchors   | [Point](../api/point.md)[]     | 默认图形的默认锚点，例如：正方形等。                 |
 |moveConnectedLine | boolean| 是否允许拖动连接线 |
+|mouseRightActive | boolean| 是否允许右键选中节点，默认true允许 |
+|disableClipboard | boolean| 是否禁止系统剪切板，默认false不禁止 |
 
 ### 默认值
 ```ts
