@@ -4,7 +4,9 @@ topology 支持 mqtt、websocket 和 http 轮询 3 种方式进行实时数据�
 
 <div style="color:#fa541c">如果配置过 mqtt 或 websocket 或 http，下次打开时，会自动连接。</div>
 
-注意：浏览器（b/s）只支持ws（wss）开头的协议，更多:[mqtt通信](faq.md#mqtt通信)
+::: tip 注意
+浏览器（b/s）只支持ws（wss）开头的协议，更多:[mqtt通信](faq.md#mqtt通信)
+:::
 
 ## MQTT
 

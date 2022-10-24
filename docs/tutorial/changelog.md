@@ -1,10 +1,46 @@
 # 更新日志
 
-## 1.2.2 next
+
+## 1.2.5 next
+### Features
+
+
+### Bug fixes
+
+
+## 1.2.5
+
+### Features
+- **新增了[setDatas](./../api/core.md#setdatas)方法**
+- 
+### Bug fixes
+
+- **优化了复制粘贴**
+- **优化了setValue方法**
+
+
+## 1.2.4
+
+### Features
+
+- **拖拽polyline锚点体验优化**
+- **新增锚点连接方向和禁用选项** 
+- **新增连接到节点的连线是否允许拖拽选项** 
+
+### Bug fixes
+
+- **修复了destory函数全局变量共享bug**
+
+
+- **格式刷**
+## 1.2.3
 
 ### Bug fixes
 
 - **修复了组合的bug**
+- **优化了组合节点动画**
+- **修复了从title离开节点bug**
+- **修复了文本/icon对齐bug**
 
 ### Features
 
