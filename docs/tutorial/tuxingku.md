@@ -48,7 +48,10 @@
 | 17   | 液压符号               | js       | 245  |
 | 18   | 电气工程常用字母和符号 | iconfont | 578  |
 | 19   | 国家电网图元规范       | iconfont | 344  |
-| 合计 |                        |          | 1671 |
+| 19   | SVG国家电网       | svg | 272  |
+| 19   | SVG电气工程       | svg | 603  |
+
+| 合计 |                        |          | 2553 |
 
 ### 1.3 物联网图形库
 
@@ -111,7 +114,5 @@
 
 
 开始设计： http://t.le5le.com/
-
-快捷键：http://developer.le5le.com/tutorial/keyboards.html
 
 解决方案：http://topology.le5le.com/search
