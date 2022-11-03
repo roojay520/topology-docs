@@ -196,6 +196,26 @@ mqtt支持两种协议，一种是tcp协议（mqtt开头），另一种是websoc
 
 ![mqtt通信问题](/img/mqtt_problem.png)
 
+## 多画布使用
+
+```js
+// 多个Topology实例
+
+topology1 = new Topology()
+topology2 = new Topology()
+...
+
+// 或  
+new Topology();
+topology1 = topology;
+new Topology();
+topology2 = topology;
+
+// js脚本中，不能再简单直接的使用(window下的)topology了，而是根据情况用topology1或2
+```
+
+**参考例子：** https://github.com/le5le-com/topology.js/blob/main/examples/vue/src/components/TopologyTwo.vue
+
 ## 其他问题
 
 其他问题，欢迎联系我们：
