@@ -1,13 +1,24 @@
 # 更新日志
 
-
-## 1.2.5 next
+## 1.2.14 next
 ### Features
 
 
 ### Bug fixes
 
+## 1.2.14
+### Features
 
+- **更改了几个快捷键的使用方式，更多查看[快捷键更改](./keyboards.md)**
+- **添加了“发送变量数据”和“发送属性数据”两个事件行为**
+- **http新增请求头配置**
+- **完善了echarts、下拉框的适配**
+- **locked新增了DisableScale、DisableMoveScale两项**
+
+### Bug fixes
+
+- **修复了echarts框选错位的bug**
+- **修复了gif缩放后获取不到的bug**
 ## 1.2.5
 
 ### Features
