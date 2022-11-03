@@ -310,9 +310,18 @@
 
 案例：连线动画常常用于展示管道水流/能源等流动方向
 
-![le5le topology 连线动画案例](/img/lianxiandonghuaanli.gif)
+![le5le topology 连线动画案例](/img/lianxiandonghuaanli.gif)    
 
-案例地址：https://t.le5le.com/?id=63071758288d77e4cee19a6f  
+案例地址：https://t.le5le.com/?id=63071758288d77e4cee19a6f      
+
+
+案例：弯曲的管道连线动画
+
+![le5le topology 连线动画案例](/img/wanquguandao.gif)    
+
+
+案例地址：https://t.le5le.com/?id=6357aafad44b9402de84d2ea    
+
 
 
 ### **4.3 鼠标提示**
