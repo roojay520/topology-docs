@@ -1323,7 +1323,7 @@ topology.closeMqtt();
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
   1.2.5 版本及以后，新增dataId 方式修改绑定变量的值,详见下方示例。
-
+  1.2.15 版本及以后，当data.id为图纸id(topology.store.data.id)的时候,该方法表示修改topology.store.data属性
 - { render: boolean = true, 
     history: boolean = true,
     doEvent: boolean = false}  

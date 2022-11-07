@@ -155,6 +155,10 @@ topology.socketFn = (message, topic) => {
   // Do sth
 
   topology.setValue(pen);
+  
+  //1.2.15版本以后
+  //return false; //表示仅执行自定义的回调函数方法
+  //return true; //表示除了执行自定义的回调方法外，还会执行核心库方法
 };
 
 // 方式2：socket回调函数js保存到图纸数据
@@ -165,6 +169,10 @@ data.socketCbJs = `
   constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
+  
+  //1.2.15版本以后
+  //return false; //表示仅执行自定义的回调函数方法
+  //return true; //表示除了执行自定义的回调方法外，还会执行核心库方法
 `;
 // 自动监听
 topology.open(data);
@@ -176,6 +184,10 @@ topology.store.data.socketCbJs = `
   constole.log(e, topic);
   // Do sth.
   topology.setValue(pen);
+
+  //1.2.15版本以后
+  //return false; //表示仅执行自定义的回调函数方法
+  //return true; //表示除了执行自定义的回调方法外，还会执行核心库方法
 `;
 // 手动监听
 topology.listenSocket();
