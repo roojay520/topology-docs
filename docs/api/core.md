@@ -1317,6 +1317,7 @@ topology.closeMqtt();
 ### setValue
 
 修改 [Pen](./pen) 属性值, 触发对应画笔们的值变化事件。（若想要不触发值变化事件使用 _setValue）
+1.1.15 版本以后，如果如果存在data.id并且id等于画布id(topology.store.data.id),则表示修改画布的options属性。
 
 **参数：**
 
@@ -1330,8 +1331,8 @@ topology.closeMqtt();
   命名参数，参照下方示例  
   1. render:更改数据后是否重新渲染画布  
   默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render()
-  2. history:是否将值变化添加到历史记录
-  3. doEvent:值变化是否触发画笔事件执行
+  1. history:是否将值变化添加到历史记录
+  2. doEvent:值变化是否触发画笔事件执行
 
 
 **返回：**  

@@ -1,10 +1,22 @@
 # 更新日志
 
-## 1.2.14 next
+## 1.2.15 next
 ### Features
 
 
 ### Bug fixes
+## 1.2.15 
+### Features
+
+- **添加了图片切换动画**
+- **统一了部分快捷键，更多查看[快捷键更改](./keyboards.md)**
+- **setValue支持设置背景图片、背景颜色等画布选项**
+
+
+### Bug fixes
+
+- **修复了一些z-index带来的一些样式bug**
+
 
 ## 1.2.14
 ### Features
