@@ -171,9 +171,9 @@ const pen2 = {
   height: 100,
 };
 
-topology.addPen([pen, pen2]);
+topology.addPens([pen, pen2]);
 
-topology.addPen([pen, pen2], true);
+topology.addPens([pen, pen2], true);
 ```
 
 ### render
