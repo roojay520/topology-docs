@@ -216,6 +216,22 @@ topology2 = topology;
 
 **参考例子：** https://github.com/le5le-com/topology.js/blob/main/examples/vue/src/components/TopologyTwo.vue
 
+
+## echrts节点的tooltip被其他eharts节点覆盖
+
+![echarts tooltip被覆盖问题](../public/img/echarts_tooltip_bug.png)
+
+如图所示，节点2的tooltip被节点1覆盖<br/>
+原因：echarts的父元素设置了transform导致层叠规则的改变,子元素设置z-index对其他层级无效。<br/>
+解决方案：在index.html中添加如下代码,取消单独分层。缺点：导致该echarts dom元素无法和该节点框同步旋转。
+```css
+<style>
+  div[_echarts_instance_]{
+      transform: none !important;
+  }
+</style>
+```
+
 ## 其他问题
 
 其他问题，欢迎联系我们：
