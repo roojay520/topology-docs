@@ -33,6 +33,7 @@ module.exports = {
       //   link: '/videos/home',
       //   activeMatch: '^/videos/',
       // },
+      { text: "3D", link: "/3d/index", activeMatch: "^/3d/" },
       {
         text: "资源",
         link: "/awesome/home",
@@ -132,6 +133,7 @@ module.exports = {
     sidebar: {
       "/tutorial/": getTutorialSidebar(),
       "/api/": getAPISidebar(),
+      "/3d/": get3DSidebar(),
       "/videos/": [
         {
           text: "视频教程",
@@ -292,6 +294,38 @@ function getAPISidebar() {
         { text: "Point", link: "/api/point" },
         { text: "Layout", link: "/api/layout" },
         { text: "Utils", link: "/api/utils" },
+      ],
+    },
+  ];
+}
+
+function get3DSidebar() {
+  return [
+    {
+      text: "可视化平台",
+      children: [
+        {
+          text: '指引',
+          children: [
+            { text: '介绍', link: '/3d/editor/guide/introduction' },
+            { text: '第一个项目', link: '/3d/editor/guide/firstProject' },
+            { text: '设置事件', link: '/3d/editor/guide/setEvents' },
+            { text: '设置动画', link: '/3d/editor/guide/setAnimations' },
+            { text: '设置动态数据', link: '/3d/editor/guide/setDynamicDatas' },
+            { text: '设置自定义数据', link: '/3d/editor/guide/setCustomDatas' },
+          ]
+        },
+        {
+          text: '深入', children: [
+            { text: '项目', link: '/3d/editor/deep-dive/project' },
+          ]
+        },
+      ],
+    },
+    {
+      text: "核心库",
+      link: '/3d/meta3d/index',
+      children: [
       ],
     },
   ];
