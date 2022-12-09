@@ -55,7 +55,7 @@ module.exports = {
             link: "http://111.172.231.243:7800/",
           },
           {
-            text: "物联平台",
+            text: "乐吾乐 物联平台",
             link: "http://iot.demo.le5le.com/",
           },
           // {
@@ -158,7 +158,7 @@ function getTutorialSidebar() {
     {
       text: "使用",
       children: [
-        { text: "Meta2d介绍", link: "/tutorial/introduction" },
+        { text: "2D可视化介绍", link: "/tutorial/introduction" },
         {
           text: "快速上手",
           link: "/tutorial/start",
@@ -186,7 +186,7 @@ function getTutorialSidebar() {
           // ],
         },
         {
-          text: "图形库",
+          text: "企业图形库清单",
           // link: "/instruction/home.html#_8-图形库",
           link: "/tutorial/tuxingku",
         },
