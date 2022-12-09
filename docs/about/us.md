@@ -25,7 +25,7 @@
 
 | 产品 |         | 体验地址 |  
 | ---- | ------------ | ---- | 
-| 乐吾乐 Meta2d 1.0    | 开始设计     | http://t.le5le.com/  | 
+| 乐吾乐 2D可视化    | 开始设计     | http://t.le5le.com/  | 
 |     | 开源地址       | Github：https://github.com/le5le-com/meta2d.js  <br/>  Gitee：  https://gitee.com/le5le/meta2d.js| 
 |    | 官方文档         | http://developer.le5le.com/  | 
 | 乐吾乐物联平台   | 体验地址       | http://iot.demo.le5le.com/| 
