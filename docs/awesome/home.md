@@ -19,7 +19,7 @@
 
 ## 官方示例
 
-[Meta2d 官网在线使用](https://2ds.le5le.com/)
+[乐吾乐2D可视化组态软件 官网在线使用](https://2ds.le5le.com/)
 
 [ES5 示例](https://github.com/le5le-com/meta2d.js/tree/master/examples/es5)
 
