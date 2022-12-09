@@ -1,6 +1,6 @@
-# 乐吾乐 Topology
+# 乐吾乐2D可视化组态软件
 
-乐吾乐Topology是乐吾乐公司自主设计、研发的web组态可视化软件，具有跨平台、高效、可扩展、实时监控、动态交互、支持自动算法等特点，最大程度减少研发和运维的成本，并致力于普通业务人员0代码开发实现web组态、SCADA等场景。是拥有为电力能源、水利、物联网、工业互联网、智慧城市、智慧医疗、智慧农业、IT运维等提供解决方案的可视化平台。
+【乐吾乐2D可视化组态软件】是乐吾乐公司自主设计、研发的web组态可视化软件，具有跨平台、高效、可扩展、实时监控、动态交互、支持自动算法等特点，最大程度减少研发和运维的成本，并致力于普通业务人员0代码开发实现web组态、SCADA等场景。是拥有为电力能源、水利、物联网、工业互联网、智慧城市、智慧医疗、智慧农业、IT运维等提供解决方案的可视化平台。
 
 <div style="display:flex; justify-content:">
 <img style="height:150px; margin: 10px" src="/img/feishuichuli.png" >
@@ -9,7 +9,6 @@
 
 <img style="height:150px; margin: 10px" src="/img/3.gif" >  
 </div>
-
 
 <br>
 
@@ -108,10 +107,10 @@ MIT © le5le.com
 
 ## 行业案例
 
-更多案例:  https://2ds.le5le.com/search    
+更多案例:https://2ds.le5le.com/search     
 
+企业版购买:https://developer.le5le.com/tutorial/commercial.html   
 
-企业版购买:  http://developer.le5le.com/topology-documents/tutorial/commercial.html
 
 **1.电力能源**
 <div style="display:flex; justify-content:">
@@ -140,7 +139,7 @@ MIT © le5le.com
 
 **6.智慧城市**
 <div style="display:flex; justify-content:">
-<img style="height:400px; margin: 10px" src="/img/2.5Dzhihuichengshi1.png" >
+<img style="height:400px; margin: 10px" src="/img/2.5Dzhihuichengshi.png" >
 </div>
 
 **7.智慧交通**
@@ -193,13 +192,17 @@ MIT © le5le.com
 <img style="height:400px; margin: 10px" src="/img/suanfachengtu.png" >
 </div>
 
+**16.绑定变量**
+<div style="display:flex; justify-content:">
+<img style="height:400px; margin: 10px" src="/img/bangdingbianliang.gif" >
+</div>
 
 <br>
 
-更多案例:  https://2ds.le5le.com/search     
-<br> 
+更多案例:  https://2ds.le5le.com/search  
+<br>
 
-企业版购买:http://developer.le5le.com/topology-documents/tutorial/commercial.html
+企业版购买:  https://developer.le5le.com/tutorial/commercial.html    
 <br>
 
 联系方式：027-63497374 （工作日9：30--18：30）
