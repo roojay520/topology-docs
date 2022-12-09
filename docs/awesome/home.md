@@ -19,7 +19,7 @@
 
 ## 官方示例
 
-[Meta2d 官网在线使用](https://2ds.le5le.com/)
+[乐吾乐2D可视化组态软件 官网在线使用](https://2ds.le5le.com/)
 
 [ES5 示例](https://github.com/le5le-com/meta2d.js/tree/master/examples/es5)
 
@@ -27,12 +27,8 @@
 
 [React 示例](https://github.com/le5le-com/meta2d.js/tree/master/examples/react)
 
-## 开发者作品
-
-[es5 编辑器](https://github.com/johnnyhhj/topology-es5) (老版本)
 
 ## 其他
 
 欢迎给我们来信推荐自己的教程或作品：  
-微信：alsmile123  
-Email: admin@le5le.com
+Email: business@le5le.com
