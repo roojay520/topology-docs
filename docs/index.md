@@ -4,7 +4,7 @@ title: 开发者中心
 pageClass: le5le-home
 # heroImage: /img/home.png
 heroAlt: Le5le Meta2d
-heroText: 乐吾乐 Meta2d
+heroText: 乐吾乐 Meta2d.js
 tagline: 全新web可视化引擎
 actionText: 开始上手
 actionLink: /tutorial/start
