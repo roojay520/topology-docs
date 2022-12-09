@@ -65,7 +65,7 @@ boolean
 **示例：**
 
 ```js
-import { hitPoint } from '@topology/core';
+import { hitPoint } from '@meta2d/core';
 
 hitPoint({ x: 7, y: 7 }, { x: 10, y: 10 });
 // return true
@@ -92,7 +92,7 @@ void
 **示例：**
 
 ```js
-import { rotatePoint } from '@topology/core';
+import { rotatePoint } from '@meta2d/core';
 
 rotatePoint({ x: 7, y: 7 }, 180, { x: 10, y: 10 });
 ```
@@ -118,7 +118,7 @@ void
 **示例：**
 
 ```js
-import { scalePoint } from '@topology/core';
+import { scalePoint } from '@meta2d/core';
 
 scalePoint({ x: 7, y: 7 }, 1.2, { x: 10, y: 10 });
 ```
@@ -142,7 +142,7 @@ void
 **示例：**
 
 ```js
-import { translatePoint } from '@topology/core';
+import { translatePoint } from '@meta2d/core';
 
 translatePoint({ x: 7, y: 7 }, 10, 10);
 ```
@@ -165,7 +165,7 @@ boolean
 **示例：**
 
 ```js
-import { samePoint } from '@topology/core';
+import { samePoint } from '@meta2d/core';
 
 samePoint({ anchorId, connectTo }, { anchorId, connectTo });
 ```
@@ -188,7 +188,7 @@ number
 **示例：**
 
 ```js
-import { distance } from '@topology/core';
+import { distance } from '@meta2d/core';
 
 distance({ x, y }, { x, y });
 ```
@@ -211,7 +211,7 @@ number
 **示例：**
 
 ```js
-import { calcRotate } from '@topology/core';
+import { calcRotate } from '@meta2d/core';
 
 calcRotate({ x, y }, { x, y });
 ```
@@ -244,7 +244,7 @@ enum Direction {
 **示例：**
 
 ```js
-import { calcRotate } from '@topology/core';
+import { calcRotate } from '@meta2d/core';
 
 facePoint({ x, y }, { x, y });
 ```

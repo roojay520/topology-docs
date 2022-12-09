@@ -4,7 +4,7 @@
 【酷炫组件，自己定义】：https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw
 :::
 
-topology 图形库是一种可扩展、开放性的图形库，可以根据需求任意定制开发。
+meta2d 图形库是一种可扩展、开放性的图形库，可以根据需求任意定制开发。
 
 其中，图形库支持 Path2D 绘画和 CanvasRenderingContext2D 两种方式：  
 简单基本图形推荐使用 Path2D，性能略高；  
@@ -56,8 +56,8 @@ export function triangleAnchors(pen: Pen) {
 
 // 3. 注册图形
 // 参数 {key: fn}。key为图形唯一name，否则覆盖原来图形，fn为相关函数
-topology.register({ triangle });
-topology.registerAnchors({ triangle: triangleAnchors });
+meta2d.register({ triangle });
+meta2d.registerAnchors({ triangle: triangleAnchors });
 
 // 4. 开始使用
 const pen = {
@@ -68,8 +68,8 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ## 自定义 Canvas Context2D 图形库
@@ -127,8 +127,8 @@ export function triangleAnchors(pen: Pen) {
 
 // 3. 注册图形
 // 参数 {key: fn}。key为图形唯一name，否则覆盖原来图形，fn为相关函数
-topology.registerCanvasDraw({ triangle });
-topology.registerAnchors({ triangle: triangleAnchors });
+meta2d.registerCanvasDraw({ triangle });
+meta2d.registerAnchors({ triangle: triangleAnchors });
 
 // 4. 开始使用
 const pen = {
@@ -139,8 +139,8 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ## 其他

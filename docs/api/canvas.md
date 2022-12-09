@@ -11,7 +11,7 @@
 **示例：**
 
 ```js
-topology.canvas.addCaches = [pen1, pen2, pen3];
+meta2d.canvas.addCaches = [pen1, pen2, pen3];
 ```
 
 ## 函数
@@ -31,7 +31,7 @@ topology.canvas.addCaches = [pen1, pen2, pen3];
 **示例：**
 
 ```js
-topology.canvas.makePen(pen);
+meta2d.canvas.makePen(pen);
 ```
 
 ### loadImage
@@ -49,7 +49,7 @@ topology.canvas.makePen(pen);
 **示例：**
 
 ```js
-topology.canvas.loadImage(pen);
+meta2d.canvas.loadImage(pen);
 ```
 
 ### updatePenRect
@@ -74,7 +74,7 @@ pen 的 rect 有更新，重新计算相关 rect。
 **示例：**
 
 ```js
-topology.canvas.updatePenRect(pen);
+meta2d.canvas.updatePenRect(pen);
 
-topology.canvas.updatePenRect(pen, true);
+meta2d.canvas.updatePenRect(pen, true);
 ```

@@ -1,6 +1,6 @@
 # 动画
 
-topology 动画分为 2 种：节点动画、连线动画
+meta2d 动画分为 2 种：节点动画、连线动画
 
 ## 节点动画
 
@@ -20,8 +20,8 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 
 // 设置动画帧
 
@@ -107,28 +107,28 @@ pen.keepAnimateState = false; // 动画播放（次数）结束，是否回到�
 2. 播放动画
 
 ```js
-topology.startAnimate(pen.id);
+meta2d.startAnimate(pen.id);
 // 或
-topology.startAnimate(pen.tag);
-topology.startAnimate([pen]);
+meta2d.startAnimate(pen.tag);
+meta2d.startAnimate([pen]);
 ```
 
 3. 暂停动画
 
 ```js
-topology.pauseAnimate(pen.id);
+meta2d.pauseAnimate(pen.id);
 // 或
-topology.pauseAnimate(pen.tag);
-topology.pauseAnimate([pen]);
+meta2d.pauseAnimate(pen.tag);
+meta2d.pauseAnimate([pen]);
 ```
 
 4. 结束动画
 
 ```js
-topology.stopAnimate(pen.id);
+meta2d.stopAnimate(pen.id);
 // 或
-topology.stopAnimate(pen.tag);
-topology.stopAnimate([pen]);
+meta2d.stopAnimate(pen.tag);
+meta2d.stopAnimate([pen]);
 ```
 
 ## 连线动画
@@ -151,8 +151,8 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 
 // 设置动画属性
 // 动画类型：默认 - 水流； 1 - 虚线段；2 - 圆点
@@ -175,32 +175,32 @@ pen.animateCycle = 3; // 动画播放3次。默认无限循环播放
 2. 播放动画
 
 ```js
-topology.startAnimate(pen.id);
+meta2d.startAnimate(pen.id);
 // 或
-topology.startAnimate(pen.tag);
-topology.startAnimate([pen]);
+meta2d.startAnimate(pen.tag);
+meta2d.startAnimate([pen]);
 ```
 
 3. 暂停动画
 
 ```js
-topology.pauseAnimate(pen.id);
+meta2d.pauseAnimate(pen.id);
 // 或
-topology.pauseAnimate(pen.tag);
-topology.pauseAnimate([pen]);
+meta2d.pauseAnimate(pen.tag);
+meta2d.pauseAnimate([pen]);
 ```
 
 4. 结束动画
 
 ```js
-topology.stopAnimate(pen.id);
+meta2d.stopAnimate(pen.id);
 // 或
-topology.stopAnimate(pen.tag);
-topology.stopAnimate([pen]);
+meta2d.stopAnimate(pen.tag);
+meta2d.stopAnimate([pen]);
 ```
 
 ## 下一个动画
 
 当设置 pen.nextAnimate=nextPen.id/nextPen.tag 时，当前 pen 播放动画结束，自动播放下一个动画。
 
-手动播放当前 pen.nextAnimate 的动画：topology.nextAnimate(pen)
+手动播放当前 pen.nextAnimate 的动画：meta2d.nextAnimate(pen)

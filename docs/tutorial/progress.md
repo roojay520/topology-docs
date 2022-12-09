@@ -14,6 +14,6 @@ const pen = {
   // progressColor: 'green',
   // verticalProgress: false,  // 水平方向还是垂直方向
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```

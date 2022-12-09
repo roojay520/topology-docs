@@ -124,7 +124,7 @@ table 类型控件(table改为table2)
       },
     ],
   };
-  topology.addPen(table);
+  meta2d.addPen(table);
 ```
 
 
@@ -133,7 +133,7 @@ table 类型控件(table改为table2)
 1. 更新一个单元格数据。提供如下规则：
 
 ```js
-topology.setValue({
+meta2d.setValue({
     id:'table.id',//表格id
     row:1,//第几行
     col:1,//第几列
@@ -161,29 +161,29 @@ const table = {
   ],
   styles:[]
 }
-topology.addPen(table);
+meta2d.addPen(table);
 
 //table.replaceMode = 0 //0 追加(默认)
-topology.setValue({
+meta2d.setValue({
   id:table.id, 
   dataY: [[1, 2, 3],[11, 22, 33]]
 });
 
 table.replaceMode = 1 //1 替换
-topology.setValue({
+meta2d.setValue({
   id:table.id, 
   dataX: [1,3], //被替代行 行索引
   dataY: [[1500, 1600, 1700],[1500, 1600, 1700]]
 });
 
 table.replaceMode = 2 //2 替换除首行后所有
-topology.setValue({
+meta2d.setValue({
   id:table.id,
   dataY: [[1500, 1600, 1700],[1600, 1500, 1700]],
 });
 
 //替换所有
-topology.setValue({
+meta2d.setValue({
   id:table.id,
   dataX:['x','y'],  //新首行
   dataY: [[1500, 1600],[1600, 1500]]

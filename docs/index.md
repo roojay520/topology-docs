@@ -3,8 +3,8 @@ home: true
 title: 开发者中心
 pageClass: le5le-home
 # heroImage: /img/home.png
-heroAlt: Le5le Topology
-heroText: 乐吾乐 Topology
+heroAlt: Le5le Meta2d
+heroText: 乐吾乐 Meta2d
 tagline: 全新web可视化引擎
 actionText: 开始上手
 actionLink: /tutorial/start
@@ -20,20 +20,20 @@ footer: Copyright © 2020-present le5le.com
 ---
 
 ```bash
-# Install topology
-yarn add -D @topology/core
+# Install meta2d
+yarn add -D @meta2d/core
 ...
 
 # Register
-import { Topology } from '@topology/core';
+import { Meta2d } from '@meta2d/core';
 import { register as registerMyDiagram } from 'my-diagram';
 
-# <div id="topology"></div>
-new Topology('topology');
+# <div id="meta2d"></div>
+new Meta2d('meta2d');
 
 registerMyDiagram();
 
 # Open a json
-topology.open(json);
+meta2d.open(json);
 
 ```

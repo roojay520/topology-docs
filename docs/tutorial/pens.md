@@ -1,6 +1,6 @@
 # 默认图形库
 
-topology 所有图形库都是动态扩展的，为了使用方便，引擎直接内置了一些基础图形库，提供了流程图相关的扩展库，按需导入使用即可。
+meta2d 所有图形库都是动态扩展的，为了使用方便，引擎直接内置了一些基础图形库，提供了流程图相关的扩展库，按需导入使用即可。
 
 ## 基础图形
 
@@ -38,8 +38,8 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### 约定图形
@@ -52,11 +52,11 @@ topology.inactive();
 
 ### 图片层级
 
-@topology/core 1.1.0 版本后，为了提升性能，额外创建了两个 canvas 用来绘制图片，一个在原画布的底下，一个在原画布的上面。  
+@meta2d/core 1.1.0 版本后，为了提升性能，额外创建了两个 canvas 用来绘制图片，一个在原画布的底下，一个在原画布的上面。  
 带图片的画笔的图片默认是在上层的 canvas 的，它会遮住所有的非图片画笔，并且使用置顶，置底是没有作用的，新增了一个 isBottom 的属性，将该画笔移动到下层的 canvas ，从而实现非图片画笔遮住该图片。
 
 ```ts
-topology.setValue({ id: "le5le", isBottom: true });
+meta2d.setValue({ id: "le5le", isBottom: true });
 ```
 
 官网设置
@@ -66,9 +66,9 @@ topology.setValue({ id: "le5le", isBottom: true });
 ## 流程图
 
 ```js
-import { flowPens } from "@topology/flow-diagram";
+import { flowPens } from "@meta2d/flow-diagram";
 
-topology.register(flowPens());
+meta2d.register(flowPens());
 ```
 
 | name                | 描述     |
@@ -90,11 +90,11 @@ topology.register(flowPens());
 import {
   activityDiagram,
   activityDiagramByCtx,
-} from "@topology/activity-diagram";
+} from "@meta2d/activity-diagram";
 
-topology.register(activityDiagram());
+meta2d.register(activityDiagram());
 // 原生canvas绘画的图库，支持逻辑复杂的需求
-topology.registerCanvasDraw(activityDiagramByCtx());
+meta2d.registerCanvasDraw(activityDiagramByCtx());
 ```
 
 | name          | 描述          |
@@ -108,10 +108,10 @@ topology.registerCanvasDraw(activityDiagramByCtx());
 ## 时序图
 
 ```js
-import { sequencePens, sequencePensbyCtx } from "@topology/sequence-diagram";
+import { sequencePens, sequencePensbyCtx } from "@meta2d/sequence-diagram";
 
-topology.register(sequencePens());
-topology.registerCanvasDraw(sequencePensbyCtx());
+meta2d.register(sequencePens());
+meta2d.registerCanvasDraw(sequencePensbyCtx());
 ```
 
 | name          | 描述   |
@@ -122,9 +122,9 @@ topology.registerCanvasDraw(sequencePensbyCtx());
 ## 类图
 
 ```js
-import { classPens } from "@topology/class-diagram";
+import { classPens } from "@meta2d/class-diagram";
 
-topology.register(classPens());
+meta2d.register(classPens());
 ```
 
 | name           | 描述     |
@@ -146,7 +146,7 @@ topology.register(classPens());
 - 注册
 
 ```js
-import { register as registerEcharts } from "@topology/chart-diagram";
+import { register as registerEcharts } from "@meta2d/chart-diagram";
 
 registerEcharts();
 ```
@@ -180,8 +180,8 @@ const pen = {
     },
   },
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 - 数据更新
@@ -203,7 +203,7 @@ export interface ChartData {
 }
 
 // id: 'le5le' x 轴追加 两个值， y 轴追加两个值
-topology.setValue({
+meta2d.setValue({
   id: "le5le",
   dataX: ["eight", "nine"],
   dataY: [500, 600],
@@ -211,7 +211,7 @@ topology.setValue({
 });
 
 // 多条线的场景使用，顺序与 option.series 相同
-topology.setValue({
+meta2d.setValue({
   id: "le5le",
   dataX: ["eight", "nine"],
   dataY: [
@@ -283,8 +283,8 @@ const pen = {
     replaceMode: 1, // 部分替换
   },
 };
-topology.addPen(pen);
-topology.setValue({
+meta2d.addPen(pen);
+meta2d.setValue({
   id: pen.id,
   // 饼图，dataY 中的 name 决定替换饼图中的哪一部分
   dataY: [{ value: 88, name: "户数" }],
@@ -320,8 +320,8 @@ const pen = {
   },
 };
 
-topology.addPen(pen);
-topology.setValue({
+meta2d.addPen(pen);
+meta2d.setValue({
   id: pen.id,
   // 折线图 dataX 标识替换哪个 category 所对应的 值
   dataX: ['电压', '电流'],
@@ -343,7 +343,7 @@ topology.setValue({
 - 注册
 
 ```js
-import { registerHighcharts } from "@topology/chart-diagram";
+import { registerHighcharts } from "@meta2d/chart-diagram";
 
 registerHighcharts();
 ```
@@ -383,8 +383,8 @@ const pen = {
     },
   },
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 - 数据更新
@@ -413,7 +413,7 @@ topology.inactive();
 - 注册
 
 ```js
-import { registerLightningChart } from "@topology/chart-diagram";
+import { registerLightningChart } from "@meta2d/chart-diagram";
 
 registerLightningChart();
 ```
@@ -479,8 +479,8 @@ const line = {
     },
   },
 };
-topology.addPen(line);
-topology.inactive();
+meta2d.addPen(line);
+meta2d.inactive();
 
 //柱状图
 const bar = {
@@ -507,8 +507,8 @@ const bar = {
     },
   },
 };
-topology.addPen(bar);
-topology.inactive();
+meta2d.addPen(bar);
+meta2d.inactive();
 
 //饼图
 const pie = {
@@ -548,8 +548,8 @@ const pie = {
     },
   },
 };
-topology.addPen(pie);
-topology.inactive();
+meta2d.addPen(pie);
+meta2d.inactive();
 
 //进度条
 const gauge = {
@@ -571,6 +571,6 @@ const gauge = {
     },
   },
 };
-topology.addPen(gauge);
-topology.inactive();
+meta2d.addPen(gauge);
+meta2d.inactive();
 ```

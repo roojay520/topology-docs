@@ -1,6 +1,6 @@
 # 图表
 
-原生 topology 图表控件，更方便的支持原生交互事件和图层。包含：折线图、柱状图、饼图、仪表盘等，更多欢迎联系我们。
+原生 meta2d 图表控件，更方便的支持原生交互事件和图层。包含：折线图、柱状图、饼图、仪表盘等，更多欢迎联系我们。
 
 注意：le5le charts对echarts格式数据做了兼容性处理（仅提取一些有效数据）。
 
@@ -42,7 +42,7 @@ const linechart = {
   ]
 };
 
-topology.addPen(linechart);
+meta2d.addPen(linechart);
 
 //使用echarts格式
 const linechart ={
@@ -79,7 +79,7 @@ const linechart ={
     }
 }
 
-topology.addPen(linechart);
+meta2d.addPen(linechart);
 ```
 
 ## histogram 柱状图
@@ -121,7 +121,7 @@ const histogram = {
   ]
 };
 
-topology.addPen(histogram);
+meta2d.addPen(histogram);
 
 //echarts格式
 const histogram = {
@@ -150,7 +150,7 @@ const histogram = {
     }
 }
 
-topology.addPen(histogram);
+meta2d.addPen(histogram);
 ```
 
 ## pieChart 饼图
@@ -204,7 +204,7 @@ const pie = {
   ]
 };
 
-topology.addPen(pie);
+meta2d.addPen(pie);
 
 //echarts格式
 
@@ -261,7 +261,7 @@ const pie = {
   }
 }
 
-topology.addPen(pie);
+meta2d.addPen(pie);
 ```
 
 ## gauge 仪表盘
@@ -304,7 +304,7 @@ const gauge = {
   animateCycle: 1,
   keepAnimateState: 0
 }
-topology.addPen(gauge);
+meta2d.addPen(gauge);
 
 //echarts 格式
 
@@ -371,7 +371,7 @@ const gauge={
   }
 }
 
-topology.addPen(gauge);
+meta2d.addPen(gauge);
 ```
 2. 时钟
 
@@ -392,7 +392,7 @@ const clock = {
     background: '#3A3A3A',
     color: '#C0911F'
 }
-topology.addPen(clock);
+meta2d.addPen(clock);
 ```
 
 ## 数据实时更新
@@ -404,8 +404,8 @@ topology.addPen(clock);
 //这里以echarts的折线图为例
 //① 选中折线图节点
 //② 控制台敲如下代码
-topology.store.active[0].echarts.option.series[0].data = [20, 932, 901, 34, 1290, 1330, 20];
-topology.setValue(topology.store.active[0]);
+meta2d.store.active[0].echarts.option.series[0].data = [20, 932, 901, 34, 1290, 1330, 20];
+meta2d.setValue(meta2d.store.active[0]);
 ```
 
 2. 通过mqtt等协议通信方式
@@ -416,7 +416,7 @@ topology.setValue(topology.store.active[0]);
 
 ```json
 {
-"tag": "topology", 
+"tag": "meta2d", 
 "echarts":{
   "option":{
     "xAxis":{
@@ -464,24 +464,24 @@ const linechart = {
   ]
 };
 
-topology.addPen(linechart);
+meta2d.addPen(linechart);
 
 //linechart.replaceMode = 0 //0 追加(默认)
-topology.setValue({
+meta2d.setValue({
   id:linechart.id, 
   dataX: ["eight", "nine"],
   dataY: [[500, 600],[500, 600]],
 });
 
 linechart.replaceMode = 1 //1 替换
-topology.setValue({
+meta2d.setValue({
   id:linechart.id, 
   dataX: ["eight", "nine"],
   dataY: [[1500, 1600],[1500, 1600]],
 });
 
 linechart.replaceMode = 2 //2 替换所有
-topology.setValue({
+meta2d.setValue({
   id:linechart.id, 
   dataX: ["eight", "nine"],
   dataY: [[1500, 1600],[1600, 1500]],
@@ -491,21 +491,21 @@ topology.setValue({
   histogram 节点的创建
 */
 //histogram.replaceMode = 0 //0 追加(默认)
-topology.setValue({
+meta2d.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
   dataY: [[50, 60],[60, 50],[50, 60]], //三组数据
 });
 
 histogram.replaceMode = 1 //1 替换
-topology.setValue({
+meta2d.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
   dataY: [[150, 160],[160, 150],[150, 160]],//三组数据
 });
 
 histogram.replaceMode = 2 //2 替换所有
-topology.setValue({
+meta2d.setValue({
   id:histogram.id, 
   dataX: ["eight", "nine"],
   dataY: [[150, 160],[160, 150],[150, 160]], //三组数据
@@ -515,7 +515,7 @@ topology.setValue({
   pieChart的创建
 */
 //pie.replaceMode = 0 //0 追加(默认)
-topology.setValue({
+meta2d.setValue({
   id:pie.id, 
   dataY: [
     [ { value: 1548, name: 'new1' }],
@@ -524,7 +524,7 @@ topology.setValue({
 });
 
 pie.replaceMode = 1 //1 替换
-topology.setValue({
+meta2d.setValue({
   id:pie.id, 
   dataY: [
     [ { value: 10, name: 'new1' }],
@@ -533,7 +533,7 @@ topology.setValue({
 });
 
 pie.replaceMode = 2 //2 替换所有
-topology.setValue({
+meta2d.setValue({
   id:pie.id, 
   dataY: [
     [ { value: 10, name: 'new1' },{ value: 30, name: 'new3' }],

@@ -8,7 +8,7 @@
 
 ```js
 // 开启自动锚点
-topology.store.options.autoAnchor = true;
+meta2d.store.options.autoAnchor = true;
 ```
 
 **快捷键**

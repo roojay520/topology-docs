@@ -2,7 +2,7 @@
 
 ## 拖拽工具栏
 
-topology 支持从工具栏拖拽图标到画布。
+meta2d 支持从工具栏拖拽图标到画布。
 
 工具栏需要自定义实现，支持 drag 相关属性；引擎已支持 drop 功能。
 
@@ -25,7 +25,7 @@ topology 支持从工具栏拖拽图标到画布。
 ```
 
 **2. 传递数据**  
-在工具栏相应事件函数中，给 topology 传递 pen 对象数据即可
+在工具栏相应事件函数中，给 meta2d 传递 pen 对象数据即可
 
 ```js
 const pen = {
@@ -40,13 +40,13 @@ onDragstart = (e) => {
 };
 
 // 支持鼠标单击添加图形
-import { deepClone } from "@topology/core";
+import { deepClone } from "@meta2d/core";
 onTouchstart = (e) => {
-  topology.canvas.addCaches = deepClone([pen]);
+  meta2d.canvas.addCaches = deepClone([pen]);
 };
 ```
 
-参考示例： https://github.com/le5le-com/topology.js/tree/master/examples
+参考示例： https://github.com/le5le-com/meta2d.js/tree/master/examples
 
 ## 拖拽桌面图片
 
@@ -55,11 +55,11 @@ onTouchstart = (e) => {
 
 ### uploadFn
 
-topology.store.options.uploadFn 配置该值，可在 new Topology 传参配置，也可以在 new 之后配置。  
+meta2d.store.options.uploadFn 配置该值，可在 new Meta2d 传参配置，也可以在 new 之后配置。  
 该方法是一个回调函数，参数是一个 file，即图片文件，上传后端后，需要返回该图片的可访问 url。
 
 ```ts
-new Topology("topology", {
+new Meta2d("meta2d", {
   uploadFn: async (file: File) => {
     // 伪代码，复制后根据实际情况使用
     const formData = new FormData();
@@ -72,7 +72,7 @@ new Topology("topology", {
 
 ### uploadUrl
 
-topology.store.options.uploadUrl 配置该值，配置方法同上。  
+meta2d.store.options.uploadUrl 配置该值，配置方法同上。  
 使用 url 的形式，配置较简单，但并不能像 uploadFn 提供一个回调函数那样自由。  
 有以下几点限制：
 
@@ -80,7 +80,7 @@ topology.store.options.uploadUrl 配置该值，配置方法同上。
 2. 后端返回的响应中，一级属性必须包含 url 属性。
 
 ```ts
-new Topology("topology", {
+new Meta2d("meta2d", {
   uploadUrl: "/api/image",
   uploadHeaders: {
     // 身份校验，需要则传

@@ -1,6 +1,6 @@
 # 消息事件
 
-topology 支持订阅和发送消息，使用(内置)：[mitt](https://github.com/developit/mitt)
+meta2d 支持订阅和发送消息，使用(内置)：[mitt](https://github.com/developit/mitt)
 
 很多交互操作，都通过 mitt 发送消息
 
@@ -8,18 +8,18 @@ topology 支持订阅和发送消息，使用(内置)：[mitt](https://github.co
 
 ```js
 // data 可以为任意数据
-topology.emit('event', data);
+meta2d.emit('event', data);
 ```
 
 ## 监听消息（订阅）
 
 ```js
 const fn = (event, data) => {};
-topology.on('event', fn);
-// 不用时，又不销毁topology实例，记得取消订阅。
+meta2d.on('event', fn);
+// 不用时，又不销毁meta2d实例，记得取消订阅。
 
 // 监听全部消息
-topology.on('*', fn);
+meta2d.on('*', fn);
 ```
 
 ## 取消监听
@@ -27,10 +27,10 @@ topology.on('*', fn);
 ```js
 const fn = (event, data) => {};
 // 订阅
-topology.on('event', fn);
+meta2d.on('event', fn);
 
 // 取消订阅
-topology.off('event', fn);
+meta2d.off('event', fn);
 ```
 
 ## 内置 API 消息
@@ -131,7 +131,7 @@ topology.off('event', fn);
 ```js
 // import { message } from 'ant-design-vue';
 
-topology.on('userDefindMessage', (e) => {
+meta2d.on('userDefindMessage', (e) => {
     const pen = e.pen;
     const params = e.params;
     alert(pen.name + params);
