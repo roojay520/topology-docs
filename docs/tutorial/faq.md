@@ -13,7 +13,7 @@
 1. 下载核心库源码
 
 ```shell
-git clone https://github.com/le5le-com/topology.js.git
+git clone https://github.com/le5le-com/meta2d.js.git
 ```
 
 2. 安装依赖包
@@ -71,7 +71,7 @@ yarn build
 
 不同的图纸 mqtt 地址和 topic 可能不同，因此默认每个图纸独立存储通信地址。保存文件时，会自动保存通信地址和参数设置，下次打开，无需再次设置。
 
-如果 IoT 平台通信地址固定，可以修改编辑器源码在 topology.open 前，给图纸 json 赋值固定的通信地址即可，参考[实时数据监听](../tutorial/data)教程设置即可
+如果 IoT 平台通信地址固定，可以修改编辑器源码在 meta2d.open 前，给图纸 json 赋值固定的通信地址即可，参考[实时数据监听](../tutorial/data)教程设置即可
 
 ## 如何绑定变量
 
@@ -80,7 +80,7 @@ yarn build
 - 我们有 3 种方式实现数据实时变化方式：  
   A、mqtt  
   B、websocket  
-  C、topology.setValue(pen)
+  C、meta2d.setValue(pen)
 
 - 修改数据的本质是：找到 pen，修改 pen。我们通过 pen.id 或 pen.tag 定位 pen，然后把数据的其他属性赋值给 pen。例如：
 
@@ -102,38 +102,38 @@ yarn build
 // tag列表来源于自己平台列表。选中一个变量绑定，等于添加一个tag
 pen.tags.push('1号位置-温度传感器');
 
-// 只要有数据给到topology，即可自动修改变化
+// 只要有数据给到meta2d，即可自动修改变化
 {
   tag: '1号位置-温度传感器', // 定位查找pen用
   value: 36 // 要修改的数据属性
 }
 ```
 
-3. 如果是自己的数据格式，写一个中间件转换成 topology 格式即可。
+3. 如果是自己的数据格式，写一个中间件转换成 meta2d 格式即可。
 
 ## 鼠标框选错位
 
 原因：
 
-1. 父 dom 元素 css 还没渲染完，就加载画布，确认方式：new Topology 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
+1. 父 dom 元素 css 还没渲染完，就加载画布，确认方式：new Meta2d 时，查看父 dom 的 clientWidth 和 clientHeight 是否存在；
 2. 修改了父 dom 元素位置，可能是存在动画
 
 解决方案：
 
-1. 等待父 dom 元素 css 加载完成后在 new Topology
-2. 确定画布位置已经稳定时，修正画布位置： topology.resize();
+1. 等待父 dom 元素 css 加载完成后在 new Meta2d
+2. 确定画布位置已经稳定时，修正画布位置： meta2d.resize();
 
 ## drawImage width or height 0
 
 原因：
 
 父 dom 的宽高变成 0 了，常见于改变屏幕尺寸  
-父 dom 的宽高度为 0 就 new Topology 了，可能是存在动画
+父 dom 的宽高度为 0 就 new Meta2d 了，可能是存在动画
 
 解决方案：
 
 1. 更改屏幕尺寸后，仍要保证父 dom 的宽高不为 0  
-2. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Topology
+2. 等待父 dom 元素存在 clientWidth 和 再 clientHeight new Meta2d
 
 ## 脏数据处理
 
@@ -147,7 +147,7 @@ pen.tags.push('1号位置-温度传感器');
 
 确认方式：
 
-1. topology.getRect() 宽度和高度很大，但有值。
+1. meta2d.getRect() 宽度和高度很大，但有值。
 2. 已点击窗口大小，但出现空白，或主体区域不在中心区域。
 
 在设计上，画布是无限大的，如果你的主体部分在右下角，而左上角存在一个画笔，而且距离很远，最小缩放比又是一个固定值（老官网 0.3），那么使用**窗口大小（fitView）**，会使画布居中并且按照最小缩放比显示，但仍然看不到主体部分和左上角的画笔。  
@@ -155,13 +155,13 @@ pen.tags.push('1号位置-温度传感器');
 
 解决方法：
 
-1. 老官网: http://topology.le5le.com/workspace/
+1. 老官网: 已不再维护
 
 窗口大小可实现该功能，但按前文所说，受到了最小缩放比的限制，所以我们把最小缩放比设置成 0 ，即允许继续缩放。  
 在控制台执行下面代码
 
 ```js
-topology.options.minScale = 0;
+meta2d.options.minScale = 0;
 ```
 
 然后点击 **视图 窗口大小** 即可。
@@ -172,7 +172,7 @@ topology.options.minScale = 0;
 代码更改为：
 
 ```js
-topology.store.options.minScale = 0;
+meta2d.store.options.minScale = 0;
 ```
 
 新版本中存在缩略图（地图）功能，打开地图也可以看到。
@@ -183,11 +183,11 @@ topology.store.options.minScale = 0;
 
 ## pen 或 pens 无 calculative 属性导致报错
 
-确定 pens 是否从 [topology.data()](../api/core.html#data) 方法中取的，若是，改用 topology.store.data.pens 即可；若不是，欢迎群里讨论，在官网控制台发重现代码，截图。
+确定 pens 是否从 [meta2d.data()](../api/core.html#data) 方法中取的，若是，改用 meta2d.store.data.pens 即可；若不是，欢迎群里讨论，在官网控制台发重现代码，截图。
 
 ## 预览画布
 
-topology 是没有预览画布的 api 的，官方仅仅是在一个新的路由（页面），重新 new Topology ，将数据 open ，并 [lock](../api/core.html#lock).   
+meta2d 是没有预览画布的 api 的，官方仅仅是在一个新的路由（页面），重新 new Meta2d ，将数据 open ，并 [lock](../api/core.html#lock).   
 也可以有其他的做法，例如不跳新页面，仅仅隐藏除画布以外的内容，并且 lock ，注意此处情况可能带来[鼠标错位](./faq.html#鼠标框选错位)的问题。
 
 ## mqtt通信
@@ -199,22 +199,22 @@ mqtt支持两种协议，一种是tcp协议（mqtt开头），另一种是websoc
 ## 多画布使用
 
 ```js
-// 多个Topology实例
+// 多个Meta2d实例
 
-topology1 = new Topology()
-topology2 = new Topology()
+meta2d1 = new Meta2d()
+meta2d2 = new Meta2d()
 ...
 
 // 或  
-new Topology();
-topology1 = topology;
-new Topology();
-topology2 = topology;
+new Meta2d();
+meta2d1 = meta2d;
+new Meta2d();
+meta2d2 = meta2d;
 
-// js脚本中，不能再简单直接的使用(window下的)topology了，而是根据情况用topology1或2
+// js脚本中，不能再简单直接的使用(window下的)meta2d了，而是根据情况用meta2d1或2
 ```
 
-**参考例子：** https://github.com/le5le-com/topology.js/blob/main/examples/vue/src/components/TopologyTwo.vue
+**参考例子：** https://github.com/le5le-com/meta2d.js/blob/main/examples/vue/src/components/Meta2dTwo.vue
 
 
 ## echrts节点的tooltip被其他eharts节点覆盖
@@ -236,7 +236,7 @@ topology2 = topology;
 
 其他问题，欢迎联系我们：
 
-Github： https://github.com/le5le-com/topology.js/issues
+Github： https://github.com/le5le-com/meta2d.js/issues
 
 交流群： [交流群](../community/wechat.html)
 

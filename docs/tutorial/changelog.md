@@ -248,14 +248,14 @@
 
 - **拖动过程中若线宽为 0, 拖动状态设置一个 1 线宽**
 
-  [Github issue 70](https://github.com/le5le-com/topology.js/issues/70)
+  [Github issue 70](https://github.com/le5le-com/meta2d.js/issues/70)
 
 ### Features
 
 - **socketFn 添加 topic**
 
   只有 mqtt 有该参数， ws 和 http 都是 ''
-  [Github issue 69](https://github.com/le5le-com/topology.js/issues/69)
+  [Github issue 69](https://github.com/le5le-com/meta2d.js/issues/69)
 
 - **_setValue data.id 使用 findOne 方法**
 
@@ -273,7 +273,7 @@
 
 - **新增 clearHover 方法**
 
-  清除 store.hover ，解决 [issue 66](https://github.com/le5le-com/topology.js/issues/66)
+  清除 store.hover ，解决 [issue 66](https://github.com/le5le-com/meta2d.js/issues/66)
 
 ## 1.1.14
 
@@ -423,15 +423,15 @@
 
 - **setValue, updateValue 更改坐标不再需要传 x,y,width,height 四个值**
 
-  传入修改值即可，并且修复 bug [Github issue 47](https://github.com/le5le-com/topology.js/issues/47)
+  传入修改值即可，并且修复 bug [Github issue 47](https://github.com/le5le-com/meta2d.js/issues/47)
 
 - **updateValue 若传入 width 与 rotate，先更改坐标再更改 rotate**
 
-  修复[Github issue 324](https://github.com/le5le-com/topology/issues/324)
+  修复[Github issue 324](https://github.com/le5le-com/meta2d/issues/324)
 
 - **toComponent 生成可复用的组件图形，不可影响原画布数据**
 
-  修复[Github issue 46](https://github.com/le5le-com/topology.js/issues/46)
+  修复[Github issue 46](https://github.com/le5le-com/meta2d.js/issues/46)
 
 - **getPenRect setPenRect 计算子节点不使用 origin 和 scale**
 
@@ -441,12 +441,12 @@
 
 - **highcharts 数据更新**
 
-  参照 echarts 文档的中数据更新实现。@topology/chart-diagram 1.0.5
+  参照 echarts 文档的中数据更新实现。@meta2d/chart-diagram 1.0.5
 
 - **toPng 添加一个参数，下载图片中包含 bkImage**
 
   downloadPng 下载的图片中，包含背景图片。
-  [Github issue 49](https://github.com/le5le-com/topology.js/issues/49)
+  [Github issue 49](https://github.com/le5le-com/meta2d.js/issues/49)
 
 ## 1.1.6
 
@@ -480,7 +480,7 @@
 
 - **空白画布开缩略图，点击出现问题**
 
-  修复[Github issue 33](https://github.com/le5le-com/topology.js/issues/33)
+  修复[Github issue 33](https://github.com/le5le-com/meta2d.js/issues/33)
 
 - **highChart 生成的 dom 绑定了 id**
 
@@ -522,7 +522,7 @@
 
 - **changePenId 修改父子 id 关系，修改连接线 id**
 
-  修复：[Github issue 32](https://github.com/le5le-com/topology.js/issues/32)  
+  修复：[Github issue 32](https://github.com/le5le-com/meta2d.js/issues/32)  
 
 
 ### Features
@@ -537,12 +537,12 @@
 
 - **缩放撤销**
 
-  修复：[Github issue 11](https://github.com/le5le-com/topology.js/issues/11)  
+  修复：[Github issue 11](https://github.com/le5le-com/meta2d.js/issues/11)  
 
 - **disableAnchor 重构**
   
   原 disableAnchor 使 worldAnchors 成为空数组，现 disableAnchor 只是不绘制图形瞄点，不允许连线，不允许移动线锚点，不允许操作线手柄。  
-  修复：[Github issue 23](https://github.com/le5le-com/topology.js/issues/23)
+  修复：[Github issue 23](https://github.com/le5le-com/meta2d.js/issues/23)
 
 - **image canvas render**
 
@@ -566,7 +566,7 @@
 
 - **setPenRect 执行 onResize 生命周期**
 
-  修复：[Github issue 26](https://github.com/le5le-com/topology.js/issues/26)
+  修复：[Github issue 26](https://github.com/le5le-com/meta2d.js/issues/26)
 
 ### Features
 
@@ -584,7 +584,7 @@
 
 - **slider图元**
 
-  修复：通过topology.open()方式打开不显示问题
+  修复：通过meta2d.open()方式打开不显示问题
 
 - **复制粘贴**
 
@@ -592,7 +592,7 @@
 
 - **撤销 dom 类型画笔**
 
-  修复：[Github issue 20](https://github.com/le5le-com/topology.js/issues/20)  
+  修复：[Github issue 20](https://github.com/le5le-com/meta2d.js/issues/20)  
 
 - **置顶置底图片节点**
 
@@ -604,7 +604,7 @@
 
 - **组合翻转**
 
-  修复：翻转重构， flip 枚举变成了 flipX 和 flipY 属性，[Github issue 22](https://github.com/le5le-com/topology.js/issues/18)
+  修复：翻转重构， flip 枚举变成了 flipX 和 flipY 属性，[Github issue 22](https://github.com/le5le-com/meta2d.js/issues/18)
 
 - **组合旋转撤销**
 
@@ -638,7 +638,7 @@
 
 - **父子坐标计算**
 
-  修复 [Github issue 22](https://github.com/le5le-com/topology.js/issues/22)
+  修复 [Github issue 22](https://github.com/le5le-com/meta2d.js/issues/22)
 
 - **页面切换动画显示**
 

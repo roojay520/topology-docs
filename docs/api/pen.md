@@ -16,7 +16,7 @@
 const pen = {id: 'le5le', ...};
 
 // 查找指定id的pen
-topology.find('le5le')
+meta2d.find('le5le')
 // return: [{id: 'le5le', ...}]
 ```
 
@@ -34,7 +34,7 @@ const pen2 = {tags:['a', 'c'], ...};
 const pen3 = {tags:['b', 'c'], ...};
 
 // 查找指定id的pen
-topology.find('a')
+meta2d.find('a')
 // return: [pen1, pen2]
 ```
 
@@ -51,7 +51,7 @@ const parentPen = {id:'a' , ...};
 const pen = {parentId: 'a', ...};
 
 // 查找parent
-topology.getParent(pen)
+meta2d.getParent(pen)
 // return: [parentPen]
 ```
 
@@ -107,7 +107,7 @@ const node2 = {
   height: 100,
 };
 
-topology.addPens([node, line, node2]);
+meta2d.addPens([node, line, node2]);
 ```
 
 ### name
@@ -175,7 +175,7 @@ const line2 = {
   height: 100,
 };
 
-topology.addPens([line1, line2]);
+meta2d.addPens([line1, line2]);
 ```
 
 ### anchors
@@ -203,14 +203,14 @@ const line = {
 
 ### x,y,width,height
 
-pen 在画布中的位置。**【注意】** 此位置仅为画布绘画的参考位置，缩放平移时，可能会变化，如果需要获取缩放平移时坐标不变的逻辑位置，用 topology.getPenRect(pen)获取。
+pen 在画布中的位置。**【注意】** 此位置仅为画布绘画的参考位置，缩放平移时，可能会变化，如果需要获取缩放平移时坐标不变的逻辑位置，用 meta2d.getPenRect(pen)获取。
 
 当 pen 不为子节点时，为画布中的绝对位置；  
 当 pen 为子节点时，为相对父元素的百分比小数相对位置。
 
 - **通常：**  
-  我们使用 topology.getPenRect(pen)获取逻辑位置；  
-  使用 topology.setPenRect(pen,{x,y,width,height})设置逻辑位置
+  我们使用 meta2d.getPenRect(pen)获取逻辑位置；  
+  使用 meta2d.setPenRect(pen,{x,y,width,height})设置逻辑位置
 
 **数据类型：** number
 
@@ -220,7 +220,7 @@ pen 在画布中的位置。**【注意】** 此位置仅为画布绘画的参�
 const pen = {x: 0, y: 0, width: 100, height: 100, ...};
 
 // 缩放、平移后，getPenRect不变，但是 pen.x、pen.y等可能会变
-topology.getPenRect(pen)
+meta2d.getPenRect(pen)
 ```
 
 ### rotate
@@ -293,7 +293,7 @@ const pen = {name: 'line', length: 自动计算得出, ...};
 
 tooltip 提示框，支持 markdown 格式  
 支持 markdown 格式需要引入 marked.min.js，可使用如下路径的包
-[https://github.com/le5le-com/topology.js/blob/master/examples/vue/public/marked.min.js]
+[https://github.com/le5le-com/meta2d.js/blob/master/examples/vue/public/marked.min.js]
 
 **数据类型：** string
 
@@ -575,10 +575,10 @@ const pen = {
   gradientRadius: 100,
 };
 
-topology.addPen(node);
+meta2d.addPen(node);
 pen.id = node.id;
-topology.setValue(pen);
-topology.inactive();
+meta2d.setValue(pen);
+meta2d.inactive();
 ```
 
 ### strokeType
@@ -654,10 +654,10 @@ const pen = {
   ...
 };
 
-topology.addPen(line);
+meta2d.addPen(line);
 pen.id = line.id;
-topology.setValue(pen);
-topology.inactive();
+meta2d.setValue(pen);
+meta2d.inactive();
 ```
 
 ### lineCap
@@ -714,8 +714,8 @@ const line3 = {
   lineCap: "square",
 };
 
-topology.addPens([line, line2, line3]);
-topology.inactive();
+meta2d.addPens([line, line2, line3]);
+meta2d.inactive();
 ```
 
 ### lineJoin
@@ -772,8 +772,8 @@ const line3 = {
   lineJoin: "miter",
 };
 
-topology.addPens([line, line2, line3]);
-topology.inactive();
+meta2d.addPens([line, line2, line3]);
+meta2d.inactive();
 ```
 
 ### shadowColor
@@ -795,8 +795,8 @@ const pen = {
   shadowColor: "black",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### shadowBlur
@@ -819,8 +819,8 @@ const pen = {
   shadowBlur: 20,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### shadowOffsetX、shadowOffsetY
@@ -845,8 +845,8 @@ const pen = {
   shadowOffsetY: 5,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### textHasShadow
@@ -875,8 +875,8 @@ const pen = {
   textWidth: 20,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### textHeight
@@ -900,8 +900,8 @@ const pen = {
   textHeight: 36,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### textLeft、textTop
@@ -925,8 +925,8 @@ const pen = {
   textTop: 20,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### textColor
@@ -948,8 +948,8 @@ const pen = {
   textColor: "green",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### hoverTextColor
@@ -971,8 +971,8 @@ const pen = {
   hoverTextColor: "green",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### activeTextColor
@@ -994,8 +994,8 @@ const pen = {
   activeTextColor: "green",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fontFamily
@@ -1017,8 +1017,8 @@ const pen = {
   fontFamily: "宋体",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fontSize
@@ -1040,8 +1040,8 @@ const pen = {
   fontSize: 24,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### lineHeight
@@ -1064,8 +1064,8 @@ const pen = {
   lineHeight: 24,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fontStyle
@@ -1087,8 +1087,8 @@ const pen = {
   fontStyle: "italic",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fontWeight
@@ -1110,8 +1110,8 @@ const pen = {
   fontWeight: 700,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### textAlign
@@ -1149,8 +1149,8 @@ const pen = {
   textBackground: "blue",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### whiteSpace
@@ -1173,8 +1173,8 @@ const pen = {
   whiteSpace: "nowrap",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### ellipsis
@@ -1198,8 +1198,8 @@ const pen = {
   ellipsis: false,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### image
@@ -1220,8 +1220,8 @@ const pen = {
   image: "/favicon.ico",
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### imageRatio
@@ -1243,8 +1243,8 @@ const pen = {
   imageRatio: true,
 };
 
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### icon
@@ -1267,8 +1267,8 @@ const pen = {
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### iconRotate
@@ -1293,8 +1293,8 @@ const pen = {
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
   iconRotate: 30,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### iconWidth、iconHeight
@@ -1316,8 +1316,8 @@ const pen = {
   iconHeight: 20,
   image: "logo.png",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### iconSize
@@ -1341,8 +1341,8 @@ const pen = {
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### iconTop、iconLeft
@@ -1367,8 +1367,8 @@ const pen = {
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### iconFamily、iconColor、iconAlign、iconWeight
@@ -1404,8 +1404,8 @@ const pen = {
   iconColor: "green", // 可缺省
   icon: "\ue8e7", // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### disableInput
@@ -1426,8 +1426,8 @@ const pen = {
   text: "Text",
   disableInput: true,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### disableRotate
@@ -1448,7 +1448,7 @@ const pen = {
   text: "Text",
   disableRotate: true,
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 ### disableSize
@@ -1469,7 +1469,7 @@ const pen = {
   text: "Text",
   disableSize: true,
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 ### disableAnchor
@@ -1490,8 +1490,8 @@ const pen = {
   text: "Text",
   disableAnchor: true,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### paddingTop
@@ -1512,8 +1512,8 @@ const pen = {
   text: "Text",
   paddingTop: 20,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### backgroundImage
@@ -1534,8 +1534,8 @@ const pen = {
   text: "Text",
   backgroundImage: "/favicon.ico",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### strokeImage
@@ -1556,8 +1556,8 @@ const pen = {
   text: "Text",
   strokeImage: "/favicon.ico",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### children
@@ -1578,8 +1578,8 @@ const pen = {
   text: "Text",
   children: ["id1", "id2"],
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### anchorRadius
@@ -1600,8 +1600,8 @@ const pen = {
   text: "Text",
   anchorRadius: 10,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### anchorBackground
@@ -1622,8 +1622,8 @@ const pen = {
   text: "Text",
   anchorBackground: "blue",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### path
@@ -1644,8 +1644,8 @@ const pen = {
   text: "Text",
   path: "M250 150 L150 350 L350 350 Z",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fromArrow、toArrow
@@ -1683,8 +1683,8 @@ const line = {
   fromArrow: "triangleSolid",
 };
 
-topology.addPen(line);
-topology.inactive();
+meta2d.addPen(line);
+meta2d.inactive();
 ```
 
 ### fromArrowSize、toArrowSize
@@ -1706,8 +1706,8 @@ const pen = {
   fromArrow: "triangleSolid",
   fromArrowSize: 12,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### fromArrowColor、toArrowColor
@@ -1729,8 +1729,8 @@ const pen = {
   fromArrow: "triangleSolid",
   fromArrowColor: "red",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### connectedLines
@@ -1760,8 +1760,8 @@ const pen = {
   text: "Text",
   connectedLines: [{ lineId, lineAnchor, anchor }],
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### animateCycle
@@ -1782,8 +1782,8 @@ const pen = {
   text: "Text",
   animateCycle: 3,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### nextAnimate
@@ -1804,13 +1804,13 @@ const pen = {
   text: "Text",
   nextAnimate: "id/tag",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### autoPlay
 
-topology.open 时，是否自动播放
+meta2d.open 时，是否自动播放
 
 **数据类型：** boolean
 
@@ -1826,8 +1826,8 @@ const pen = {
   text: "Text",
   autoPlay: true,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### playLoop
@@ -1849,8 +1849,8 @@ const pen = {
   autoPlay: true,
   playLoop: true,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### duration
@@ -1877,8 +1877,8 @@ const pen = {
   text: "Text",
   linear: false,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### scale
@@ -1989,8 +1989,8 @@ const pen = {
   text: "Text",
   input: true,
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### dropdownList
@@ -2019,8 +2019,8 @@ const pen = {
   text: "Text",
   dropdownList: [1, 2, 3],
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 
 // 复杂类型
 const pen = {
@@ -2035,8 +2035,8 @@ const pen = {
     { text: 2, a: "b" },
   ],
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### events
@@ -2064,10 +2064,10 @@ const pen = {
   y: 100,
   width: 100,
   height: 100,
-  iframe: "http://topology.le5le.com",
+  iframe: "http://2ds.le5le.com",
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### video、audio
@@ -2105,8 +2105,8 @@ const line = {
   autoPolyline: true,
 };
 
-topology.addPen(line);
-topology.inactive();
+meta2d.addPen(line);
+meta2d.inactive();
 
 // 需要连线连接到一个Pen，这里暂时没有构造关联数据
 ```
@@ -2131,8 +2131,8 @@ const pen = {
   // progressColor: 'green',
   // verticalProgress: false,  // 水平方向还是垂直方向
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### progressColor
@@ -2155,8 +2155,8 @@ const pen = {
   progressColor: "green",
   // verticalProgress: false,  // 水平方向还是垂直方向
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### verticalProgress
@@ -2179,8 +2179,8 @@ const pen = {
   // progressColor: 'green',
   verticalProgress: true, // 垂直方向
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ### autoFrom
@@ -2207,8 +2207,8 @@ const line = {
   autoFrom: true,
 };
 
-topology.addPen(line);
-topology.inactive();
+meta2d.addPen(line);
+meta2d.inactive();
 
 // 需要连线连接到一个Pen，这里暂时没有构造关联数据
 ```
@@ -2237,8 +2237,8 @@ const line = {
   autoTo: true,
 };
 
-topology.addPen(line);
-topology.inactive();
+meta2d.addPen(line);
+meta2d.inactive();
 
 // 需要连线连接到一个Pen，这里暂时没有构造关联数据
 ```
@@ -2337,7 +2337,7 @@ void
 **示例：**
 
 ```js
-import { randomId } from "@topology/core";
+import { randomId } from "@meta2d/core";
 
 randomId(pen);
 ```
@@ -2360,7 +2360,7 @@ Pen。如果没有父元素，返回 undefined
 **示例：**
 
 ```js
-import { getParent } from "@topology/core";
+import { getParent } from "@meta2d/core";
 
 getParent(pen);
 ```
@@ -2380,7 +2380,7 @@ Pen[]。如果没有子元素或孙元素，返回 []
 **示例：**
 
 ```js
-import { getAllChildren } from "@topology/core";
+import { getAllChildren } from "@meta2d/core";
 
 getAllChildren(pen);
 ```
@@ -2400,14 +2400,14 @@ void
 **示例：**
 
 ```js
-import { calcPenRect } from "@topology/core";
+import { calcPenRect } from "@meta2d/core";
 
 calcPenRect(pen);
 ```
 
 ### scalePen
 
-缩放画笔。仅仅修改世界坐标（临时绘画坐标，不影响原始数据），如果需要配套更新数据，需要调用 topology.canvas.updatePenRect(pen)。
+缩放画笔。仅仅修改世界坐标（临时绘画坐标，不影响原始数据），如果需要配套更新数据，需要调用 meta2d.canvas.updatePenRect(pen)。
 
 **参数：**
 
@@ -2426,7 +2426,7 @@ void
 **示例：**
 
 ```js
-import { scalePen } from "@topology/core";
+import { scalePen } from "@meta2d/core";
 
 // 相对自身中点缩放120%
 scalePen(pen, 1.2, pen.calculative.worldRect.center);
@@ -2450,7 +2450,7 @@ Point。世界坐标下的锚点
 **示例：**
 
 ```js
-import { pushPenAnchor } from "@topology/core";
+import { pushPenAnchor } from "@meta2d/core";
 
 // 这里的x,y仅为示例值
 pushPenAnchor(pen, { x: 100, y: 100 });
@@ -2458,7 +2458,7 @@ pushPenAnchor(pen, { x: 100, y: 100 });
 
 ### addLineAnchor
 
-添加连线锚点。一般还需要调用 topology.canvas.initLineRect(line);重新计算连线长度、样式和区域
+添加连线锚点。一般还需要调用 meta2d.canvas.initLineRect(line);重新计算连线长度、样式和区域
 
 **参数：**
 
@@ -2477,16 +2477,16 @@ Point。世界坐标下的锚点
 **示例：**
 
 ```js
-import { addLineAnchor } from "@topology/core";
+import { addLineAnchor } from "@meta2d/core";
 
 // 这里的x,y仅为示例值
 addLineAnchor(line, { x: 100, y: 100 }, 0);
-topology.canvas.initLineRect(line);
+meta2d.canvas.initLineRect(line);
 ```
 
 ### removePenAnchor
 
-移除锚点。如果为 line 还需要调用 topology.canvas.initLineRect(line);重新计算连线长度、样式和区域
+移除锚点。如果为 line 还需要调用 meta2d.canvas.initLineRect(line);重新计算连线长度、样式和区域
 
 **参数：**
 
@@ -2502,11 +2502,11 @@ void
 **示例：**
 
 ```js
-import { removePenAnchor } from "@topology/core";
+import { removePenAnchor } from "@meta2d/core";
 
 removePenAnchor(pen, { id: "id" });
 if (line.type) {
-  topology.canvas.initLineRect(line);
+  meta2d.canvas.initLineRect(line);
 }
 ```
 
@@ -2528,7 +2528,7 @@ Point：锚点
 **示例：**
 
 ```js
-import { nearestAnchor } from "@topology/core";
+import { nearestAnchor } from "@meta2d/core";
 
 const pt = nearestAnchor(pen, { x: 100, y: 100 });
 ```
@@ -2561,7 +2561,7 @@ enum Direction {
 **示例：**
 
 ```js
-import { facePen } from "@topology/core";
+import { facePen } from "@meta2d/core";
 
 const direction = facePen({ x: 100, y: 100 }, pen);
 ```
@@ -2584,7 +2584,7 @@ Point: 锚点
 **示例：**
 
 ```js
-import { getAnchor } from "@topology/core";
+import { getAnchor } from "@meta2d/core";
 
 const pt = getAnchor(pen, "id");
 ```
@@ -2604,7 +2604,7 @@ Point: 起点
 **示例：**
 
 ```js
-import { getFromAnchor } from "@topology/core";
+import { getFromAnchor } from "@meta2d/core";
 
 const from = getFromAnchor(pen);
 ```
@@ -2624,7 +2624,7 @@ Point: 终点
 **示例：**
 
 ```js
-import { getToAnchor } from "@topology/core";
+import { getToAnchor } from "@meta2d/core";
 
 const to = getToAnchor(pen);
 ```
@@ -2647,7 +2647,7 @@ void
 **示例：**
 
 ```js
-import { setHover } from "@topology/core";
+import { setHover } from "@meta2d/core";
 
 setHover(pen);
 ```
@@ -2675,7 +2675,7 @@ setHover(pen);
 **示例：**
 
 ```js
-import { connectLine, s8 } from "@topology/core";
+import { connectLine, s8 } from "@meta2d/core";
 
 const pen: Pen = {
   name: "rectangle",
@@ -2684,7 +2684,7 @@ const pen: Pen = {
   x: 100,
   y: 100,
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 // 添加进入画布后，会为 pen 添加 id , anchors
 const anchorId = pen.anchors[0].id;
 const line: Pen = {
@@ -2710,10 +2710,10 @@ const line: Pen = {
     },
   ],
 };
-topology.addPen(line);
+meta2d.addPen(line);
 connectLine(pen, pen.anchors[0], line, line.anchors[0]);
 line.calculative.active = false;
-topology.canvas.updateLines(pen);
+meta2d.canvas.updateLines(pen);
 ```
 
 ### disconnectLine
@@ -2726,7 +2726,7 @@ topology.canvas.updateLines(pen);
 **示例：**
 
 ```js
-import { disconnectLine, Pen } from "@topology/core";
+import { disconnectLine, Pen } from "@meta2d/core";
 
 const pen: Pen = {
   name: "rectangle",
@@ -2749,7 +2749,7 @@ const pen: Pen = {
     },
   ],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 const line: Pen = {
   id: 'line',
   x: 200,
@@ -2774,6 +2774,6 @@ const line: Pen = {
     },
   ],
 };
-topology.addPen(line);
+meta2d.addPen(line);
 disconnectLine(pen, pen.anchors[0], line, line.anchors[0]);
 ```

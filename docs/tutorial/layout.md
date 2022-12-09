@@ -15,7 +15,7 @@
 
 ```js
 // 自适应屏幕显示
-topology.fitView();
+meta2d.fitView();
 ```
 
 ## 中间件

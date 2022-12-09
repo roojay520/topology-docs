@@ -10,12 +10,12 @@ module.exports = {
     algolia: {
       appId: "3UU73GDKU1",
       apiKey: "4d05a9750de2dd2ecdc6611ce62e545e",
-      indexName: "le5le-topology",
+      indexName: "le5le-meta2d",
       placeholder: "搜索后，请刷新",
       transformItems(items) {
         for (const item of items) {
-          item.objectID.replace("topology-documents/", "");
-          item.url.replace("topology-documents/", "");
+          item.objectID.replace("meta2d-documents/", "");
+          item.url.replace("meta2d-documents/", "");
         }
         return items;
       },
@@ -33,6 +33,7 @@ module.exports = {
       //   link: '/videos/home',
       //   activeMatch: '^/videos/',
       // },
+      { text: "3D", link: "/3d/index", activeMatch: "^/3d/" },
       {
         text: "资源",
         link: "/awesome/home",
@@ -42,25 +43,25 @@ module.exports = {
         text: "产品",
         items: [
           {
-            text: "Topology 2D",
-            link: "http://topology.le5le.com/",
+            text: "乐吾乐 2D可视化",
+            link: "https://2ds.le5le.com/",
           },
           // {
-          //   text: 'Topology 2D 企业版',
+          //   text: 'Meta2d 2D 企业版',
           //   link: 'tutorial/commercial',
           // },
           {
-            text: "Topology 3D 预览版",
-            link: "http://3d.preview.le5le.com/",
+            text: "乐吾乐 3D 预览版",
+            link: "http://111.172.231.243:7800/",
           },
           {
             text: "物联平台",
             link: "http://iot.demo.le5le.com/",
           },
-          {
-            text: "Topology 0.5.x",
-            link: "https://www.yuque.com/alsmile/topology",
-          },
+          // {
+          //   text: "Meta2d 0.5.x",
+          //   link: "https://www.yuque.com/alsmile/meta2d",
+          // },
         ],
       },
       {
@@ -132,6 +133,7 @@ module.exports = {
     sidebar: {
       "/tutorial/": getTutorialSidebar(),
       "/api/": getAPISidebar(),
+      "/3d/": get3DSidebar(),
       "/videos/": [
         {
           text: "视频教程",
@@ -156,7 +158,7 @@ function getTutorialSidebar() {
     {
       text: "使用",
       children: [
-        { text: "Topology介绍", link: "/tutorial/introduction" },
+        { text: "Meta2d介绍", link: "/tutorial/introduction" },
         {
           text: "快速上手",
           link: "/tutorial/start",
@@ -214,7 +216,7 @@ function getTutorialSidebar() {
       text: "架构",
       children: [
         { text: "概要", link: "/tutorial/architecture" },
-        { text: "画布", link: "/tutorial/topology" },
+        { text: "画布", link: "/tutorial/meta2d" },
         { text: "画笔", link: "/tutorial/pen" },
         { text: "生命周期", link: "/tutorial/lifecycle" },
         { text: "实时数据监听", link: "/tutorial/data" },
@@ -292,6 +294,38 @@ function getAPISidebar() {
         { text: "Point", link: "/api/point" },
         { text: "Layout", link: "/api/layout" },
         { text: "Utils", link: "/api/utils" },
+      ],
+    },
+  ];
+}
+
+function get3DSidebar() {
+  return [
+    {
+      text: "可视化平台",
+      children: [
+        {
+          text: '指引',
+          children: [
+            { text: '介绍', link: '/3d/editor/guide/introduction' },
+            { text: '第一个项目', link: '/3d/editor/guide/firstProject' },
+            { text: '设置事件', link: '/3d/editor/guide/setEvents' },
+            { text: '设置动画', link: '/3d/editor/guide/setAnimations' },
+            { text: '设置动态数据', link: '/3d/editor/guide/setDynamicDatas' },
+            { text: '设置自定义数据', link: '/3d/editor/guide/setCustomDatas' },
+          ]
+        },
+        {
+          text: '深入', children: [
+            { text: '项目', link: '/3d/editor/deep-dive/project' },
+          ]
+        },
+      ],
+    },
+    {
+      text: "核心库",
+      link: '/3d/meta3d/index',
+      children: [
       ],
     },
   ];

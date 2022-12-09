@@ -10,7 +10,7 @@
 控制台查看  
 
 ```js
-topology.store.active[0].devName     // 确保选中，并且配置的属性名叫 devName
+meta2d.store.active[0].devName     // 确保选中，并且配置的属性名叫 devName
 ```
 
 ![业务属性](/img/serviceData.gif)

@@ -1,6 +1,6 @@
 # API接口文档
 
-注意：下面是官方topology自己的服务接口。自己开发的接口与topology-vue组件依赖的格式不一定完全相同，请根据实际情况转换为所需要的数据格式。
+注意：下面是官方meta2d自己的服务接口。自己开发的接口与meta2d-vue组件依赖的格式不一定完全相同，请根据实际情况转换为所需要的数据格式。
 ​
 
 **默认**：所有接口调用失败时，返回{ error: '错误原因'}。正确时，直接返回所需数据，不再需要error字段。故所有接口返回通过返回是否有error字段判断。
@@ -77,7 +77,7 @@ sort - 排序
       "id": "604248bbe0bd6df843c9fd59",
       "name": "空白文件",
       "desc": "",
-      "image": "/image/topology/thumb_0dc82df17768828f.png",
+      "image": "/image/meta2d/thumb_0dc82df17768828f.png",
       "class": "架构拓扑图",
       "component": false,
       "folder": "",
@@ -105,7 +105,7 @@ sort - 排序
 ```json
 {
   "id": "60490215e0bd6d451be9cbf0",
-  "name": "topology.2021/3/11上午1:29:57",
+  "name": "meta2d.2021/3/11上午1:29:57",
   "desc": "",
   "image": "",
   "class": "",

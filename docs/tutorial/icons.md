@@ -30,8 +30,8 @@ const pen = {
   iconColor: 'green', // 可缺省
   icon: '\ue8e7', // 字体图标Unicode编码。必须正确设置，具体参考下面文档
 };
-topology.addPen(pen);
-topology.inactive();
+meta2d.addPen(pen);
+meta2d.inactive();
 ```
 
 ## 字体图标 Unicode 编码
