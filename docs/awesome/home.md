@@ -12,28 +12,6 @@
 
 ## 视频教程
 
-### 演示
-
-[【乐吾乐Meta2d宣传片】专业的Web组态可视化软件](https://www.bilibili.com/video/BV1SY4y137xy/) 
-
-### 开发
-
-①  [绑定变量，快速实现实时数据动态展示](https://www.bilibili.com/video/BV1Yd4y1D7ys?spm_id_from=333.999.0.0)
-
-②  [企业版快速上手](https://www.bilibili.com/video/BV1ZS4y1K7KY?spm_id_from=333.999.0.0)
-
-③  [条件变化触发实时告警](https://www.bilibili.com/video/BV1dT4y1U7V1?spm_id_from=333.999.0.0)
-
-④  [消息通信](https://www.bilibili.com/video/BV1wL4y1M76g?spm_id_from=333.999.0.0)
-
-⑤  [交互事件](https://www.bilibili.com/video/BV1wP4y1u7eH?spm_id_from=333.999.0.0)
-
-⑥  [开关的断开与闭合如何快速实现](https://www.bilibili.com/video/BV1i44y1376U?spm_id_from=333.999.0.0)
-
-⑦  [点击组件，显示弹框](https://www.bilibili.com/video/BV1634y1v7Yz?spm_id_from=333.999.0.0)
-
-⑧  [炫酷组件，自己定义](https://mp.weixin.qq.com/s/R8uB48uzvKzJYHoTbXVGrw)
-
 ### 用户使用教程
 
 ①  [用户教程01-用连线绘制管道效果](https://www.bilibili.com/video/BV1VM41167jR/?vd_source=28d7954182229a8fb83df5f4b07265c7)   
