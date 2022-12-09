@@ -11,16 +11,16 @@
 <br>
 
 ::: tip 提示  
-初始化引擎后，会在 window 下注入 topology 对象（即 window.topology）。
+初始化引擎后，会在 window 下注入 meta2d 对象（即 window.meta2d）。
 
-默认任何相关文档提到的 topology 均指 window.topology（实例化引擎对象）。
+默认任何相关文档提到的 meta2d 均指 window.meta2d（实例化引擎对象）。
 :::
 
 ::: tip 划重点
-所有标准 js 语法均可打开 [topology 官网编辑器](http://t.le5le.com) ，在浏览器控制台直接运行查看效果
+所有标准 js 语法均可打开 [meta2d 官网编辑器](http://t.le5le.com) ，在浏览器控制台直接运行查看效果
 :::
 
-例如，在[topology 官网编辑器](http://t.le5le.com/) 页面的控制台运行：
+例如，在[meta2d 官网编辑器](http://t.le5le.com/) 页面的控制台运行：
 
 ```js
 // 定义一个pen，矩形
@@ -33,30 +33,30 @@ const pen = {
   height: 100,
 };
 
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 需要编译和依赖环境的代码除外，比如：
 
 ```js
-import { Topology } from "@topology/core";
+import { Meta2d } from "@meta2d/core";
 
-new Topology();
+new Meta2d();
 ```
 
-本教程下列代码不可在 topology 官网编辑器运行。其他页面教程的标准 js 语法大多可以。
+本教程下列代码不可在 meta2d 官网编辑器运行。其他页面教程的标准 js 语法大多可以。
 
 ---
 
 ## 在 ES5 中使用
 
-1. 获取 topology.js
+1. 获取 meta2d.js
 
 ```shell
-npm install topology.js --save
+npm install meta2d.js --save
 ```
 
-2. 拷贝 node_modules/topology.js/topology.js 到静态资源目录（比例 index.html 所在目录）
+2. 拷贝 node_modules/meta2d.js/meta2d.js 到静态资源目录（比例 index.html 所在目录）
 
 3. 编写 index.html
 
@@ -64,47 +64,47 @@ npm install topology.js --save
 <!DOCTYPE html>
 <html>
   <head>
-    <title i18n>乐吾乐 Topology</title>
+    <title i18n>乐吾乐 Meta2d</title>
     <meta charset="UTF-8" />
   </head>
 
   <body>
-    <div id="topology"></div>
-    <script src="topology.js"></script>
+    <div id="meta2d"></div>
+    <script src="meta2d.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
 ```
 
-4. 编写 index.js 加载 topology.js
+4. 编写 index.js 加载 meta2d.js
 
 ```js
-var topology = new Topology("topology");
+var meta2d = new Meta2d("meta2d");
 registerCommonDiagram(); //注册图形库
 // Get the json data
 // ...
 // Open the json
-topology.open(json);
+meta2d.open(json);
 ```
 
-**参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/es5
+**参考例子：** https://github.com/le5le-com/meta2d.js/tree/master/examples/es5
 
 ## 在 Vue3 中使用
 
-1. 获取 @topology/core 等库
+1. 获取 @meta2d/core 等库
 
 ```shell
-npm install @topology/core --save
+npm install @meta2d/core --save
 
 // Option
-npm install @topology/activity-diagram --save
-npm install @topology/chart-diagram --save
-npm install @topology/class-diagram --save
-npm install @topology/flow-diagram --save
-npm install @topology/sequence-diagram --save
+npm install @meta2d/activity-diagram --save
+npm install @meta2d/chart-diagram --save
+npm install @meta2d/class-diagram --save
+npm install @meta2d/flow-diagram --save
+npm install @meta2d/sequence-diagram --save
 // ...
 # 新版本尚未发布，待
-# npm install @topology/layout --save
+# npm install @meta2d/layout --save
 
 ```
 
@@ -113,69 +113,69 @@ npm install @topology/sequence-diagram --save
 ```html
 <template>
   <div class="main">
-    <div id="topology"></div>
+    <div id="meta2d"></div>
   </div>
 </template>
 ```
 
-3. 编写 js 加载 topology
+3. 编写 js 加载 meta2d
 
 ```ts
     import {
         Options,
-        Topology
-    } from '@topology/core';
+        Meta2d
+    } from '@meta2d/core';
 import {
     flowPens
-} from '@topology/flow-diagram';
+} from '@meta2d/flow-diagram';
 import {
     activityDiagram
-} from '@topology/activity-diagram';
+} from '@meta2d/activity-diagram';
 import {
     classPens
-} from '@topology/class-diagram';
+} from '@meta2d/class-diagram';
 import {
     sequencePens,
     sequencePensbyCtx
-} from '@topology/sequence-diagram';
+} from '@meta2d/sequence-diagram';
 import {
     defineComponent,
     onMounted,
     onUnmounted,
     ref
 } from 'vue';
-import { formPens } from '@topology/form-diagram';
+import { formPens } from '@meta2d/form-diagram';
 
 declare const window: any;
-declare const topology: Topology;
+declare const meta2d: Meta2d;
 
 export default defineComponent({
-    name: 'TopologyCanvas',
+    name: 'Meta2dCanvas',
     components: {},
     setup() {
-        const topologyOptions: Options = {};
+        const meta2dOptions: Options = {};
 
         onMounted(() => {
-            new Topology('topology', topologyOptions);
-            topology.register(flowPens());
-            topology.register(activityDiagram());
-            topology.register(classPens());
-            topology.register(sequencePens());
-            topology.registerCanvasDraw(sequencePensbyCtx());
-            topology.registerCanvasDraw(formPens());
+            new Meta2d('meta2d', meta2dOptions);
+            meta2d.register(flowPens());
+            meta2d.register(activityDiagram());
+            meta2d.register(classPens());
+            meta2d.register(sequencePens());
+            meta2d.registerCanvasDraw(sequencePensbyCtx());
+            meta2d.registerCanvasDraw(formPens());
 
             // 监听消息事件
-            topology.on('contextmenu', contextmenu);
-            topology.on('click', click);
+            meta2d.on('contextmenu', contextmenu);
+            meta2d.on('click', click);
 
             // 打开文件
-            topology.open(json);
+            meta2d.open(json);
         });
         onUnmounted(() => {
-            if (topology) {
-                topology.off('contextmenu', contextmenu);
-                topology.off('click', click);
-                topology.destroy();
+            if (meta2d) {
+                meta2d.off('contextmenu', contextmenu);
+                meta2d.off('click', click);
+                meta2d.destroy();
             }
         });
 
@@ -196,24 +196,24 @@ export default defineComponent({
 }); <
 ```
 
-**参考例子：** https://github.com/le5le-com/topology.js/tree/main/examples/vue
+**参考例子：** https://github.com/le5le-com/meta2d.js/tree/main/examples/vue
 
 ## 在 React 中使用
 
-1. 获取 @topology/core 等库
+1. 获取 @meta2d/core 等库
 
 ```shell
-npm install @topology/core --save
+npm install @meta2d/core --save
 
 // Option
-npm install @topology/activity-diagram --save
-npm install @topology/chart-diagram --save
-npm install @topology/class-diagram --save
-npm install @topology/flow-diagram --save
-npm install @topology/sequence-diagram --save
+npm install @meta2d/activity-diagram --save
+npm install @meta2d/chart-diagram --save
+npm install @meta2d/class-diagram --save
+npm install @meta2d/flow-diagram --save
+npm install @meta2d/sequence-diagram --save
 // ...
 # 新版本尚未发布，待
-# npm install @topology/layout --save
+# npm install @meta2d/layout --save
 
 ```
 
@@ -221,36 +221,36 @@ npm install @topology/sequence-diagram --save
 
 ```tsx
 import React, { useEffect } from "react";
-import { Options, Topology } from "@topology/core";
-import { flowPens } from "@topology/flow-diagram";
-import { activityDiagram } from "@topology/activity-diagram";
-import { classPens } from "@topology/class-diagram";
-import { sequencePens, sequencePensbyCtx } from "@topology/sequence-diagram";
-import { formPens } from "@topology/form-diagram";
+import { Options, Meta2d } from "@meta2d/core";
+import { flowPens } from "@meta2d/flow-diagram";
+import { activityDiagram } from "@meta2d/activity-diagram";
+import { classPens } from "@meta2d/class-diagram";
+import { sequencePens, sequencePensbyCtx } from "@meta2d/sequence-diagram";
+import { formPens } from "@meta2d/form-diagram";
 
-const TopologyContainer = () => {
+const Meta2dContainer = () => {
   useEffect(() => {
-    window.topology = new Topology("topology");
+    window.meta2d = new Meta2d("meta2d");
 
-    topology.register(flowPens());
-    topology.register(activityDiagram());
-    topology.register(classPens());
-    topology.register(sequencePens());
-    topology.registerCanvasDraw(sequencePensbyCtx());
-    topology.registerCanvasDraw(formPens());
+    meta2d.register(flowPens());
+    meta2d.register(activityDiagram());
+    meta2d.register(classPens());
+    meta2d.register(sequencePens());
+    meta2d.registerCanvasDraw(sequencePensbyCtx());
+    meta2d.registerCanvasDraw(formPens());
 
     // 打开文件
-    topology.open(json);
+    meta2d.open(json);
   }, []);
 
   return (
     <div className="main">
-      <div className="topology" id="topology"></div>
+      <div className="meta2d" id="meta2d"></div>
     </div>
   );
 };
 
-export default TopologyContainer;
+export default Meta2dContainer;
 ```
 
-**参考例子：** https://github.com/le5le-com/topology.js/tree/master/examples/react
+**参考例子：** https://github.com/le5le-com/meta2d.js/tree/master/examples/react

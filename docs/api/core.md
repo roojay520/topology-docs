@@ -7,9 +7,9 @@
 | 名称               | 类型                                         | 描述                                       |
 | ------------------ | -------------------------------------------- | ------------------------------------------ |
 | parent             | HTMLElement                                  | 可视化引擎的父容器                         |
-| options            | [Options](../tutorial/topology#options-选项) | 可视化引擎选项                             |
+| options            | [Options](../tutorial/meta2d#options-选项) | 可视化引擎选项                             |
 | canvas             | [Canvas](./canvas)                           | 绘画画板                                   |
-| store              | [TopologyStore](../tutorial/topology#topologystore)              | 绘画数据。包括文件数据和各种状态数据等     |
+| store              | [Meta2dStore](../tutorial/meta2d#meta2dstore)              | 绘画数据。包括文件数据和各种状态数据等     |
 | websocket          | WebSocket                                    | 原生 WebSocket 客户端。仅连接成功才有实例  |
 | mqttClient         | Mqtt.Client                                  | mqtt.js 通信客户端                         |
 | beforeAddPen **弃用**  | (pen: Pen) => boolean                    | 添加 Pen 前生命周期函数，返回 true 允许    |
@@ -29,7 +29,7 @@
 - parent ：string | HTMLElement  
   可视化引擎的父容器 id 或 Element 元素
 
-- options ：[Options](../tutorial/topology#options-选项)  
+- options ：[Options](../tutorial/meta2d#options-选项)  
   可视化引擎选项，可缺省
 
 **返回：**  
@@ -38,11 +38,11 @@ void
 **示例：**
 
 ```js
-var topology = new Topology('topology');
+var meta2d = new Meta2d('meta2d');
 
-var topology = new Topology('topology', options);
+var meta2d = new Meta2d('meta2d', options);
 
-var topology = new Topology(div, options);
+var meta2d = new Meta2d(div, options);
 ```
 
 ### setOptions
@@ -51,7 +51,7 @@ var topology = new Topology(div, options);
 
 **参数：**
 
-- options ：[Options](../tutorial/topology#options-选项)  
+- options ：[Options](../tutorial/meta2d#options-选项)  
   可视化引擎选项
 
 **返回：**  
@@ -60,8 +60,8 @@ void
 **示例：**
 
 ```js
-var topology = new Topology('topology');
-topology.setOptions(options);
+var meta2d = new Meta2d('meta2d');
+meta2d.setOptions(options);
 ```
 
 ### getOptions
@@ -77,8 +77,8 @@ void
 **示例：**
 
 ```js
-var topology = new Topology('topology');
-var options = topology.getOptions();
+var meta2d = new Meta2d('meta2d');
+var options = meta2d.getOptions();
 ```
 
 ### resize
@@ -99,9 +99,9 @@ void
 **示例：**
 
 ```js
-topology.resize();
+meta2d.resize();
 
-topology.resize(1000, 800);
+meta2d.resize(1000, 800);
 ```
 
 ### addPen
@@ -130,9 +130,9 @@ const pen = {
   width: 100,
   height: 100,
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
-topology.addPen(pen, true);
+meta2d.addPen(pen, true);
 ```
 
 ### addPens
@@ -171,9 +171,9 @@ const pen2 = {
   height: 100,
 };
 
-topology.addPens([pen, pen2]);
+meta2d.addPens([pen, pen2]);
 
-topology.addPens([pen, pen2], true);
+meta2d.addPens([pen, pen2], true);
 ```
 
 ### render
@@ -186,7 +186,7 @@ topology.addPens([pen, pen2], true);
   时间的毫秒数 或 是否脏  
   可为空 - 表示当前时间，下一个绘画周期重绘  
   true - 于空完全相同  
-  false - 且 topology.canvas.dirty(1.1.35及以后版本dirty重命名为patchFlags) 为 true 时，在下一个绘画周期重绘。常用在不确定是否需要重绘时使用，例如说本次修改数据可能需要重绘时，在可能的情况下将 (topology.canvas.dirty = true) ，再执行 topology.render(false) ，这样不会导致非重绘的情况也重绘。
+  false - 且 meta2d.canvas.dirty(新版本dirty重命名为patchFlags) 为 true 时，在下一个绘画周期重绘。常用在不确定是否需要重绘时使用，例如说本次修改数据可能需要重绘时，在可能的情况下将 (meta2d.canvas.dirty = true) ，再执行 meta2d.render(false) ，这样不会导致非重绘的情况也重绘。
   number - 不推荐使用 number
 
   主要用于避免一帧内，多次频繁调用 render 带来不必要的绘画开销
@@ -199,11 +199,11 @@ void
 ```js
 // 多次频繁调用，有性能保护，且显示最新
 for (let i = 0; i < 100; i++) {
-  topology.render();
+  meta2d.render();
 }
 
 // 修改过数据，确认数据已经dirty
-topology.render();
+meta2d.render();
 ```
 
 ### open
@@ -212,7 +212,7 @@ topology.render();
 
 **参数：**
 
-- data: [TopologyData](../tutorial/topology#文件数据)  
+- data: [Meta2dData](../tutorial/meta2d#文件数据)  
   json 图纸数据。可为空，表示打开新的空白文档
 
 **返回：**  
@@ -230,7 +230,7 @@ const pen = {
   height: 100,
 };
 
-topology.open({ pens: [pen] });
+meta2d.open({ pens: [pen] });
 ```
 
 ### connectSocket
@@ -246,9 +246,9 @@ void
 **示例：**
 
 ```js
-topology.store.data.websocket = url;
+meta2d.store.data.websocket = url;
 
-topology.connectSocket();
+meta2d.connectSocket();
 ```
 
 ### drawLine
@@ -269,10 +269,10 @@ void
 
 ```js
 // 开始钢笔绘画
-topology.drawLine('curve');
+meta2d.drawLine('curve');
 
 // 取消绘画
-topology.drawLine();
+meta2d.drawLine();
 ```
 
 ### finishDrawLine
@@ -291,10 +291,10 @@ void
 
 ```js
 // 开始钢笔绘画
-topology.drawLine('curve');
+meta2d.drawLine('curve');
 
 // 绘画完成
-topology.finishDrawLine();
+meta2d.finishDrawLine();
 ```
 
 ### drawingPencil
@@ -309,7 +309,7 @@ void
 **示例：**
 
 ```js
-topology.drawingPencil();
+meta2d.drawingPencil();
 ```
 
 ### stopPencil
@@ -324,7 +324,7 @@ void
 **示例：**
 
 ```js
-topology.stopPencil();
+meta2d.stopPencil();
 ```
 
 ### lock
@@ -339,7 +339,7 @@ void
 **示例：**
 
 ```js
-topology.lock(1);
+meta2d.lock(1);
 ```
 
 ### finishPencil
@@ -355,10 +355,10 @@ void
 **示例：**
 
 ```js
-topology.drawingPencil();
+meta2d.drawingPencil();
 
 // 绘画完成
-topology.finishPencil();
+meta2d.finishPencil();
 ```
 
 ### updateLineType
@@ -379,9 +379,9 @@ void
 **示例：**
 
 ```js
-topology.updateLineType(line, 'curve');
+meta2d.updateLineType(line, 'curve');
 
-topology.updateLineType(line, 'line');
+meta2d.updateLineType(line, 'line');
 ```
 
 ### addDrawLineFn
@@ -393,7 +393,7 @@ topology.updateLineType(line, 'line');
 - fnName: string  
   自定义的连线类型名称。
 
-- fn: (store: TopologyStore, pen: Pen, mousedwon?: Point) => void  
+- fn: (store: Meta2dStore, pen: Pen, mousedwon?: Point) => void  
   自定义的连线锚点算法
 
 **返回：**  
@@ -417,7 +417,7 @@ void
 **示例：**
 
 ```js
-topology.removeDrawLineFn('polyline');
+meta2d.removeDrawLineFn('polyline');
 ```
 
 ### showMagnifier
@@ -433,7 +433,7 @@ void
 **示例：**
 
 ```js
-topology.showMagnifier();
+meta2d.showMagnifier();
 ```
 
 ### hideMagnifier
@@ -449,7 +449,7 @@ void
 **示例：**
 
 ```js
-topology.hideMagnifier();
+meta2d.hideMagnifier();
 ```
 
 ### toggleMagnifier
@@ -465,7 +465,7 @@ void
 **示例：**
 
 ```js
-topology.toggleMagnifier();
+meta2d.toggleMagnifier();
 ```
 
 ### clear
@@ -481,7 +481,7 @@ void
 **示例：**
 
 ```js
-topology.clear();
+meta2d.clear();
 ```
 
 ### emit
@@ -502,7 +502,7 @@ void
 **示例：**
 
 ```js
-topology.emit('myMessage', { a: 1 });
+meta2d.emit('myMessage', { a: 1 });
 ```
 
 ### on
@@ -524,8 +524,8 @@ void
 
 ```js
 const fn = (event, data) => {};
-topology.on('event', fn);
-// 不用时，又不销毁topology实例，记得取消订阅。
+meta2d.on('event', fn);
+// 不用时，又不销毁meta2d实例，记得取消订阅。
 ```
 
 ### off
@@ -548,10 +548,10 @@ void
 ```js
 const fn = (event, data) => {};
 // 订阅
-topology.on('event', fn);
+meta2d.on('event', fn);
 
 // 取消订阅
-topology.off('event', fn);
+meta2d.off('event', fn);
 ```
 
 ### register
@@ -608,7 +608,7 @@ void
 
 **参数：**
 
-- store: [TopologyStore](../tutorial/topology#topologystore)  
+- store: [Meta2dStore](../tutorial/meta2d#meta2dstore)  
   引擎数据存储对象
 
 - rect: [Rect](./rect)  
@@ -637,7 +637,7 @@ json 对象，包含：xDock, yDock
 **示例：**
 
 ```js
-topology.registerMoveDock((store, rect, pens, offset) => {
+meta2d.registerMoveDock((store, rect, pens, offset) => {
   return {
     xDock: {
       x,
@@ -662,7 +662,7 @@ topology.registerMoveDock((store, rect, pens, offset) => {
 
 **参数：**
 
-- store: [TopologyStore](../tutorial/topology#topologystore)  
+- store: [Meta2dStore](../tutorial/meta2d#meta2dstore)  
   引擎数据存储对象
 
 - rect: [Rect](./rect)  
@@ -691,7 +691,7 @@ json 对象，包含：xDock, yDock
 **示例：**
 
 ```js
-topology.registerResizeDock((store, rect, pens, resizeIndex) => {
+meta2d.registerResizeDock((store, rect, pens, resizeIndex) => {
   return {
     xDock: {
       x,
@@ -726,7 +726,7 @@ topology.registerResizeDock((store, rect, pens, resizeIndex) => {
 **示例：**
 
 ```js
-var pens = topology.find('aaa');
+var pens = meta2d.find('aaa');
 ```
 
 ### findOne
@@ -744,7 +744,7 @@ var pens = topology.find('aaa');
 **示例：**
 
 ```js
-const pen = topology.find('id');
+const pen = meta2d.find('id');
 ```
 
 ### getPenRect
@@ -762,7 +762,7 @@ const pen = topology.find('id');
 **示例：**
 
 ```js
-var rect = topology.getPenRect(pen);
+var rect = meta2d.getPenRect(pen);
 ```
 
 ### setPenRect
@@ -786,7 +786,7 @@ void
 **示例：**
 
 ```js
-topology.setPenRect(pen, { x: 200, y: 200, width: 100, height: 100 });
+meta2d.setPenRect(pen, { x: 200, y: 200, width: 100, height: 100 });
 ```
 
 ### startAnimate
@@ -804,9 +804,9 @@ void
 **示例：**
 
 ```js
-topology.startAnimate('aaa');
+meta2d.startAnimate('aaa');
 
-topology.startAnimate([pen]);
+meta2d.startAnimate([pen]);
 ```
 
 ### pauseAnimate
@@ -824,9 +824,9 @@ void
 **示例：**
 
 ```js
-topology.pauseAnimate('aaa');
+meta2d.pauseAnimate('aaa');
 
-topology.pauseAnimate([pen]);
+meta2d.pauseAnimate([pen]);
 ```
 
 ### stopAnimate
@@ -844,9 +844,9 @@ void
 **示例：**
 
 ```js
-topology.stopAnimate('aaa');
+meta2d.stopAnimate('aaa');
 
-topology.stopAnimate([pen]);
+meta2d.stopAnimate([pen]);
 ```
 
 
@@ -866,9 +866,9 @@ void
 **示例：**
 
 ```js
-topology.startVideo('aaa');
+meta2d.startVideo('aaa');
 
-topology.startVideo([pen]);
+meta2d.startVideo([pen]);
 ```
 
 ### pauseVideo
@@ -886,9 +886,9 @@ void
 **示例：**
 
 ```js
-topology.pauseVideo('aaa');
+meta2d.pauseVideo('aaa');
 
-topology.pauseVideo([pen]);
+meta2d.pauseVideo([pen]);
 ```
 
 ### stopVideo
@@ -906,9 +906,9 @@ void
 **示例：**
 
 ```js
-topology.stopVideo('aaa');
+meta2d.stopVideo('aaa');
 
-topology.stopVideo([pen]);
+meta2d.stopVideo([pen]);
 ```
 
 ### calcAnimateDuration
@@ -926,7 +926,7 @@ number 动画帧时长
 **示例：**
 
 ```js
-const duration = topology.calcAnimateDuration(pen);
+const duration = meta2d.calcAnimateDuration(pen);
 ```
 
 ### combine
@@ -944,15 +944,15 @@ const duration = topology.calcAnimateDuration(pen);
   若组合为 [状态](../tutorial/data.html#状态) ，需传递该参数，默认展示第一个即传 0 ，第二个 1。
 
 **返回：**  
-void。新画笔为 topology.store.active[0]
+void。新画笔为 meta2d.store.active[0]
 
 **示例：**
 
 ```js
-topology.combine(pens);
+meta2d.combine(pens);
 
 // 组合为状态
-topology.combine(pens, 0);
+meta2d.combine(pens, 0);
 ```
 
 ### uncombine
@@ -970,7 +970,7 @@ void
 **示例：**
 
 ```js
-topology.uncombine(pen);
+meta2d.uncombine(pen);
 ```
 
 ### active
@@ -983,12 +983,12 @@ topology.uncombine(pen);
   画笔数组
 
 **返回：**  
-void。高亮画笔为 topology.store.active
+void。高亮画笔为 meta2d.store.active
 
 **示例：**
 
 ```js
-topology.active(pens);
+meta2d.active(pens);
 ```
 
 ### inactive
@@ -1004,7 +1004,7 @@ void
 **示例：**
 
 ```js
-topology.inactive();
+meta2d.inactive();
 ```
 
 ### delete
@@ -1022,7 +1022,7 @@ void
 **示例：**
 
 ```js
-topology.delete(pens);
+meta2d.delete(pens);
 ```
 
 ### scale
@@ -1044,7 +1044,7 @@ void
 
 ```js
 // 缩放到120%
-topology.scale(1.2);
+meta2d.scale(1.2);
 ```
 
 ### translate
@@ -1065,7 +1065,7 @@ void
 **示例：**
 
 ```js
-topology.translate(10, 10);
+meta2d.translate(10, 10);
 ```
 
 ### translatePens
@@ -1089,7 +1089,7 @@ void
 **示例：**
 
 ```js
-topology.translatePens([pen], 10, 10);
+meta2d.translatePens([pen], 10, 10);
 ```
 
 ### getParent
@@ -1111,17 +1111,17 @@ Pen
 
 ```js
 // 获取父画笔
-topology.getParent(pen);
+meta2d.getParent(pen);
 
 // 获取根祖父画笔
-topology.getParent(pen, true);
+meta2d.getParent(pen, true);
 ```
 
 ### data
 
 获取文件保存数据。  
 与画布数据失去关联关系，即修改该值不影响画布数据。  
-若要修改后影响画布数据，请使用 topology.store.data 
+若要修改后影响画布数据，请使用 meta2d.store.data 
 
 **参数：**  
 无
@@ -1132,7 +1132,7 @@ json 数据
 **示例：**
 
 ```js
-topology.data();
+meta2d.data();
 ```
 
 ### copy
@@ -1150,9 +1150,9 @@ void
 **示例：**
 
 ```js
-topology.copy();
+meta2d.copy();
 
-topology.copy([pen]);
+meta2d.copy([pen]);
 ```
 
 ### cut
@@ -1170,9 +1170,9 @@ void
 **示例：**
 
 ```js
-topology.cut();
+meta2d.cut();
 
-topology.cut([pen]);
+meta2d.cut([pen]);
 ```
 
 ### paste
@@ -1189,7 +1189,7 @@ void
 **示例：**
 
 ```js
-topology.paste();
+meta2d.paste();
 ```
 
 ### undo
@@ -1206,7 +1206,7 @@ void
 **示例：**
 
 ```js
-topology.undo();
+meta2d.undo();
 ```
 
 ### redo
@@ -1223,7 +1223,7 @@ void
 **示例：**
 
 ```js
-topology.redo();
+meta2d.redo();
 ```
 
 ### connectWebsocket
@@ -1242,10 +1242,10 @@ void
 
 ```js
 // 重连
-topology.connectWebsocket();
+meta2d.connectWebsocket();
 
 // 连接新url
-topology.connectWebsocket(url);
+meta2d.connectWebsocket(url);
 ```
 
 ### closeWebsocket
@@ -1261,7 +1261,7 @@ void
 **示例：**
 
 ```js
-topology.closeWebsocket();
+meta2d.closeWebsocket();
 ```
 
 ### connectMqtt
@@ -1292,10 +1292,10 @@ void
 
 ```js
 // 重连
-topology.connectMqtt();
+meta2d.connectMqtt();
 
 // 连接新配置
-topology.connectMqtt(params);
+meta2d.connectMqtt(params);
 ```
 
 ### closeMqtt
@@ -1311,26 +1311,26 @@ void
 **示例：**
 
 ```js
-topology.closeMqtt();
+meta2d.closeMqtt();
 ```
 
 ### setValue
 
 修改 [Pen](./pen) 属性值, 触发对应画笔们的值变化事件。（若想要不触发值变化事件使用 _setValue）
-1.1.15 版本以后，如果如果存在data.id并且id等于画布id(topology.store.data.id),则表示修改画布的options属性。
+1.1.15 版本以后，如果如果存在data.id并且id等于画布id(meta2d.store.data.id),则表示修改画布的options属性。
 
 **参数：**
 
 - data: any  
   更新的数据。其中，需要有 id 或 tag，定位查找需要修改的 pen  
-  1.2.5 版本及以后，新增dataId 方式修改绑定变量的值,详见下方示例。
-  1.2.15 版本及以后，当data.id为图纸id(topology.store.data.id)的时候,该方法表示修改topology.store.data属性
+  新版本以后，新增dataId 方式修改绑定变量的值,详见下方示例。
+  新版本以后，当data.id为图纸id(meta2d.store.data.id)的时候,该方法表示修改meta2d.store.data属性
 - { render: boolean = true, 
     history: boolean = true,
     doEvent: boolean = false}  
   命名参数，参照下方示例  
   1. render:更改数据后是否重新渲染画布  
-  默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 topology.render()
+  默认会重新渲染，但若在 for 循环中使用 setValue 可能带来性能问题，推荐将值设置成 false ，当 for 循环执行完毕后，使用 meta2d.render()
   1. history:是否将值变化添加到历史记录
   2. doEvent:值变化是否触发画笔事件执行
 
@@ -1342,26 +1342,26 @@ void
 
 ```js
 // 修改id为aaa的画笔的text属性
-topology.setValue({ id: 'aaa', text: 'new text' });
+meta2d.setValue({ id: 'aaa', text: 'new text' });
 
 // 修改tag为aaa的画笔的text属性
-topology.setValue({ tag: 'aaa', text: 'new text' });
+meta2d.setValue({ tag: 'aaa', text: 'new text' });
 
 // 查找id = pen.id的画笔，修改id为111
-topology.setValue({ id: pen.id, newId: '111' });
+meta2d.setValue({ id: pen.id, newId: '111' });
 
 // for 循环设置 pens 的 text
 for (const pen of pens) {
-  topology.setValue({ id: pen.id, text: 'new text' }, { render: false });
+  meta2d.setValue({ id: pen.id, text: 'new text' }, { render: false });
 }
-topology.render();
+meta2d.render();
 
 /*
 1.2.5 版本及以后
 1.属性绑定变量
-2.topology.initBindDatas(); 
+2.meta2d.initBindDatas(); 
 */
-topology.setValue({dataId:'d-1-a-001',value:20});
+meta2d.setValue({dataId:'d-1-a-001',value:20});
 ```
 
 
@@ -1393,9 +1393,9 @@ topology.setValue({dataId:'d-1-a-001',value:20});
 /*
 1.2.5 版本及以后
 1.属性绑定变量
-2.topology.initBindDatas(); 
+2.meta2d.initBindDatas(); 
 */
-topology.setDatas([{dataId:'d-1-a-001',value:20}]);
+meta2d.setDatas([{dataId:'d-1-a-001',value:20}]);
 ```
 
 
@@ -1419,9 +1419,9 @@ void
 **示例：**
 
 ```js
-const pen = topology.store.data.pen[0];
+const pen = meta2d.store.data.pen[0];
 
-topology.updateValue(pen, {background: '#f40'});
+meta2d.updateValue(pen, {background: '#f40'});
 ```
 
 ### pushHistory
@@ -1453,15 +1453,15 @@ void
 **示例：**
 
 ```js
-topology.pushHistory({ type: EditType.Add, pens: [pen] });
+meta2d.pushHistory({ type: EditType.Add, pens: [pen] });
 
-topology.pushHistory({
+meta2d.pushHistory({
   type: EditType.Update,
   pens: currentPens,
   initPens,
 });
 
-topology.pushHistory({ type: EditType.Delete, pens });
+meta2d.pushHistory({ type: EditType.Delete, pens });
 ```
 
 ### showInput
@@ -1479,7 +1479,7 @@ void
 **示例：**
 
 ```js
-topology.showInput(pen);
+meta2d.showInput(pen);
 ```
 
 ### hideInput
@@ -1497,7 +1497,7 @@ void
 **示例：**
 
 ```js
-topology.hideInput(pen);
+meta2d.hideInput(pen);
 ```
 
 ### clearDropdownList
@@ -1515,7 +1515,7 @@ void
 **示例：**
 
 ```js
-topology.clearDropdownList();
+meta2d.clearDropdownList();
 ```
 
 ### pushChildren
@@ -1536,7 +1536,7 @@ void
 **示例：**
 
 ```js
-topology.pushChildren(pen, [child]);
+meta2d.pushChildren(pen, [child]);
 ```
 
 ### renderPenRaw
@@ -1560,7 +1560,7 @@ void
 **示例：**
 
 ```js
-topology.pushChildren(ctx, pen);
+meta2d.pushChildren(ctx, pen);
 ```
 
 ### toPng
@@ -1581,7 +1581,7 @@ topology.pushChildren(ctx, pen);
 **示例：**
 
 ```js
-var blob = topology.toPng();
+var blob = meta2d.toPng();
 ```
 
 ### downloadPng
@@ -1602,7 +1602,7 @@ void
 **示例：**
 
 ```js
-topology.downloadPng();
+meta2d.downloadPng();
 ```
 
 ### getRect
@@ -1620,7 +1620,7 @@ topology.downloadPng();
 **示例：**
 
 ```js
-var rect = topology.getRect();
+var rect = meta2d.getRect();
 ```
 
 ### fitView
@@ -1641,9 +1641,9 @@ void
 **示例：**
 
 ```js
-topology.fitView();
+meta2d.fitView();
 
-topology.fitView(true, 20);
+meta2d.fitView(true, 20);
 ```
 
 ### gotoView
@@ -1661,7 +1661,7 @@ void
 **示例：**
 
 ```js
-topology.gotoView(pen);
+meta2d.gotoView(pen);
 ```
 
 ### centerView
@@ -1677,7 +1677,7 @@ void
 **示例：**
 
 ```js
-topology.centerView();
+meta2d.centerView();
 ```
 
 ### hasView
@@ -1693,7 +1693,7 @@ void
 **示例：**
 
 ```js
-var hasPens = topology.hasView();
+var hasPens = meta2d.hasView();
 ```
 
 ### alignNodes
@@ -1717,9 +1717,9 @@ void
 **示例：**
 
 ```js
-topology.alignNodes('left');
+meta2d.alignNodes('left');
 
-topology.alignNodes('left', pens);
+meta2d.alignNodes('left', pens);
 ```
 
 ### spaceBetween
@@ -1740,9 +1740,9 @@ void
 **示例：**
 
 ```js
-topology.spaceBetween();
+meta2d.spaceBetween();
 
-topology.spaceBetween(undefined, 1000);
+meta2d.spaceBetween(undefined, 1000);
 ```
 
 ### spaceBetweenColumn
@@ -1763,9 +1763,9 @@ void
 **示例：**
 
 ```js
-topology.spaceBetweenColumn();
+meta2d.spaceBetweenColumn();
 
-topology.spaceBetweenColumn(null, 1000);
+meta2d.spaceBetweenColumn(null, 1000);
 ```
 
 ### layout
@@ -1789,9 +1789,9 @@ void
 **示例：**
 
 ```js
-topology.layout();
+meta2d.layout();
 
-topology.layout(undefined, undefined, 50);
+meta2d.layout(undefined, undefined, 50);
 ```
 
 ### showMap
@@ -1807,7 +1807,7 @@ void
 **示例：**
 
 ```js
-topology.showMap();
+meta2d.showMap();
 ```
 
 ### hideMap
@@ -1823,7 +1823,7 @@ void
 **示例：**
 
 ```js
-topology.hideMap();
+meta2d.hideMap();
 ```
 
 ### toggleAnchorMode
@@ -1839,7 +1839,7 @@ void
 **示例：**
 
 ```js
-topology.toggleAnchorMode();
+meta2d.toggleAnchorMode();
 ```
 
 ### addAnchorHand
@@ -1855,7 +1855,7 @@ void
 **示例：**
 
 ```js
-topology.addAnchorHand();
+meta2d.addAnchorHand();
 ```
 
 ### removeAnchorHand
@@ -1871,7 +1871,7 @@ void
 **示例：**
 
 ```js
-topology.removeAnchorHand();
+meta2d.removeAnchorHand();
 ```
 
 ### toggleAnchorHand
@@ -1887,7 +1887,7 @@ void
 **示例：**
 
 ```js
-topology.toggleAnchorHand();
+meta2d.toggleAnchorHand();
 ```
 
 ### top
@@ -1909,7 +1909,7 @@ void
 **示例：**
 
 ```js
-topology.top(pen);
+meta2d.top(pen);
 ```
 
 ### bottom
@@ -1930,7 +1930,7 @@ void
 **示例：**
 
 ```js
-topology.bottom(pen);
+meta2d.bottom(pen);
 ```
 
 ### up
@@ -1951,7 +1951,7 @@ void
 **示例：**
 
 ```js
-topology.up(pen);
+meta2d.up(pen);
 ```
 
 ### down
@@ -1972,7 +1972,7 @@ void
 **示例：**
 
 ```js
-topology.down(pen);
+meta2d.down(pen);
 ```
 
 ### setLayer
@@ -1996,7 +1996,7 @@ void
 **示例：**
 
 ```js
-topology.setLayer(pen, 10);
+meta2d.setLayer(pen, 10);
 ```
 
 ### changePenId
@@ -2017,7 +2017,7 @@ void
 **示例：**
 
 ```js
-topology.changePenId('1', '2');
+meta2d.changePenId('1', '2');
 ```
 
 ### getLines
@@ -2038,7 +2038,7 @@ Pen[]
 **示例：**
 
 ```js
-var lines = topology.getLines(pen);
+var lines = meta2d.getLines(pen);
 ```
 
 ### nextNode
@@ -2056,7 +2056,7 @@ Pen[]
 **示例：**
 
 ```js
-var pens = topology.nextNode(pen);
+var pens = meta2d.nextNode(pen);
 ```
 
 ### previousNode
@@ -2074,7 +2074,7 @@ Pen[]
 **示例：**
 
 ```js
-var pens = topology.previousNode(pen);
+var pens = meta2d.previousNode(pen);
 ```
 
 ### toComponent
@@ -2098,9 +2098,9 @@ Pen[]。组合成一个组件的画笔数组对象（包含父子 Pen）
 **示例：**
 
 ```js
-const pens = topology.toComponent();
+const pens = meta2d.toComponent();
 
-const pens = topology.toComponent(undefined, 0);
+const pens = meta2d.toComponent(undefined, 0);
 ```
 
 ### setVisible  
@@ -2123,8 +2123,8 @@ const pens = topology.toComponent(undefined, 0);
 **示例：**
 
 ```js
-const pen = topology.findOne('id');
-topology.setVisible(pen, false);
+const pen = meta2d.findOne('id');
+meta2d.setVisible(pen, false);
 ```
 
 ### destroy
@@ -2140,7 +2140,7 @@ void
 **示例：**
 
 ```js
-topology.destroy();
+meta2d.destroy();
 ```
 
 ### setBackgroundImage
@@ -2156,7 +2156,7 @@ void
 **示例：**
 
 ```js
-topology.setBackgroundImage('/img/logo.png');
+meta2d.setBackgroundImage('/img/logo.png');
 ```
 
 ### setBackgroundColor  
@@ -2172,8 +2172,8 @@ void
 **示例：**
 
 ```js
-topology.setBackgroundColor('#1890ff');
-topology.render();
+meta2d.setBackgroundColor('#1890ff');
+meta2d.render();
 ```
 
 ### setGrid
@@ -2190,10 +2190,10 @@ void
 **示例：**
 
 ```js
-topology.setGrid({
+meta2d.setGrid({
   grid: true
 });
-topology.render();
+meta2d.render();
 ```
 
 
@@ -2211,10 +2211,10 @@ void
 **示例：**
 
 ```js
-topology.setRule({
+meta2d.setRule({
   rule: true
 });
-topology.render();
+meta2d.render();
 ```
 
 ### getNext
@@ -2238,8 +2238,8 @@ topology.render();
 **示例：**
 
 ```js
-const pen = topology.findOne('id');
-topology.getNext(pen);
+const pen = meta2d.findOne('id');
+meta2d.getNext(pen);
 ```
 
 ### addAnchor
@@ -2261,11 +2261,11 @@ void
 **示例：**
 
 ```js
-const pen = topology.findOne('id');
-topology.addAnchor(pen,{x:0.5,y:0.5,id:'anchor id'});
+const pen = meta2d.findOne('id');
+meta2d.addAnchor(pen,{x:0.5,y:0.5,id:'anchor id'});
 
-const line = topology.findOne('id');
-topology.addAnchor(line,{x:200,y:300},-1); //末尾添加
+const line = meta2d.findOne('id');
+meta2d.addAnchor(line,{x:200,y:300},-1); //末尾添加
 ```
 
 ### connectLine
@@ -2292,9 +2292,9 @@ topology.addAnchor(line,{x:200,y:300},-1); //末尾添加
 **示例：**
 
 ```js
-const from = topology.findOne('from');
-const to = topology.findOne('to');
-topology.connectLine(from,to);
-topology.connectLine(from,to,from.anchors[0],to.anchors[0]);
-topology.connectLine(from,to,from.calculative.worldAnchors[3],to.calculative.worldAnchors[3]);
+const from = meta2d.findOne('from');
+const to = meta2d.findOne('to');
+meta2d.connectLine(from,to);
+meta2d.connectLine(from,to,from.anchors[0],to.anchors[0]);
+meta2d.connectLine(from,to,from.calculative.worldAnchors[3],to.calculative.worldAnchors[3]);
 ```

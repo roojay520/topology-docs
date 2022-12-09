@@ -37,7 +37,7 @@ boolean
 **示例：**
 
 ```js
-import { pointInRect } from '@topology/core';
+import { pointInRect } from '@meta2d/core';
 
 // 点（世界坐标）是否在pen上
 pointInRect(point, pen.calculative.worldRect);
@@ -62,7 +62,7 @@ boolean
 **示例：**
 
 ```js
-import { pointInSimpleRect } from '@topology/core';
+import { pointInSimpleRect } from '@meta2d/core';
 
 // 点（世界坐标）是否在pen上
 pointInSimpleRect(point, pen.calculative.worldRect);
@@ -82,7 +82,7 @@ void
 **示例：**
 
 ```js
-import { calcCenter } from '@topology/core';
+import { calcCenter } from '@meta2d/core';
 
 calcCenter({ x, y, width, height });
 ```
@@ -106,7 +106,7 @@ boolean
 **示例：**
 
 ```js
-import { rectInRect } from '@topology/core';
+import { rectInRect } from '@meta2d/core';
 
 rectInRect({ x, y, width, height }, { x, y, width, height });
 ```
@@ -129,7 +129,7 @@ void
 **示例：**
 
 ```js
-import { translateRect } from '@topology/core';
+import { translateRect } from '@meta2d/core';
 
 translateRect({ x, y, width, height }, 10, 10);
 ```
@@ -152,7 +152,7 @@ void
 **示例：**
 
 ```js
-import { scaleRect } from '@topology/core';
+import { scaleRect } from '@meta2d/core';
 
 scaleRect({ x, y, width, height }, 1.2, { x: 0, y: 0 });
 ```
@@ -173,7 +173,7 @@ Rect: 相对坐标
 **示例：**
 
 ```js
-import { calcRelativeRect } from '@topology/core';
+import { calcRelativeRect } from '@meta2d/core';
 
 const relRect = calcRelativeRect({ x, y, width, height }, { x, y, width, height });
 ```
@@ -194,7 +194,7 @@ Point: 相对坐标
 **示例：**
 
 ```js
-import { calcRelativePoint } from '@topology/core';
+import { calcRelativePoint } from '@meta2d/core';
 
 const relPoint = calcRelativePoint({ x, y }, { x, y, width, height });
 ```

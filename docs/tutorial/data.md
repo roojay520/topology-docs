@@ -1,6 +1,6 @@
 # 实时数据监听
 
-topology 支持 mqtt、websocket 和 http 轮询 3 种方式进行实时数据监听。
+meta2d 支持 mqtt、websocket 和 http 轮询 3 种方式进行实时数据监听。
 
 <div style="color:#fa541c">如果配置过 mqtt 或 websocket 或 http，下次打开时，会自动连接。</div>
 
@@ -27,18 +27,18 @@ const params = {
 };
 
 // 方式1
-topology.connectMqtt(params);
+meta2d.connectMqtt(params);
 
 // 方式2
-topology.store.data.mqtt = params.mqtt;
-topology.store.data.mqttTopics = params.mqttTopics;
-topology.store.data.mqttOptions = params.mqttOptions;
-topology.connectMqtt();
+meta2d.store.data.mqtt = params.mqtt;
+meta2d.store.data.mqttTopics = params.mqttTopics;
+meta2d.store.data.mqttOptions = params.mqttOptions;
+meta2d.connectMqtt();
 ```
 
 2. 自动监听 mqtt 数据
 
-topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。
+meta2d 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。
 
 <div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
@@ -75,16 +75,16 @@ topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../a
 const url = "url";
 
 // 方式1
-topology.connectWebsocket(url);
+meta2d.connectWebsocket(url);
 
 // 方式2
-topology.store.data.websocket = url;
-topology.connectWebsocket();
+meta2d.store.data.websocket = url;
+meta2d.connectWebsocket();
 ```
 
 2. 自动监听 websocket 数据
 
-topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。
+meta2d 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。
 
 <div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
 
@@ -123,13 +123,13 @@ topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../a
 
 ```ts
 const url = "/test"; // 可访问的 http
-topology.store.data.http = url;
-topology.store.data.httpTimeInterval = 500; // 轮询间隔时间, 默认 1000
-topology.connectHttp();
+meta2d.store.data.http = url;
+meta2d.store.data.httpTimeInterval = 500; // 轮询间隔时间, 默认 1000
+meta2d.connectHttp();
 ```
 
 2. 自动监听 http 数据  
-   topology 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。  
+   meta2d 引擎会自动监听数据并实时刷新。只需要按照 [Pen](../api/pen) 数据格式发送数据即可。  
    数据格式参照上方 mqtt 或 ws。
 
 <div style="color:#fa541c">注意：仅需要传递 id 或 tag（查找定位 Pen）及需要更新的属性。</div>
@@ -151,10 +151,10 @@ topology.connectHttp();
 
 ```js
 // 方式1：直接设置socket回调函数
-topology.socketFn = (message, topic) => {
+meta2d.socketFn = (message, topic) => {
   // Do sth
 
-  topology.setValue(pen);
+  meta2d.setValue(pen);
   
   //1.2.15版本以后
   //return false; //表示仅执行自定义的回调函数方法
@@ -168,29 +168,29 @@ data.socketCbJs = `
   // params: topic - mqtt 有，ws 和 http 是空串
   constole.log(e, topic);
   // Do sth.
-  topology.setValue(pen);
+  meta2d.setValue(pen);
   
   //1.2.15版本以后
   //return false; //表示仅执行自定义的回调函数方法
   //return true; //表示除了执行自定义的回调方法外，还会执行核心库方法
 `;
 // 自动监听
-topology.open(data);
+meta2d.open(data);
 
 // 或
-topology.store.data.socketCbJs = `
+meta2d.store.data.socketCbJs = `
   // params: e - the message
   // params: topic - mqtt 有，ws 和 http 是空串
   constole.log(e, topic);
   // Do sth.
-  topology.setValue(pen);
+  meta2d.setValue(pen);
 
   //1.2.15版本以后
   //return false; //表示仅执行自定义的回调函数方法
   //return true; //表示除了执行自定义的回调方法外，还会执行核心库方法
 `;
 // 手动监听
-topology.listenSocket();
+meta2d.listenSocket();
 ```
 
 ## 发送数据
@@ -200,16 +200,16 @@ topology.listenSocket();
 ```js
 // 仅连接成功后有效
 
-topology.mqttClient.publish("event", "data");
+meta2d.mqttClient.publish("event", "data");
 
-topology.websocket.send("data");
+meta2d.websocket.send("data");
 ```
 
 ## 消息通信
 
 1. 配置 websocket 或 mqtt 协议
 
-   这里以 mqtt 协议为例，在 topology 编辑器画布的通信面板中填写 MQTT 的 url 地址和 Topics,其他可按需配置。
+   这里以 mqtt 协议为例，在 meta2d 编辑器画布的通信面板中填写 MQTT 的 url 地址和 Topics,其他可按需配置。
 
 ![配置websocket或mqtt协议](/img/huabuCommunication.png)
 
@@ -233,12 +233,12 @@ topology.websocket.send("data");
 ```json
 {
   "id": "73c3bcdb",
-  "text":"hello topology!"
+  "text":"hello meta2d!"
 }
 // 或
 {
-  "tag": "topology",
-  "text":"hello topology!"
+  "tag": "meta2d",
+  "text":"hello meta2d!"
 }
 ```
 
@@ -253,7 +253,7 @@ topology.websocket.send("data");
 
 ```js
 const showChild = 0;
-topology.combine(pens, showChild); // 若组合成状态，showChild 必填
+meta2d.combine(pens, showChild); // 若组合成状态，showChild 必填
 ```
 
 官网示例:
@@ -282,8 +282,8 @@ topology.combine(pens, showChild); // 若组合成状态，showChild 必填
 
 ## 绑定变量
 
-@topology/core 1.1.14
-@topology/chart-dirgram 1.0.10
+@meta2d/core 1.0.0
+@meta2d/chart-dirgram 1.0.0
 
 对于实际的场景而言，后端通常是不知道画笔的 id 或 tag 的，它们只关注于某个变量的值变化，那么前端可以将某个属性绑定在某个变量上，后端发过来变量的值时，再去更改绑定了该变量的画笔的对应属性即可。  
 这套新规则与默认规则同时存在，而 [解析自定义数据格式](./data.html#解析自定义数据格式) 的优先级更高，它存在的话，即默认规则与绑定变量均失效。
@@ -314,9 +314,9 @@ const pen = {
     },
   ],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
-// topology.doSocket(
+// meta2d.doSocket(
 //   JSON.stringify([
 //     {
 //       dataId: "d-3-a-001", // 变量标识
@@ -385,7 +385,7 @@ const pen = {
     },
   ],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 数据示例

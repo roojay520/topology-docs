@@ -1,6 +1,6 @@
 # 画笔
 
-画笔是 topology 的绘画单元。详情可参考： [Pen API](../api/pen)
+画笔是 meta2d 的绘画单元。详情可参考： [Pen API](../api/pen)
 
 ## 类型 type
 
@@ -32,7 +32,7 @@ const line = {type: 1, name: 'line', anchors:[...], ...};
 
 符合画笔格式的 json 数据即画笔。例如：
 
-**以下代码，均可直接在 topology.le5le.com 官网在线编辑器或 topology 实例页面的控制台执行**
+**以下代码，均可直接在 2ds.le5le.com 官网在线编辑器或 meta2d 实例页面的控制台执行**
 
 ```js
 // 定义一个pen，矩形
@@ -46,18 +46,18 @@ const pen = {
 };
 
 // 方式一：open加载，将清除之前数据
-topology.open({ pens: [pen] });
+meta2d.open({ pens: [pen] });
 
 // 方式二：添加到画布，并选中，会触发生命周期函数beforeAddPen
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 方式三：仅添加画笔，不选中，不触发生命周期函数，不重绘（不立刻显示），可用于批量添加后，一次重绘
-topology.canvas.makePen(pen);
+meta2d.canvas.makePen(pen);
 
 // 选中高亮
-topology.active([pen]);
+meta2d.active([pen]);
 // 重绘显示
-topology.render();
+meta2d.render();
 ```
 
 ## 查找
@@ -73,13 +73,13 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 查找方式一：id查找，返回的是数组
-const pens1 = topology.find(pen.id);
+const pens1 = meta2d.find(pen.id);
 
 // 查找方式二：tag查找，返回的是数组
-const pens2 = topology.find("aaa");
+const pens2 = meta2d.find("aaa");
 ```
 
 ## 更新
@@ -95,16 +95,16 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 查找id = pen.id的画笔，
-topology.setValue({
+meta2d.setValue({
   id: pen.id,
   text: "le5le",
 });
 
 // 查找id = pen.id的画笔，修改id为111
-topology.setValue({
+meta2d.setValue({
   id: pen.id,
   newId: "111",
 });
@@ -123,10 +123,10 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 删除
-topology.delete(topology.find(pen.id));
+meta2d.delete(meta2d.find(pen.id));
 ```
 
 ## 选中高亮
@@ -142,13 +142,13 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 高亮
-topology.active(topology.find(pen.id));
+meta2d.active(meta2d.find(pen.id));
 
 // 清空高亮。如果需要取消部分高亮，直接调用active()赋最新值即可
-topology.inactive();
+meta2d.inactive();
 ```
 
 ## 是否选中高亮
@@ -164,7 +164,7 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 
 // 打印是否选中高亮
 console.log(pen.calculative.active);
@@ -183,12 +183,12 @@ console.log(pen.calculative.active);
 - 数据更新 valueUpdate
 
 触发 pen 的上述行为时，可配置执行的动作  
-锁画布后(topology.store.data.locked = 1 or 2)，可触发交互事件。  
+锁画布后(meta2d.store.data.locked = 1 or 2)，可触发交互事件。  
 事件采用冒泡机制，先执行子节点，后执行父节点。  
 事件配置参考：
 
 1. 在 [官网](http://t.le5le.com/) 拖拽一个节点，配置需要的事件。
-2. 选中节点，在控制台输入 `topology.store.active[0].events` , 如果报错，确保已经选中该节点。
+2. 选中节点，在控制台输入 `meta2d.store.active[0].events` , 如果报错，确保已经选中该节点。
 
 ```js
 const pen = {
@@ -203,11 +203,11 @@ const pen = {
       name: "click",
       action: EventAction.Link, // 执行动作
       where: { key: "text", comparison: "==", value: "矩形" }, // 触发条件
-      value: "topology.le5le.com",
+      value: "2ds.le5le.com",
     },
   ],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 ```ts
@@ -294,8 +294,8 @@ export type Comparison =
   控制台设置：
 
   ```js
-  topology.store.fillWorldTextRect = true;
-  topology.render();
+  meta2d.store.fillWorldTextRect = true;
+  meta2d.render();
   ```
 
 #### textDrawRect
@@ -337,7 +337,7 @@ const pen = {
   text: "长文本长文本长文本长文本长文本长文本",
   whiteSpace: "nowrap",
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```
 
 2. 最大两行文本，永远换行，超出省略
@@ -360,5 +360,5 @@ const pen = {
   textHeight: 50,
   whiteSpace: "break-all",
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 ```

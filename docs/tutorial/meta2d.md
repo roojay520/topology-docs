@@ -1,6 +1,6 @@
 # 画布
 
-画布是 topology 的核心，所有展示和交互都在画布上呈现。
+画布是 meta2d 的核心，所有展示和交互都在画布上呈现。
 
 ## 创建画布
 
@@ -8,27 +8,27 @@
 
 ```html
 // 提前设置好css样式，特别是大小位置
-<div id="topology"></div>
+<div id="meta2d"></div>
 ```
 
 2. 在 js 中创建实例
 
 ```js
-// 'topology'为id或Element实例；options可选
-var topology = new Topology('topology', options);
+// 'meta2d'为id或Element实例；options可选
+var meta2d = new Meta2d('meta2d', options);
 
 // 核心库将自动添加
-// window.topology = topology;
+// window.meta2d = meta2d;
 ```
 
-3. 根据业务，调用 topology api 开始使用
+3. 根据业务，调用 meta2d api 开始使用
 
 ```js
-// 例如：打开一个topology格式文件
-topology.open(json);
+// 例如：打开一个meta2d格式文件
+meta2d.open(json);
 
 // 获取文件数据
-const json = topology.data();
+const json = meta2d.data();
 ```
 
 ## 拖拽图形库
@@ -52,7 +52,7 @@ const json = topology.data();
 ```
 
 **2. 传递数据**  
-在工具栏相应事件函数中，给 topology 传递 pen 对象数据即可
+在工具栏相应事件函数中，给 meta2d 传递 pen 对象数据即可
 
 ```js
 const pen = {
@@ -67,9 +67,9 @@ onDragstart = (e) => {
 };
 
 // 支持鼠标单击添加图形
-import { deepClone } from '@topology/core';
+import { deepClone } from '@meta2d/core';
 onTouchstart = (e) => {
-  topology.canvas.addCaches = deepClone([pen]);
+  meta2d.canvas.addCaches = deepClone([pen]);
 };
 ```
 
@@ -108,7 +108,7 @@ onTouchstart = (e) => {
 | disableDockLine     | boolean     | 取消辅助线                                         |
 | minScale            | number      | 画布最小缩放比例                                   |
 | maxScale            | number      | 画布最大缩放比例                                   |
-| keydown             | KeydownType | 快捷键监听对象，默认 document；-1 不监听快捷键，需在 Topology 初始化时配置 |
+| keydown             | KeydownType | 快捷键监听对象，默认 document；-1 不监听快捷键，需在 Meta2d 初始化时配置 |
 | grid                | boolean     | 是否显示网格                                       |
 | gridColor           | string      | 网格颜色                                           |
 | gridSize            | number      | 网格大小                                           |
@@ -151,7 +151,7 @@ onTouchstart = (e) => {
 
 ## 文件数据
 
-通过 [topology.data()](../api/core.md#data) 函数获取，返回数据格式如下：
+通过 [meta2d.data()](../api/core.md#data) 函数获取，返回数据格式如下：
 
 | 名称             | 类型                           | 描述                                               |
 | ---------------- | ------------------------------ | -------------------------------------------------- |
@@ -186,16 +186,16 @@ onTouchstart = (e) => {
 | 名称       | 类型                            | 描述                                      |
 | ---------- | ------------------------------- | ----------------------------------------- |
 | canvas     | [Canvas](../api/canvas)         | 绘画画板                                  |
-| store      | [TopologyStore](#topologystore) | 绘画数据。包括文件数据和各种状态数据等    |
+| store      | [Meta2dStore](#meta2dstore) | 绘画数据。包括文件数据和各种状态数据等    |
 | websocket  | WebSocket                       | 原生 WebSocket 客户端。仅连接成功才有实例 |
 | mqttClient | Mqtt.Client                     | mqtt.js 通信客户端                        |
 
-### TopologyStore
+### Meta2dStore
 
 | 名称         | 类型                     | 描述                                              |
 | ------------ | ------------------------ | ------------------------------------------------- |
 | id           | string                   | 当前引擎实例 id。一个页面可以有多个可视化引擎实例 |
-| data         | [TopologyData](#文件数据)             | 绘画（图纸）数据。包含自动计算的临时变量          |
+| data         | [Meta2dData](#文件数据)             | 绘画（图纸）数据。包含自动计算的临时变量          |
 | pens         | Object（id: pen）        | 画笔 map。方便检索 pen                            |
 | active       | Pen[]                    | 选中的画笔。数组                                  |
 | hover        | Pen                      | 鼠标经过活动的画笔。单 Pen                        |

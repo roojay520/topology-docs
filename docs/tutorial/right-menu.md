@@ -11,7 +11,7 @@ const showContextMenu = () => {};
 const hideContextMenu = () => {};
 
 // 右键菜单
-topology.on('contextmenu', showContextMenu);
+meta2d.on('contextmenu', showContextMenu);
 // 点击画布
-topology.on('click', hideContextMenu);
+meta2d.on('click', hideContextMenu);
 ```

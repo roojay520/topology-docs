@@ -4,8 +4,8 @@
 
 注册：
 ```ts
-import { formPens } from '@topology/form-diagram';
-topology.registerCanvasDraw(formPens());
+import { formPens } from '@meta2d/form-diagram';
+meta2d.registerCanvasDraw(formPens());
 ```
 
 ## radio 单选框
@@ -38,7 +38,7 @@ const radio = {
   ],
 };
 
-topology.addPens([radio]);
+meta2d.addPens([radio]);
 ```
 
 ## checkbox 复选框
@@ -67,7 +67,7 @@ const checkbox = {
   value: '选项一',
 };
 
-topology.addPens([checkbox]);
+meta2d.addPens([checkbox]);
 ```
 
 ## switch 开关
@@ -100,7 +100,7 @@ const lSwitch = {
   //disable: true,
 };
 
-topology.addPen(lSwitch);
+meta2d.addPen(lSwitch);
 ```
 
 ## slider 滑动输入条
@@ -138,7 +138,7 @@ const slider = {
   unit: "%",
 };
 
-topology.addPen(slider);
+meta2d.addPen(slider);
 ```
 
 ## button 按钮
@@ -169,7 +169,7 @@ const button = {
   hoverTextColor: "#ffffff",
 };
 
-topology.addPen(button);
+meta2d.addPen(button);
 ```
 
 ## 输入框
@@ -195,7 +195,7 @@ const input = {
   textLeft: 10,
 };
 
-topology.addPen(input);
+meta2d.addPen(input);
 ```
 
 ## 选择器
@@ -226,5 +226,5 @@ const select = {
   ],
 };
 
-topology.addPen(select);
+meta2d.addPen(select);
 ```

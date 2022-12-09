@@ -18,7 +18,7 @@
 // store - 表示引擎数据存储
 // pen - 当前绘画的连线
 // mousedwon - 鼠标按下的初始位置
-export function myLineFn(store: TopologyStore, pen: Pen, mousedwon?: Point) {
+export function myLineFn(store: Meta2dStore, pen: Pen, mousedwon?: Point) {
   if (!pen.calculative.worldAnchors) {
     pen.calculative.worldAnchors = [];
   }
@@ -31,14 +31,14 @@ export function myLineFn(store: TopologyStore, pen: Pen, mousedwon?: Point) {
 2. 注册函数
 
 ```js
-topology.addDrawLineFn('newLineName', myLineFn);
+meta2d.addDrawLineFn('newLineName', myLineFn);
 ```
 
 3. 使用
 
 ```js
 // 开始绘画曲线，使用newLineName对应的myLineFn函数自动计算锚点
-topology.drawLine('newLineName');
+meta2d.drawLine('newLineName');
 ```
 
 ## 内置曲线算法

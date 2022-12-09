@@ -18,7 +18,7 @@ topolog.beforeAddPen = (pen: Pen) => {
   return true;
 };
 
-topology.beforeAddPens = async (pens: Pen[]) => {
+meta2d.beforeAddPens = async (pens: Pen[]) => {
   console.log("addPens", pens);
   // 1. window.confirm 会阻塞后面代码，不推荐
   // return window.confirm("是否添加此类图元？");
@@ -38,7 +38,7 @@ topolog.beforeRemovePens = async (pens: Pen[]) => {
   return res.ok;
 };
 
-topology.beforeAddAnchor = async (pen: Pen, anchor: Point) => {
+meta2d.beforeAddAnchor = async (pen: Pen, anchor: Point) => {
   // 1. window.confirm 会阻塞后面代码，不推荐
   // return window.confirm('是否添加锚点？');
 
@@ -47,7 +47,7 @@ topology.beforeAddAnchor = async (pen: Pen, anchor: Point) => {
   return await showModal("添加锚点");
 };
 
-topology.beforeRemoveAnchor = async (pen: Pen, anchor: Point) => {
+meta2d.beforeRemoveAnchor = async (pen: Pen, anchor: Point) => {
   // 1. window.confirm 会阻塞后面代码，不推荐
   // return window.confirm('是否删除锚点？');
 
@@ -66,7 +66,7 @@ const pen = {
   height: 100,
   tag: ["aaa"],
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 // print: addPen, pen
 ```
 
@@ -120,8 +120,8 @@ const pen = {
   height: 100,
   onAdd: onAddPen,
 };
-topology.addPen(pen);
+meta2d.addPen(pen);
 // print: onAddPen, pen
 ```
 
-自定义图形库设置 onAdd 相关函数，参考：[自定义图形库示例](https://github.com/le5le-com/topology.js/blob/master/packages/chart-diagram/src/echarts.ts)
+自定义图形库设置 onAdd 相关函数，参考：[自定义图形库示例](https://github.com/le5le-com/meta2d.js/blob/master/packages/chart-diagram/src/echarts.ts)

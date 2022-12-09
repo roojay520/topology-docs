@@ -10,12 +10,12 @@ module.exports = {
     algolia: {
       appId: "3UU73GDKU1",
       apiKey: "4d05a9750de2dd2ecdc6611ce62e545e",
-      indexName: "le5le-topology",
+      indexName: "le5le-meta2d",
       placeholder: "搜索后，请刷新",
       transformItems(items) {
         for (const item of items) {
-          item.objectID.replace("topology-documents/", "");
-          item.url.replace("topology-documents/", "");
+          item.objectID.replace("meta2d-documents/", "");
+          item.url.replace("meta2d-documents/", "");
         }
         return items;
       },
@@ -43,25 +43,25 @@ module.exports = {
         text: "产品",
         items: [
           {
-            text: "Topology 2D",
-            link: "http://topology.le5le.com/",
+            text: "乐吾乐 2D可视化",
+            link: "https://2ds.le5le.com/",
           },
           // {
-          //   text: 'Topology 2D 企业版',
+          //   text: 'Meta2d 2D 企业版',
           //   link: 'tutorial/commercial',
           // },
           {
-            text: "Topology 3D 预览版",
-            link: "http://3d.preview.le5le.com/",
+            text: "乐吾乐 3D 预览版",
+            link: "http://111.172.231.243:7800/",
           },
           {
             text: "物联平台",
             link: "http://iot.demo.le5le.com/",
           },
-          {
-            text: "Topology 0.5.x",
-            link: "https://www.yuque.com/alsmile/topology",
-          },
+          // {
+          //   text: "Meta2d 0.5.x",
+          //   link: "https://www.yuque.com/alsmile/meta2d",
+          // },
         ],
       },
       {
@@ -158,7 +158,7 @@ function getTutorialSidebar() {
     {
       text: "使用",
       children: [
-        { text: "Topology介绍", link: "/tutorial/introduction" },
+        { text: "Meta2d介绍", link: "/tutorial/introduction" },
         {
           text: "快速上手",
           link: "/tutorial/start",
@@ -216,7 +216,7 @@ function getTutorialSidebar() {
       text: "架构",
       children: [
         { text: "概要", link: "/tutorial/architecture" },
-        { text: "画布", link: "/tutorial/topology" },
+        { text: "画布", link: "/tutorial/meta2d" },
         { text: "画笔", link: "/tutorial/pen" },
         { text: "生命周期", link: "/tutorial/lifecycle" },
         { text: "实时数据监听", link: "/tutorial/data" },

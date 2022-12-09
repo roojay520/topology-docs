@@ -2,7 +2,7 @@
 
 钢笔是和其他众多绘图工具（Photoshop、Sketch、Illustrator）中一致的钢笔工具，能够很方便的在线绘制各种小图标
 
-![乐吾乐topology钢笔工具](/img/pen.png)
+![乐吾乐meta2d钢笔工具](/img/pen.png)
 
 在线体验： http://t.le5le.com/
 
@@ -10,18 +10,18 @@
 
 ```js
 // 开始绘画：curve
-topology.drawLine('curve');
+meta2d.drawLine('curve');
 // 除了curve，还有polyline、line、mind
 
 // 取消绘画
-topology.drawLine();
+meta2d.drawLine();
 
 // 默认Enter、Escape、鼠标右键完成绘画。
 // 手动完成绘画
-topology.finishDrawLine();
+meta2d.finishDrawLine();
 
 // drawingLineName 有值时，认为在钢笔状态
-if (topology.canvas.drawingLineName)  // 钢笔绘画状态
+if (meta2d.canvas.drawingLineName)  // 钢笔绘画状态
 ```
 
 **快捷键**
