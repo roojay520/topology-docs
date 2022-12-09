@@ -89,7 +89,7 @@
 
 ## 3 部署试用
 （安装包版，本地或内网部署使用）
-http://developer.le5le.com/topology-documents/tutorial/commercial-trial.html
+https://developer.le5le.com/tutorial/commercial-trial.html   s
 
 
 
