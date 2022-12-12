@@ -23,17 +23,17 @@ module.exports = {
 
     nav: [
       {
-        text: "教程",
+        text: "2D教程",
         link: "/tutorial/introduction",
         // activeMatch: '^/tutorial/'
       },
-      { text: "API", link: "/api/core", activeMatch: "^/api/" },
+      { text: "Meta2D API", link: "/api/core", activeMatch: "^/api/" },
       // {
       //   text: '视频教程',
       //   link: '/videos/home',
       //   activeMatch: '^/videos/',
       // },
-      { text: "3D", link: "/3d/index", activeMatch: "^/3d/" },
+      { text: "3D教程", link: "/3d/editor/guide/introduction", activeMatch: "^/3d/" },
       {
         text: "资源",
         link: "/awesome/home",
@@ -308,6 +308,7 @@ function get3DSidebar() {
           text: '指引',
           children: [
             { text: '介绍', link: '/3d/editor/guide/introduction' },
+            { text: '界面', link: '/3d/editor/guide/view' },
             { text: '第一个项目', link: '/3d/editor/guide/firstProject' },
             { text: '设置事件', link: '/3d/editor/guide/setEvents' },
             { text: '设置动画', link: '/3d/editor/guide/setAnimations' },
